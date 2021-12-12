@@ -15,7 +15,8 @@
     "core-js": "^3.6.5",
     "sass-loader": "^12.3.0",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "vue-styled-components": "^1.6.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
