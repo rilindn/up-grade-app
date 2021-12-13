@@ -1,5 +1,13 @@
 <template>
-  <div class="about">
+  <Wrapper>
     <h1>This is an about page</h1>
-  </div>
+  </Wrapper>
 </template>
+<script>
+import { Wrapper } from "./About.styles";
+export default {
+  components: {
+    Wrapper,
+  },
+};
+</script>

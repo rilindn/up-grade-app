@@ -1,101 +1,105 @@
 <template>
-  <div class="wrapper">
-    <div
-      class="container"
-      id="container"
-      v-bind:class="{ 'right-panel-active': rightPanelShow }"
-    >
-      <div class="form-container sign-up-container">
-        <form action="#">
+  <Wrapper>
+    <Container id="container" :leftContainer="rightPanelShow">
+      <FormContainer :rightPanel="rightPanelShow" :rightContainer="true">
+        <Form action="#">
           <h1>Login as Staff</h1>
-          <div class="social-container">
+          <SocialContainer>
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-          </div>
+          </SocialContainer>
           <span>or use your account</span>
           <input class="input" type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
-          <Button
-              id="signInStaff"
-              title="Sign In"
-            >
-            </Button>
-        </form>
-      </div>
-      <div class="form-container sign-in-container">
-        <form action="#">
+          <Button id="signInStaff" title="Sign In" />
+        </Form>
+      </FormContainer>
+      <FormContainer :rightPanel="rightPanelShow" :leftContainer="true">
+        <Form action="#">
           <h1>Login as Student</h1>
-          <div class="social-container">
+          <SocialContainer>
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-          </div>
+          </SocialContainer>
           <span>or use your account</span>
           <input class="input" type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
-          <Button
-              id="signInStaff"
-              title="Sign In"
-            >
-            </Button>
-        </form>
-      </div>
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-right">
+          <Button title="Sign In" />
+        </Form>
+      </FormContainer>
+      <OverlayContainer :rightPanel="rightPanelShow">
+        <Overlay :rightPanel="rightPanelShow">
+          <OverlayPanel :rightOverlay="true">
             <h1>Staff or Teacher?</h1>
             <p>If you are a staff or teacher please slide to the other form</p>
-            <div style="padding: 30px">
-              <img src="../../assets/teacher.svg" alt="" width="100" />
+            <div style="padding: 27px">
+              <img src="@/assets/teacher.svg" alt="" width="100" />
             </div>
             <Button
-              class="ghost"
-              id="signInStaff"
-              @click="rightPanelShow = true"
+              @onClick="setRightPanel(true)"
               title="Sign In as Staff"
               bgColor="transparent"
               borderColor="#fff"
-            >
-            </Button>
-          </div>
-          <div class="overlay-panel overlay-left">
+            />
+          </OverlayPanel>
+          <OverlayPanel>
             <h1>Student or Parent?</h1>
             <p>If you are a student or parent please slide to the other form</p>
-            <div style="padding-bottom: 50px">
-              <img src="../../assets/student.svg" alt="" width="100" />
+            <div style="padding: 27px">
+              <img src="@/assets/student.svg" alt="" width="100" />
             </div>
-           <Button
-              class="ghost"
-              id="signInStaff"
-              @click="rightPanelShow = false"
+            <Button
+              @onClick="setRightPanel(false)"
               title="Sign In as Staff"
               bgColor="transparent"
               borderColor="#fff"
             >
+              Sign In as Student
             </Button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          </OverlayPanel>
+        </Overlay>
+      </OverlayContainer>
+    </Container>
+  </Wrapper>
 </template>
 <script>
-import Button from '../../components/button'
+import {
+  Wrapper,
+  Container,
+  FormContainer,
+  OverlayContainer,
+  Overlay,
+  OverlayPanel,
+  Form,
+  SocialContainer,
+} from "./Login.styles";
+import Button from "@/components/button";
 export default {
-  name: "App",
-  components: {
-    Button
-  },
   data() {
     return {
       rightPanelShow: false,
     };
   },
+  components: {
+    Wrapper,
+    Button,
+    Container,
+    FormContainer,
+    OverlayContainer,
+    Overlay,
+    OverlayPanel,
+    Form,
+    SocialContainer,
+  },
+  methods: {
+    setRightPanel(val) {
+      this.rightPanelShow = val;
+    },
+  },
 };
 </script>
-<style scoped>
-@import "./Login.styles.scss";
-</style>
+<style scoped></style>
