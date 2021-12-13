@@ -17,7 +17,11 @@
           <input class="input" type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
-          <button>Sign In</button>
+          <Button
+              id="signInStaff"
+              title="Sign In"
+            >
+            </Button>
         </form>
       </div>
       <div class="form-container sign-in-container">
@@ -32,7 +36,11 @@
           <input class="input" type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
-          <button>Sign In</button>
+          <Button
+              id="signInStaff"
+              title="Sign In"
+            >
+            </Button>
         </form>
       </div>
       <div class="overlay-container">
@@ -40,30 +48,34 @@
           <div class="overlay-panel overlay-right">
             <h1>Staff or Teacher?</h1>
             <p>If you are a staff or teacher please slide to the other form</p>
-            <div style="padding-bottom: 20px">
+            <div style="padding: 30px">
               <img src="../../assets/teacher.svg" alt="" width="100" />
             </div>
-            <button
+            <Button
               class="ghost"
               id="signInStaff"
               @click="rightPanelShow = true"
+              title="Sign In as Staff"
+              bgColor="transparent"
+              borderColor="#fff"
             >
-              Sign In as Staff
-            </button>
+            </Button>
           </div>
           <div class="overlay-panel overlay-left">
             <h1>Student or Parent?</h1>
             <p>If you are a student or parent please slide to the other form</p>
-            <div style="padding-bottom: 20px">
+            <div style="padding-bottom: 50px">
               <img src="../../assets/student.svg" alt="" width="100" />
             </div>
-            <button
+           <Button
               class="ghost"
-              id="signInTeacher"
+              id="signInStaff"
               @click="rightPanelShow = false"
+              title="Sign In as Staff"
+              bgColor="transparent"
+              borderColor="#fff"
             >
-              Sign In as Student
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -71,9 +83,12 @@
   </div>
 </template>
 <script>
+import Button from '../../components/button'
 export default {
   name: "App",
-  components: {},
+  components: {
+    Button
+  },
   data() {
     return {
       rightPanelShow: false,
