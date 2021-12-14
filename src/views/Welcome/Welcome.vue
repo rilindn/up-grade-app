@@ -1,8 +1,13 @@
 <template>
-  <div class="welcome">
+  <Wrapper>
     <h1>Welcome</h1>
-  </div>
+  </Wrapper>
 </template>
 <script>
-export default {};
+import { Wrapper } from "./Welcome.styles";
+export default {
+  components: {
+    Wrapper,
+  },
+};
 </script>

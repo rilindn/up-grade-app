@@ -1,5 +1,13 @@
 <template>
-  <div class="contact-us">
+  <Wrapper>
     <h1>This is an contact us page</h1>
-  </div>
+  </Wrapper>
 </template>
+<script>
+import { Wrapper } from "./ContactUs.styles";
+export default {
+  components: {
+    Wrapper,
+  },
+};
+</script>
