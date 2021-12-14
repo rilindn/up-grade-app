@@ -38,9 +38,9 @@ injectGlobal`
   }
   
   input {
-    background-color: #eee;
+    background-color: #eee !important;
     border: none;
-    border-radius: 10px;
+    border-radius: 10px !important;
     padding: 12px 15px;
     margin: 8px 0;
     width: 100%;

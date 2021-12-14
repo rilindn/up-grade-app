@@ -22,10 +22,10 @@ export const ButtonStyled = styled("button", btnProps)`
   background-color: ${(props) => props.backgroundColor};
   border-radius: ${(props) => props.borderRadius};
   border-color: ${(props) => props.borderColor};
-  & :active {
+  :active {
     transform: scale(0.95);
   }
-  & :focus {
+  :focus {
     outline: none;
   }
 `;
