@@ -1,10 +1,17 @@
 <template>
-  <div>
-    <h1 class="footer">Footer</h1>
-  </div>
+  <Wrapper>
+    <h1>Footer test</h1>
+  </Wrapper>
 </template>
 
-<script></script>
+<script>
+import { Wrapper } from "./Footer.styles";
+export default {
+  components: {
+    Wrapper,
+  },
+};
+</script>
 
 <style scoped>
 .footer {

@@ -1,10 +1,10 @@
 <template>
   <Wrapper>
-    <h1>This is an home page</h1>
+    <h1>Welcome</h1>
   </Wrapper>
 </template>
 <script>
-import { Wrapper } from "./Home.styles";
+import { Wrapper } from "./Welcome.styles";
 export default {
   components: {
     Wrapper,

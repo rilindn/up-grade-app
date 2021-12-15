@@ -1,14 +1,19 @@
 <template>
-  <div id="nav">
+  <Wrapper>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link to="/contact-us">Contact Us</router-link>
-  </div>
-  <router-view />
+    <router-link to="/contact-us">Contact Us</router-link> |
+    <router-link to="/login">Login</router-link>
+  </Wrapper>
 </template>
 
-<script></script>
+<script>
+import { Wrapper } from "./Header.styles";
+export default {
+  components: {
+    Wrapper,
+  },
+};
+</script>
 
-<style>
-@import "./Header.styles.scss";
-</style>
+<style></style>
