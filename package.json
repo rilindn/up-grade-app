@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "sass-loader": "^12.3.0",
+    "vee-validate": "^4.5.7",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
   },
