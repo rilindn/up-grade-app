@@ -1,6 +1,6 @@
 <template>
   <div>
-  <Sidebar v-if="$route.fullPath !== '/login'"/>
+    <Sidebar v-if="$route.fullPath !== '/login'" />
     <Header v-if="$route.fullPath !== '/login'" />
     <router-view />
     <!-- <Footer /> -->
@@ -18,7 +18,7 @@ export default {
   name: "App",
   components: {
     // Footer,
-     Sidebar,
+    Sidebar,
     Header,
     Welcome,
   },

@@ -2,64 +2,70 @@
   <Wrapper>
     <Container id="container" :leftContainer="rightPanelShow">
       <FormContainer :rightPanel="rightPanelShow" :rightContainer="true">
-        <Form action="#">
-          <h1>Login as Staff</h1>
+        <Form @submit.prevent>
+          <h1>{{ $t("login.staff.title") }}</h1>
           <SocialContainer>
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </SocialContainer>
-          <span>or use your account</span>
+          <span>{{ $t("login.externalLogin") }}</span>
           <input class="input" type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
-          <a href="#">Forgot your password?</a>
-          <Button id="signInStaff" title="Sign In" />
+          <a href="#">{{ $t("login.forgotPsw") }}</a>
+          <Button
+            :title="$t('login.signInBtn')"
+            :loading="loading"
+            @onClick="login"
+          />
         </Form>
       </FormContainer>
       <FormContainer :rightPanel="rightPanelShow" :leftContainer="true">
-        <Form action="#">
-          <h1>Login as Student</h1>
+        <Form @submit.prevent>
+          <h1>{{ $t("login.student.title") }}</h1>
           <SocialContainer>
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </SocialContainer>
-          <span>or use your account</span>
+          <span>{{ $t("login.externalLogin") }}</span>
           <input class="input" type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
-          <a href="#">Forgot your password?</a>
-          <Button title="Sign In" />
+          <a href="#">{{ $t("login.forgotPsw") }}</a>
+          <Button
+            :title="$t('login.signInBtn')"
+            :loading="loading"
+            @onClick="login"
+          />
         </Form>
       </FormContainer>
       <OverlayContainer :rightPanel="rightPanelShow">
         <Overlay :rightPanel="rightPanelShow">
           <OverlayPanel :rightOverlay="true">
-            <h1>Staff or Teacher?</h1>
-            <p>If you are a staff or teacher please slide to the other form</p>
+            <h1>{{ $t("login.student.overlay.title") }}</h1>
+            <p>{{ $t("login.student.overlay.text") }}</p>
             <div style="padding: 27px">
               <img src="@/assets/teacher.svg" alt="" width="100" />
             </div>
             <Button
               @onClick="setRightPanel(true)"
-              title="Sign In as Staff"
+              :title="$t('login.student.overlay.btn')"
               bgColor="transparent"
               borderColor="#fff"
             />
           </OverlayPanel>
           <OverlayPanel>
-            <h1>Student or Parent?</h1>
-            <p>If you are a student or parent please slide to the other form</p>
+            <h1>{{ $t("login.staff.overlay.title") }}</h1>
+            <p>{{ $t("login.staff.overlay.text") }}</p>
             <div style="padding: 27px">
               <img src="@/assets/student.svg" alt="" width="100" />
             </div>
             <Button
               @onClick="setRightPanel(false)"
-              title="Sign In as Staff"
+              :title="$t('login.staff.overlay.btn')"
               bgColor="transparent"
               borderColor="#fff"
-            >
-              Sign In as Student
-            </Button>
+            />
           </OverlayPanel>
         </Overlay>
       </OverlayContainer>
@@ -82,6 +88,7 @@ export default {
   data() {
     return {
       rightPanelShow: false,
+      loading: false,
     };
   },
   components: {
@@ -98,6 +105,16 @@ export default {
   methods: {
     setRightPanel(val) {
       this.rightPanelShow = val;
+    },
+    login() {
+      this.loading = true;
+      return new Promise((resolve, _reject) => {
+        setTimeout(() => {
+          resolve((this.loading = false));
+        }, 2000);
+      }).then(() => {
+        this.$router.push("/home");
+      });
     },
   },
 };

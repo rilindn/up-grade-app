@@ -1,0 +1,41 @@
+{
+  "welcome": {
+    "title": "Welcome {name}"
+  },
+  "about": {
+    "title": "This is an about page"
+  },
+  "home": {
+    "title": "This is an home page"
+  },
+  "contactUs": {
+    "title": "This is an contact us page"
+  },
+  "sidebar": {
+    "login": "Login",
+    "about": "About",
+    "contactUs": "Contact",
+    "home": "Home"
+  },
+  "login": {
+    "student": {
+      "title": "Login as Student",
+      "overlay": {
+        "title": "Staff or Teacher?",
+        "text": "If you are a staff or teacher please slide to the other form",
+        "btn": "Sign In as Staff"
+      }
+    },
+    "staff": {
+      "title": "Login as Staff",
+      "overlay": {
+        "title": "Student or Parent?",
+        "text": "If you are a student or parent please slide to the other form",
+        "btn": "Sign In as Student"
+      }
+    },
+    "externalLogin": "or use your account",
+    "forgotPsw": "Forgot your password?",
+    "signInBtn": "Sign In"
+  }
+}

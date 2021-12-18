@@ -5,13 +5,14 @@ const palette = {
     red: "#ff0000",
   },
   primary: {
+    light: "#05c59a",
+    main: "#008466",
+    dark: "#0C5B49",
+  },
+  secondary: {
     main: "#8bcffc",
     dark: "#0084ff",
     contrastText: "#fff",
-  },
-  secondary: {
-    main: "#008466",
-    dark: "#0C5B49",
   },
   info: {
     main: "#E84E1B",

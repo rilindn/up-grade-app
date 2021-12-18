@@ -21,7 +21,6 @@
 </template>
 
 <script>
-
 import { useField } from "vee-validate";
 
 export default {
@@ -52,7 +51,6 @@ export default {
     },
   },
   setup(props) {
- n
     const {
       value: inputValue,
       errorMessage,
@@ -74,7 +72,7 @@ export default {
 };
 </script>
 
-<style  scoped>
+<style scoped>
 .InputField {
   position: relative;
   margin-bottom: calc(1em * 1.5);

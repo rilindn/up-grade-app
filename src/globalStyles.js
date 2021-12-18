@@ -1,6 +1,10 @@
 import { injectGlobal } from "vue-styled-components";
 
 injectGlobal`
+html{
+  overflow: hidden !important;
+
+}
 * {
     box-sizing: border-box;
   }
