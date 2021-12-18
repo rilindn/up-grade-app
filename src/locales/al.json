@@ -1,0 +1,41 @@
+{
+  "welcome": {
+    "title": "Miresevini {name}"
+  },
+  "about": {
+    "title": "Kjo eshte faqja rreth nesh"
+  },
+  "home": {
+    "title": "Kjo eshte faqja home"
+  },
+  "contactUs": {
+    "title": "Kjo eshte faqja kontaktit"
+  },
+  "sidebar": {
+    "login": "Kycuni",
+    "about": "Rreth nesh",
+    "contactUs": "Kontakti",
+    "home": "Home"
+  },
+  "login": {
+    "student": {
+      "title": "Kycuni si Student",
+      "overlay": {
+        "title": "Staf apo Mesues?",
+        "text": "Nese jeni staf apo mesues kaloni ne formen tjeter",
+        "btn": "Kycuni si Staf"
+      }
+    },
+    "staff": {
+      "title": "Kycuni si Staf",
+      "overlay": {
+        "title": "Student apo Prind?",
+        "text": "Nese jeni student apo prind kaloni ne formen tjeter",
+        "btn": "Kycuni si Student"
+      }
+    },
+    "externalLogin": "ose perdorni llogarine tuaj",
+    "forgotPsw": "Keni harruar fjalekalimin?",
+    "signInBtn": "Kycuni"
+  }
+}

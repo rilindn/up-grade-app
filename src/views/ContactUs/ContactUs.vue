@@ -1,6 +1,6 @@
 <template>
   <Wrapper>
-    <h1>This is an contact us page</h1>
+    <h1>{{ $t("contactUs.title") }}</h1>
   </Wrapper>
 </template>
 <script>

@@ -1,6 +1,6 @@
 <template>
   <Wrapper>
-    <h1>This is an home page</h1>
+    <h1>{{ $t("home.title") }}</h1>
   </Wrapper>
 </template>
 <script>

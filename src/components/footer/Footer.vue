@@ -13,8 +13,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.footer {
-  background-color: aqua;
-}
-</style>
+<style scoped></style>

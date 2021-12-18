@@ -8,17 +8,20 @@
     :height="height"
   >
     <i v-bind:class="startIcon"></i>
-    {{ title }}
+    <h4 v-if="!loading">{{ title }}</h4>
+    <LoadingSpinner :loading="loading"></LoadingSpinner>
   </ButtonStyled>
 </template>
 
 <script>
 import { ButtonStyled } from "./CustomButton.styles";
+import LoadingSpinner from "@/components/loadingSpinner";
 import palette from "@/theme/palette";
 import { radius } from "@/theme/shapings";
 export default {
   components: {
     ButtonStyled,
+    LoadingSpinner,
   },
   props: {
     title: {
@@ -26,7 +29,7 @@ export default {
     },
     bgColor: {
       type: String,
-      default: palette.primary.dark,
+      default: palette.primary.main,
     },
     borderRadius: {
       type: String,
@@ -34,7 +37,7 @@ export default {
     },
     borderColor: {
       type: String,
-      default: palette.primary.dark,
+      default: palette.primary.main,
     },
     startIcon: {
       type: Element,
@@ -46,6 +49,10 @@ export default {
     height: {
       type: String,
       default: "40px",
+    },
+    loading: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {

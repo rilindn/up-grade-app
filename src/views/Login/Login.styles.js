@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
   margin: 0;
-  background-image: url(${BackgroundPhoto});
+  background: -webkit-linear-gradient(to left, #008466, #0c5b49);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 `;
@@ -85,13 +85,9 @@ export const OverlayContainer = styled("div", loginProps)`
 `;
 
 export const Overlay = styled("div", loginProps)`
-  background: ${palette.primary.dark};
-  background: -webkit-linear-gradient(
-    to left,
-    #c6e0f1,
-    ${palette.primary.dark}
-  );
-  background: radial-gradient(${palette.primary.main}, ${palette.primary.dark});
+  background: ${palette.primary.main};
+  background: -webkit-linear-gradient(to left, #008466, #0c5b49);
+  background: radial-gradient(${palette.primary.light}, #008466);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;

@@ -1,6 +1,6 @@
 <template>
   <Wrapper>
-    <h1>Welcome</h1>
+    <h1>{{ $t("welcome.title", { name: "Rilinda" }) }}</h1>
   </Wrapper>
 </template>
 <script>

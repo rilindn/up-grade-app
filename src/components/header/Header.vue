@@ -1,17 +1,22 @@
 <template>
   <Wrapper>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/contact-us">Contact Us</router-link> |
-    <router-link to="/login">Login</router-link>
+    <RightContent> E - LEARNING </RightContent>
+    <LeftContent>
+      <LanguageSwitcher />
+    </LeftContent>
   </Wrapper>
 </template>
 
 <script>
-import { Wrapper } from "./Header.styles";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher.vue";
+import { Wrapper, RightContent, LeftContent } from "./Header.styles";
 export default {
+  name: "Header",
   components: {
     Wrapper,
+    LanguageSwitcher,
+    RightContent,
+    LeftContent,
   },
 };
 </script>
