@@ -2,7 +2,11 @@
   <Wrapper>
     <Container id="container" :leftContainer="rightPanelShow">
       <FormContainer :rightPanel="rightPanelShow" :rightContainer="true">
-        <Form @submit.prevent>
+        <FormStyled
+          @submit="login"
+          :validation-schema="loginSchema"
+          v-slot="{ errors }"
+        >
           <h1>{{ $t("login.staff.title") }}</h1>
           <SocialContainer>
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -10,18 +14,32 @@
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </SocialContainer>
           <span>{{ $t("login.externalLogin") }}</span>
-          <input class="input" type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <InputField
+            name="email"
+            type="email"
+            :error="errors"
+            placeholder="Email"
+          />
+          <InputField
+            name="password"
+            type="password"
+            :error="errors"
+            placeholder="Password"
+          />
           <a href="#">{{ $t("login.forgotPsw") }}</a>
           <Button
             :title="$t('login.signInBtn')"
             :loading="loading"
-            @onClick="login"
+            type="submit"
           />
-        </Form>
+        </FormStyled>
       </FormContainer>
       <FormContainer :rightPanel="rightPanelShow" :leftContainer="true">
-        <Form @submit.prevent>
+        <FormStyled
+          @submit="login"
+          :validation-schema="loginSchema"
+          v-slot="{ errors }"
+        >
           <h1>{{ $t("login.student.title") }}</h1>
           <SocialContainer>
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -29,15 +47,25 @@
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </SocialContainer>
           <span>{{ $t("login.externalLogin") }}</span>
-          <input class="input" type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <InputField
+            name="email"
+            type="email"
+            :error="errors"
+            placeholder="Email"
+          />
+          <InputField
+            name="password"
+            type="password"
+            :error="errors"
+            placeholder="Password"
+          />
           <a href="#">{{ $t("login.forgotPsw") }}</a>
           <Button
             :title="$t('login.signInBtn')"
             :loading="loading"
-            @onClick="login"
+            type="submit"
           />
-        </Form>
+        </FormStyled>
       </FormContainer>
       <OverlayContainer :rightPanel="rightPanelShow">
         <Overlay :rightPanel="rightPanelShow">
@@ -80,15 +108,30 @@ import {
   OverlayContainer,
   Overlay,
   OverlayPanel,
-  Form,
   SocialContainer,
+  FormStyled,
 } from "./Login.styles";
+import InputField from "@/components/InputField";
 import Button from "@/components/button";
+import { configure } from "vee-validate";
+import * as yup from "yup";
+
+configure({
+  validateOnBlur: true,
+});
 export default {
   data() {
     return {
       rightPanelShow: false,
       loading: false,
+      loginSchema: yup.object({
+        email: yup.string().required().email(),
+        // can define custom error message
+        password: yup
+          .string()
+          .required("Password is a required field")
+          .min(8, "Must be 8 chars"),
+      }),
     };
   },
   components: {
@@ -99,21 +142,23 @@ export default {
     OverlayContainer,
     Overlay,
     OverlayPanel,
-    Form,
     SocialContainer,
+    FormStyled,
+    InputField,
   },
   methods: {
     setRightPanel(val) {
       this.rightPanelShow = val;
     },
-    login() {
+    login(values) {
+      console.log(values);
       this.loading = true;
       return new Promise((resolve, _reject) => {
         setTimeout(() => {
           resolve((this.loading = false));
         }, 2000);
       }).then(() => {
-        this.$router.push("/home");
+        this.$router.push("/");
       });
     },
   },

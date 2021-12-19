@@ -1,6 +1,7 @@
-import styled from "vue-styled-components";
+import styled from "vue3-styled-components";
 import palette from "@/theme/palette";
-import BackgroundPhoto from "@/assets/loginbg.png";
+import { Form } from "vee-validate";
+// import BackgroundPhoto from "@/assets/loginbg.png";
 const loginProps = {
   rightPanel: Boolean,
   leftContainer: Boolean,
@@ -122,7 +123,7 @@ export const OverlayPanel = styled("div", loginProps)`
   `};
 `;
 
-export const Form = styled.form`
+export const FormStyled = styled(Form)`
   background-color: ${palette.common.white};
   display: flex;
   align-items: center;

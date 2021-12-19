@@ -1,30 +1,30 @@
 <template>
-  <div
-    class="InputField"
-    :class="{ 'has-error': !!errorMessage, success: meta.valid }"
-  >
-    <label :for="name">{{ label }}</label>
-    <input
+  <Wrapper :error="error[name]">
+    <Field
+      @blur="change"
       :name="name"
-      :id="name"
       :type="type"
-      :value="inputValue"
       :placeholder="placeholder"
-      @input="handleChange"
-      @blur="handleBlur"
     />
-
-    <p class="help-message" v-show="errorMessage || meta.valid">
-      {{ errorMessage || successMessage }}
-    </p>
-  </div>
+    <ErrorMessage :name="name" />
+  </Wrapper>
 </template>
 
 <script>
-import { useField } from "vee-validate";
+import { Wrapper } from "./InputField.styles";
+import { Field, ErrorMessage } from "vee-validate";
 
 export default {
+  components: {
+    Wrapper,
+    Field,
+    ErrorMessage,
+  },
   props: {
+    error: {
+      type: String,
+      default: null,
+    },
     type: {
       type: String,
       default: "text",
@@ -41,43 +41,20 @@ export default {
       type: String,
       required: true,
     },
-    successMessage: {
-      type: String,
-      default: "",
-    },
     placeholder: {
       type: String,
       default: "",
     },
   },
-  setup(props) {
-    const {
-      value: inputValue,
-      errorMessage,
-      handleBlur,
-      handleChange,
-      meta,
-    } = useField(props.name, undefined, {
-      initialValue: props.value,
-    });
-
-    return {
-      handleChange,
-      handleBlur,
-      errorMessage,
-      inputValue,
-      meta,
-    };
-  },
 };
 </script>
 
 <style scoped>
-.InputField {
+/* .InputField {
   position: relative;
   margin-bottom: calc(1em * 1.5);
   width: 100%;
-}
+} */
 
 label {
   display: block;

@@ -1,4 +1,4 @@
-import { injectGlobal } from "vue-styled-components";
+import { injectGlobal } from "vue3-styled-components";
 
 injectGlobal`
 html{

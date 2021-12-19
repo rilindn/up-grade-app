@@ -1,4 +1,4 @@
-import styled from "vue-styled-components";
+import styled from "vue3-styled-components";
 
 export const Wrapper = styled.div`
   width: 100%;
