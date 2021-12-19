@@ -7,7 +7,7 @@ const palette = {
   primary: {
     light: "#05c59a",
     main: "#008466",
-    dark: "#0C5B49",
+    dark: "#2A9D8F",
   },
   secondary: {
     main: "#8bcffc",
@@ -37,6 +37,10 @@ const palette = {
     100: "#F1F1F5",
     50: "#FAFAFB",
     0: "#FFF",
+  },
+  green: {
+    600: "#228176",
+    500: "#2A9D8F",
   },
 };
 export default palette;
