@@ -8,9 +8,8 @@
 </template>
 
 <script>
-import Footer from "./components/footer";
+// import Footer from "./components/footer";
 import Header from "./components/header";
-import Welcome from "./views/Welcome";
 import "./globalStyles";
 import Sidebar from "./components/sidebar";
 
@@ -20,7 +19,6 @@ export default {
     // Footer,
     Sidebar,
     Header,
-    Welcome,
   },
 };
 </script>

@@ -1,12 +1,14 @@
 <template>
-  <v-progress-circular
-    v-if="loading"
-    indeterminate
-    color="primary"
-    class="spinner"
-    :style="{ width: width, height: height }"
-  >
-  </v-progress-circular>
+  <div>
+    <!-- <v-progress-circular
+      v-if="loading"
+      indeterminate
+      color="primary"
+      class="spinner"
+      :style="{ width: width, height: height }"
+    >
+    </v-progress-circular> -->
+  </div>
 </template>
 
 <script>

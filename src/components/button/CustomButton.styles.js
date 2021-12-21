@@ -1,4 +1,4 @@
-import styled from "vue-styled-components";
+import styled from "vue3-styled-components";
 import palette from "@/theme/palette";
 const btnProps = {
   backgroundColor: String,
@@ -27,5 +27,8 @@ export const ButtonStyled = styled("button", btnProps)`
   }
   :focus {
     outline: none;
+  }
+  h4 {
+    margin: 0;
   }
 `;
