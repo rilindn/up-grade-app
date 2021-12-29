@@ -5,6 +5,15 @@
   "about": {
     "title": "Kjo eshte faqja rreth nesh"
   },
+  "landingPage": {
+    "title": "Kjo eshte faqja hyrese",
+    "firstSection": {
+      "title": "Ky eshte seksioni i pare"
+    },
+    "secondSection": {
+      "title": "Ky eshte seksioni i dyte"
+    }
+  },
   "home": {
     "title": "Kjo eshte faqja home",
     "welcome": "Pershendetje"

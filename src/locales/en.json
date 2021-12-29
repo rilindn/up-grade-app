@@ -5,9 +5,14 @@
   "about": {
     "title": "This is an about page"
   },
-  "home": {
-    "title": "This is an home page",
-    "welcome": "Welcome"
+  "landingPage": {
+    "title": "This is an landing page",
+    "firstSection": {
+      "title": "This is an first section"
+    },
+    "secondSection": {
+      "title": "This is an second section"
+    }
   },
   "contactUs": {
     "title": "This is an contact us page"
@@ -25,7 +30,7 @@
     "schedule": "Schedule",
     "home": "Home",
     "gradesBoard": "GradesBoard",
-    "classes":"Classes"
+    "classes": "Classes"
   },
   "login": {
     "student": {

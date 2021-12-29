@@ -58,6 +58,11 @@ const routes = [
     name: "Classes",
     component: () => import("@/views/Classes"),
   },
+  {
+    path: "/landingpage",
+    name: "LandingPage",
+    component: () => import("@/views/LandingPage"),
+  },
 ];
 
 const router = createRouter({

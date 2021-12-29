@@ -5,7 +5,7 @@
   </Wrapper>
 </template>
 <script>
-import { Wrapper } from "./Home.styles";
+import { Wrapper } from "./FirstSection.styles";
 export default {
   components: {
     Wrapper,
