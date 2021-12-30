@@ -14,8 +14,10 @@
     "rm": "^0.1.8",
     "vee-validate": "^4.5.7",
     "vue": "^3.0.0",
+    "vue-country-flag-next": "^2.3.2",
     "vue-i18n": "^9.1.0",
     "vue-router": "^4.0.0-0",
+    "vue3-click-away": "^1.2.1",
     "vue3-styled-components": "^1.2.1",
     "yup": "^0.32.11"
   },
