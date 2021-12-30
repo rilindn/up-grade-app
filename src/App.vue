@@ -3,12 +3,12 @@
     <Sidebar v-if="$route.fullPath !== '/login'" />
     <Header v-if="$route.fullPath !== '/login'" />
     <router-view />
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 
 <script>
-// import Footer from "./components/footer";
+import Footer from "./components/footer";
 import Header from "./components/header";
 import "./globalStyles";
 import Sidebar from "./components/sidebar";
@@ -16,7 +16,7 @@ import Sidebar from "./components/sidebar";
 export default {
   name: "App",
   components: {
-    // Footer,
+    Footer,
     Sidebar,
     Header,
   },

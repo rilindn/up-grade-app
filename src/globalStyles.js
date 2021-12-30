@@ -2,7 +2,8 @@ import { injectGlobal } from "vue3-styled-components";
 
 injectGlobal`
 html{
-  overflow: hidden !important;
+  /* overflow: hidden !important; */
+
 
 }
 * {
