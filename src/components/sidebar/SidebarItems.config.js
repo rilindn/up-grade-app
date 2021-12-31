@@ -15,9 +15,9 @@ export const items = [
     path: "/about",
   },
   {
-    name: "sidebar.contactUs",
-    icon: "fa fa-users",
-    path: "/contact-us",
+    name: "sidebar.schedule",
+    icon: "fas fa-calendar-day",
+    path: "/schedule",
   },
 ];
 

@@ -22,9 +22,9 @@ const routes = [
     component: () => import("@/views/Welcome"),
   },
   {
-    path: "/contact-us",
-    name: "ContactUs",
-    component: () => import("@/views/ContactUs"),
+    path: "/schedule",
+    name: "Schedule",
+    component: () => import("@/views/Schedule"),
   },
 ];
 

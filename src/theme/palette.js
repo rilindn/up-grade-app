@@ -39,8 +39,10 @@ const palette = {
     0: "#FFF",
   },
   green: {
+    700: "#00B3A6",
     600: "#228176",
     500: "#2A9D8F",
   },
+  background: "#F3F8FC",
 };
 export default palette;

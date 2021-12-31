@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 export const FirstWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 50px;
+  margin-top: 20px;
   h4 {
     color: ${palette.common.white};
   }
