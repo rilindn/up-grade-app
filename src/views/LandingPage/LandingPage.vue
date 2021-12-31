@@ -1,6 +1,6 @@
 <template>
   <Wrapper>
-    <Title>{{ $t("landingPage.title") }}</Title>
+    <!-- <Title>{{ $t("landingPage.title") }}</Title> -->
     <FirstSection />
     <SecondSection />
   </Wrapper>
@@ -11,7 +11,7 @@ import FirstSection from "./FirstSection";
 import SecondSection from "./SecondSection";
 export default {
   components: {
-    Title,
+    // Title,
     Wrapper,
     FirstSection,
     SecondSection,

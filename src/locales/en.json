@@ -8,7 +8,9 @@
   "landingPage": {
     "title": "This is an landing page",
     "firstSection": {
-      "title": "This is an first section"
+      "title": "A great place for learning",
+      "description":"A best and cheapest way of getting know learning to make a better tomorrow",
+      "button":"Get Started"
     },
     "secondSection": {
       "title": "This is an second section"
