@@ -18,6 +18,11 @@ const studentItems = [
     path: "/schedule",
   },
   {
+    name: "sidebar.classes",
+    icon: "fas fa-users-class",
+    path: "/classes",
+  },
+  {
     name: "Grades",
     icon: "fas fa-book-open",
     path: "/grades-board",

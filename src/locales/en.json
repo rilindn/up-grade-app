@@ -24,7 +24,8 @@
     "about": "About",
     "schedule": "Schedule",
     "home": "Home",
-    "gradesBoard": "GradesBoard"
+    "gradesBoard": "GradesBoard",
+    "classes":"Classes"
   },
   "login": {
     "student": {
