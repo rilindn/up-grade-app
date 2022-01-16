@@ -9,6 +9,10 @@ export const Wrapper = styled("div", inputProps)`
   width: 100%;
   text-align: left;
   input {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
     margin-bottom: 0;
     border-radius: 5px;
     border-width: 1px !important;
