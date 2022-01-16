@@ -132,11 +132,29 @@ export const FormStyled = styled(Form)`
   padding: 0 50px;
   height: 100%;
   text-align: center;
+  & > h1 {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  & > span {
+    font-size: 12px;
+  }
+  & > a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+  }
 `;
 
 export const SocialContainer = styled.div`
   margin: 20px 0;
   > a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    // margin: 15px 0;
     border: 1px solid #091520;
     border-radius: 50%;
     display: inline-flex;
