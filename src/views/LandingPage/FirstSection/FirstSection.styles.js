@@ -10,7 +10,6 @@ export const Wrapper = styled.div`
   text-align: center;
   display: flex;
   flex-direction:column;
-  border: 1px solid black;
 `;
 
 export const HeaderWrapper = styled.div`
@@ -31,17 +30,29 @@ justify-content:center;
 export const MiddleWrapper = styled.div`  
 display: flex;
 flex-direction: column;
-justify-content:center;
 padding-right:120px;
 font-size:${fontSizes.titleLarge};
+font-family: "Montserrat", sans-serif;
 width:40%;
 margin-right:100px;
 text-align: left;
 
 
 `;
+
+export const Title = styled.h2`  
+font-size:${fontSizes.titleLarge};
+font-family: "Montserrat", sans-serif;
+color: ${palette.grey[600]};
+width:90%;
+padding-right:90px;
+// line-height: 60px;
+
+`;
+
 export const PhotoWrapper = styled.div`  
 display: flex;
 justify-content:center;
+
 `;
 

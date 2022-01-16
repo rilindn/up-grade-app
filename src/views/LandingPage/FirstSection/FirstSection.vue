@@ -10,7 +10,9 @@
     </HeaderWrapper>
     <FirstWrapper>
       <MiddleWrapper>
-        <h2>{{ $t("landingPage.firstSection.title") }}</h2>
+        <Title>
+          <h2>{{ $t("landingPage.firstSection.title") }}</h2>
+        </Title>
         <p>{{ $t("landingPage.firstSection.description") }}</p>
         <Button
           :title="$t('landingPage.firstSection.button')"
@@ -33,6 +35,7 @@ import {
   FirstWrapper,
   MiddleWrapper,
   PhotoWrapper,
+  Title,
 } from "./FirstSection.styles";
 import Button from "@/components/button";
 export default {
@@ -42,6 +45,7 @@ export default {
     FirstWrapper,
     MiddleWrapper,
     PhotoWrapper,
+    Title,
     Button,
   },
 };

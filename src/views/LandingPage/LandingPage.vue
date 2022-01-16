@@ -11,7 +11,7 @@ import FirstSection from "./FirstSection";
 import SecondSection from "./SecondSection";
 export default {
   components: {
-    // Title,
+    // Title,ss
     Wrapper,
     FirstSection,
     SecondSection,

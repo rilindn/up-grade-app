@@ -13,7 +13,11 @@
       "button":"Get Started"
     },
     "secondSection": {
-      "title": "This is an second section"
+      "title": "Welcome To Online Class Education",
+      "aboutUs":"About Us",
+      "aboutUsText":"There are many variations of passages of Lorem Ipsum available,but the majority have suffered  alteration in some form, by injected humo ur, or randomised words which don't look even slightly believable.",
+      "aboutUsDetails":"It is a long established fact that a reader will be distracted by the readable conte.",
+      "button":"Read More"
     }
   },
   "contactUs": {
