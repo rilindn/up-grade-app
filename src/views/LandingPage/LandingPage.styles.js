@@ -3,8 +3,8 @@ import palette from "@/theme/palette";
 
 export const Wrapper = styled.div`
   width: 100%;
-  text-align: center;
-  background-color: ${palette.green[100]};
+  // text-align: center;
+  // background-color: ${palette.green[100]};
 `;
 
 // export const Title = styled.h1`

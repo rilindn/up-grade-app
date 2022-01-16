@@ -35,6 +35,7 @@ const palette = {
     300: "#B5B5BE",
     200: "#d7d7d7",
     100: "#F1F1F5",
+    90:"F1F1F1",
     50: "#FAFAFB",
     0: "#FFF",
   },
