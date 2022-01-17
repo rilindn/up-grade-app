@@ -1,24 +1,20 @@
 <template>
   <div>
-    <Sidebar v-if="$route.fullPath !== '/login'" />
-    <Header v-if="$route.fullPath !== '/login'" />
-    <router-view />
-    <Footer />
+    <MainLayout v-if="$store.state.loggedUser.isLogged" />
+    <Login v-else />
   </div>
 </template>
 
 <script>
-import Footer from "./components/footer";
-import Header from "./components/header";
+import MainLayout from "./layouts/MainLayout";
+import Login from "./views/Login";
 import "./globalStyles";
-import Sidebar from "./components/sidebar";
 
 export default {
   name: "App",
   components: {
-    Footer,
-    Sidebar,
-    Header,
+    MainLayout,
+    Login,
   },
 };
 </script>
