@@ -6,7 +6,8 @@
     "title": "This is an about page"
   },
   "home": {
-    "title": "This is an home page"
+    "title": "This is an home page",
+    "welcome": "Welcome"
   },
   "contactUs": {
     "title": "This is an contact us page"

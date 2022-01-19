@@ -158,6 +158,7 @@ export default {
           resolve((this.loading = false));
         }, 2000);
       }).then(() => {
+        this.$store.commit("SET_LOGGED_USER", values);
         this.$router.push("/");
       });
     },
