@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="loading">
     <!-- <v-progress-circular
       v-if="loading"
       indeterminate
@@ -8,6 +8,7 @@
       :style="{ width: width, height: height }"
     >
     </v-progress-circular> -->
+    loading...
   </div>
 </template>
 

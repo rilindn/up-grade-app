@@ -3,7 +3,7 @@
     <Container id="container" :leftContainer="rightPanelShow">
       <FormContainer :rightPanel="rightPanelShow" :rightContainer="true">
         <FormStyled
-          @submit="login"
+          @submit="(values) => login(values, 'Staff')"
           :validation-schema="loginSchema"
           v-slot="{ errors }"
         >
@@ -36,7 +36,7 @@
       </FormContainer>
       <FormContainer :rightPanel="rightPanelShow" :leftContainer="true">
         <FormStyled
-          @submit="login"
+          @submit="(values) => login(values, 'Student')"
           :validation-schema="loginSchema"
           v-slot="{ errors }"
         >
@@ -114,6 +114,7 @@ import {
 import InputField from "@/components/InputField";
 import Button from "@/components/button";
 import { configure } from "vee-validate";
+import { users } from "../../data/usersData";
 import * as yup from "yup";
 
 configure({
@@ -150,15 +151,25 @@ export default {
     setRightPanel(val) {
       this.rightPanelShow = val;
     },
-    login(values) {
-      console.log(values);
+    login(values, role) {
+      console.log("asddsa", values, role);
       this.loading = true;
+      const user = users.find((user) => user.email === values.email);
       return new Promise((resolve, _reject) => {
         setTimeout(() => {
-          resolve((this.loading = false));
+          const authResult =
+            user?.psw === values.password && user?.role === role;
+          if (user && authResult) {
+            resolve(() => {
+              this.loading = false;
+            });
+          } else {
+            this.loading = false;
+            _reject(new Error("Oops!"));
+          }
         }, 2000);
       }).then(() => {
-        this.$store.commit("SET_LOGGED_USER", values);
+        this.$store.commit("SET_LOGGED_USER", user);
         this.$router.push("/");
       });
     },
