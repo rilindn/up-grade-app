@@ -1,9 +1,4 @@
-export const items = [
-  {
-    name: "sidebar.login",
-    icon: "fa fa-picture-o",
-    path: "/login",
-  },
+const basicItems = [
   {
     name: "sidebar.home",
     icon: "fa fa-home",
@@ -14,6 +9,9 @@ export const items = [
     icon: "fa fa-book",
     path: "/about",
   },
+];
+
+const studentItems = [
   {
     name: "sidebar.schedule",
     icon: "fas fa-calendar-day",
@@ -21,4 +19,4 @@ export const items = [
   },
 ];
 
-export default items;
+export { basicItems, studentItems };

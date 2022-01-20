@@ -38,5 +38,10 @@
     "externalLogin": "or use your account",
     "forgotPsw": "Forgot your password?",
     "signInBtn": "Sign In"
+  },
+  "userMenu": {
+    "myProfile": "My Profile",
+    "settings": "Settings",
+    "logout": "Logout"
   }
 }

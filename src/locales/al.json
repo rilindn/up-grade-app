@@ -38,5 +38,10 @@
     "externalLogin": "ose perdorni llogarine tuaj",
     "forgotPsw": "Keni harruar fjalekalimin?",
     "signInBtn": "Kycuni"
+  },
+  "userMenu": {
+    "myProfile": "Profili im",
+    "settings": "Cilesimet",
+    "logout": "Ckyqu"
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <Wrapper>
     <h1>{{ $t("home.title") }}</h1>
-    <h2>{{ `${$t("home.welcome")}  ${$store.state.loggedUser.email}` }}</h2>
+    <h2>{{ `${$t("home.welcome")}  ${$store.state.loggedUser.name}` }}</h2>
   </Wrapper>
 </template>
 <script>
