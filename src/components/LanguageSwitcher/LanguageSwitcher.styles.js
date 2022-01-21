@@ -13,18 +13,19 @@ export const Wrapper = styled.div`
 export const Menu = styled("div")`
   display: flex;
   flex-direction: column;
-  background-color: ${palette.grey[100]};
+  background-color: ${palette.background};
   position: absolute;
   border-radius: 5px;
   padding: 3px;
   top: 86%;
+  box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16);
+  font-weight: bold;
 `;
 
 export const MenuItem = styled("span")`
   width: 80px;
   background-color: ${palette.common.white};
   font-size: 20px;
-  padding: 5px;
   border-radius: 5px;
   cursor: pointer;
   margin: 2px;

@@ -20,5 +20,8 @@ export default createStore({
   },
   actions: {},
   modules: {},
+  getters: {
+    isAuthenticated: (state) => state.loggedUser.isLogged,
+  },
   plugins: [createPersistedState()],
 });
