@@ -19,6 +19,11 @@ export const items = [
     icon: "fas fa-calendar-day",
     path: "/schedule",
   },
+  {
+    name: "Grades",
+    icon: "fas fa-book-open",
+    path: "/GradesBoard",
+  },
 ];
 
 export default items;

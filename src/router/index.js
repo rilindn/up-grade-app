@@ -26,6 +26,11 @@ const routes = [
     name: "Schedule",
     component: () => import("@/views/Schedule"),
   },
+  {
+    path: "/GradesBoard",
+    name: "gradesBoard",
+    component: () => import("@/views/GradesBoard"),
+  },
 ];
 
 const router = createRouter({
