@@ -6,7 +6,8 @@
     "title": "Kjo eshte faqja rreth nesh"
   },
   "home": {
-    "title": "Kjo eshte faqja home"
+    "title": "Kjo eshte faqja home",
+    "welcome": "Pershendetje"
   },
   "contactUs": {
     "title": "Kjo eshte faqja kontaktit"
@@ -41,5 +42,10 @@
     "externalLogin": "ose perdorni llogarine tuaj",
     "forgotPsw": "Keni harruar fjalekalimin?",
     "signInBtn": "Kycuni"
+  },
+  "userMenu": {
+    "myProfile": "Profili im",
+    "settings": "Cilesimet",
+    "logout": "Ckyqu"
   }
 }

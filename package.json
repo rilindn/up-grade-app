@@ -19,6 +19,8 @@
     "vue-router": "^4.0.0-0",
     "vue3-click-away": "^1.2.1",
     "vue3-styled-components": "^1.2.1",
+    "vuex": "^4.0.0-0",
+    "vuex-persistedstate": "^4.1.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
@@ -26,6 +28,7 @@
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "^4.5.15",
+    "@vue/cli-plugin-vuex": "^4.5.15",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",

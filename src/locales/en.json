@@ -6,7 +6,8 @@
     "title": "This is an about page"
   },
   "home": {
-    "title": "This is an home page"
+    "title": "This is an home page",
+    "welcome": "Welcome"
   },
   "contactUs": {
     "title": "This is an contact us page"
@@ -41,5 +42,10 @@
     "externalLogin": "or use your account",
     "forgotPsw": "Forgot your password?",
     "signInBtn": "Sign In"
+  },
+  "userMenu": {
+    "myProfile": "My Profile",
+    "settings": "Settings",
+    "logout": "Logout"
   }
 }
