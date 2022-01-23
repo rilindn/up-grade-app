@@ -34,8 +34,8 @@ export default {
   },
   methods: {
     getInitials() {
-      const names = this.name.split(" ");
-      return names[0][0] + names[1][0];
+      const names = this.name?.split(" ");
+      return names?.[0]?.[0] + names?.[1]?.[0];
     },
     randomColor() {
       const randomNum = Math.floor(Math.random() * 4);

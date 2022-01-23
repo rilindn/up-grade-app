@@ -1,14 +1,9 @@
 <template>
-  <div>
-    <router-view />
-  </div>
+  <router-view />
 </template>
-
 <script>
-import "./globalStyles";
-
 export default {
-  name: "App",
+  name: "LoginLayout",
   components: {},
 };
 </script>
