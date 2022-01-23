@@ -48,6 +48,11 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/grades-board",
+    name: "gradesBoard",
+    component: () => import("@/views/GradesBoard"),
+  },
 ];
 
 const router = createRouter({

@@ -12,11 +12,19 @@
   "contactUs": {
     "title": "This is an contact us page"
   },
+  "gradesBoard": {
+    "title": "My Grades",
+    "grades": "Grades",
+    "subjects": "Subjects",
+    "manner": "Manner",
+    "periods": "Periods"
+  },
   "sidebar": {
     "login": "Login",
     "about": "About",
     "schedule": "Schedule",
-    "home": "Home"
+    "home": "Home",
+    "gradesBoard": "GradesBoard"
   },
   "login": {
     "student": {

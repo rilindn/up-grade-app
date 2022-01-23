@@ -12,11 +12,19 @@
   "contactUs": {
     "title": "Kjo eshte faqja kontaktit"
   },
+  "gradesBoard": {
+    "title": "Notat e mia",
+    "grades": "Notat",
+    "subjects": "Lendet",
+    "manner": "Sjellja",
+    "periods": "Periodat"
+  },
   "sidebar": {
     "login": "Kycuni",
     "about": "Rreth nesh",
     "contactUs": "Kontakti",
-    "home": "Home"
+    "home": "Home",
+    "gradesBoard": "Notat"
   },
   "login": {
     "student": {

@@ -17,6 +17,11 @@ const studentItems = [
     icon: "fas fa-calendar-day",
     path: "/schedule",
   },
+  {
+    name: "Grades",
+    icon: "fas fa-book-open",
+    path: "/grades-board",
+  },
 ];
 
 export { basicItems, studentItems };
