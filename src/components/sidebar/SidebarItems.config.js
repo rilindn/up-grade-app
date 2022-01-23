@@ -20,7 +20,7 @@ const studentItems = [
   {
     name: "Grades",
     icon: "fas fa-book-open",
-    path: "/GradesBoard",
+    path: "/grades-board",
   },
 ];
 

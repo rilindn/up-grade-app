@@ -27,7 +27,7 @@ const routes = [
     component: () => import("@/views/Schedule"),
   },
   {
-    path: "/GradesBoard",
+    path: "/grades-board",
     name: "gradesBoard",
     component: () => import("@/views/GradesBoard"),
   },
