@@ -14,7 +14,7 @@
     </Container>
          <Container>
           <SubContainer>
-            <Classroom  :bgColor="palette.pink[200]" title="Forth grade" subTitle="IV"/>
+            <Classroom  :bgColor="palette.pink[200]" title="Fourth grade" subTitle="IV"/>
       </SubContainer>
            <SubContainer>
             <Classroom  :bgColor="palette.grey[200]" title="Fifth grade" subTitle="V"/>
