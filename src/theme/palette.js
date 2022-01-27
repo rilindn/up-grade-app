@@ -44,9 +44,26 @@ const palette = {
     500: "#2A9D8F",
     300: "#00C4B4",
     200: "#03DAC5",
-    100: "#70EFDE",
-    50: "#C8FFF4",
+    100: "#42D9DA",
+    50: "#BCECA6",
   },
   background: "#F3F8FC",
+
+  pink: {
+    100: "#F4ACB1",
+    200: "#F89ADD",
+  },
+  blue: {
+    100: "#24B4F4",
+  },
+  yellow: {
+    100: "#FFE790",
+  },
+  brown: {
+    100: "#DCA796",
+  },
+  orange: {
+    100: "#FFA562",
+  },
 };
 export default palette;

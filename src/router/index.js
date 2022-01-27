@@ -53,6 +53,11 @@ const routes = [
     name: "gradesBoard",
     component: () => import("@/views/GradesBoard"),
   },
+  {
+    path: "/classes",
+    name: "Classes",
+    component: () => import("@/views/Classes"),
+  },
 ];
 
 const router = createRouter({

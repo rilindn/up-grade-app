@@ -25,7 +25,7 @@ export const FirstMiddleWrapper = styled.div`
   margin-top: 10px;
   justify-content: space-around;
   color: ${palette.common.white};
-  svg {
+  i {
     margin-top: 10px;
     margin-right: 10px;
     width: 15px !important;
