@@ -15,9 +15,8 @@ export const ButtonStyled = styled("button", btnProps)`
   color: ${palette.common.white};
   font-size: 12px;
   font-weight: bold;
-  padding: 12px 45px;
+  // padding: 12px 45px;
   letter-spacing: 1px;
-  text-transform: uppercase;
   transition: transform 80ms ease-in;
   background-color: ${(props) => props.backgroundColor};
   border-radius: ${(props) => props.borderRadius};

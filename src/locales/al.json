@@ -5,6 +5,19 @@
   "about": {
     "title": "Kjo eshte faqja rreth nesh"
   },
+  "landingPage": {
+    "title": "Kjo eshte faqja hyrese",
+    "firstSection": {
+      "title": "A great place for learning",
+      "description":"A best and cheapest way of getting know learning to make a better tomorrow",
+      "button":"Get Started"
+    },
+    "secondSection": {
+      "title": "Ky eshte seksioni i dyte"
+    }
+    
+    
+  },
   "home": {
     "title": "Kjo eshte faqja home",
     "welcome": "Pershendetje"
