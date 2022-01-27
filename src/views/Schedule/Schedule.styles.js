@@ -43,7 +43,7 @@ export const WeekWrapper = styled.div`
     height: 50px;
     background-color: ${palette.common.white};
     text-align: center;
-    padding-top: 12px;
+    padding-top: 16px;
     border-radius: 5px;
     font-size: 14px;
     color: #92929d;

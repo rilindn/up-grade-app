@@ -1,8 +1,11 @@
 export const users = [
   {
     id: 1,
-    name: "Leanne Graham",
+    number: 1,
+    name: "Leanne ",
+    lastname: "Graham",
     username: "Bret",
+    dateOfBirth: "15-03-2001",
     email: "Sincere@april.biz",
     address: {
       street: "Kulas Light",
@@ -24,8 +27,11 @@ export const users = [
   },
   {
     id: 2,
-    name: "Ervin Howell",
+    number: 2,
+    name: "Ervin",
+    lastname: "Howell",
     username: "Antonette",
+    dateOfBirth: "12-02-20010",
     email: "Shanna@melissa.tv",
     address: {
       street: "Victor Plains",
@@ -47,8 +53,11 @@ export const users = [
   },
   {
     id: 3,
-    name: "Clementine Bauch",
+    number: 3,
+    name: "Clementine ",
+    lastname: "Bauch",
     username: "Samantha",
+    dateOfBirth: "15-05-2004",
     email: "Nathan@yesenia.net",
     address: {
       street: "Douglas Extension",
@@ -70,8 +79,11 @@ export const users = [
   },
   {
     id: 4,
-    name: "Patricia Lebsack",
+    number: 4,
+    name: "Patricia",
+    lastname: "Lebsack",
     username: "Karianne",
+    dateOfBirth: "14-8.2003",
     email: "Julianne.OConner@kory.org",
     address: {
       street: "Hoeger Mall",
@@ -93,8 +105,11 @@ export const users = [
   },
   {
     id: 5,
-    name: "Chelsey Dietrich",
+    number: 5,
+    name: "Chelsey",
+    lastname: "Dietrich",
     username: "Kamren",
+    dateOfBirth: "25-11-2005",
     email: "Lucio_Hettinger@annie.ca",
     address: {
       street: "Skiles Walks",
@@ -116,8 +131,11 @@ export const users = [
   },
   {
     id: 6,
-    name: "Mrs. Dennis Schulist",
+    number: 6,
+    name: "Dennis ",
+    lastname: "Schulist",
     username: "Leopoldo_Corkery",
+    dateOfBirth: "18-09.2007",
     email: "Karley_Dach@jasper.info",
     address: {
       street: "Norberto Crossing",
@@ -139,8 +157,11 @@ export const users = [
   },
   {
     id: 7,
-    name: "Kurtis Weissnat",
+    number: 7,
+    name: "Kurtis ",
+    lastname: "Weissnat",
     username: "Elwyn.Skiles",
+    dateOfBirth: "22-02-2007",
     email: "Telly.Hoeger@billy.biz",
     address: {
       street: "Rex Trail",
@@ -162,8 +183,11 @@ export const users = [
   },
   {
     id: 8,
-    name: "Nicholas Runolfsdottir V",
+    number: 8,
+    name: "Nicholas",
+    lastname: "Runolfsdottir",
     username: "Maxime_Nienow",
+    dateOfBirth: "15-02-2007",
     email: "Sherwood@rosamond.me",
     address: {
       street: "Ellsworth Summit",
@@ -185,8 +209,11 @@ export const users = [
   },
   {
     id: 9,
-    name: "Glenna Reichert",
+    number: 9,
+    name: "Glenna ",
+    lastname: "Reichert",
     username: "Delphine",
+    dateOfBirth: "29-01-2004",
     email: "Chaim_McDermott@dana.io",
     address: {
       street: "Dayna Park",
@@ -208,8 +235,11 @@ export const users = [
   },
   {
     id: 10,
-    name: "Clementina DuBuque",
+    number: 10,
+    name: "Clementina ",
+    lastname: "DuBuque",
     username: "Moriah.Stanton",
+    dateOfBirth: "19-05-2008",
     email: "Rey.Padberg@karina.biz",
     address: {
       street: "Kattie Turnpike",

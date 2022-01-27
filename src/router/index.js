@@ -30,6 +30,11 @@ const routes = [
         component: () => import("@/views/Classes"),
       },
       {
+        path: "/students",
+        name: "Students",
+        component: () => import("@/views/Students"),
+      },
+      {
         path: ":catchAll(.*)",
         name: "NotFound",
         component: () => import("@/views/NotFound"),
