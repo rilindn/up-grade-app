@@ -7,13 +7,8 @@ const routes = [
     name: "MainLayout",
     component: () => import("@/layouts/MainLayout"),
     meta: { requiresAuth: true },
-    redirect: "/home",
+    redirect: "/welcome",
     children: [
-      {
-        path: "home",
-        name: "Home",
-        component: () => import("@/views/Home"),
-      },
       {
         path: "about",
         name: "About",
@@ -28,6 +23,11 @@ const routes = [
         path: "schedule",
         name: "Schedule",
         component: () => import("@/views/Schedule"),
+      },
+      {
+        path: "/classes",
+        name: "Classes",
+        component: () => import("@/views/Classes"),
       },
       {
         path: ":catchAll(.*)",
@@ -49,14 +49,17 @@ const routes = [
     ],
   },
   {
-    path: "/grades-board",
-    name: "gradesBoard",
-    component: () => import("@/views/GradesBoard"),
-  },
-  {
-    path: "/classes",
-    name: "Classes",
-    component: () => import("@/views/Classes"),
+    path: "/admin",
+    name: "AdminLayout",
+    component: () => import("@/layouts/AdminLayout"),
+    meta: { requiresAuth: true },
+    children: [
+      {
+        path: "",
+        name: "AdminHome",
+        component: () => import("@/views/AdminHome"),
+      },
+    ],
   },
   {
     path: "/landingpage",
