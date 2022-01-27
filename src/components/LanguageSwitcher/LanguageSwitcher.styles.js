@@ -1,5 +1,6 @@
 import styled from "vue3-styled-components";
 import palette from "@/theme/palette";
+import { fontFamily } from "@/theme/typography";
 
 export const Wrapper = styled.div`
   position: relative;
@@ -38,7 +39,8 @@ export const MenuItem = styled("span")`
   }
   span {
     :nth-child(2) {
-      height: 16px;
+      height: 24px;
+      ${fontFamily.poppinsSemiBold}
     }
     font-size: 17px;
   }
@@ -58,7 +60,8 @@ export const CurrentLang = styled("span")`
   justify-content: space-evenly;
   span {
     :nth-child(2) {
-      height: 16px;
+      height: 24px;
+      ${fontFamily.poppinsSemiBold}
     }
     font-size: 17px;
   }

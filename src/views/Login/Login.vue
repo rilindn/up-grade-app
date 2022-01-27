@@ -152,9 +152,9 @@ export default {
       this.rightPanelShow = val;
     },
     login(values, role) {
-      console.log("asddsa", values, role);
       this.loading = true;
       const user = users.find((user) => user.email === values.email);
+      if (user?.role == "Admin") role = "Admin";
       return new Promise((resolve, _reject) => {
         setTimeout(() => {
           const authResult =
@@ -170,7 +170,8 @@ export default {
         }, 2000);
       }).then(() => {
         this.$store.commit("SET_LOGGED_USER", user);
-        this.$router.push("/");
+        if (user?.role === "Admin") this.$router.push("/admin");
+        else this.$router.push("/");
       });
     },
   },

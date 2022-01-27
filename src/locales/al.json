@@ -2,64 +2,62 @@
   "welcome": {
     "title": "Miresevini {name}"
   },
-  "about": {
-    "title": "Kjo eshte faqja rreth nesh"
+  "admin": {
+    "title": "Pershendetje"
   },
   "landingPage": {
     "firstSection": {
       "title": "A great place for learning",
-      "description":" ” Education is the ability to listen to almost anything without losing your temper or your self-confidence.” ",
-      "button":"Get Started"
+      "description": " ” Education is the ability to listen to almost anything without losing your temper or your self-confidence.” ",
+      "button": "Get Started"
     },
     "secondSection": {
       "title": "Welcome To Online Class Education",
-      "aboutUs":"About Us",
-      "aboutUsText":"There are many variations of passages of Lorem Ipsum available,but the majority have suffered  alteration in some form, by injected humo ur, or randomised words which don't look even slightly believable.",
-      "aboutUsDetails":"It is a long established fact that a reader will be distracted by the readable conte.",
-      "button":"Read More"
+      "aboutUs": "About Us",
+      "aboutUsText": "There are many variations of passages of Lorem Ipsum available,but the majority have suffered  alteration in some form, by injected humo ur, or randomised words which don't look even slightly believable.",
+      "aboutUsDetails": "It is a long established fact that a reader will be distracted by the readable conte.",
+      "button": "Read More"
     },
     "thirdSection": {
       "title": "Watch us",
       "subTitle": "Start Growing Knowledge With Us",
-      "serviceTitle":"Services",
-      "serviceTitleDetails":"What We Provide To You",
-      "serviceTitleDescription":"There are many variations of passages of Lorem Ipsum available,but the majority have suffered i alteration in some form, by injected humo.",
-      "buttonWatch":"All Services",
-      "services":{
-       "firstTitle":"Skilled Lectures",
-       "firstDescription":"Lorem ipsum lorem lore via ipsum lorem ipsum lorem."
+      "serviceTitle": "Services",
+      "serviceTitleDetails": "What We Provide To You",
+      "serviceTitleDescription": "There are many variations of passages of Lorem Ipsum available,but the majority have suffered i alteration in some form, by injected humo.",
+      "buttonWatch": "All Services",
+      "services": {
+        "firstTitle": "Skilled Lectures",
+        "firstDescription": "Lorem ipsum lorem lore via ipsum lorem ipsum lorem."
       },
-      "schoolarship":{
-        "firstTitle":"Scholarship",
-        "firstDescription":"Lorem ipsum lorem lore via ipsum lorem ipsum lorem."
-       },
-       "booklibrary":{
-        "firstTitle":"Book Library",
-        "firstDescription":"Lorem ipsum lorem lore via ipsum lorem ipsum lorem."
-       },
-       "onlieClasses":{
-        "firstTitle":"Online Classes",
-        "firstDescription":"Lorem ipsum lorem lore via ipsum lorem ipsum lorem."
-       },
-       "homeProjects":{
-        "firstTitle":"Home Projects",
-        "firstDescription":"Lorem ipsum lorem lore via ipsum lorem ipsum lorem."
-       },
-       "support":{
-        "firstTitle":"24x7 Support",
-        "firstDescription":"Lorem ipsum lorem lore via ipsum lorem ipsum lorem."
-       }
-    
+      "schoolarship": {
+        "firstTitle": "Scholarship",
+        "firstDescription": "Lorem ipsum lorem lore via ipsum lorem ipsum lorem."
+      },
+      "booklibrary": {
+        "firstTitle": "Book Library",
+        "firstDescription": "Lorem ipsum lorem lore via ipsum lorem ipsum lorem."
+      },
+      "onlieClasses": {
+        "firstTitle": "Online Classes",
+        "firstDescription": "Lorem ipsum lorem lore via ipsum lorem ipsum lorem."
+      },
+      "homeProjects": {
+        "firstTitle": "Home Projects",
+        "firstDescription": "Lorem ipsum lorem lore via ipsum lorem ipsum lorem."
+      },
+      "support": {
+        "firstTitle": "24x7 Support",
+        "firstDescription": "Lorem ipsum lorem lore via ipsum lorem ipsum lorem."
+      }
     },
     "fourthSection": {
       "title": "Testimonial",
       "subTitle": "See What Our Client Say’s",
-      "testiomonialDescription":"There are many variations of passages of Lorem Ipsum available,but  the majority have suffered  alteration in some form, by injected humo ur, or randomised words which don't look even slightly believable.",
-      "firstName":"Eva Alkher",
-      "firstType":"STUDENT",
-      "description":"There are many variations of passages of Lorem Ipsum available,but  the majority have suffered  alteration in some form, by injected humo ur, or randomised words which don't look even slightly believable."
+      "testiomonialDescription": "There are many variations of passages of Lorem Ipsum available,but  the majority have suffered  alteration in some form, by injected humo ur, or randomised words which don't look even slightly believable.",
+      "firstName": "Eva Alkher",
+      "firstType": "STUDENT",
+      "description": "There are many variations of passages of Lorem Ipsum available,but  the majority have suffered  alteration in some form, by injected humo ur, or randomised words which don't look even slightly believable."
     }
-
   },
   "home": {
     "title": "Kjo eshte faqja home",
@@ -80,7 +78,10 @@
     "about": "Rreth nesh",
     "contactUs": "Kontakti",
     "home": "Home",
-    "gradesBoard": "Notat"
+    "schedule": "Orari",
+    "classes": "Klasat",
+    "gradesBoard": "Notat",
+    "dashboard": "Ballina"
   },
   "login": {
     "student": {

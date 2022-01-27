@@ -31,4 +31,12 @@ export const users = [
     psw: "12345678",
     role: "Staff",
   },
+  {
+    id: 5,
+    name: "Admin",
+    username: "admin",
+    email: "admin@gmail.com",
+    psw: "12345678",
+    role: "Admin",
+  },
 ];
