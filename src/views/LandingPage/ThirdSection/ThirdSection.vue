@@ -2,8 +2,8 @@
   <Wrapper>
        <HalfWrapper>
         <div>
-        <h2 style="color:#2A9D8F;font-size:20px">{{ $t("landingPage.thirdSection.title") }}</h2>
-        <h2 style="color:#6B6B6B;font-size:30px">{{ $t("landingPage.thirdSection.subTitle") }}</h2>
+        <h2>{{ $t("landingPage.thirdSection.title") }}</h2>
+        <h1>{{ $t("landingPage.thirdSection.subTitle") }}</h1>
         </div>
         </HalfWrapper>
          <HeaderWrapper>
@@ -24,7 +24,7 @@
             backgroundColor="#00BFA6"
             width="30%"
             borderColor="#00BFA6"
-
+            borderRadius="10px"
           />
         </div>   
            </FirstWrapper>
@@ -39,16 +39,16 @@
             </Box>
                 <Box>
                 <div>
-                 <img src="@/assets/landpage/box1.svg" alt="" width="65" />
-                 <h1>{{ $t("landingPage.thirdSection.services.firstTitle") }}</h1>
-                 <p>{{ $t("landingPage.thirdSection.services.firstDescription") }}</p>
+                 <img src="@/assets/landpage/schoolarship.svg" alt="" width="65" />
+                 <h1>{{ $t("landingPage.thirdSection.schoolarship.firstTitle") }}</h1>
+                 <p>{{ $t("landingPage.thirdSection.schoolarship.firstDescription") }}</p>
                  </div>
             </Box>
                 <Box>
                 <div>
-                 <img src="@/assets/landpage/box1.svg" alt="" width="65" />
-                 <h1>{{ $t("landingPage.thirdSection.services.firstTitle") }}</h1>
-                 <p>{{ $t("landingPage.thirdSection.services.firstDescription") }}</p>
+                 <img src="@/assets/landpage/booklibrary.svg" alt="" width="65" />
+                 <h1>{{ $t("landingPage.thirdSection.booklibrary.firstTitle") }}</h1>
+                 <p>{{ $t("landingPage.thirdSection.booklibrary.firstDescription") }}</p>
                  </div>
             </Box>
                </SecondMiddleWrapper>
@@ -56,23 +56,23 @@
      <FirstMiddleWrapper>
             <Box>
                 <div>
-                 <img src="@/assets/landpage/box1.svg" alt="" width="65" />
-                 <h1>{{ $t("landingPage.thirdSection.services.firstTitle") }}</h1>
-                 <p>{{ $t("landingPage.thirdSection.services.firstDescription") }}</p>
+                 <img src="@/assets/landpage/onlineclasses.svg" alt="" width="65" />
+                 <h1>{{ $t("landingPage.thirdSection.onlieClasses.firstTitle") }}</h1>
+                 <p>{{ $t("landingPage.thirdSection.onlieClasses.firstDescription") }}</p>
                  </div>
             </Box>
                 <Box>
                 <div>
-                 <img src="@/assets/landpage/box1.svg" alt="" width="65" />
-                 <h1>{{ $t("landingPage.thirdSection.services.firstTitle") }}</h1>
-                 <p>{{ $t("landingPage.thirdSection.services.firstDescription") }}</p>
+                 <img src="@/assets/landpage/homeprojects.svg" alt="" width="65" />
+                 <h1>{{ $t("landingPage.thirdSection.homeProjects.firstTitle") }}</h1>
+                 <p>{{ $t("landingPage.thirdSection.homeProjects.firstDescription") }}</p>
                  </div>
             </Box>
                 <Box>
                 <div>
-                 <img src="@/assets/landpage/box1.svg" alt="" width="65" />
-                 <h1>{{ $t("landingPage.thirdSection.services.firstTitle") }}</h1>
-                 <p>{{ $t("landingPage.thirdSection.services.firstDescription") }}</p>
+                 <img src="@/assets/landpage/support.svg" alt="" width="65" />
+                 <h1>{{ $t("landingPage.thirdSection.support.firstTitle") }}</h1>
+                 <p>{{ $t("landingPage.thirdSection.support.firstDescription") }}</p>
                  </div>
             </Box>
                </FirstMiddleWrapper>

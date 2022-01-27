@@ -2,28 +2,34 @@
   <Wrapper>
     <HeaderWrapper>
       <Button
-        :title="$t('landingPage.firstSection.button')"
-        backgroundColor="#00BFA6"
-        width="9%"
-        borderColor="#00BFA6"
-      />
-    </HeaderWrapper>
-    <FirstWrapper>
-      <MiddleWrapper>
-        <Title>
-          <h2>{{ $t("landingPage.firstSection.title") }}</h2>
-        </Title>
-        <p>{{ $t("landingPage.firstSection.description") }}</p>
-        <Button
-          :title="$t('landingPage.firstSection.button')"
-          backgroundColor="#00BFA6"
-          width="30%"
-          borderColor="#00BFA6"
-          :loading="loading"
-        />
-      </MiddleWrapper>
-      <PhotoWrapper>
-        <img src="@/assets/school.svg" alt="" />
+            :title="$t('landingPage.firstSection.button')"
+            backgroundColor="#00BFA6"
+            width="9%"
+            borderColor="#00BFA6"
+            borderRadius="10px"
+
+          />
+   </HeaderWrapper>
+  <FirstWrapper>
+   
+        
+    <MiddleWrapper>
+
+   <h1>{{ $t("landingPage.firstSection.title") }}</h1>
+
+   <p>{{ $t("landingPage.firstSection.description") }}</p>
+    <Button
+            :title="$t('landingPage.firstSection.button')"
+            backgroundColor="#00BFA6"
+            width="30%"
+            borderColor="#00BFA6"
+            :loading="loading"
+              borderRadius="10px"
+
+          />
+    </MiddleWrapper>
+    <PhotoWrapper>
+   <img src="@/assets/landpage/school.svg" alt="" />
       </PhotoWrapper>
     </FirstWrapper>
   </Wrapper>

@@ -5,8 +5,11 @@
     <Menu v-if="displayMenu" v-click-away="triggerMenu">
       <div v-for="{ name, icon } in menuItems" :key="name">
         <MenuItem>
+        <router-link :to="item.path">
+
           <i :class="icon"></i>
           <span>{{ $t(name) }}</span>
+          </router-link>
         </MenuItem>
         <Divider />
       </div>
