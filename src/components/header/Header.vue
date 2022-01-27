@@ -1,6 +1,9 @@
 <template>
   <Wrapper>
-    <RightContent> E - LEARNING </RightContent>
+    <RightContent>
+      <img src="@/assets/logosvg.svg" width="93" height="43" alt="logo" />
+      <span>Up Grade</span>
+    </RightContent>
     <LeftContent>
       <LanguageSwitcher />
       <UserMenu />
