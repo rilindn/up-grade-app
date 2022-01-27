@@ -2,7 +2,7 @@ const items = [
   {
     name: "userMenu.myProfile",
     icon: "fas fa-user-circle",
-    path: "/profile",
+    path: "/studentprofile",
   },
   {
     name: "userMenu.settings",
