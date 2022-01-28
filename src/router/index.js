@@ -47,7 +47,7 @@ const routes = [
         component: () => import("@/views/Login"),
       },
     ],
-  },
+  }, 
   {
     path: "/admin",
     name: "AdminLayout",

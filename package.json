@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "@splidejs/vue-splide": "^0.5.18",
     "core-js": "^3.6.5",
     "rm": "^0.1.8",
     "vee-validate": "^4.5.7",
