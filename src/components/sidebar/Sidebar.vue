@@ -1,14 +1,15 @@
 <template>
-  <div>
-    <NavigationBtn v-if="!showNavigation" v-on:click="display"
+  <NavWrapper>
+    <NavigationBtn v-if="!isStatic && !showNavigation" v-on:click="display"
       ><i class="fas fa-bars"></i>
     </NavigationBtn>
     <Navigation
+      :isStatic="isStatic"
       :showNavbar="showNavigation"
       v-click-away="this.showNavigation && hide"
     >
       <ul>
-        <CloseButton>
+        <CloseButton v-if="!isStatic">
           <a v-on:click="hide"><i class="fas fa-times"></i></a>
         </CloseButton>
         <li v-for="item in sidebarItems" :key="item.name">
@@ -19,11 +20,16 @@
         </li>
       </ul>
     </Navigation>
-  </div>
+  </NavWrapper>
 </template>
 <script>
-import { Navigation, CloseButton, NavigationBtn } from "./Sidebar.styles";
-import { basicItems, studentItems } from "./SidebarItems.config";
+import {
+  Navigation,
+  CloseButton,
+  NavigationBtn,
+  NavWrapper,
+} from "./Sidebar.styles";
+import { basicItems, studentItems, adminItems } from "./SidebarItems.config";
 import { directive } from "vue3-click-away";
 export default {
   name: "Sidebar",
@@ -31,10 +37,17 @@ export default {
     Navigation,
     CloseButton,
     NavigationBtn,
+    NavWrapper,
+  },
+  props: {
+    isStatic: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
-      showNavigation: false,
+      showNavigation: this.isStatic ? true : false,
       sidebarItems: [],
       userRole: this.$store.state.loggedUser.role,
     };
@@ -45,18 +58,17 @@ export default {
       this.showNavigation = true; //showNavigation
     },
     hide() {
-      this.showNavigation = false;
+      if (!this.isStatic) this.showNavigation = false;
     },
   },
   directives: {
     ClickAway: directive,
   },
   created() {
-    if (this.userRole === "Student") {
+    if (this.userRole === "Student")
       this.sidebarItems = [...basicItems, ...studentItems];
-    } else if (this.userRole === "Staff") {
-      this.sidebarItems = basicItems;
-    }
+    else if (this.userRole === "Staff") this.sidebarItems = basicItems;
+    else if (this.userRole === "Admin") this.sidebarItems = adminItems;
   },
 };
 </script>

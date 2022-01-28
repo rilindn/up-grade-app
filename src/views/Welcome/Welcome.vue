@@ -1,6 +1,6 @@
 <template>
   <Wrapper>
-    <h1>{{ $t("welcome.title", { name: "Rilinda" }) }}</h1>
+    <h1>{{ $t("welcome.title", { name: $store.state.loggedUser.name }) }}</h1>
   </Wrapper>
 </template>
 <script>

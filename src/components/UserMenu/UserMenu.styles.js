@@ -24,6 +24,7 @@ export const Menu = styled("div")`
   border-radius: ${radius.default};
   color: ${palette.common.black};
   box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16);
+  z-index: 100;
 `;
 
 export const MenuItem = styled("span")`
@@ -33,7 +34,7 @@ export const MenuItem = styled("span")`
   padding: 7px;
   font-weight: 800;
   border-radius: ${radius.default};
-  > svg {
+  > i {
     margin-right: 7px;
   }
   :hover {

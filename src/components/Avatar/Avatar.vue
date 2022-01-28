@@ -35,7 +35,11 @@ export default {
   methods: {
     getInitials() {
       const names = this.name?.split(" ");
-      return names?.[0]?.[0] + names?.[1]?.[0];
+      const firstName = names?.[0]?.[0];
+      const lastName = names?.[1]?.[0];
+      console.log(lastName);
+      if (!lastName) return firstName;
+      return firstName + lastName;
     },
     randomColor() {
       const randomNum = Math.floor(Math.random() * 4);

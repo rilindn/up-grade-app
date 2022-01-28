@@ -1,5 +1,6 @@
 import styled from "vue3-styled-components";
 import palette from "@/theme/palette";
+import { fontFamily } from "@/theme/typography";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -12,9 +13,15 @@ export const Wrapper = styled.div`
 `;
 export const RightContent = styled.div`
   margin-left: 50px;
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 22px;
+    ${fontFamily.poppinsBold}
+  }
 `;
 export const LeftContent = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-right: 15px;
+  margin-right: 10px;
 `;

@@ -23,10 +23,18 @@ const studentItems = [
     path: "/classes",
   },
   {
-    name: "Grades",
+    name: "sidebar.gradesBoard",
     icon: "fas fa-book-open",
     path: "/grades-board",
   },
 ];
 
-export { basicItems, studentItems };
+const adminItems = [
+  {
+    name: "sidebar.dashboard",
+    icon: "fad fa-user-chart",
+    path: "/admin",
+  },
+];
+
+export { basicItems, studentItems, adminItems };
