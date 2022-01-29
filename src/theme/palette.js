@@ -16,6 +16,7 @@ const palette = {
   },
   info: {
     main: "#E84E1B",
+    edit: "#ffa404",
   },
   error: {
     main: "#FF0000",
