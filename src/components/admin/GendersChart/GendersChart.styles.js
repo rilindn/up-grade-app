@@ -39,6 +39,7 @@ export const StatsMale = styled.span`
   position: absolute;
   top: 55%;
   right: 100px;
+  z-index: -2;
   hr {
     border: none;
     background-color: ${palette.primary.main};
@@ -57,6 +58,7 @@ export const StatsFemale = styled.span`
   position: absolute;
   top: 43%;
   left: 70px;
+  z-index: -2;
   hr {
     height: 2px;
 

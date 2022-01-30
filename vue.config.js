@@ -10,4 +10,7 @@ module.exports = {
       fullInstall: true,
     },
   },
+  devServer: {
+    host: "localhost",
+  },
 };
