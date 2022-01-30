@@ -1,46 +1,14 @@
 import styled from "vue3-styled-components";
 import palette from "../../theme/palette";
+import { fontFamily } from "@/theme/typography";
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  background-color: ${palette.grey[400]};
-  height: 250px;
+  background-color: ${palette.grey[600]};
+  height: 80px;
   width: 100%;
-  justify-content: space-around;
-`;
-
-export const FirstWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  h4 {
-    color: ${palette.common.white};
-  }
-`;
-
-export const FirstMiddleWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   color: ${palette.common.white};
-  i {
-    margin-top: 10px;
-    margin-right: 10px;
-    width: 15px !important;
-  }
-  span {
-    font-size: 15px;
-  }
-`;
-export const List = styled.div`
-  color: white;
-  line-height: 30px !important;
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  span {
-    font-size: 15px;
-  }
+  font-family: ${fontFamily.poppinsRegular};
 `;

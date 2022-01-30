@@ -2,7 +2,7 @@ import styled from "vue3-styled-components";
 import palette from "../../theme/palette";
 
 export const Container = styled.div`
-  width: 100vw;
+  width: 95vw;
   height: 100vh;
   display: flex;
   justify-content: center;
