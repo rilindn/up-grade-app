@@ -37,7 +37,6 @@ export default {
       const names = this.name?.split(" ");
       const firstName = names?.[0]?.[0];
       const lastName = names?.[1]?.[0];
-      console.log(lastName);
       if (!lastName) return firstName;
       return firstName + lastName;
     },

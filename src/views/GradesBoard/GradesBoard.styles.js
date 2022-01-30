@@ -20,6 +20,7 @@ export const HeadStyled = styled(Head)`
     }
     div:first-child {
       text-align: right;
+      margin-right: 0;
     }
     div:last-child {
       text-align: left;
@@ -52,23 +53,15 @@ export const CellStyled = styled(Cell)`
 `;
 
 export const Wrapper = styled.div`
-  box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16);
+  /* box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16); */
   border-radius: 5px;
-  width: 95%;
-  margin: 30px auto;
-`;
-
-export const Title = styled.div`
-  display: flex;
-  justify-content: center;
-  font-size: 18px;
-  border-bottom: 1px solid rgba(0, 132, 102, 0.16);
-  margin: 0 30px;
+  width: 100%;
+  /* margin: 30px auto; */
 `;
 
 export const TablesWrapper = styled.div`
   display: flex;
-  justify-content: end;
+  justify-content: start;
 `;
 
 export const GradeWrapper = styled.div`
@@ -112,6 +105,8 @@ export const OtherGrades = styled.div`
 export const SingleTable = styled.div`
   margin: 40px;
   margin-bottom: 7px;
+  display: flex;
+  flex-direction: column;
   span:first-child {
     font-size: 20px;
     font-weight: bold;

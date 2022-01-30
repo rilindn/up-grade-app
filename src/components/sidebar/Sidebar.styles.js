@@ -1,65 +1,67 @@
 import styled from "vue3-styled-components";
 import palette from "@/theme/palette";
-const navProps = {
-  showNavbar: Boolean,
-  isStatic: Boolean,
+import { fontFamily } from "@/theme/typography";
+
+const listProps = {
+  isCurrentRoute: Boolean,
 };
 
 export const NavWrapper = styled("div")`
-  width: 318px;
-  margin-right: 15px;
+  /* width: 318px; */
 `;
 
-export const Navigation = styled("nav", navProps)`
-  left: ${(props) => (props.showNavbar ? "0" : "-100%")};
-  position: fixed;
-  visibility: visible;
-  transition: all 0.7s ease 0s;
+export const Navigation = styled("nav")`
   margin: 0;
   padding: 0;
   height: 100%;
   width: 260px;
-  background-color: ${palette.grey[600]};
-  ul {
-    padding: 0;
-    padding-top: ${(props) => props.isStatic && "15px"};
-    li {
-      list-style: none;
-      a {
-        display: block;
-        font-family: "Montserrat", sans-serif;
-        text-decoration: none;
-        text-transform: uppercase;
+  background: radial-gradient(#05c59a, #008466);
+  a {
+    text-decoration: none;
+  }
+`;
 
-        font-weight: 600;
-        font-size: 16px;
-        color: #fff;
-        position: relative;
-        padding: 15px 0 15px 38px;
-      }
-      a:before {
-        content: "";
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        width: 0%;
-        height: 100%;
-        background: #e3e9f7;
-        border-radius: 40px 0px 0px 40px;
-        z-index: -1;
-        transition: all 300ms ease-in-out;
-      }
-      a:hover {
-        color: #2b2626;
-      }
-      a:hover:before {
-        width: 95%;
-      }
-      a > i {
-        width: 20px !important;
-        margin-right: 10px;
-      }
+export const List = styled("ul")`
+  padding: 0;
+  padding-top: 20px;
+`;
+
+export const ListItem = styled("li", listProps)`
+  list-style: none;
+  a {
+    display: block;
+    text-decoration: none;
+    z-index: 1;
+    font-size: 16px;
+    color: ${(props) => (props.isCurrentRoute ? "#2b2626" : "#fff")};
+    position: relative;
+    padding: 15px 0 15px 38px;
+    span {
+      ${fontFamily.poppinsMedium}
+      font-size: 18px;
     }
+  }
+  a:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: ${(props) => (props.isCurrentRoute ? "95%" : "0%")};
+    height: 100%;
+    background: #e3e9f7;
+    border-radius: 40px 0px 0px 40px;
+    z-index: -1;
+    transition: all 300ms ease-in-out;
+  }
+  a:hover {
+    color: #2b2626;
+  }
+  a:hover:before {
+    width: 95%;
+  }
+  a > i {
+    width: 20px !important;
+    margin-right: 10px;
   }
 `;
 
@@ -74,13 +76,18 @@ export const CloseButton = styled.span`
   }
 `;
 
-export const NavigationBtn = styled.span`
-  position: absolute;
-  top: 10px;
-  left: 13px;
+export const LogoSection = styled.div`
   display: flex;
-  justify-content: flex-start;
-  cursor: pointer;
-  font-size: 30px;
-  color: white;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 132, 102, 0.9);
+  height: 65px;
+  span {
+    font-size: 22px;
+    ${fontFamily.poppinsBold}
+    color: ${palette.common.white};
+    span {
+      color: ${palette.grey[600]};
+    }
+  }
 `;

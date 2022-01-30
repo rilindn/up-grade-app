@@ -1,7 +1,7 @@
 <template>
   <Header />
   <Body>
-    <Sidebar :isStatic="true" />
+    <Sidebar />
     <router-view />
   </Body>
 </template>

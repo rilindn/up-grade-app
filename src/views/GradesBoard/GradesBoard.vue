@@ -1,8 +1,5 @@
 <template>
   <Wrapper>
-    <Title>
-      <h1>{{ $t("gradesBoard.title") }}</h1>
-    </Title>
     <TablesWrapper>
       <SingleTable>
         <span>{{ $t("gradesBoard.grades") }}</span>
@@ -10,7 +7,9 @@
           <HeadStyled>
             <ColumnStyled>
               <div>{{ $t("gradesBoard.subjects") }}</div>
-              <hr />
+              <span>
+                <hr />
+              </span>
               <div>{{ $t("gradesBoard.periods") }}</div>
             </ColumnStyled>
             <ColumnStyled>I</ColumnStyled>
@@ -39,7 +38,7 @@
           </BodyStyled>
         </TableStyled>
       </SingleTable>
-      <SingleTable>
+      <!-- <SingleTable>
         <span>{{ $t("gradesBoard.manner") }}</span>
         <TableStyled>
           <HeadStyled>
@@ -65,14 +64,13 @@
             </RowStyled>
           </BodyStyled>
         </TableStyled>
-      </SingleTable>
+      </SingleTable> -->
     </TablesWrapper>
   </Wrapper>
 </template>
 <script>
 import {
   Wrapper,
-  Title,
   TablesWrapper,
   TableStyled,
   HeadStyled,
@@ -89,7 +87,6 @@ import { studentgrades, subjects, studentmannergrades } from "./GradesData";
 export default {
   components: {
     Wrapper,
-    Title,
     TablesWrapper,
     TableStyled,
     HeadStyled,

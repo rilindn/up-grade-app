@@ -13,6 +13,7 @@ injectGlobal`
   body {
     ${fontFamily.poppinsRegular}
     margin: 0;
+    background-color: rgba(0, 132, 102,0.05);
   }
   
 `;

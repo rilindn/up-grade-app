@@ -9,8 +9,16 @@ export const Wrapper = styled("div")`
   cursor: pointer;
 `;
 
+export const AvatarWrapper = styled("div")`
+  border-radius: 50%;
+  padding: 2px;
+  border: 1px solid rgba(0, 132, 102, 0.15);
+`;
+
 export const NameField = styled.h4`
   margin: 0 5px 0 15px;
+  font-size: 14px;
+  font-weight: 500;
 `;
 
 export const Menu = styled("div")`
@@ -25,6 +33,10 @@ export const Menu = styled("div")`
   color: ${palette.common.black};
   box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16);
   z-index: 100;
+  div:first-child {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const MenuItem = styled("span")`

@@ -1,68 +1,52 @@
 <template>
   <NavWrapper>
-    <NavigationBtn v-if="!isStatic && !showNavigation" v-on:click="display"
-      ><i class="fas fa-bars"></i>
-    </NavigationBtn>
-    <Navigation
-      :isStatic="isStatic"
-      :showNavbar="showNavigation"
-      v-click-away="this.showNavigation && hide"
-    >
-      <ul>
-        <CloseButton v-if="!isStatic">
-          <a v-on:click="hide"><i class="fas fa-times"></i></a>
-        </CloseButton>
-        <li v-for="item in sidebarItems" :key="item.name">
+    <Navigation>
+      <router-link to="/">
+        <LogoSection>
+          <img src="@/assets/logosvg.svg" width="93" height="43" alt="logo" />
+          <span>Up <span>Grade</span></span>
+        </LogoSection>
+      </router-link>
+      <List>
+        <ListItem
+          v-for="item in sidebarItems"
+          :key="item.name"
+          :isCurrentRoute="$route.fullPath === item.path"
+        >
           <router-link :to="item.path">
             <i :class="item.icon" />
-            {{ $t(item.name) }}
+            <span>
+              {{ $t(item.name) }}
+            </span>
           </router-link>
-        </li>
-      </ul>
+        </ListItem>
+      </List>
     </Navigation>
   </NavWrapper>
 </template>
 <script>
 import {
   Navigation,
-  CloseButton,
-  NavigationBtn,
   NavWrapper,
+  LogoSection,
+  List,
+  ListItem,
 } from "./Sidebar.styles";
 import { basicItems, studentItems, adminItems } from "./SidebarItems.config";
-import { directive } from "vue3-click-away";
 export default {
   name: "Sidebar",
   components: {
     Navigation,
-    CloseButton,
-    NavigationBtn,
     NavWrapper,
-  },
-  props: {
-    isStatic: {
-      type: Boolean,
-      default: false,
-    },
+    LogoSection,
+    List,
+    ListItem,
   },
   data() {
     return {
-      showNavigation: this.isStatic ? true : false,
       sidebarItems: [],
       userRole: this.$store.state.loggedUser.role,
     };
-  },
-  methods: {
-    display() {
-      // this.showNavigation=!this.showNavigation, //showNavigation and hide
-      this.showNavigation = true; //showNavigation
-    },
-    hide() {
-      if (!this.isStatic) this.showNavigation = false;
-    },
-  },
-  directives: {
-    ClickAway: directive,
   },
   created() {
     if (this.userRole === "Student")

@@ -1,13 +1,31 @@
 <template>
-  <Sidebar />
-  <Header />
-  <router-view />
+  <Wrapper>
+    <Sidebar />
+    <ContentWrapper>
+      <HeaderSection>
+        <CurrentView>
+          <span>
+            {{ $route.name }}
+          </span>
+        </CurrentView>
+        <Header />
+      </HeaderSection>
+      <router-view />
+    </ContentWrapper>
+  </Wrapper>
   <Footer />
 </template>
 <script>
-import Footer from "../../components/footer";
-import Header from "../../components/header";
-import Sidebar from "../../components/sidebar";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import Sidebar from "@/components/sidebar";
+
+import {
+  Wrapper,
+  ContentWrapper,
+  CurrentView,
+  HeaderSection,
+} from "./MainLayout.styles";
 
 export default {
   name: "MainLayout",
@@ -15,6 +33,10 @@ export default {
     Footer,
     Sidebar,
     Header,
+    Wrapper,
+    ContentWrapper,
+    CurrentView,
+    HeaderSection,
   },
 };
 </script>

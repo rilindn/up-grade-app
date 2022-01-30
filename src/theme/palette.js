@@ -53,7 +53,7 @@ const palette = {
   background: "#F3F8FC",
 
   pink: {
-    100: "#F4ACB1",
+    100: "#fd868e",
     200: "#F89ADD",
   },
   blue: {
