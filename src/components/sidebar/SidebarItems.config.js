@@ -35,6 +35,11 @@ const adminItems = [
     icon: "fad fa-user-chart",
     path: "/admin",
   },
+  {
+    name: "Students",
+    icon: "fas fa-user-graduate",
+    path: "/students",
+  },
 ];
 
 export { basicItems, studentItems, adminItems };

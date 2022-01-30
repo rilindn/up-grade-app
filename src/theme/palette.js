@@ -16,6 +16,7 @@ const palette = {
   },
   info: {
     main: "#E84E1B",
+    edit: "#ffa404",
   },
   error: {
     main: "#FF0000",
@@ -35,11 +36,12 @@ const palette = {
     300: "#B5B5BE",
     200: "#d7d7d7",
     100: "#F1F1F5",
-    90:"F1F1F1",
+    90: "F1F1F1",
     50: "#FAFAFB",
     0: "#FFF",
   },
   green: {
+    800: "#42D9DA",
     700: "#00B3A6",
     600: "#228176",
     500: "#2A9D8F",

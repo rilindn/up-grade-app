@@ -3,7 +3,7 @@
   <Wrapper>
       <Container>
           <SubContainer>
-            <Classroom  :bgColor="palette.green[100]" title="First grade" subTitle="I"/>
+            <Classroom  :bgColor="palette.green[800]" title="First grade" subTitle="I"/>
       </SubContainer>
            <SubContainer>
             <Classroom  :bgColor="palette.pink[100]" title="Second grade" subTitle="II"/>

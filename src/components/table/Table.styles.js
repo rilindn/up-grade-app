@@ -5,7 +5,6 @@ export const Table = styled("table")`
   box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16);
   border-radius: 7px;
   border-collapse: collapse;
-  margin: 100px;
 `;
 
 export const Head = styled.thead`
