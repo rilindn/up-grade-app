@@ -22,21 +22,41 @@ const routes = [
       {
         path: "schedule",
         name: "Schedule",
+        meta: { requiredRole: ["Student"] },
         component: () => import("@/views/Schedule"),
       },
       {
         path: "/classes",
         name: "Classes",
+        meta: { requiredRole: ["Admin"] },
         component: () => import("@/views/Classes"),
       },
       {
         path: "/students",
         name: "Students",
+        meta: { requiredRole: ["Admin"] },
         component: () => import("@/views/Students"),
       },
       {
+        path: "/grades-board",
+        name: "Grades Board",
+        meta: { requiredRole: ["Student"] },
+        component: () => import("@/views/GradesBoard"),
+      },
+      {
+        path: "/admin",
+        name: "Dashboard",
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/Dashboard"),
+      },
+      {
+        path: "/access-denied",
+        name: "Access Denied",
+        component: () => import("@/views/AccessDenied"),
+      },
+      {
         path: ":catchAll(.*)",
-        name: "NotFound",
+        name: "Not Found",
         component: () => import("@/views/NotFound"),
       },
     ],
@@ -52,25 +72,25 @@ const routes = [
         component: () => import("@/views/Login"),
       },
     ],
-  }, 
-  {
-    path: "/admin",
-    name: "AdminLayout",
-    component: () => import("@/layouts/AdminLayout"),
-    meta: { requiresAuth: true },
-    children: [
-      {
-        path: "",
-        name: "AdminHome",
-        component: () => import("@/views/AdminHome"),
-      },
-    ],
   },
   {
     path: "/landingpage",
     name: "LandingPage",
     component: () => import("@/views/LandingPage"),
   },
+  // {
+  //   path: "/admin",
+  //   name: "AdminLayout",
+  //   component: () => import("@/layouts/AdminLayout"),
+  //   meta: { requiresAuth: true },
+  //   children: [
+  //     {
+  //       path: "",
+  //       name: "AdminHome",
+  //       component: () => import("@/views/AdminHome"),
+  //     },
+  //   ],
+  // },
 ];
 
 const router = createRouter({
@@ -79,11 +99,15 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log(to);
-  if (to.meta.requiresAuth && !store.getters.isAuthenticated) {
-    next({ name: "Login" });
-  } else if (to.name === "Login" && store.getters.isAuthenticated)
-    next({ path: "/" });
+  const requiredRole = to.meta.requiredRole;
+  const requiresAuth = to.meta.requiresAuth;
+  const isAuthenticated = store.getters.isAuthenticated;
+  const userRole = store.getters.userRole;
+
+  if (requiresAuth && !isAuthenticated) next({ name: "Login" });
+  else if (to.name === "Login" && isAuthenticated) next({ path: "/" });
+  else if (requiredRole && !requiredRole.includes(userRole))
+    next({ path: "/access-denied" });
   else next();
 });
 

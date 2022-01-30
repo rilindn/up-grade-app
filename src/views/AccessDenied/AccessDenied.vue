@@ -1,10 +1,10 @@
 <template>
   <Wrapper>
-    <h3>{{ $t("notFound.title") }}</h3>
+    <h3>{{ $t("accessDenied.title") }}</h3>
   </Wrapper>
 </template>
 <script>
-import { Wrapper } from "./NotFound.styles";
+import { Wrapper } from "./AccessDenied.styles";
 export default {
   components: {
     Wrapper,
