@@ -18,11 +18,6 @@ const studentItems = [
     path: "/schedule",
   },
   {
-    name: "sidebar.classes",
-    icon: "fas fa-users-class",
-    path: "/classes",
-  },
-  {
     name: "sidebar.gradesBoard",
     icon: "fas fa-book-open",
     path: "/grades-board",
@@ -39,6 +34,11 @@ const adminItems = [
     name: "Students",
     icon: "fas fa-user-graduate",
     path: "/students",
+  },
+  {
+    name: "sidebar.classes",
+    icon: "fas fa-users-class",
+    path: "/classes",
   },
 ];
 

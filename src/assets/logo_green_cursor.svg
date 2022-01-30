@@ -1,0 +1,41 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="644.95" height="381.96997" viewBox="0 0 644.95 381.96997">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #008466;
+      }
+
+      .cls-4, .cls-5 {
+        fill: #434345;
+      }
+
+      .cls-4 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 0.75px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="32.95" width="612" height="381.85999"/>
+  <path class="cls-2" d="M114.49,418.71q-7.485,3.93-14.96,7.86V343.64q7.485,3.09,14.96,6.19Z" transform="translate(32.95 -205.07001)"/>
+  <path class="cls-2" d="M605.96,329.75q-55.005,22.395-110.01,44.78a449.85278,449.85278,0,0,0-280.3.54c-11.58-4.55-96.16-37.81-109.35-45.32-1.86-1.06-6.04-3.51-6.04-6.82,0-2.72,2.01-5.44,6.04-6.82l245.13-84.16a14.7284,14.7284,0,0,1,9.37,0l245.16,84.16C614.01,318.86,614.01,326.98,605.96,329.75Z" transform="translate(32.95 -205.07001)"/>
+  <path class="cls-2" d="M479.16,511.12H232.37c-6.6,0-11.94-5.64-11.94-12.6V386.02q134.445-41.16,270.68,0v112.5C491.1,505.48,485.76,511.12,479.16,511.12Z" transform="translate(32.95 -205.07001)"/>
+  <path class="cls-3" d="M49.78,511.25q-41.37-6.165-82.73-12.34,74.61-33.33,149.23-66.66-18.51,77.4-37.01,154.79Q64.525,549.135,49.78,511.25Z" transform="translate(32.95 -205.07001)"/>
+  <path class="cls-4" d="M126.93,515.21" transform="translate(32.95 -205.07001)"/>
+  <path class="cls-5" d="M46.14,74.86" transform="translate(32.95 -205.07001)"/>
+  <path class="cls-2" d="M129.5,558.29" transform="translate(32.95 -205.07001)"/>
+  <path class="cls-2" d="M184.79,172.57" transform="translate(32.95 -205.07001)"/>
+  <path class="cls-2" d="M357.64,429.64" transform="translate(32.95 -205.07001)"/>
+  <path class="cls-2" d="M501.07,401.43" transform="translate(32.95 -205.07001)"/>
+  <path class="cls-2" d="M258.71,550.57" transform="translate(32.95 -205.07001)"/>
+  <path class="cls-2" d="M463.79,537.07" transform="translate(32.95 -205.07001)"/>
+  <path class="cls-2" d="M322.36,595.57" transform="translate(32.95 -205.07001)"/>
+</svg>

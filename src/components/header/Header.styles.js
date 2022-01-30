@@ -3,25 +3,18 @@ import palette from "@/theme/palette";
 import { fontFamily } from "@/theme/typography";
 
 export const Wrapper = styled.div`
-  width: 100%;
+  width: 300px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 50px;
+  justify-content: flex-end;
+  height: 65px;
+  background-color: transparent;
+  color: ${palette.common.black};
+`;
+
+export const Divider = styled.span`
   background-color: ${palette.primary.main};
-  color: ${palette.common.white};
-`;
-export const RightContent = styled.div`
-  margin-left: 50px;
-  display: flex;
-  align-items: center;
-  span {
-    font-size: 22px;
-    ${fontFamily.poppinsBold}
-  }
-`;
-export const LeftContent = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-right: 10px;
+  width: 1px;
+  height: 20px;
+  background-color: rgba(0, 132, 102, 0.16);
 `;

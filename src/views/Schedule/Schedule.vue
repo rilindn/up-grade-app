@@ -1,97 +1,106 @@
 <template>
   <Wrapper>
     <SecondWrapper>
-       <Container>
-       <p>Schedule</p>
-      <WeekWrapper>
+      <Container>
+        <WeekWrapper>
+          <div>
             <span>Mon</span>
+          </div>
+          <div>
             <span>Tue</span>
+          </div>
+          <div>
             <span>Wed</span>
+          </div>
+          <div>
             <span>Thur</span>
+          </div>
+          <div>
             <span>Fri</span>
-      </WeekWrapper>
-      <Course>
-        <CourseContainer>
-          <p>1</p>
-          <CourseCode>
-          <p>Mathematics</p>
-          <p>MAT001</p>
-          </CourseCode>
-        </CourseContainer>
-      </Course>
+          </div>
+        </WeekWrapper>
         <Course>
-        <CourseContainer>
-          <p>2</p>
-           <CourseCode>
-          <p>Biology</p>
-          <p>BIO002</p>
+          <CourseContainer>
+            <p>1</p>
+            <CourseCode>
+              <p>Mathematics</p>
+              <p>MAT001</p>
             </CourseCode>
-        </CourseContainer>
-      </Course>
+          </CourseContainer>
+        </Course>
         <Course>
-        <CourseContainer>
-          <p>3</p>
-           <CourseCode>
-          <p>English</p>
-          <p>ENG003</p>
-           </CourseCode>
-        </CourseContainer>
-      </Course>
+          <CourseContainer>
+            <p>2</p>
+            <CourseCode>
+              <p>Biology</p>
+              <p>BIO002</p>
+            </CourseCode>
+          </CourseContainer>
+        </Course>
         <Course>
-        <CourseContainer>
-          <p>4</p>
-          <CourseCode>
-          <p>Mathematics</p>
-          <p>MAT001</p>
-          </CourseCode>
-        </CourseContainer>
-      </Course>
-      <Course>
-        <CourseContainer>
-          <p>5</p>
-           <CourseCode>
-          <p>Biology</p>
-          <p>BIO002</p>
-           </CourseCode>
-        </CourseContainer>
-      </Course>
+          <CourseContainer>
+            <p>3</p>
+            <CourseCode>
+              <p>English</p>
+              <p>ENG003</p>
+            </CourseCode>
+          </CourseContainer>
+        </Course>
         <Course>
-        <CourseContainer>
-          <p>6</p>
-           <CourseCode>
-          <p>English</p>
-          <p>ENG003</p>
-           </CourseCode>
-        </CourseContainer>
-      </Course>
+          <CourseContainer>
+            <p>4</p>
+            <CourseCode>
+              <p>Mathematics</p>
+              <p>MAT001</p>
+            </CourseCode>
+          </CourseContainer>
+        </Course>
+        <Course>
+          <CourseContainer>
+            <p>5</p>
+            <CourseCode>
+              <p>Biology</p>
+              <p>BIO002</p>
+            </CourseCode>
+          </CourseContainer>
+        </Course>
+        <Course>
+          <CourseContainer>
+            <p>6</p>
+            <CourseCode>
+              <p>English</p>
+              <p>ENG003</p>
+            </CourseCode>
+          </CourseContainer>
+        </Course>
       </Container>
     </SecondWrapper>
     <ThirdWrapper>
       <ul>
+        <ListItem> <span>Course:</span><span>Mathematics</span> </ListItem>
+        <ListItem> <span>Class:</span><span>Z008</span> </ListItem>
+        <ListItem> <span>Code:</span><span>MAT001</span> </ListItem>
         <ListItem>
-          <span>Course:</span><span>Mathematics</span>
-        </ListItem>
-         <ListItem>
-          <span>Class:</span><span>Z008</span>
-        </ListItem>
-          <ListItem>
-          <span>Code:</span><span>MAT001</span>
-        </ListItem>
-          <ListItem>
           <span>Professor:</span><span>Rilinda Xhaqkaj</span>
         </ListItem>
-          <ListItem>
-          <span>Start time:</span><span>08:00 AM</span>
-        </ListItem>
-          <ListItem>
-          <span>End time:</span><span>08:45 AM</span>
-        </ListItem>
+        <ListItem> <span>Start time:</span><span>08:00 AM</span> </ListItem>
+        <ListItem> <span>End time:</span><span>08:45 AM</span> </ListItem>
       </ul>
     </ThirdWrapper>
   </Wrapper>
 </template>
 <script>
-import { Wrapper, SecondWrapper ,ThirdWrapper, WeekWrapper, Container,Course,CourseContainer,CourseCode,ListItem} from "./Schedule.styles";
+import {
+  Wrapper,
+  SecondWrapper,
+  ThirdWrapper,
+  WeekWrapper,
+  Container,
+  Course,
+  CourseContainer,
+  CourseCode,
+  ListItem,
+} from "./Schedule.styles";
 export default {
   components: {
     Wrapper,
@@ -102,7 +111,7 @@ export default {
     Course,
     CourseContainer,
     CourseCode,
-    ListItem
+    ListItem,
   },
 };
 </script>
