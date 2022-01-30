@@ -107,6 +107,12 @@
     "forgotPsw": "Forgot your password?",
     "signInBtn": "Sign In"
   },
+  "notFound": {
+    "title": "The page you are looking for was not found."
+  },
+  "accessDenied": {
+    "title": "Oops! Looks like you don't have access in this page."
+  },
   "userMenu": {
     "myProfile": "My Profile",
     "settings": "Settings",

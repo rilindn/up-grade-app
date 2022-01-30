@@ -104,6 +104,12 @@
     "forgotPsw": "Keni harruar fjalekalimin?",
     "signInBtn": "Kycuni"
   },
+  "notFound": {
+    "title": "Faqja qe po kerkoni nuk u gjend."
+  },
+  "accessDenied": {
+    "title": "Oops! Duket se ju nuk keni qasje ne kete faqe."
+  },
   "userMenu": {
     "myProfile": "Profili im",
     "settings": "Cilesimet",
