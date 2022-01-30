@@ -47,6 +47,10 @@ const palette = {
     100: "#70EFDE",
     50: "#C8FFF4",
   },
+  blue: {
+   100: "#229BDE",
+   
+  },
   background: "#F3F8FC",
 };
 export default palette;
