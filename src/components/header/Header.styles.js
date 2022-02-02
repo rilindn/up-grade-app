@@ -1,5 +1,5 @@
 import styled from "vue3-styled-components";
-import palette from "@/theme/palette";
+
 import { fontFamily } from "@/theme/typography";
 
 export const Wrapper = styled.div`
@@ -9,11 +9,11 @@ export const Wrapper = styled.div`
   justify-content: flex-end;
   height: 65px;
   background-color: transparent;
-  color: ${palette.common.black};
+  color: var(--va-black);
 `;
 
 export const Divider = styled.span`
-  background-color: ${palette.primary.main};
+  background-color: var(--va-primaryLight);
   width: 1px;
   height: 20px;
   background-color: rgba(0, 132, 102, 0.16);

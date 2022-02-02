@@ -13,7 +13,7 @@
           <Pie
             :dataKeys="['Gender', 'Nr']"
             :pie-style="{
-              colors: [palette.primary.main, palette.pink[100]],
+              colors: ['var(--va-primaryMain)', 'var(--va-pink100)'],
               innerRadius: 100,
               padAngle: 0.05,
             }"
@@ -21,7 +21,7 @@
         </template>
         <template #widgets>
           <Tooltip
-            :color="palette.primary.main"
+            color="var(--va-primaryMain)"
             :config="{
               name: {},
               avg: { hide: true },
@@ -39,7 +39,6 @@
 <script>
 import { ref } from "vue";
 import { Chart, Responsive, Pie, Tooltip } from "vue3-charts";
-import palette from "@/theme/palette";
 
 export default {
   name: "PieChart",
@@ -48,11 +47,6 @@ export default {
     usersData: {
       type: Array,
     },
-  },
-  data() {
-    return {
-      palette,
-    };
   },
   setup() {
     const direction = ref("circular");

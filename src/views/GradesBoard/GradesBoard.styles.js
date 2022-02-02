@@ -1,6 +1,5 @@
 import styled from "vue3-styled-components";
 import { Table, Head, Body, Column, Row, Cell } from "@/components/table";
-import palette from "@/theme/palette";
 
 export const TableStyled = styled(Table)`
   margin: 10px 0 0 0;
@@ -37,19 +36,27 @@ export const ColumnStyled = styled(Column)`
   text-align: center;
   font-weight: bold;
   padding: 5px;
+  vertical-align: middle;
 `;
 export const RowStyled = styled(Row)`
-  td:first-child {
+  & .subject-name {
     font-size: 15px;
-    color: ${palette.grey[600]};
+    color: var(--va-grey600);
     font-weight: bold;
     text-transform: uppercase;
     text-align: left;
     font-size: 17px;
   }
+  & .final-grade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
 `;
 export const CellStyled = styled(Cell)`
   border-right: 1px solid rgba(0, 132, 102, 0.16);
+  vertical-align: middle;
 `;
 
 export const Wrapper = styled.div`
@@ -77,7 +84,7 @@ export const GradeWrapper = styled.div`
     padding-right: 4px;
     span {
       text-align: center;
-      color: ${palette.grey[500]};
+      color: var(--va-grey500);
     }
     span:nth-child(1) {
       border-bottom: 1px groove;
@@ -88,7 +95,7 @@ export const FinalGrade = styled.div`
   border-left: 1px;
   width: 50%;
   text-align: center;
-  color: ${palette.grey[600]};
+  color: var(--va-grey600);
   span {
     font-size: 25px;
     padding: 5px;

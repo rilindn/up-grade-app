@@ -3,21 +3,21 @@
     <Container>
       <SubContainer>
         <Classroom
-          :bgColor="palette.green[300]"
+          bgColor="var(--va-green300)"
           title="First grade"
           subTitle="I"
         />
       </SubContainer>
       <SubContainer>
         <Classroom
-          :bgColor="palette.pink[100]"
+          bgColor="var(--va-pink200)"
           title="Second grade"
           subTitle="II"
         />
       </SubContainer>
       <SubContainer>
         <Classroom
-          :bgColor="palette.blue[100]"
+          bgColor="var(--va-blue100)"
           title="Third grade"
           subTitle="III"
         />
@@ -26,21 +26,21 @@
     <Container>
       <SubContainer>
         <Classroom
-          :bgColor="palette.pink[200]"
+          bgColor="var(--va-pink200)"
           title="Fourth grade"
           subTitle="IV"
         />
       </SubContainer>
       <SubContainer>
         <Classroom
-          :bgColor="palette.grey[200]"
+          bgColor="var(--va-grey300)"
           title="Fifth grade"
           subTitle="V"
         />
       </SubContainer>
       <SubContainer>
         <Classroom
-          :bgColor="palette.yellow[100]"
+          bgColor="var(--va-yellow100)"
           title="Sixth grade"
           subTitle="VI"
         />
@@ -49,21 +49,21 @@
     <Container>
       <SubContainer>
         <Classroom
-          :bgColor="palette.brown[100]"
+          bgColor="var(--va-brown100)"
           title="Seventh grade"
           subTitle="VII"
         />
       </SubContainer>
       <SubContainer>
         <Classroom
-          :bgColor="palette.green[50]"
+          bgColor="var(--va-green50)"
           title="Eighth grade"
           subTitle="VIII"
         />
       </SubContainer>
       <SubContainer>
         <Classroom
-          :bgColor="palette.orange[100]"
+          bgColor="var(--va-orange100)"
           title="Ninth grade"
           subTitle="IX"
         />
@@ -74,7 +74,7 @@
 <script>
 import Select from "@/components/select";
 import Classroom from "../../components/classroom";
-import palette from "@/theme/palette";
+
 import { Wrapper, Container, SubContainer } from "./Classes.styles";
 
 export default {
@@ -84,11 +84,6 @@ export default {
     Wrapper,
     Container,
     SubContainer,
-  },
-  data() {
-    return {
-      palette,
-    };
   },
 };
 </script>

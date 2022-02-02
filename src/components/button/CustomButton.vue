@@ -16,7 +16,7 @@
 <script>
 import { ButtonStyled } from "./CustomButton.styles";
 import LoadingSpinner from "@/components/loadingSpinner";
-import palette from "@/theme/palette";
+
 import { radius } from "@/theme/shapings";
 export default {
   components: {
@@ -29,7 +29,7 @@ export default {
     },
     bgColor: {
       type: String,
-      default: palette.primary.main,
+      default: "var(--va-primaryMain)",
     },
     borderRadius: {
       type: String,
@@ -37,7 +37,7 @@ export default {
     },
     borderColor: {
       type: String,
-      default: palette.primary.main,
+      default: "var(--va-primaryMain)",
     },
     startIcon: {
       type: Element,

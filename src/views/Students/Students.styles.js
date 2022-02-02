@@ -1,5 +1,4 @@
 import styled from "vue3-styled-components";
-import palette from "../../theme/palette";
 
 export const Container = styled.div`
   display: flex;
@@ -22,8 +21,8 @@ export const ActionWrapper = styled.div`
 `;
 
 export const Edit = styled.div`
-  background-color: ${palette.info.edit};
-  color: ${palette.common.white};
+  background-color: var(--va-infoEdit);
+  color: var(--va-white);
   padding: 5px 7px 5px 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -33,8 +32,8 @@ export const Edit = styled.div`
 `;
 
 export const Delete = styled.div`
-  background-color: ${palette.error.main};
-  color: ${palette.common.white};
+  background-color: var(--va-errorMain);
+  color: var(--va-white);
   padding: 5px 10px 5px 10px;
   margin: 5px;
   border-radius: 5px;
@@ -46,8 +45,8 @@ export const Delete = styled.div`
 
 export const AddNew = styled.div`
   display: flex;
-  background-color: ${palette.primary.main};
-  color: ${palette.common.white};
+  background-color: var(--va-primary);
+  color: var(--va-white);
   width: 140px;
   height: 45px;
   font-size: 13pt;

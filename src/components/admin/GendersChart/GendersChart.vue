@@ -1,15 +1,15 @@
 <template>
   <SingleChart>
-    <h2>Genders</h2>
+    <h5 class="display-5">Genders</h5>
     <em>Current users by their gender.</em>
     <PieChart :usersData="usersData" />
     <Legend>
       <div>
-        <Color :color="palette.primary.main" />
+        <Color color="var(--va-primaryMain)" />
         <span>Male</span>
       </div>
       <div>
-        <Color :color="palette.pink[100]" />
+        <Color color="var(--va-pink100)" />
         <span>Female</span>
       </div>
     </Legend>
@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import palette from "@/theme/palette";
 import {
   Color,
   Legend,
@@ -46,7 +45,6 @@ export default {
   },
   data() {
     return {
-      palette,
       usersData: [
         { Gender: "Male", Nr: 2000, avg: 900, inc: 400 },
         { Gender: "Female", Nr: 1000, avg: 500, inc: 300 },

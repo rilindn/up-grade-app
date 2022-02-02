@@ -21,18 +21,13 @@
     "vue3-charts": "^1.1.27",
     "vue3-click-away": "^1.2.1",
     "vue3-styled-components": "^1.2.1",
+    "vuestic-ui": "^1.3.1",
     "vuex": "^4.0.0-0",
     "vuex-persistedstate": "^4.1.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
     "@intlify/vue-i18n-loader": "^3.0.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-router": "^4.5.15",
-    "@vue/cli-plugin-vuex": "^4.5.15",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
     "@types/d3-array": "^3.0.2",
     "@types/d3-axis": "^3.0.1",
     "@types/d3-format": "^3.0.1",
@@ -42,10 +37,17 @@
     "@types/d3-selection": "^3.0.2",
     "@types/d3-shape": "^3.0.2",
     "@types/ramda": "^0.27.60",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "^4.5.15",
+    "@vue/cli-plugin-vuex": "^4.5.15",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
-    "vue-cli-plugin-i18n": "~2.3.1"
+    "vue-cli-plugin-i18n": "~2.3.1",
+    "vue-cli-plugin-vuestic-ui": "~1.0.4"
   },
   "eslintConfig": {
     "root": true,

@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import palette from "@/theme/palette";
 import { Wrapper, Avatar } from "./Avatar.styles";
 
 export default {
@@ -18,7 +17,6 @@ export default {
   props: {
     size: {
       type: Number,
-      default: palette.primary.main,
     },
     name: {
       type: String,

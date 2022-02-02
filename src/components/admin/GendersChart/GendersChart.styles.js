@@ -1,5 +1,4 @@
 import styled from "vue3-styled-components";
-import palette from "@/theme/palette";
 
 const colorProps = {
   color: String,
@@ -37,12 +36,12 @@ export const Legend = styled.legend`
 export const StatsMale = styled.span`
   font-size: 13px;
   position: absolute;
-  top: 55%;
+  top: 50%;
   right: 100px;
   z-index: -2;
   hr {
     border: none;
-    background-color: ${palette.primary.main};
+    background-color: var(--va-primaryLight);
     height: 2px;
     width: 40px;
     position: absolute;
@@ -53,20 +52,18 @@ export const StatsMale = styled.span`
 `;
 
 export const StatsFemale = styled.span`
-  position: absolute;
   font-size: 13px;
   position: absolute;
-  top: 43%;
-  left: 70px;
+  top: 40%;
+  left: 60px;
   z-index: -2;
   hr {
     height: 2px;
-
     border: none;
-    background-color: ${palette.pink[100]};
+    background-color: var(--va-pink100);
     width: 40px;
     position: absolute;
-    bottom: 30px;
+    bottom: 29px;
     left: 20px;
     transform: rotate(40deg);
   }

@@ -19,7 +19,7 @@
           </HeadStyled>
           <BodyStyled>
             <RowStyled v-for="(grades, i) in studentgrades" :key="i">
-              <CellStyled>{{ grades.subject }}</CellStyled>
+              <CellStyled class="subject-name">{{ grades.subject }}</CellStyled>
               <CellStyled v-for="(g, i) in grades.periods" :key="i">
                 <GradeWrapper>
                   <div>
@@ -31,7 +31,7 @@
                   </FinalGrade>
                 </GradeWrapper>
               </CellStyled>
-              <CellStyled>
+              <CellStyled class="final-grade">
                 <OtherGrades>{{ grades.final }}</OtherGrades>
               </CellStyled>
             </RowStyled>

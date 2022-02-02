@@ -1,5 +1,4 @@
 import styled from "vue3-styled-components";
-import palette from "../../theme/palette";
 
 const classroomProps = {
   backgroundColor: String,
@@ -20,7 +19,7 @@ export const SingleClass = styled("div", classroomProps)`
   align-items: center;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  color: ${palette.common.white};
+  color: var(--va-white);
   p {
     font-size: 18px;
   }
@@ -36,8 +35,8 @@ export const DropDownWrapper = styled("div")`
   border-bottom-right-radius: 20px;
   border: 1px solid ${(props) => props.backgroundColor};
 
-  background-color: ${palette.grey[100]};
-  color: ${palette.common.black};
+  background-color: var(--va-grey100);
+  color: var(--va-black);
   cursor: pointer;
 `;
 
@@ -49,10 +48,10 @@ export const DropDownText = styled("div")`
   height: 50px;
   span {
     font-size: 17px;
-    color: ${palette.grey[400]};
+    color: var(--va-grey400);
   }
   span:last-child {
-    color: ${palette.grey[400]};
+    color: var(--va-grey400);
     padding-bottom: 12px;
   }
 `;
@@ -61,11 +60,11 @@ export const MenuItem = styled("span")`
   display: flex;
   justify-content: center;
   text-align: center;
-  color: ${palette.grey[400]};
+  color: var(--va-grey400);
   align-items: center;
   height: 45px;
   :hover {
-    background-color: ${palette.grey[100]};
+    background-color: var(--va-grey100);
   }
   p {
     font-size: 17px;
@@ -80,8 +79,8 @@ export const Menu = styled("div")`
   width: 100%;
   top: 66%;
   margin-top: -33px;
-  background-color: ${palette.common.white};
-  color: ${palette.common.black};
+  background-color: var(--va-white);
+  color: var(--va-black);
   box-shadow: 0 0 2px 2px rgba(232, 236, 241);
 `;
 
@@ -91,5 +90,5 @@ export const Divider = styled("div")`
   margin-bottom: 0;
   border: none;
   height: 1px;
-  background-color: ${palette.grey[200]};
+  background-color: var(--va-grey200);
 `;
