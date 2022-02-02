@@ -1,5 +1,5 @@
 import styled from "vue3-styled-components";
-import palette from "@/theme/palette";
+
 import { Form } from "vee-validate";
 // import BackgroundPhoto from "@/assets/loginbg.png";
 const loginProps = {
@@ -13,7 +13,7 @@ const loginProps = {
 export const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
-  background: ${palette.common.white};
+  background: var(--va-white);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled("div", loginProps)`
-  background-color: ${palette.common.white};
+  background-color: var(--va-white);
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
@@ -86,13 +86,13 @@ export const OverlayContainer = styled("div", loginProps)`
 `;
 
 export const Overlay = styled("div", loginProps)`
-  background: ${palette.primary.main};
+  background: var(--va-primaryLight);
   background: -webkit-linear-gradient(to left, #008466, #0c5b49);
-  background: radial-gradient(${palette.primary.light}, #008466);
+  background: radial-gradient(var(--va-primaryLight), #008466);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
-  color: ${palette.common.white};
+  color: var(--va-white);
   position: relative;
   left: -100%;
   height: 100%;
@@ -115,6 +115,9 @@ export const OverlayPanel = styled("div", loginProps)`
   width: 50%;
   transform: translateX(0);
   transition: transform 0.6s ease-in-out;
+  p {
+    margin: 37px 0;
+  }
   ${(props) =>
     props.rightOverlay &&
     `
@@ -124,7 +127,7 @@ export const OverlayPanel = styled("div", loginProps)`
 `;
 
 export const FormStyled = styled(Form)`
-  background-color: ${palette.common.white};
+  background-color: var(--va-white);
   display: flex;
   align-items: center;
   justify-content: center;

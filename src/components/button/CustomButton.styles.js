@@ -1,5 +1,5 @@
 import styled from "vue3-styled-components";
-import palette from "@/theme/palette";
+
 const btnProps = {
   backgroundColor: String,
   borderRadius: String,
@@ -12,7 +12,7 @@ export const ButtonStyled = styled("button", btnProps)`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   border: 1px solid;
-  color: ${palette.common.white};
+  color: var(--va-white);
   font-size: 12px;
   font-weight: bold;
   // padding: 12px 45px;

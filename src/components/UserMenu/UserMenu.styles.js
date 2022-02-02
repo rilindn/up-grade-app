@@ -1,5 +1,5 @@
 import styled from "vue3-styled-components";
-import palette from "@/theme/palette";
+
 import { radius } from "@/theme/shapings";
 
 export const Wrapper = styled("div")`
@@ -19,6 +19,7 @@ export const NameField = styled.h4`
   margin: 0 5px 0 15px;
   font-size: 14px;
   font-weight: 500;
+  margin: 0 4px 0 6px !important;
 `;
 
 export const Menu = styled("div")`
@@ -28,9 +29,9 @@ export const Menu = styled("div")`
   width: 135px;
   top: 105%;
   right: 10px;
-  background-color: ${palette.background};
+  background-color: var(--va-background);
   border-radius: ${radius.default};
-  color: ${palette.common.black};
+  color: var(--va-black);
   box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16);
   z-index: 100;
   div:first-child {
@@ -44,14 +45,14 @@ export const MenuItem = styled("span")`
   place-items: center;
   margin: 5px 8px;
   padding: 7px;
-  font-weight: 800;
+  font-weight: 600;
   border-radius: ${radius.default};
   > i {
     margin-right: 7px;
   }
   :hover {
-    background-color: ${palette.primary.main};
-    color: ${palette.common.white};
+    background-color: var(--va-primaryLight);
+    color: var(--va-white);
   }
 `;
 

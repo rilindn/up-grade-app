@@ -1,5 +1,5 @@
 import styled from "vue3-styled-components";
-import palette from "@/theme/palette";
+
 import { fontFamily } from "@/theme/typography";
 
 const listProps = {
@@ -85,9 +85,9 @@ export const LogoSection = styled.div`
   span {
     font-size: 22px;
     ${fontFamily.poppinsBold}
-    color: ${palette.common.white};
+    color: var(--va-white);
     span {
-      color: ${palette.grey[600]};
+      color: var(--va-grey600);
     }
   }
 `;

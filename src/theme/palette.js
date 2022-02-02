@@ -1,72 +1,51 @@
 const palette = {
-  common: {
-    black: "#000",
-    white: "#fff",
-    red: "#ff0000",
-  },
-  primary: {
-    light: "#05c59a",
-    main: "#008466",
-    dark: "#2A9D8F",
-  },
-  secondary: {
-    main: "#8bcffc",
-    dark: "#0084ff",
-    contrastText: "#fff",
-  },
-  info: {
-    main: "#E84E1B",
-    edit: "#ffa404",
-  },
-  error: {
-    main: "#FF0000",
-    dark: "#c20000",
-  },
-  grey: {
-    1000: "#000000",
-    950: "#1B1C1D",
-    900: "#18191a",
-    850: "#1C1D1E",
-    800: "#1e2023",
-    700: "#242526",
-    600: "#3A3B3C",
-    550: "#44444F",
-    500: "#626262",
-    400: "#92929D",
-    300: "#B5B5BE",
-    200: "#d7d7d7",
-    100: "#F1F1F5",
-    90: "F1F1F1",
-    50: "#FAFAFB",
-    0: "#FFF",
-  },
-  green: {
-    800: "#42D9DA",
-    700: "#00B3A6",
-    600: "#228176",
-    500: "#2A9D8F",
-    300: "#00C4B4",
-    200: "#00BFA6",
-    100: "#DFFDEF",
-    50: "#BCECA6",
-  },
+  black: "#000",
+  white: "#fff",
+  // primary
+  primaryLight: "#05c59a",
+  primaryMain: "#008466",
+  primaryDark: "#2A9D8F",
+  // info
+  infoEdit: "#ffa404",
+  // error
+  errorMain: "#FF0000",
+  errorDark: "#c20000",
+  // grey
+  grey950: "#1B1C1D",
+  grey900: "#18191a",
+  grey850: "#1C1D1E",
+  grey800: "#1e2023",
+  grey700: "#242526",
+  grey600: "#3A3B3C",
+  grey550: "#44444F",
+  grey500: "#626262",
+  grey400: "#92929D",
+  grey300: "#B5B5BE",
+  grey200: "#d7d7d7",
+  grey100: "#F1F1F5",
+  grey90: "#F1F1F1",
+  grey50: "#FAFAFB",
+  // green
+  green800: "#42D9DA",
+  green700: "#00B3A6",
+  green600: "#228176",
+  green500: "#2A9D8F",
+  green300: "#00C4B4",
+  green200: "#00BFA6",
+  green100: "#DFFDEF",
+  green50: "#BCECA6",
+  // background
   background: "#F3F8FC",
-
-  pink: {
-    100: "#fd868e",
-    200: "#F89ADD",
-  },
-  blue: {
-    100: "#24B4F4",
-  },
-  yellow: {
-    100: "#FFE790",
-  },
-  brown: {
-    100: "#DCA796",
-  },
-  orange: {
-    100: "#FFA562",
-  },
+  // pink
+  pink100: "#fd868e",
+  pink200: "#F89ADD",
+  // blue
+  blue100: "#24B4F4",
+  // yellow
+  yellow100: "#FFE790",
+  // brown
+  brown100: "#DCA796",
+  // orange
+  orange100: "#FFA562",
 };
 export default palette;

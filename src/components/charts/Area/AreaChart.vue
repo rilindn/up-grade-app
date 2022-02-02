@@ -12,20 +12,20 @@
         <Area
           :dataKeys="['Month', 'Nr']"
           type="monotone"
-          :areaStyle="{ fill: palette.primary.main }"
+          :areaStyle="{ fill: 'var(--va-primaryMain)' }"
         />
         <Line
           :dataKeys="['Month', 'Nr']"
           type="monotone"
           :lineStyle="{
-            stroke: palette.primary.main,
+            stroke: 'var(--va-primaryMain)',
           }"
         />
         <Marker
           v-if="marker"
           :value="1000"
           label="Mean."
-          :color="palette.primary.main"
+          color="var(--va-primaryMain)"
           strokeWidth="2"
           strokeDasharray="6 6"
         />
@@ -33,7 +33,7 @@
           <linearGradient id="grad" gradientTransform="rotate(90)">
             <stop
               offset="0%"
-              :stop-color="palette.primary.main"
+              stop-color="var(--va-primaryMain)"
               stop-opacity="1"
             />
             <stop offset="100%" stop-color="white" stop-opacity="0.4" />
@@ -43,9 +43,9 @@
 
       <template #widgets>
         <Tooltip
-          :color="palette.primary.main"
+          color="var(--va-primaryMain)"
           :config="{
-            Nr: { color: palette.primary.main },
+            Nr: { color: 'var(--va-primaryMain)' },
             avg: { hide: true },
             inc: { hide: true },
           }"
@@ -56,7 +56,6 @@
 </template>
 
 <script>
-import palette from "@/theme/palette";
 import { Wrapper } from "./AreaChart.styles";
 import { defineComponent, ref } from "vue";
 import { Chart, Grid, Line, Tooltip } from "vue3-charts";
@@ -73,11 +72,6 @@ export default {
     chartData: {
       type: Array,
     },
-  },
-  data() {
-    return {
-      palette,
-    };
   },
   setup() {
     const direction = ref("horizontal");

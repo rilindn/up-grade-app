@@ -1,6 +1,5 @@
 import styled from "vue3-styled-components";
 import { fontFamily } from "@/theme/typography";
-import palette from "@/theme/palette";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -30,6 +29,6 @@ export const CurrentView = styled.div`
   align-items: center;
   padding-left: 25px;
   span {
-    border-bottom: 1px solid ${palette.primary.main};
+    border-bottom: 1px solid var(--va-primaryLight);
   }
 `;

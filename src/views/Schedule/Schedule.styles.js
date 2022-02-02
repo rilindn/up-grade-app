@@ -1,5 +1,4 @@
 import styled from "vue3-styled-components";
-import palette from "../../theme/palette";
 
 export const Wrapper = styled.div`
   height: 700px;
@@ -12,18 +11,18 @@ export const Wrapper = styled.div`
 
 export const SecondWrapper = styled.div`
   width: 50%;
-  background-color: ${palette.background};
+  background-color: var(--va-background);
   display: flex;
   justify-content: center;
   align-items: center;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  border: 1px solid ${palette.primary.main};
+  border: 1px solid var(--va-primaryLight);
 `;
 
 export const ThirdWrapper = styled.div`
   width: 50%;
-  background-color: ${palette.primary.main};
+  background-color: var(--va-primaryLight);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +52,7 @@ export const WeekWrapper = styled.div`
     align-items: center;
     width: 50px;
     height: 50px;
-    background-color: ${palette.common.white};
+    background-color: var(--va-white);
     text-align: center;
     border-radius: 5px;
     font-size: 14px;
@@ -61,8 +60,8 @@ export const WeekWrapper = styled.div`
     cursor: pointer;
     box-shadow: 0.5px 1px #b5b5be;
     :hover {
-      background-color: ${palette.green[700]};
-      color: ${palette.common.white};
+      background-color: var(--va-green700);
+      color: var(--va-white);
     }
   }
 `;
@@ -70,19 +69,20 @@ export const WeekWrapper = styled.div`
 export const Course = styled.div`
   width: 330px;
   height: 60px;
-  background-color: ${palette.common.white};
+  background-color: var(--va-white);
   margin-top: 20px;
   border-radius: 5px;
   box-shadow: 0.5px 1px #b5b5be;
   padding: 0 20px;
+  display: flex;
+  align-items: center;
 `;
 
 export const CourseContainer = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   cursor: pointer;
-
+  width: 100%;
   p {
     font-size: 18px;
   }
@@ -109,11 +109,10 @@ export const ListItem = styled.li`
   width: 400px;
   list-style: none;
   margin-bottom: 30px;
-  border-bottom: 1px solid rgba(0, 132, 102, 0.5);
   span {
     width: 170px;
     font-size: 18px;
-    color: ${palette.common.white};
+    color: var(--va-white);
   }
   span:first-child {
     font-weight: 600;

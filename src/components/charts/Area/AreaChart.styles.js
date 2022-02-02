@@ -1,5 +1,5 @@
 import styled from "vue3-styled-components";
-import palette from "@/theme/palette";
+
 const btnProps = {
   size: Number,
   coloe: String,

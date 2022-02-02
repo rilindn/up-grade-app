@@ -1,7 +1,6 @@
 <template>
   <Wrapper>
     <div class="stats">
-      <h1>{{ `${$t("admin.title")}  ${$store.state.loggedUser.name}` }}</h1>
       <StatisticsSection>
         <Statistics
           icon="fad fa-user-graduate"
@@ -19,7 +18,7 @@
     </div>
     <Chart>
       <SingeChart>
-        <h2>Users stat</h2>
+        <h2 class="display-5">Users stat</h2>
         <em>New users registered in past 6 months.</em>
         <AreaChart :chartData="chartData" />
       </SingeChart>
@@ -36,7 +35,7 @@ import {
   SingleChart,
 } from "./Dashboard.styles";
 import AreaChart from "@/components/charts/Area";
-import palette from "@/theme/palette";
+
 import GendersChart from "@/components/admin/GendersChart";
 
 export default {
@@ -51,7 +50,6 @@ export default {
   },
   data() {
     return {
-      palette,
       chartData: [
         { Month: "Jan", Nr: 1000, avg: 500, inc: 300 },
         { Month: "Feb", Nr: 2000, avg: 900, inc: 400 },

@@ -1,5 +1,5 @@
 import styled from "vue3-styled-components";
-import palette from "@/theme/palette";
+
 import { fontFamily } from "@/theme/typography";
 
 export const Wrapper = styled.div`
@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
 export const Menu = styled("div")`
   display: flex;
   flex-direction: column;
-  background-color: ${palette.background};
+  background-color: var(--va-background);
   position: absolute;
   border-radius: 5px;
   padding: 3px;
@@ -26,7 +26,7 @@ export const Menu = styled("div")`
 
 export const MenuItem = styled("span")`
   width: 80px;
-  background-color: ${palette.common.white};
+  background-color: var(--va-white);
   font-size: 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -34,14 +34,17 @@ export const MenuItem = styled("span")`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: ${palette.common.black};
+  color: var(--va-black);
   :hover {
-    background-color: ${palette.grey[200]};
+    background-color: var(--va-grey200);
   }
   span {
     :nth-child(2) {
-      height: 24px;
+      height: 14px;
       ${fontFamily.poppinsSemiBold}
+    }
+    :nth-child(1) {
+      margin-bottom: -3px;
     }
     font-size: 17px;
   }
@@ -56,15 +59,18 @@ export const CurrentLang = styled("span")`
   border: 1px solid rgba(0, 132, 102, 0.1);
   cursor: pointer;
   margin: 2px;
-  color: ${palette.common.black};
+  color: var(--va-black);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   padding-bottom: 9px;
   span {
     :nth-child(2) {
-      height: 24px;
+      height: 14px;
       ${fontFamily.poppinsSemiBold}
+    }
+    :nth-child(1) {
+      margin-bottom: -3px;
     }
     font-size: 17px;
   }
