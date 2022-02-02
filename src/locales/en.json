@@ -117,5 +117,30 @@
     "myProfile": "My Profile",
     "settings": "Settings",
     "logout": "Logout"
+  },
+  "studentProfile": {
+    "name": "Maria Aslehmeni",
+    "active": "(Active Student)",
+    "id": "Student ID",
+    "birthday":"Birthday",
+    "date":"1 July  2000 (age 21)",
+    "idNr":"19038128",
+    "nationality":"Nationality",
+    "nationalityPlace":"United States",
+    "citizenship":"Citizenship",
+    "citizenshipPlace":"United States",
+    "gender":"Gender",
+    "genderType":"Female",
+    "place":"Place",
+    "placeName":"New York,USA",
+    "zipcode":"Zip Code",
+    "zipcodeNumber":"172520",
+    "personalEmail":"Personal Email",
+    "personalEmailText":"mariasgmail.com",
+    "phoneNumberNr":"+323239939393",
+    "phoneNumber":"Phone Number",
+    "studentEmail":"Student Email",
+    "studentEmailText":"mariaubt-uni.com"
+    
   }
 }
