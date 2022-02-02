@@ -6,6 +6,7 @@
    class="styledPicker"  
    :typeable="true" 
    :upperLimit="currentDate"
+   :lowerLimit = "minDate"
    />
 </template>
 <script>
@@ -20,6 +21,7 @@ export default{
         return {
              picked: new Date(),
              currentDate: new Date(),
+             minDate: new Date('1995-1-1')
             }
          }
     }

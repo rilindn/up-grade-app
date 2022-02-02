@@ -15,6 +15,13 @@
             type="email"
             placeholder="Email"
         />
+        <va-select 
+            class="role-select" 
+            placeholder="Choose a role" 
+            v-model="role" 
+            color="#008466" 
+            :options="['Student','Staff']">
+        </va-select>
         <DateContainer>
         <Label>Date of Birth</Label>
         <DatePicker/>
@@ -23,7 +30,7 @@
             :title="('Register')"
             type="submit"
             width="40%"
-            borderRadius="5px"
+            borderRadius="20px"
             backgroundColor="#10ac74"
           />
         </FormWrapper>
@@ -43,8 +50,26 @@ export default {
         Label,
         DateContainer,
         Button,
-        ButtonContainer
+        ButtonContainer,
+    },
+    data(){
+        return{
+            role:'',
+        }
     }
-
 }
 </script>
+<style>
+    .role-select{
+        width: 100%;
+        margin: 15px;   
+  border-radius: 5px;
+    }
+    .va-input__content-wrapper{
+
+      padding: 13px 10px;
+    }
+    .va-input__container{
+        background-color: #f2f5f7 !important;
+    }
+</style>
