@@ -68,7 +68,6 @@ export const MenuItem = styled("span")`
   }
   p {
     font-size: 17px;
-    margin-bottom: 25px;
   }
 `;
 

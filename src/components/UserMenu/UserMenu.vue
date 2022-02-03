@@ -5,7 +5,7 @@
       <Avatar :size="37" :name="name" @click="triggerMenu" />
     </AvatarWrapper>
     <Menu v-if="displayMenu" v-click-away="triggerMenu">
-   <div v-for="{ name, icon, path } in menuItems" :key="name">
+      <div v-for="{ name, icon, path } in menuItems" :key="name">
         <MenuItem>
           <router-link :to="path">
             <i :class="icon"></i>
