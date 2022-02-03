@@ -117,5 +117,18 @@
     "myProfile": "My Profile",
     "settings": "Settings",
     "logout": "Logout"
+  },
+  "studentProfile": {
+    "id": "Student ID",
+    "birthday":"Birthday",
+    "nationality":"Nationality",
+    "citizenship":"Citizenship",
+    "gender":"Gender",
+    "place":"Place",
+    "zipcode":"Zip Code",
+    "personalEmail":"Personal Email",
+    "phoneNumber":"Phone Number",
+    "studentEmail":"Student Email"
+    
   }
 }

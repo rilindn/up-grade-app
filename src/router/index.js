@@ -55,6 +55,11 @@ const routes = [
         component: () => import("@/views/AccessDenied"),
       },
       {
+        path: "/student-profile",
+        name: "My Profile",
+        component: () => import("@/views/StudentProfile"),
+      },
+      {
         path: ":catchAll(.*)",
         name: "Not Found",
         component: () => import("@/views/NotFound"),
