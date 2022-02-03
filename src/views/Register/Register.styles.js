@@ -21,19 +21,3 @@ export const FormWrapper = styled.div`
     padding-bottom: 12px;
   }
 `;
-
-export const Label = styled.label`
-  font-size: 10px;
-  display: flex;
-  justify-content: flex-start;
-`;
-
-export const DateContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-`;
-
-export const ButtonContainer = styled.div`
-  margin-top: 10px;
-`;

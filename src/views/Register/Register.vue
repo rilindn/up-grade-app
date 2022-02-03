@@ -22,10 +22,12 @@
             color="#008466" 
             :options="['Student','Staff']">
         </va-select>
-        <DateContainer>
-        <Label>Date of Birth</Label>
-        <DatePicker/>
-        </DateContainer>
+        <va-date-input class="date-picker" 
+            highlight-weekend={true} 
+            placeholder="Date of birth" 
+            color="#008466"
+            manual-input ={true}>
+        </va-date-input>
             <Button
             :title="('Register')"
             type="submit"
@@ -38,19 +40,14 @@
 </template>
 <script>
 import InputField from "@/components/InputField";
-import {Wrapper, FormWrapper, Label, DateContainer, ButtonContainer} from './Register.styles';
-import DatePicker from "@/components/datepicker"
+import {Wrapper, FormWrapper} from './Register.styles';
 import Button from "@/components/button"
 export default {
     components:{
         InputField,
         Wrapper,
         FormWrapper,
-        DatePicker,
-        Label,
-        DateContainer,
         Button,
-        ButtonContainer,
     },
     data(){
         return{
@@ -71,5 +68,9 @@ export default {
     }
     .va-input__container{
         background-color: #f2f5f7 !important;
+    }
+    .date-picker{
+        width: 100%;
+        margin-bottom: 20px;
     }
 </style>
