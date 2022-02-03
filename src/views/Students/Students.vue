@@ -77,8 +77,6 @@ export default {
   async beforeCreate() {
     const users = await getAllUsers();
     const user = await getUserById(3);
-    console.log(users);
-    console.log(user);
   },
 };
 </script>
