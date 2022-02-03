@@ -1,5 +1,5 @@
 <template>
-  <Wrapper :error="error[name]">
+  <Wrapper :error="error?.[name]">
     <Field
       @blur="change"
       :name="name"
@@ -71,6 +71,7 @@ input {
   width: 100%;
   transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out,
     background-color 0.3s ease-in-out;
+    padding-left: 22px;
 }
 
 input:focus {

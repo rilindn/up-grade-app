@@ -10,7 +10,7 @@
       </SubContainer>
       <SubContainer>
         <Classroom
-          bgColor="var(--va-pink200)"
+          bgColor="var(--va-pink100)"
           title="Second grade"
           subTitle="II"
         />

@@ -53,6 +53,7 @@ export const DropDownText = styled("div")`
   span:last-child {
     color: var(--va-grey400);
     padding-bottom: 12px;
+    font-size: 12px;
   }
 `;
 
@@ -68,6 +69,7 @@ export const MenuItem = styled("span")`
   }
   p {
     font-size: 17px;
+    margin-bottom: 5px;
   }
 `;
 
