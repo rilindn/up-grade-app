@@ -52,6 +52,7 @@ import {
   AddNew,
   Container,
 } from "./Students.styles";
+import { getAllUsers, getUserById } from "@/api/ApiMethods";
 export default {
   components: {
     Table,
@@ -71,6 +72,13 @@ export default {
     return {
       users: users,
     };
+  },
+  // api calls examples
+  async beforeCreate() {
+    const users = await getAllUsers();
+    const user = await getUserById(3);
+    console.log(users);
+    console.log(user);
   },
 };
 </script>

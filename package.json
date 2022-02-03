@@ -11,6 +11,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@splidejs/vue-splide": "^0.5.18",
+    "axios": "^0.25.0",
     "core-js": "^3.6.5",
     "moment": "^2.29.1",
     "rm": "^0.1.8",

@@ -10,6 +10,9 @@ import store from "./store";
 // import "vuestic-ui/dist/vuestic-ui.css";
 import { VuesticPlugin } from "vuestic-ui";
 import palette from "@/theme/palette";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 createApp(App)
   .use(store)
