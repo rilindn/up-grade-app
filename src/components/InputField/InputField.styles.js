@@ -26,6 +26,9 @@ export const Wrapper = styled("div", inputProps)`
     :focus {
       border-color: "var(--va-primaryDark)" !important;
     }
+    ::placeholder {
+      color: var(--va-grey300);
+    }
   }
   span {
     margin-left: 5px;

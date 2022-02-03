@@ -114,5 +114,17 @@
     "myProfile": "Profili im",
     "settings": "Cilesimet",
     "logout": "Ckyqu"
+  },
+  "studentProfile":{
+  "id": "ID Studentit",
+  "birthday":"Ditelindja",
+  "nationality":"Kombesia",
+  "citizenship":"Nenshtetesia",
+  "gender":"Gjinia",
+  "place":"Vendlindja",
+  "zipcode":"Kodi Postal",
+  "personalEmail":"Email Personal",
+  "phoneNumber":"Numri Kontaktues",
+  "studentEmail":"Email Studentit"
   }
 }

@@ -1,7 +1,7 @@
 <template>
     <Wrapper>
         <FormWrapper>
-            <span>Register New User</span>
+            <h3>Register New User</h3>
         <InputField
             name=""
             placeholder="Firstname"
