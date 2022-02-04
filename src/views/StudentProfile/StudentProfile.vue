@@ -43,8 +43,8 @@
   </Wrapper>
 </template>
 <script>
-import { Wrapper,TopWrapper,MiddleBox,RightWrapper ,LeftWrapper,Profile,PhotoWrapper,ProfileInfo,FirstContainer,SecondContainer,TopNavigation,Container,NameWrapper} from "./StudentProfile.styles";
-// import { basicItems } from "./TopNavigationItems.config";
+import { Wrapper,TopWrapper,MiddleBox,RightWrapper ,LeftWrapper,PhotoWrapper,FirstContainer,SecondContainer,Container,NameWrapper} from "./StudentProfile.styles";
+
 export default {
   components: {
     Wrapper,
@@ -53,21 +53,11 @@ export default {
     RightWrapper,
     LeftWrapper,
     PhotoWrapper,
-    Profile,
-    ProfileInfo,
     FirstContainer,
     SecondContainer,
-    TopNavigation,
     Container,
     NameWrapper
   
-  },
-   data() {
-    return {
-     
-      topNavigationItems: [],
-    isHidden: false
-    };
   },
  
 };
