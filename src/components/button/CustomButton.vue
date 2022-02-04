@@ -9,7 +9,7 @@
   >
     <i v-bind:class="startIcon"></i>
     <h4 v-if="!loading">{{ title }}</h4>
-    <LoadingSpinner :loading="loading"></LoadingSpinner>
+    <LoadingSpinner :loading="loading" size="medium"></LoadingSpinner>
   </ButtonStyled>
 </template>
 

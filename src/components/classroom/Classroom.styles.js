@@ -33,7 +33,7 @@ export const DropDownWrapper = styled("div")`
   width: 220px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  border: 1px solid ${(props) => props.backgroundColor};
+  border: 2px solid ${(props) => props.backgroundColor};
 
   background-color: var(--va-grey100);
   color: var(--va-black);
@@ -69,7 +69,6 @@ export const MenuItem = styled("span")`
   }
   p {
     font-size: 17px;
-    margin-bottom: 5px;
   }
 `;
 

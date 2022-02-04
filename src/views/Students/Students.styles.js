@@ -45,7 +45,7 @@ export const Delete = styled.div`
 
 export const AddNew = styled.div`
   display: flex;
-  background-color: var(--va-primary);
+  background-color: var(--va-primaryMain);
   color: var(--va-white);
   width: 140px;
   height: 45px;
