@@ -1,5 +1,6 @@
 <template>
   <div>
+    <notifications class="my-notifications"/>
     <router-view />
   </div>
 </template>
