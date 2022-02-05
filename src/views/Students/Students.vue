@@ -23,7 +23,6 @@
             <Cell>{{ user.email }}</Cell>
             <Cell>
               <ActionWrapper>
-                <Edit><i class="far fa-edit"></i></Edit>
                 <Delete> <i class="far fa-trash-alt"></i></Delete>
               </ActionWrapper>
             </Cell>

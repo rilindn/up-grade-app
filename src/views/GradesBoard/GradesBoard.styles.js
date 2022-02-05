@@ -47,12 +47,6 @@ export const RowStyled = styled(Row)`
     text-align: left;
     font-size: 17px;
   }
-  & .final-grade {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-  }
 `;
 export const CellStyled = styled(Cell)`
   border-right: 1px solid rgba(0, 132, 102, 0.16);
@@ -69,7 +63,7 @@ export const Wrapper = styled.div`
 export const TablesWrapper = styled.div`
   display: flex;
   justify-content: start;
-  margin: 0 0 30px 10px;
+  margin: 40px;
 `;
 
 export const GradeWrapper = styled.div`
@@ -99,6 +93,7 @@ export const FinalGrade = styled.div`
   span {
     font-size: 25px;
     padding: 5px;
+    font-weight: 500;
   }
 `;
 
@@ -108,14 +103,15 @@ export const OtherGrades = styled.div`
   justify-content: center;
   min-width: 30px;
   font-size: 30px;
+  font-weight: 600;
 `;
 
 export const SingleTable = styled.div`
-  margin: 40px;
   margin-bottom: 7px;
   display: flex;
   flex-direction: column;
-  span:first-child {
+  margin: 10px;
+  .table-title {
     font-size: 20px;
     font-weight: bold;
   }
