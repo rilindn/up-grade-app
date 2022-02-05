@@ -10,11 +10,13 @@ import store from "./store";
 // import "vuestic-ui/dist/vuestic-ui.css";
 import { VuesticPlugin } from "vuestic-ui";
 import palette from "@/theme/palette";
+import Notifications from "@kyvg/vue3-notification";
 
 createApp(App)
   .use(store)
   .use(router)
   .use(i18n)
+  .use(Notifications)
   .use(VuesticPlugin, {
     colors: palette,
   })

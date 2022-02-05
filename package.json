@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "@kyvg/vue3-notification": "^2.3.4",
     "@splidejs/vue-splide": "^0.5.18",
     "axios": "^0.25.0",
     "core-js": "^3.6.5",
