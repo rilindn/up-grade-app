@@ -1,5 +1,5 @@
 <template>
-  <Wrapper :error="error[name]">
+  <Wrapper :error="error?.[name]">
     <Field
       @blur="change"
       :name="name"
