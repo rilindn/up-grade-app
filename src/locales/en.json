@@ -77,6 +77,11 @@
     "manner": "Manner",
     "periods": "Periods"
   },
+  "subjectsBoard": {
+    "title": "Subjects",
+    "subjects":"subjects"
+  
+  },
   "sidebar": {
     "login": "Login",
     "about": "About",
@@ -84,7 +89,8 @@
     "home": "Home",
     "gradesBoard": "Grades",
     "classes": "Classes",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "subjectsBoard":"Subjects"
   },
   "login": {
     "student": {

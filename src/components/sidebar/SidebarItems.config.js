@@ -22,6 +22,7 @@ const studentItems = [
     icon: "fas fa-book-open",
     path: "/grades-board",
   },
+
 ];
 
 const adminItems = [
@@ -39,6 +40,11 @@ const adminItems = [
     name: "sidebar.classes",
     icon: "fas fa-users-class",
     path: "/classes",
+  },
+  {
+    name: "sidebar.subjectsBoard",
+    icon: "fas fa-book-open",
+    path: "/subjects-board",
   },
 ];
 

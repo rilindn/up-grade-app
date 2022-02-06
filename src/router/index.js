@@ -44,6 +44,12 @@ const routes = [
         component: () => import("@/views/GradesBoard"),
       },
       {
+        path: "/subjects-board",
+        name: "Subjects Board",
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/SubjectsBoard"),
+      },
+      {
         path: "/admin",
         name: "Dashboard",
         meta: { requiredRole: ["Admin"] },
