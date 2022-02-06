@@ -20,12 +20,14 @@
              <div>
                <div><p>{{ $t("studentProfile.id") }}:</p><span>19038128</span></div>
                <div> <p>{{ $t("studentProfile.studentEmail") }}:</p><span>maria@ubt-uni.com</span></div>
-               <div><p>{{ $t("studentProfile.birthday") }}:</p><span>1 July  2000 (age 21)</span></div>
-               <div><p>{{ $t("studentProfile.gender") }}:</p><span>Female</span></div>
+               <div><p>{{ $t("studentProfile.generate") }}:</p><span>2019/2020</span></div>
+               <div><p>{{ $t("studentProfile.parentName") }}:</p><span>Alia Ahshsb</span></div>
             </div>
            </FirstContainer>
             <SecondContainer>
              <div>
+               
+             
              <div> <div><p>{{ $t("studentProfile.nationality") }}:</p><span>United States</span></div></div>
               <div>   <div><p>{{ $t("studentProfile.citizenship") }}:</p><span>United States</span></div></div>
                <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.place") }}:</p><span>New York,USA</span></div>
@@ -36,11 +38,7 @@
             placeholder="Password"
             />
             </div>
-             </div>
-            </SecondContainer>
-                <ThirdContainer>
-             <div>
-                 <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.zipcode") }}:</p><span>172520</span></div>
+               <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.zipcode") }}:</p><span>172520</span></div>
             <InputField
            v-if="seen"
             name="zip code"
@@ -48,6 +46,13 @@
             placeholder="Password"
             />
             </div>
+             </div>
+            </SecondContainer>
+                <ThirdContainer>
+             <div>
+                 <div><div><p>{{ $t("studentProfile.birthday") }}:</p><span>1 July  2000 (age 21)</span></div></div>
+               <div> <div><p>{{ $t("studentProfile.gender") }}:</p><span>Female</span></div></div>
+              
                 <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.personalEmail") }}:</p><span>marias@gmail.com</span></div>
                   <InputField
             v-if="seen"

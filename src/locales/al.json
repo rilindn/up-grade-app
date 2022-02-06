@@ -125,6 +125,8 @@
   "zipcode":"Kodi Postal",
   "personalEmail":"Email Personal",
   "phoneNumber":"Numri Kontaktues",
-  "studentEmail":"Email Studentit"
+  "studentEmail":"Email Studentit",
+  "generate":"Viti Regjistrimit",
+  "parentName":"Emri Prindit"
   }
 }

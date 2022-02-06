@@ -128,7 +128,9 @@
     "zipcode":"Zip Code",
     "personalEmail":"Personal Email",
     "phoneNumber":"Phone Number",
-    "studentEmail":"Student Email"
+    "studentEmail":"Student Email",
+    "generate":"Enrolled Year",
+    "parentName":"Father's Name"
     
   }
 }
