@@ -32,6 +32,11 @@ const adminItems = [
     path: "/admin",
   },
   {
+    name: "Teachers",
+    icon: "fas fa-chalkboard-teacher",
+    path: "/teachers",
+  },
+  {
     name: "Students",
     icon: "fas fa-user-graduate",
     path: "/students",
@@ -46,6 +51,7 @@ const adminItems = [
     icon: "fas fa-book-open",
     path: "/subjects-board",
   },
+ 
 ];
 
 export { basicItems, studentItems, adminItems };
