@@ -49,8 +49,7 @@ export default {
     };
   },
   created() {
-    if (this.userRole === "Student")
-      this.sidebarItems = [ ...studentItems, ...teacherItems];
+    if (this.userRole === "Student") this.sidebarItems = studentItems;
     else if (this.userRole === "Staff") this.sidebarItems = teacherItems;
     else if (this.userRole === "Admin") this.sidebarItems = adminItems;
   },
