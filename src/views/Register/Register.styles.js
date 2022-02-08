@@ -20,4 +20,7 @@ export const FormWrapper = styled.div`
   span {
     padding-bottom: 12px;
   }
+  button {
+    margin-top: 10px;
+  }
 `;
