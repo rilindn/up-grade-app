@@ -17,7 +17,7 @@ export const Wrapper = styled("div", inputProps)`
     border-radius: 5px;
     border-width: 1px !important;
     border-color: ${(props) =>
-      props.error ? "var(--va-errorDark)" : "transparent"} !important;
+      props.error ? "var(--va-errorMain)" : "transparent"} !important;
     padding: 15px 10px;
     outline: none;
     width: 100%;
@@ -32,7 +32,7 @@ export const Wrapper = styled("div", inputProps)`
   }
   span {
     margin-left: 5px;
-    color: var(--va-errorDark);
+    color: var(--va-errorMain);
     font-weight: 600;
     font-size: 11px;
   }

@@ -5,7 +5,7 @@ export const users = [
     name: "Leanne ",
     lastname: "Graham",
     username: "Bret",
-    dateOfBirth: "15-03-2001",
+    dateOfBirth: "05-03-2001",
     email: "Sincere@april.biz",
     address: {
       street: "Kulas Light",

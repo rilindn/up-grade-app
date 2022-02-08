@@ -79,8 +79,7 @@
   },
   "subjectsBoard": {
     "title": "Subjects",
-    "subjects":"subjects"
-  
+    "subjects": "subjects"
   },
   "sidebar": {
     "login": "Login",
@@ -90,8 +89,8 @@
     "gradesBoard": "Grades",
     "classes": "Classes",
     "dashboard": "Dashboard",
-    "subjectsBoard":"Subjects",
-    "myClasses":"My Classes"
+    "subjectsBoard": "Subjects",
+    "myClasses": "My Classes"
   },
   "login": {
     "student": {
@@ -125,18 +124,19 @@
     "settings": "Settings",
     "logout": "Logout"
   },
+  "save": "Save",
+  "cancel": "Cancel",
   "studentProfile": {
     "id": "Student ID",
-    "birthday":"Birthday",
-    "nationality":"Nationality",
-    "citizenship":"Citizenship",
-    "gender":"Gender",
-    "place":"Place",
-    "zipcode":"Zip Code",
-    "personalEmail":"Personal Email",
-    "phoneNumber":"Phone Number",
-    "studentEmail":"Student Email"
-    
+    "birthday": "Birthday",
+    "nationality": "Nationality",
+    "citizenship": "Citizenship",
+    "gender": "Gender",
+    "place": "Place",
+    "zipcode": "Zip Code",
+    "personalEmail": "Personal Email",
+    "phoneNumber": "Phone Number",
+    "studentEmail": "Student Email"
   },
   "myClasses": {
     "title": "myClasses"

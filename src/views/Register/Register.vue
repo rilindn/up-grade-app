@@ -52,7 +52,6 @@ export default {
 }
 .va-input__content-wrapper {
   height: 50px;
-  margin: 15px;
   border-radius: 5px;
 }
 .va-input__content-wrapper {
