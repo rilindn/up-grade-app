@@ -1,16 +1,3 @@
-const basicItems = [
-  {
-    name: "sidebar.home",
-    icon: "fa fa-home",
-    path: "/",
-  },
-  {
-    name: "sidebar.about",
-    icon: "fa fa-book",
-    path: "/about",
-  },
-];
-
 const studentItems = [
   {
     name: "sidebar.schedule",
@@ -22,7 +9,14 @@ const studentItems = [
     icon: "fas fa-book-open",
     path: "/grades-board",
   },
+];
 
+const teacherItems = [
+  {
+    name: "sidebar.schedule",
+    icon: "fas fa-calendar-day",
+    path: "/teacher-schedule",
+  },
 ];
 
 const adminItems = [
@@ -51,7 +45,6 @@ const adminItems = [
     icon: "fas fa-book-open",
     path: "/subjects-board",
   },
- 
 ];
 
-export { basicItems, studentItems, adminItems };
+export { studentItems, adminItems, teacherItems };

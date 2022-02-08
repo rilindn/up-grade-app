@@ -1,0 +1,114 @@
+<template>
+  <Wrapper>
+    <SecondWrapper>
+      <Container>
+        <WeekWrapper>
+          <div>
+            <span>Mon</span>
+          </div>
+          <div>
+            <span>Tue</span>
+          </div>
+          <div>
+            <span>Wed</span>
+          </div>
+          <div>
+            <span>Thur</span>
+          </div>
+          <div>
+            <span>Fri</span>
+          </div>
+        </WeekWrapper>
+        <Course>
+          <CourseContainer>
+            <p>1</p>
+            <CourseCode>
+              <h4>First Grade</h4>
+              <span>Parallel I</span>
+            </CourseCode>
+          </CourseContainer>
+        </Course>
+        <Course>
+          <CourseContainer>
+            <p>2</p>
+            <CourseCode>
+              <h4>Second Grade</h4>
+              <span>Parallel 2</span>
+            </CourseCode>
+          </CourseContainer>
+        </Course>
+        <Course>
+          <CourseContainer>
+            <p>3</p>
+            <CourseCode>
+              <h4>Third Grade</h4>
+              <span>Parallel 1</span>
+            </CourseCode>
+          </CourseContainer>
+        </Course>
+        <Course>
+          <CourseContainer>
+            <p>4</p>
+            <CourseCode>
+              <h4>Second Grade</h4>
+              <span>Parallel 1</span>
+            </CourseCode>
+          </CourseContainer>
+        </Course>
+        <Course>
+          <CourseContainer>
+            <p>5</p>
+            <CourseCode>
+              <h4>Third Grade</h4>
+              <span>Parallel 2</span>
+            </CourseCode>
+          </CourseContainer>
+        </Course>
+        <Course>
+          <CourseContainer>
+            <p>6</p>
+            <CourseCode>
+              <h4>Forth Grade</h4>
+              <span>Parallel 1</span>
+            </CourseCode>
+          </CourseContainer>
+        </Course>
+      </Container>
+    </SecondWrapper>
+    <ThirdWrapper>
+      <ul>
+        <ListItem> <span>Course:</span><span>Mathematics</span> </ListItem>
+        <ListItem> <span>Class:</span><span>Z008</span> </ListItem>
+        <ListItem> <span>Code:</span><span>MAT001</span> </ListItem>
+        <ListItem> <span>Start time:</span><span>08:00 AM</span> </ListItem>
+        <ListItem> <span>End time:</span><span>08:45 AM</span> </ListItem>
+      </ul>
+    </ThirdWrapper>
+  </Wrapper>
+</template>
+<script>
+import {
+  Wrapper,
+  SecondWrapper,
+  ThirdWrapper,
+  WeekWrapper,
+  Container,
+  Course,
+  CourseContainer,
+  CourseCode,
+  ListItem,
+} from "./TeacherSchedule.styles";
+export default {
+  components: {
+    Wrapper,
+    SecondWrapper,
+    ThirdWrapper,
+    WeekWrapper,
+    Container,
+    Course,
+    CourseContainer,
+    CourseCode,
+    ListItem,
+  },
+};
+</script>
