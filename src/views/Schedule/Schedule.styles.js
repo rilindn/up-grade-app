@@ -17,7 +17,7 @@ export const SecondWrapper = styled.div`
   align-items: center;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  border: 1px solid var(--va-primaryLight);
+  border: 3px solid var(--va-primaryLight);
 `;
 
 export const ThirdWrapper = styled.div`

@@ -44,6 +44,12 @@ const routes = [
         component: () => import("@/views/GradesBoard"),
       },
       {
+        path: "/subjects-board",
+        name: "Subjects Board",
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/SubjectsBoard"),
+      },
+      {
         path: "/admin",
         name: "Dashboard",
         meta: { requiredRole: ["Admin"] },
@@ -53,6 +59,12 @@ const routes = [
         path: "/access-denied",
         name: "Access Denied",
         component: () => import("@/views/AccessDenied"),
+      },
+      {
+        path: "/register",
+        name: "Register",
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/Register"),
       },
       {
         path: "/student-profile",

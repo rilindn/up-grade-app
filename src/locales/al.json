@@ -73,6 +73,12 @@
     "manner": "Sjellja",
     "periods": "Periodat"
   },
+  "subjectsBoard": {
+    "title": "Lendet",
+    "subjects":"Lendet"
+    
+    
+  },
   "sidebar": {
     "login": "Kycuni",
     "about": "Rreth nesh",
@@ -81,7 +87,8 @@
     "schedule": "Orari",
     "classes": "Klasat",
     "gradesBoard": "Notat",
-    "dashboard": "Ballina"
+    "dashboard": "Ballina",
+    "subjectsBoard":"Lendet"
   },
   "login": {
     "student": {

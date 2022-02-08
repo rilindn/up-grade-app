@@ -23,7 +23,6 @@
             <Cell>{{ user.email }}</Cell>
             <Cell>
               <ActionWrapper>
-                <Edit><i class="far fa-edit"></i></Edit>
                 <Delete> <i class="far fa-trash-alt"></i></Delete>
               </ActionWrapper>
             </Cell>
@@ -52,6 +51,7 @@ import {
   AddNew,
   Container,
 } from "./Students.styles";
+import { getAllUsers, getUserById } from "@/api/ApiMethods";
 export default {
   components: {
     Table,
@@ -71,6 +71,11 @@ export default {
     return {
       users: users,
     };
+  },
+  // api calls examples
+  async beforeCreate() {
+    const users = await getAllUsers();
+    const user = await getUserById(3);
   },
 };
 </script>

@@ -7,12 +7,23 @@ const colorProps = {
 export const SingleChart = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  align-items: flex-start;
   position: relative;
-  .chart-title {
-    font-size: 20px !important;
+  margin: 10px;
+  span:first-child {
+    font-size: 20px;
     font-weight: bold;
   }
+`;
+
+export const ChartWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 20px 20px;
+  box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16);
+  border-radius: 10px;
+  margin-top: 10px;
+  position: relative;
 `;
 
 export const Color = styled("div", colorProps)`
@@ -22,15 +33,13 @@ export const Color = styled("div", colorProps)`
   background-color: ${(props) => props.color};
 `;
 
-export const Legend = styled.legend`
-  display: flex;
-  flex-direction: column;
-  div {
-    display: flex;
-    align-items: center;
-    span {
-      margin-left: 10px;
-    }
+export const Legend = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  span {
+    font-size: 35px !important;
   }
 `;
 

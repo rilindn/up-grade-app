@@ -1,5 +1,6 @@
 import styled from "vue3-styled-components";
 
+
 export const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -13,6 +14,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: end;
 `;
+
 
 export const ActionWrapper = styled.div`
   display: flex;
@@ -45,7 +47,7 @@ export const Delete = styled.div`
 
 export const AddNew = styled.div`
   display: flex;
-  background-color: var(--va-primaryMain);
+  background-color: var(--va-primary);
   color: var(--va-white);
   width: 140px;
   height: 45px;

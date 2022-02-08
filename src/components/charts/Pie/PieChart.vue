@@ -11,16 +11,18 @@
       >
         <template #layers>
           <Pie
-            :dataKeys="['Gender', 'Nr']"
+            :dataKeys="dataKeys"
             :pie-style="{
-              colors: ['var(--va-primaryMain)', 'var(--va-pink100)'],
-              innerRadius: 100,
-              padAngle: 0.05,
+              colors: colors,
+              innerRadius: innerRadius,
+              padAngle: padAngle,
+              cornerRadius: cornerRadius,
             }"
           />
         </template>
         <template #widgets>
           <Tooltip
+            v-if="showTooltip"
             color="var(--va-primaryMain)"
             :config="{
               name: {},
@@ -46,6 +48,25 @@ export default {
   props: {
     usersData: {
       type: Array,
+    },
+    dataKeys: {
+      type: Array,
+    },
+    colors: {
+      type: Array,
+    },
+    padAngle: {
+      type: Number,
+    },
+    cornerRadius: {
+      type: Number,
+    },
+    innerRadius: {
+      type: Number,
+    },
+    showTooltip: {
+      type: Boolean,
+      default: true,
     },
   },
   setup() {
