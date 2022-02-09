@@ -82,6 +82,12 @@ const routes = [
         name: "Not Found",
         component: () => import("@/views/NotFound"),
       },
+      {
+        path: "teacher-schedule",
+        name: "Schedule",
+        meta: { requiredRole: ["Staff"] },
+        component: () => import("@/views/TeacherSchedule"),
+      },
     ],
   },
   {

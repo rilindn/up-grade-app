@@ -23,7 +23,19 @@ const studentItems = [
     icon: "fas fa-book-open",
     path: "/grades-board",
   },
+];
 
+const teacherItems = [
+  {
+    name: "sidebar.schedule",
+    icon: "fas fa-calendar-day",
+    path: "/teacher-schedule",
+  },
+  {
+    name: "My Classes",
+    icon: "fas fa-users-class",
+    path: "/teacher-classes",
+  },
 ];
 
 const adminItems = [
@@ -31,6 +43,11 @@ const adminItems = [
     name: "sidebar.dashboard",
     icon: "fad fa-user-chart",
     path: "/admin",
+  },
+  {
+    name: "Teachers",
+    icon: "fas fa-chalkboard-teacher",
+    path: "/teachers",
   },
   {
     name: "Students",
@@ -49,12 +66,6 @@ const adminItems = [
   },
 ];
 
-const teacherItems = [
-  {
-    name: "My Classes",
-    icon: "fas fa-users-class",
-    path: "/teacher-classes",
-  },
-];
+
 
 export { basicItems, studentItems, adminItems, teacherItems };
