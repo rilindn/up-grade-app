@@ -90,7 +90,8 @@
     "gradesBoard": "Grades",
     "classes": "Classes",
     "dashboard": "Dashboard",
-    "subjectsBoard":"Subjects"
+    "subjectsBoard":"Subjects",
+    "myClasses":"My Classes"
   },
   "login": {
     "student": {

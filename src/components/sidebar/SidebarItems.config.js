@@ -32,7 +32,7 @@ const teacherItems = [
     path: "/teacher-schedule",
   },
   {
-    name: "My Classes",
+    name: "sidebar.myClasses",
     icon: "fas fa-users-class",
     path: "/teacher-classes",
   },
