@@ -133,5 +133,8 @@
   "personalEmail":"Email Personal",
   "phoneNumber":"Numri Kontaktues",
   "studentEmail":"Email Studentit"
+  },
+  "myClasses": {
+    "title": "Klasat"
   }
 }

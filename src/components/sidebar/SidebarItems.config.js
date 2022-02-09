@@ -9,6 +9,7 @@ const basicItems = [
     icon: "fa fa-book",
     path: "/about",
   },
+ 
 ];
 
 const studentItems = [
@@ -48,4 +49,12 @@ const adminItems = [
   },
 ];
 
-export { basicItems, studentItems, adminItems };
+const teacherItems = [
+  {
+    name: "My Classes",
+    icon: "fas fa-users-class",
+    path: "/teacher-classes",
+  },
+];
+
+export { basicItems, studentItems, adminItems, teacherItems };

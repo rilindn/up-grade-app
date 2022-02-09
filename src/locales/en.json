@@ -136,5 +136,8 @@
     "phoneNumber":"Phone Number",
     "studentEmail":"Student Email"
     
+  },
+  "myClasses": {
+    "title": "myClasses"
   }
 }
