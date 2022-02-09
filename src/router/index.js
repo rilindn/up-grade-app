@@ -51,8 +51,8 @@ const routes = [
       },
       {
         path:"/teachers",
-        name:"Teachers",
-        meta:{requiredRole:["Staff"]},
+        name: "Teachers",
+        meta: { requiredRole:["Admin"] },
         component:() => import("@/views/Teachers"),
       },
       {
