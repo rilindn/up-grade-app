@@ -13,53 +13,68 @@
    </RightBox>
    <LeftBox>
       <h3>List Of   Teachers</h3>
-     <div>
-     <img src="@/assets/profile.jpeg" alt=""  width="300"/>
-     <div>
-     <span>Alia Mendalys</span>
-     <p>English Teacher</p>
-     </div>
-     <button>View Profile</button>
-    </div>
-     <div>
-     <img src="@/assets/profile.jpeg" alt=""  width="300"/>
-     <div>
-     <span>Alia Mendalys</span>
-     <p>English Teacher</p>
-     </div>
-     <button style="backgroundColor:#D9F2CE;color:#78D34E">View Profile</button>
-    </div>
-     <div>
-     <img src="@/assets/profile.jpeg" alt=""  width="300"/>
-     <div>
-     <span>Alia Mendalys</span>
-     <p>English Teacher</p>
-     </div>
-     <button style="backgroundColor:#C3EDFF;color:#00A1E9">View Profile</button>
-    </div>
-     <div>
-     <img src="@/assets/profilee.jpeg" alt=""  width="300"/>
-     <div>
-     <span>Alia Mendalys</span>
-     <p>English Teacher</p>
-     </div>
-     <button style="backgroundColor:#FFDFF6;color:#9B0A72">View Profile</button>
-    </div>
-     <div>
-     <img src="@/assets/profile.jpeg" alt=""  width="300"/>
-     <div>
-     <span>Alia Mendalys</span>
-     <p>English Teacher</p>
-     </div>
-     <button>View Profile</button>
-    </div>
+       <TeacherContainer>
+        <Teacher
+          bgColor="var(--va-orange50)"
+          textColor="var(--va-orange400)"
+          name="Alicia Smith"
+          subjectTeacher="English Teacher"
+          image="profilee.jpeg"
+        />
+       </TeacherContainer>
+        <TeacherContainer>
+        <Teacher
+          bgColor="var(--va-green40)"
+          textColor="var(--va-green200)"
+          name="Alicia Smith"
+          subjectTeacher="Math Teacher"
+          image="profile.jpeg"
+        />
+       </TeacherContainer>
+       <TeacherContainer>
+        <Teacher
+          bgColor="var(--va-blue50)"
+          textColor="var(--va-blue100)"
+          name="Alicia Smith"
+          subjectTeacher="Education Teacher"
+          image="profilee.jpeg"
+        />
+       </TeacherContainer>
+       <TeacherContainer>
+        <Teacher
+          bgColor="var(--va-pink50)"
+          textColor="var(--va-pink300)"
+          name="Alicia Smith"
+          subjectTeacher="Spanish Teacher"
+          image="profile.jpeg"
+        />
+       </TeacherContainer>
+       <TeacherContainer>
+        <Teacher
+          bgColor="var(--va-yellow50)"
+          textColor="var(--va-yellow200)"
+          name="Alicia Smith"
+          subjectTeacher="Math Teacher"
+          image="profile.jpeg"
+        />
+       </TeacherContainer> 
+       <TeacherContainer>
+        <Teacher
+          bgColor="var(--va-orange50)"
+          textColor="var(--va-orange400)"
+          name="Alicia Smith"
+          subjectTeacher="English Teacher"
+          image="profilee.jpeg"
+        />
+       </TeacherContainer> 
    </LeftBox>
  </MiddleBox>
        
   </Wrapper>
 </template>
 <script>
-import { Wrapper,TopBox,LeftBox,MiddleBox,RightBox,Teachers} from "./StudentHome.styles";
+import { Wrapper,TopBox,LeftBox,MiddleBox,RightBox,TeacherContainer} from "./StudentHome.styles";
+import Teacher from "../../components/teacher";
 export default {
   components: {
     Wrapper,
@@ -67,7 +82,8 @@ export default {
     MiddleBox,
     LeftBox,
     RightBox,
-    Teachers
+    TeacherContainer,
+    Teacher
   },
 };
 </script>
