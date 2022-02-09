@@ -1,17 +1,22 @@
 const basicItems = [
-  {
-    name: "sidebar.home",
-    icon: "fa fa-home",
-    path: "/",
-  },
-  {
-    name: "sidebar.about",
-    icon: "fa fa-book",
-    path: "/about",
-  },
+  // {
+  //   name: "sidebar.home",
+  //   icon: "fa fa-home",
+  //   path: "/",
+  // },
+  // {
+  //   name: "sidebar.about",
+  //   icon: "fa fa-book",
+  //   path: "/about",
+  // },
 ];
 
 const studentItems = [
+  {
+    name: "Home",
+    icon: "fas fa-book-open",
+    path: "/studenthome",
+  },
   {
     name: "sidebar.schedule",
     icon: "fas fa-calendar-day",
@@ -22,6 +27,7 @@ const studentItems = [
     icon: "fas fa-book-open",
     path: "/grades-board",
   },
+ 
 
 ];
 

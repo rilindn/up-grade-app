@@ -46,7 +46,13 @@ const palette = {
   // brown
   brown100: "#DCA796",
   // orange
+  orange50: "#FDDFC8",
   orange100: "#FFA562",
+  orange200: "#FF8427",
+  orange300: "#E36200",
+
+
+
 
   //red
   red100: "#FFE1E0",
