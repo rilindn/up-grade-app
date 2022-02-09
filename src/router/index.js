@@ -50,6 +50,12 @@ const routes = [
         component: () => import("@/views/SubjectsBoard"),
       },
       {
+        path:"/teachers",
+        name:"Teachers",
+        meta:{requiredRole:["Staff"]},
+        component:() => import("@/views/Teachers"),
+      },
+      {
         path: "/teacher-classes",
         name: "My Classes",
         meta: { requiredRole: ["Staff"] },
