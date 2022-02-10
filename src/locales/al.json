@@ -88,7 +88,8 @@
     "classes": "Klasat",
     "gradesBoard": "Notat",
     "dashboard": "Ballina",
-    "subjectsBoard":"Lendet"
+    "subjectsBoard":"Lendet",
+    "myClasses":"Klasat"
   },
   "login": {
     "student": {
@@ -133,5 +134,8 @@
   "personalEmail":"Email Personal",
   "phoneNumber":"Numri Kontaktues",
   "studentEmail":"Email Studentit"
+  },
+  "myClasses": {
+    "title": "Klasat"
   }
 }

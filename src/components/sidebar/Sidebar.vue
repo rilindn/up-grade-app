@@ -32,7 +32,7 @@ import {
   List,
   ListItem,
 } from "./Sidebar.styles";
-import { studentItems, adminItems, teacherItems } from "./SidebarItems.config";
+import { basicItems, studentItems, adminItems, teacherItems } from "./SidebarItems.config";
 export default {
   name: "Sidebar",
   components: {
@@ -49,8 +49,9 @@ export default {
     };
   },
   created() {
-    if (this.userRole === "Student") this.sidebarItems = studentItems;
-    else if (this.userRole === "Staff") this.sidebarItems = teacherItems;
+    if (this.userRole === "Student")
+      this.sidebarItems = [...basicItems, ...studentItems];
+    else if (this.userRole === "Staff") this.sidebarItems = [...basicItems, ...teacherItems];
     else if (this.userRole === "Admin") this.sidebarItems = adminItems;
   },
 };
