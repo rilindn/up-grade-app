@@ -50,10 +50,10 @@ const routes = [
         component: () => import("@/views/SubjectsBoard"),
       },
       {
-        path:"/teachers",
+        path: "/teachers",
         name: "Teachers",
-        meta: { requiredRole:["Admin"] },
-        component:() => import("@/views/Teachers"),
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/Teachers"),
       },
       {
         path: "/teacher-classes",
@@ -94,6 +94,12 @@ const routes = [
         name: "Schedule",
         meta: { requiredRole: ["Staff"] },
         component: () => import("@/views/TeacherSchedule"),
+      },
+      {
+        path: "/class-students",
+        name: "ClassStudents",
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/ClassStudents"),
       },
     ],
   },
