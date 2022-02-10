@@ -15,6 +15,7 @@ export const ButtonStyled = styled("button", btnProps)`
   color: var(--va-white);
   font-size: 12px;
   font-weight: bold;
+  cursor: pointer;
   // padding: 12px 45px;
   letter-spacing: 1px;
   transition: transform 80ms ease-in;

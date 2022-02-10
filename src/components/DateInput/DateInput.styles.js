@@ -8,6 +8,7 @@ export const Wrapper = styled("div", inputProps)`
   position: relative;
   width: 100%;
   text-align: left;
+  height: 70px;
   .va-input-wrapper__input {
     margin: 15px 0 0 0;
   }

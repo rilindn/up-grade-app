@@ -81,6 +81,7 @@ const routes = [
       {
         path: "/student-profile",
         name: "My Profile",
+        meta: { requiredRole: ["Student", "Admin"] },
         component: () => import("@/views/StudentProfile"),
       },
       {
