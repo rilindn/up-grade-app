@@ -1,67 +1,97 @@
 <template>
   <Wrapper>
     <FormWrapper>
+      <Form
+        @submit="register"
+        :validation-schema="registerSchema"
+        v-slot="{ errors }">
       <h3>Register New User</h3>
-      <InputField name="" placeholder="Firstname" />
-      <InputField name="" placeholder="Lastname" />
-      <InputField name="" type="email" placeholder="Email" />
+      <InputField 
+       :error="errors" 
+       name="firstname" 
+       placeholder="Firstname"
+        />
+      <InputField 
+      :error="errors" 
+      name="lastname" 
+      placeholder="Lastname"
+       />
+      <InputField 
+      :error="errors" 
+      name="email" 
+      type="email" 
+      placeholder="Email" 
+      />
       <SelectInput
         :error="errors"
         name="role"
         placeholder="Choose a role"
         :options="['Student', 'Staff']"
       />
-      <DateInput :error="errors" name="dateOfBirth" />
-      <Button
-        :title="'Register'"
-        type="submit"
-        width="40%"
-        borderRadius="20px"
-        backgroundColor="#10ac74"
+      <DateInput 
+      :error="errors" 
+      name="dateOfBirth" 
       />
+      <SaveButton
+        title="Register"
+        type="submit"
+      />
+      </Form>
     </FormWrapper>
   </Wrapper>
 </template>
 <script>
 import InputField from "@/components/InputField";
-import { Wrapper, FormWrapper } from "./Register.styles";
-import Button from "@/components/button";
+import { Wrapper, FormWrapper, SaveButton } from "./Register.styles";
 import DateInput from "@/components/DateInput";
-
 import SelectInput from "@/components/SelectInput";
+import { Form } from "vee-validate";
+import * as yup from "yup";
+
 export default {
   components: {
     InputField,
     Wrapper,
     FormWrapper,
-    Button,
     DateInput,
     SelectInput,
+    Form,
+    SaveButton
   },
   data() {
     return {
-      role: "",
+      registerSchema: yup.object({
+        firstname: yup
+          .string()
+          .label("Firstname")
+          .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
+          .required(),
+        lastname: yup
+          .string()
+          .label("Lastname")
+          .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
+          .required(),
+        email: yup.string().required().email().label("Email"),
+        dateOfBirth: yup.date().required().label("Date of birth"),
+        role: yup.string().required("Please choose a role"),
+      }),
+      loading: false,
+
     };
+  },
+  methods: {
+    register(data) {
+      this.loading = true;
+      return new Promise((resolve, _reject) => {
+        setTimeout(() => {
+          resolve(() => {
+            this.loading = false;
+          });
+        }, 2000);
+      })
+    },
   },
 };
 </script>
 <style>
-.role-select {
-  width: 100%;
-  border-radius: 5px;
-}
-.va-input__content-wrapper {
-  height: 50px;
-  border-radius: 5px;
-}
-.va-input__content-wrapper {
-  padding: 13px 10px;
-}
-.va-input__container {
-  background-color: #f2f5f7 !important;
-}
-.date-picker {
-  width: 100%;
-  margin-bottom: 20px;
-}
 </style>
