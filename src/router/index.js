@@ -86,6 +86,12 @@ const routes = [
         component: () => import("@/views/TeacherSchedule"),
       },
       {
+        path: "/class-students",
+        name: "ClassStudents",
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/ClassStudents"),
+      },
+      {
         path: "/access-denied",
         name: "Access Denied",
         component: () => import("@/views/AccessDenied"),

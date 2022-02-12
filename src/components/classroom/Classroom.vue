@@ -12,11 +12,15 @@
         </span>
       </DropDownText>
       <Menu v-if="displayDropDown" v-click-away="dropDown">
+         <router-link to="class-students" >
         <MenuItem>
+       
           <span>
             <p>Paralel I</p>
           </span>
+        
         </MenuItem>
+          </router-link>
         <Divider />
         <MenuItem>
           <span>
