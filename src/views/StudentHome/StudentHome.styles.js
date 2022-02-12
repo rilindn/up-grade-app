@@ -76,7 +76,19 @@ justify-content:center;
 `;
 
 export const RightBox = styled.div`
-  width: 55%;
+width: 50%;
+margin-right:40px;
+background-color: var(--va-grey100);
+height: auto;
+border-radius:10px;
+padding-bottom:25px;
+& h3 {
+color:var(--va-grey600);
+${fontFamily.poppinsMedium}; 
+padding-top:15px;
+padding-bottom:15px;
+padding-left:30px;
+}
 `;
 
 

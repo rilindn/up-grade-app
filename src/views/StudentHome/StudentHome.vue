@@ -9,7 +9,21 @@
    </TopBox>
    <MiddleBox>
           <RightBox>
-       <p>dd</p>
+             <h3>List Of Classmates</h3>
+     <StudentList
+          bgColor="var(--va-green600)"
+          name="Ana Smith"
+          studentEmail="as29120@std-uni.net"
+          image="profilee.jpeg"
+          activeStudent="Active Student"
+        />
+          <StudentList
+          bgColor="var(--va-errorMain)"
+          name="Ela Smith"
+          studentEmail="el2233220@std-uni.net"
+          image="profilee.jpeg"
+          activeStudent="Non Active Student"
+        />
    </RightBox>
    <LeftBox>
       <h3>List Of   Teachers</h3>
@@ -75,6 +89,7 @@
 <script>
 import { Wrapper,TopBox,LeftBox,MiddleBox,RightBox,TeacherContainer} from "./StudentHome.styles";
 import Teacher from "../../components/teacher";
+import StudentList from "../../components/studentList";
 export default {
   components: {
     Wrapper,
@@ -83,6 +98,7 @@ export default {
     LeftBox,
     RightBox,
     TeacherContainer,
+    StudentList,
     Teacher
   },
 };
