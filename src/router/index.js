@@ -50,10 +50,10 @@ const routes = [
         component: () => import("@/views/SubjectsBoard"),
       },
       {
-        path:"/teachers",
+        path: "/teachers",
         name: "Teachers",
-        meta: { requiredRole:["Admin"] },
-        component:() => import("@/views/Teachers"),
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/Teachers"),
       },
       {
         path: "/teacher-classes",
@@ -68,11 +68,6 @@ const routes = [
         component: () => import("@/views/Dashboard"),
       },
       {
-        path: "/access-denied",
-        name: "Access Denied",
-        component: () => import("@/views/AccessDenied"),
-      },
-      {
         path: "/register",
         name: "Register",
         meta: { requiredRole: ["Admin"] },
@@ -85,15 +80,20 @@ const routes = [
         component: () => import("@/views/StudentProfile"),
       },
       {
+        path: "teacher-schedule",
+        name: "Teacher Schedule",
+        meta: { requiredRole: ["Staff"] },
+        component: () => import("@/views/TeacherSchedule"),
+      },
+      {
+        path: "/access-denied",
+        name: "Access Denied",
+        component: () => import("@/views/AccessDenied"),
+      },
+      {
         path: ":catchAll(.*)",
         name: "Not Found",
         component: () => import("@/views/NotFound"),
-      },
-      {
-        path: "teacher-schedule",
-        name: "Schedule",
-        meta: { requiredRole: ["Staff"] },
-        component: () => import("@/views/TeacherSchedule"),
       },
     ],
   },
