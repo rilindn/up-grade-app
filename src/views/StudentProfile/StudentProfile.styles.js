@@ -173,3 +173,14 @@ color: var(--va-green500);
 
 `;
 
+export const InputFieldWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  & i {
+    margin-left:10px
+    :hover{
+      color: var(--va-green500);
+    }
+  } 
+`;
+
