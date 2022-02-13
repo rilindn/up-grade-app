@@ -8,6 +8,8 @@ export const Wrapper = styled("div", inputProps)`
   position: relative;
   width: 100%;
   text-align: left;
+  display:flex;
+  flex-direction:column;
   input {
     color: #333;
     font-size: 14px;
@@ -18,6 +20,8 @@ export const Wrapper = styled("div", inputProps)`
     border-width: 1px !important;
     border-color: ${(props) =>
       props.error ? "var(--va-errorDark)" : "transparent"} !important;
+    color: ${(props) =>
+        props.error ? "var(--va-errorDark)" : "transparent"} !important;
     padding: 15px 10px;
     outline: none;
     width: 100%;

@@ -22,6 +22,7 @@ export const RightWrapper = styled.div`
   width: 1100px;
   box-shadow: 3px 6px 5px 0px rgba(176, 176, 176, 0.75);
   background-color: var(--va-white);
+  padding-bottom:25px;
 `;
 
 export const PhotoWrapper = styled.div`
