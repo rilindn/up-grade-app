@@ -2,7 +2,7 @@
   <Wrapper>
      <EditWrapper>
        <button v-on:click="seen = !seen" style="border:none">
-        <p >Edit Profile</p>
+       <i class="far fa-edit"></i>
        </button>
       </EditWrapper>
     <MiddleBox>
@@ -15,7 +15,12 @@
         <div><div></div><p>Maria Ahshhs</p><span>(Active Student)</span></div>
       </NameWrapper>
        </TopWrapper>
+            <Form
+        @submit="editProfile"
+        :validation-schema="profileSchema"
+        v-slot="{ errors }">
        <Container>
+ 
            <FirstContainer>
              <div>
                <div><p>{{ $t("studentProfile.id") }}:</p><span>19038128</span></div>
@@ -25,51 +30,56 @@
             </div>
            </FirstContainer>
             <SecondContainer>
-             <div>
-               
-             
-             <div> <div><p>{{ $t("studentProfile.nationality") }}:</p><span>United States</span></div></div>
-              <div>   <div><p>{{ $t("studentProfile.citizenship") }}:</p><span>United States</span></div></div>
-               <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.place") }}:</p><span>New York,USA</span></div>
+             <div> 
+            <div><div><p>{{ $t("studentProfile.nationality") }}:</p><span>United States</span></div></div>
+            <div><div><p>{{ $t("studentProfile.citizenship") }}:</p><span>United States</span></div></div>
+            <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.place") }}:</p><span>New York,USA</span></div>
            <InputField
             v-if="seen"
-            name="zip code"
+            name="place"
             :error="errors"
-            placeholder="Password"
+            placeholder="Place"
+            type="place"
             />
             </div>
-               <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.zipcode") }}:</p><span>172520</span></div>
+            <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.zipcode") }}:</p><span>172520</span></div>
             <InputField
-           v-if="seen"
-            name="zip code"
+            v-if="seen"
+            name="zipCode"
             :error="errors"
-            placeholder="Password"
+            placeholder="Zip Code"
+            type="zipCode"
             />
             </div>
-             </div>
+            </div>
             </SecondContainer>
-                <ThirdContainer>
+            <ThirdContainer>
              <div>
-                 <div><div><p>{{ $t("studentProfile.birthday") }}:</p><span>1 July  2000 (age 21)</span></div></div>
-               <div> <div><p>{{ $t("studentProfile.gender") }}:</p><span>Female</span></div></div>
-              
-                <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.personalEmail") }}:</p><span>marias@gmail.com</span></div>
-                  <InputField
+            <div><div><p>{{ $t("studentProfile.birthday") }}:</p><span>1 July  2000 (age 21)</span></div></div>
+            <div> <div><p>{{ $t("studentProfile.gender") }}:</p><span>Female</span></div></div>
+            <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.personalEmail") }}:</p><span>marias@gmail.com</span></div>
+            <InputField
             v-if="seen"
-            name="zip code"
             :error="errors"
-            placeholder="Password"
-            /></div>
-                <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.phoneNumber") }}:</p><span>+323239939393</span></div>
-                  <InputField
+            placeholder="Personal Email"
+            name="personalEmail"
+            type="personalEmail"
+            />
+            </div>
+            <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.phoneNumber") }}:</p><span>+323239939393</span></div>
+            <InputField
             v-if="seen"
-            name="zip code"
+            name="phoneNumber"
             :error="errors"
-            placeholder="Password"
-            /></div>  
-             </div>
+            type="phoneNumber"
+            placeholder="Phone Number"
+            />
+            </div>  
+            </div>
             </ThirdContainer>
+            
       </Container>
+         </Form>
     </RightWrapper>
     </MiddleBox>
         
@@ -78,6 +88,8 @@
 <script>
 import { Wrapper,TopWrapper,MiddleBox,RightWrapper ,PhotoWrapper,FirstContainer,SecondContainer,Container,NameWrapper,EditWrapper,ThirdContainer} from "./StudentProfile.styles";
 import InputField from "@/components/InputField";
+import { Form } from "vee-validate";
+import * as yup from "yup";
 export default {
   components: {
     Wrapper,
@@ -91,13 +103,33 @@ export default {
     NameWrapper,
     EditWrapper,
     ThirdContainer,
+    Form,
     InputField,
   
   },
     data() {
     return {
       seen: false,
-    };
+       role: "",
+      profileSchema: yup.object({
+        place: yup
+          .string()
+          .label("Place")
+          .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
+          .required(),
+        phoneNumber: yup
+          .string()
+          .label("Phone Number")
+          .matches(/^[0-9]*$/, "Only numbers are allowed for this field ")
+          .required(),
+        zipCode: yup
+          .string()
+          .label("Zip Code")
+          .matches(/^[0-9]*$/, "Only numbers are allowed for this field ")
+          .required(),
+        personalEmail: yup.string().required().email().label("Email"),
+      }),
+    };  
   },
 
  

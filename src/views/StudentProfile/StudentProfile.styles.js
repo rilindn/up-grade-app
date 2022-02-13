@@ -18,7 +18,7 @@ export const MiddleBox = styled.div`
 `;
 
 export const RightWrapper = styled.div`
-  height: 480px;
+  height: auto;
   width: 1100px;
   box-shadow: 3px 6px 5px 0px rgba(176, 176, 176, 0.75);
   background-color: var(--va-white);
@@ -161,16 +161,13 @@ width:90px;
 position: absolute;
 right: 0;
 margin-top:90px;
-margin-right:70px;
 color: var(--va-green500);
-& button > p{
-  background-color: var(--va-background);
+& button {
+  background-color: var(--va-green6);
 }
-& button > 
-:hover{
-border-bottom:1px solid var(--va-green500);  
-}& button >p{
-  color: var(--va-green500);
+& button > i
+:hover{ 
+color: var(--va-green500);
 }
 
 `;
