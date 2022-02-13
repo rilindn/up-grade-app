@@ -20,7 +20,6 @@
         :validation-schema="profileSchema"
         v-slot="{ errors }">
        <Container>
- 
            <FirstContainer>
              <div>
                <div><p>{{ $t("studentProfile.id") }}:</p><span>19038128</span></div>
@@ -34,7 +33,7 @@
             <div><div><p>{{ $t("studentProfile.nationality") }}:</p><span>United States</span></div></div>
             <div><div><p>{{ $t("studentProfile.citizenship") }}:</p><span>United States</span></div></div>
             <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.place") }}:</p><span>New York,USA</span></div>
-            <InputFieldWrapper v-if="seen">
+           <div>
            <InputField
             v-if="seen"
             name="place"
@@ -42,11 +41,10 @@
             placeholder="Place"
             type="place"
             />
-             <i class="far fa-check-square"></i>
-            </InputFieldWrapper>
+           </div>
             </div>
             <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.zipcode") }}:</p><span>172520</span></div>
-            <InputFieldWrapper v-if="seen">
+            <div>
             <InputField
             v-if="seen"
             name="zipCode"
@@ -54,8 +52,7 @@
             placeholder="Zip Code"
             type="zipCode"
             />
-            <i class="far fa-check-square"></i>
-            </InputFieldWrapper>
+            </div>
             </div>
             </div>
             </SecondContainer>
@@ -64,7 +61,7 @@
             <div><div><p>{{ $t("studentProfile.birthday") }}:</p><span>1 July  2000 (age 21)</span></div></div>
             <div> <div><p>{{ $t("studentProfile.gender") }}:</p><span>Female</span></div></div>
             <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.personalEmail") }}:</p><span>marias@gmail.com</span></div>
-           <InputFieldWrapper v-if="seen">
+          <div>
             <InputField
             v-if="seen"
             :error="errors"
@@ -72,25 +69,33 @@
             name="personalEmail"
             type="personalEmail"
             />
-            <i class="far fa-check-square"></i>
-             </InputFieldWrapper>
+          </div>
             </div>
             <div style="display:flex;flex-direction:column"> <div><p>{{ $t("studentProfile.phoneNumber") }}:</p><span>+323239939393</span></div>
-            <InputFieldWrapper v-if="seen">
+           <div>
             <InputField
             v-if="seen"
             name="phoneNumber"
             :error="errors"
             type="phoneNumber"
-            placeholder="Phone Number"
             />
-           <i class="far fa-check-square"></i>
-             </InputFieldWrapper>
+           </div>
             </div>  
             </div>
             </ThirdContainer>
-            
       </Container>
+         <SubmitButton  v-if="seen">
+            <Button
+            color="var(--va-green500)"
+            :title="'Submit'"
+            backgroundColor="white"
+            width="100%"
+            borderColor="#00BFA6"
+            :loading="loading"
+            borderRadius="10px"
+            type="submit"
+          />    
+            </SubmitButton>
          </Form>
     </RightWrapper>
     </MiddleBox>
@@ -98,8 +103,9 @@
   </Wrapper>
 </template>
 <script>
-import { Wrapper,TopWrapper,MiddleBox,RightWrapper ,PhotoWrapper,FirstContainer,SecondContainer,Container,NameWrapper,EditWrapper,ThirdContainer,InputFieldWrapper} from "./StudentProfile.styles";
+import { Wrapper,TopWrapper,MiddleBox,RightWrapper ,PhotoWrapper,FirstContainer,SecondContainer,Container,NameWrapper,EditWrapper,ThirdContainer,SubmitButton} from "./StudentProfile.styles";
 import InputField from "@/components/InputField";
+import Button from "@/components/button";
 import { Form } from "vee-validate";
 import * as yup from "yup";
 export default {
@@ -116,8 +122,9 @@ export default {
     EditWrapper,
     ThirdContainer,
     Form,
-    InputFieldWrapper,
+    SubmitButton,
     InputField,
+    Button
   
   },
     data() {
@@ -144,7 +151,5 @@ export default {
       }),
     };  
   },
-
- 
 };
 </script>

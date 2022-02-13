@@ -2,7 +2,7 @@ import styled from "vue3-styled-components";
 import { fontSizes, fontFamily } from "../../theme/typography";
 
 export const Wrapper = styled.div`
-  height: 740px;
+  height: auto;
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -14,7 +14,7 @@ export const MiddleBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  margin-top:130px;
 `;
 
 export const RightWrapper = styled.div`
@@ -22,7 +22,7 @@ export const RightWrapper = styled.div`
   width: 1100px;
   box-shadow: 3px 6px 5px 0px rgba(176, 176, 176, 0.75);
   background-color: var(--va-white);
-  padding-bottom:25px;
+ margin-bottom:70px;
 `;
 
 export const PhotoWrapper = styled.div`
@@ -173,14 +173,11 @@ color: var(--va-green500);
 
 `;
 
-export const InputFieldWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  & i {
-    margin-left:10px
-    :hover{
-      color: var(--va-green500);
-    }
-  } 
+export const SubmitButton = styled.div`
+width:100px;
+height:100px;
+float:right;
+margin-top:30px;
+margin-right:20px;
 `;
 
