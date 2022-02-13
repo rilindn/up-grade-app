@@ -10,23 +10,23 @@
           <Column>Number</Column>
           <Column>Name</Column>
           <Column>Lastname</Column>
-          <Column>Date of Birth</Column>
           <Column>Email</Column>
           <Column>Actions</Column>
         </Head>
         <Body>
           <Row v-for="(user, i) in users" :key="user.id" :index="++i">
-            <Cell>{{ user.number }}</Cell>
-            <Cell>{{ user.name }}</Cell>
-            <Cell>{{ user.lastname }}</Cell>
-            <Cell>{{ user.dateOfBirth }}</Cell>
+            <Cell>{{ user.studentId }}</Cell>
+            <Cell>{{ user.firstName }}</Cell>
+            <Cell>{{ user.lastName }}</Cell>
             <Cell>{{ user.email }}</Cell>
             <Cell>
               <ActionWrapper>
                 <Edit @click="editModal(user)"
                   ><i class="far fa-edit"></i
                 ></Edit>
-                <Delete> <i class="far fa-trash-alt"></i></Delete>
+                <Delete @click="deleteStudent(user._id)">
+                  <i class="far fa-trash-alt"></i
+                ></Delete>
               </ActionWrapper>
             </Cell>
           </Row>
@@ -43,7 +43,6 @@
 
 <script>
 import { Table, Head, Body, Column, Row, Cell } from "@/components/table";
-import { users } from "@/components/table/sampleData";
 import {
   Wrapper,
   ActionWrapper,
@@ -53,7 +52,7 @@ import {
   Container,
 } from "./Students.styles";
 import EditStudent from "./EditStudent";
-import { getAllUsers, getUserById } from "@/api/ApiMethods";
+import { getAllStudents, deleteStudent } from "@/api/ApiMethods";
 export default {
   components: {
     Table,
@@ -72,7 +71,7 @@ export default {
   },
   data() {
     return {
-      users,
+      users: [],
       showModal: false,
       editUserData: [],
     };
@@ -85,11 +84,15 @@ export default {
     closeModal() {
       this.showModal = false;
     },
+    async deleteStudent(id) {
+      await deleteStudent(id);
+      const users = await getAllStudents();
+      this.users = users;
+    },
   },
-  // api calls examples
   async beforeCreate() {
-    const users = await getAllUsers();
-    const user = await getUserById(3);
+    const users = await getAllStudents();
+    this.users = users;
   },
 };
 </script>

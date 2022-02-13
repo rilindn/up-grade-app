@@ -31,12 +31,17 @@ export async function getLoggedUser() {
   }
 }
 
-export async function getAllUsers() {
-  const users = await Client.get("users");
+export async function getAllStudents() {
+  const users = await Client.get("student");
   return users.data;
 }
 
-export async function getUserById(id) {
-  const user = await Client.get(`users/${id}`);
+export async function getStudentById(id) {
+  const user = await Client.get(`student/${id}`);
+  return user.data;
+}
+
+export async function deleteStudent(id) {
+  const user = await Client.delete(`student/${id}`);
   return user.data;
 }
