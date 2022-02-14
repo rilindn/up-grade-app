@@ -9,6 +9,7 @@ const basicItems = [
     icon: "fa fa-book",
     path: "/about",
   },
+ 
 ];
 
 const studentItems = [
@@ -69,5 +70,4 @@ const adminItems = [
     path: "/subjects-board",
   },
 ];
-
 export { basicItems, studentItems, adminItems, teacherItems };
