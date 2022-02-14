@@ -1,5 +1,6 @@
 import styled from "vue3-styled-components";
 import { fontSizes, fontFamily } from "../../theme/typography";
+import Button from "@/components/button";
 
 export const Wrapper = styled.div`
   height: auto;
@@ -14,44 +15,49 @@ export const MiddleBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top:130px;
+  margin-top: 130px;
 `;
 
 export const RightWrapper = styled.div`
   height: auto;
-  width: 1100px;
-  box-shadow: 3px 6px 5px 0px rgba(176, 176, 176, 0.75);
+  width: 95%;
+  box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16);
   background-color: var(--va-white);
- margin-bottom:70px;
+  margin-bottom: 70px;
+  border-radius: 5px;
 `;
 
 export const PhotoWrapper = styled.div`
-  margin-top: -80px;
+  margin-top: -115px;
   margin-left: 40px;
+  img {
+    border-radius: 50%;
+    box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16);
+    width: 170px;
+  }
 `;
 
 export const NameWrapper = styled.div`
-  margin-top: -40px;
+  margin-top: -100px;
   margin-left: 30px;
-  & div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  & div > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  div {
     width: 10px;
     height: 10px;
     background-color: var(--va-green600);
     border-radius: 30px;
   }
-  & div > p {
+  p {
     font-size: ${fontSizes.large};
     color: var(--va-grey500);
-    padding-left:8px;
+    padding-left: 8px;
+    font-weight: 600;
   }
   padding-left: 10px;
   ${fontFamily.poppinsMedium}
-  & div>span {
+  span {
     font-size: ${fontSizes.small};
     color: var(--va-grey400);
     padding-left: 5px;
@@ -63,91 +69,32 @@ export const TopWrapper = styled.div`
   flex-direction: row;
 `;
 
-
-export const FirstContainer = styled.div`
-  width: 380px;
-  height: 400px;
+export const DataField = styled.div`
+  margin: 0;
   display: flex;
-  flex-direction: column;
-  padding-left: 40px;
-  & > div > div {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    padding-top: 50px;
-  }
-  & > div > div > p {
+  align-items: center;
+  height: 75px;
+  p {
     color: var(--va-grey600);
     padding-left: 7px;
     margin: 0;
     font-size: ${fontSizes.default};
     ${fontFamily.poppinsMedium}
   }
-  & > div > div > span {
+  span {
     color: var(--va-grey400);
+    font-size: 14px;
     ${fontFamily.poppinsRegular};
     padding-left: 7px;
   }
 `;
 
-export const SecondContainer = styled.div`
-  width: 320px;
-  height: 330px;
+export const ContainerColumn = styled.div`
+  width: 31%;
+  height: 100%;
   display: flex;
-  padding-left: 40px;
   flex-direction: column;
-  & > div > div {
-    padding-top: 50px;
-
-  }
-  & > div > div >div{
-    margin: 0;
-    display: flex;
-    align-items: center;
-    // padding-top: 35px;
-  }
-  & > div > div > div>p {
-    color: var(--va-grey500);
-    padding-left: 7px;
-    margin: 0;
-    font-size: ${fontSizes.default};
-    ${fontFamily.poppinsMedium}
-  }
-  & > div > div > div>span {
-    color: var(--va-grey400);
-    padding-left: 7px;
-    ${fontFamily.poppinsRegular}
-  }
-`;
-
-export const ThirdContainer = styled.div`
-  width: 350px;
-  height: 330px;
-  display: flex;
   padding-left: 40px;
-  flex-direction: column;
-  & > div > div {
-    padding-top: 50px;
-
-  }
-  & > div > div >div{
-    margin: 0;
-    display: flex;
-    align-items: center;
-    // padding-top: 35px;
-  }
-  & > div > div > div>p {
-    color: var(--va-grey500);
-    padding-left: 7px;
-    margin: 0;
-    font-size: ${fontSizes.default};
-    ${fontFamily.poppinsMedium}
-  }
-  & > div > div > div>span {
-    color: var(--va-grey400);
-    padding-left: 7px;
-    ${fontFamily.poppinsRegular}
-  }
 `;
 
 export const Container = styled.div`
@@ -157,27 +104,29 @@ export const Container = styled.div`
   flex-direction: row;
 `;
 export const EditWrapper = styled.div`
-height:40px;
-width:90px;
-position: absolute;
-right: 0;
-margin-top:90px;
-color: var(--va-green500);
-& button {
-  background-color: var(--va-green6);
-}
-& button > i
-:hover{ 
-color: var(--va-green500);
-}
-
+  width: 60px;
+  position: absolute;
+  right: 0;
+  margin-top: 90px;
+  color: var(--va-green500);
+  i {
+    color: var(--va-green600);
+    cursor: pointer;
+    font-size: 25px;
+  }
+  i:hover {
+    color: var(--va-green500);
+  }
 `;
 
-export const SubmitButton = styled.div`
-width:100px;
-height:100px;
-float:right;
-margin-top:30px;
-margin-right:20px;
+export const SubmitButton = styled(Button)`
+  width: 150px;
+  height: 50px;
+  float: right;
+  margin: 20px 70px;
+  font-size: 15px;
+  color: var(--va-white);
+  background-color: var(--va-primaryMain);
+  border-color: #00bfa6;
+  border-radius: 10px;
 `;
-
