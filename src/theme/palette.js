@@ -4,6 +4,7 @@ const palette = {
   // primary
   primaryLight: "#05c59a",
   primaryMain: "#008466",
+  primary: "#008466", // override vuestic primary color
   primaryDark: "#2A9D8F",
   // info
   infoEdit: "#ffa404",
@@ -32,7 +33,7 @@ const palette = {
   green500: "#2A9D8F",
   green300: "#00C4B4",
   green200: "#00BFA6",
-  green100: "#DFFDEF",
+  green100: "#D5FAE8",
   green50: "#BCECA6",
   // background
   background: "#F3F8FC",
@@ -47,5 +48,8 @@ const palette = {
   brown100: "#DCA796",
   // orange
   orange100: "#FFA562",
+
+  //red
+  red100: "#FFE1E0",
 };
 export default palette;

@@ -47,7 +47,10 @@ export const MenuItem = styled("span")`
   padding: 7px;
   font-weight: 600;
   border-radius: ${radius.default};
-  > i {
+  a {
+    color: var(--va-black);
+  }
+  i {
     margin-right: 7px;
   }
   :hover {

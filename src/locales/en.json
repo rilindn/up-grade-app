@@ -77,6 +77,10 @@
     "manner": "Manner",
     "periods": "Periods"
   },
+  "subjectsBoard": {
+    "title": "Subjects",
+    "subjects": "subjects"
+  },
   "sidebar": {
     "login": "Login",
     "about": "About",
@@ -84,7 +88,9 @@
     "home": "Home",
     "gradesBoard": "Grades",
     "classes": "Classes",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "subjectsBoard": "Subjects",
+    "myClasses": "My Classes"
   },
   "login": {
     "student": {
@@ -118,6 +124,8 @@
     "settings": "Settings",
     "logout": "Logout"
   },
+  "save": "Save",
+  "cancel": "Cancel",
   "studentProfile": {
     "id": "Student ID",
     "birthday":"Birthday",
@@ -131,6 +139,8 @@
     "studentEmail":"Student Email",
     "generate":"Enrolled Year",
     "parentName":"Father's Name"
-    
+  },
+  "myClasses": {
+    "title": "myClasses"
   }
 }

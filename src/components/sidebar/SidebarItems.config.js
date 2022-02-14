@@ -9,6 +9,7 @@ const basicItems = [
     icon: "fa fa-book",
     path: "/about",
   },
+ 
 ];
 
 const studentItems = [
@@ -24,11 +25,29 @@ const studentItems = [
   },
 ];
 
+const teacherItems = [
+  {
+    name: "sidebar.schedule",
+    icon: "fas fa-calendar-day",
+    path: "/teacher-schedule",
+  },
+  {
+    name: "sidebar.myClasses",
+    icon: "fas fa-users-class",
+    path: "/teacher-classes",
+  },
+];
+
 const adminItems = [
   {
     name: "sidebar.dashboard",
     icon: "fad fa-user-chart",
     path: "/admin",
+  },
+  {
+    name: "Teachers",
+    icon: "fas fa-chalkboard-teacher",
+    path: "/teachers",
   },
   {
     name: "Students",
@@ -40,6 +59,13 @@ const adminItems = [
     icon: "fas fa-users-class",
     path: "/classes",
   },
+  {
+    name: "sidebar.subjectsBoard",
+    icon: "fas fa-book-open",
+    path: "/subjects-board",
+  },
 ];
 
-export { basicItems, studentItems, adminItems };
+
+
+export { basicItems, studentItems, adminItems, teacherItems };

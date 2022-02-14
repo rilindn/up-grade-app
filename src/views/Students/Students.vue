@@ -23,7 +23,9 @@
             <Cell>{{ user.email }}</Cell>
             <Cell>
               <ActionWrapper>
-                <Edit><i class="far fa-edit"></i></Edit>
+                <Edit @click="editModal(user)"
+                  ><i class="far fa-edit"></i
+                ></Edit>
                 <Delete> <i class="far fa-trash-alt"></i></Delete>
               </ActionWrapper>
             </Cell>
@@ -31,19 +33,17 @@
         </Body>
       </Table>
     </Wrapper>
+    <va-modal v-model="showModal" hide-default-actions>
+      <slot>
+        <EditStudent :data="editUserData" @closeModal="closeModal" />
+      </slot>
+    </va-modal>
   </Container>
 </template>
 
 <script>
-import {
-  Table,
-  Head,
-  Body,
-  Column,
-  Row,
-  Cell,
-} from "../../components/table/Table.styles";
-import { users } from "../../components/table/sampleData";
+import { Table, Head, Body, Column, Row, Cell } from "@/components/table";
+import { users } from "@/components/table/sampleData";
 import {
   Wrapper,
   ActionWrapper,
@@ -52,6 +52,8 @@ import {
   AddNew,
   Container,
 } from "./Students.styles";
+import EditStudent from "./EditStudent";
+import { getAllUsers, getUserById } from "@/api/ApiMethods";
 export default {
   components: {
     Table,
@@ -66,11 +68,28 @@ export default {
     Delete,
     AddNew,
     Container,
+    EditStudent,
   },
   data() {
     return {
-      users: users,
+      users,
+      showModal: false,
+      editUserData: [],
     };
+  },
+  methods: {
+    editModal(user) {
+      this.editUserData = user;
+      this.showModal = true;
+    },
+    closeModal() {
+      this.showModal = false;
+    },
+  },
+  // api calls examples
+  async beforeCreate() {
+    const users = await getAllUsers();
+    const user = await getUserById(3);
   },
 };
 </script>

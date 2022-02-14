@@ -1,8 +1,15 @@
 <template>
   <SingleChart>
-    <h5 class="display-5">Genders</h5>
+    <h5 class="chart-title">Genders</h5>
     <em>Current users by their gender.</em>
-    <PieChart :usersData="usersData" />
+    <PieChart
+      :usersData="usersData"
+      :dataKeys="['Gender', 'Nr']"
+      :colors="['var(--va-primaryMain)', 'var(--va-pink100)']"
+      :padAngle="0.05"
+      :innerRadius="100"
+      :cornerRadius="10"
+    />
     <Legend>
       <div>
         <Color color="var(--va-primaryMain)" />

@@ -1,14 +1,6 @@
 <template>
-  <div v-if="loading">
-    <!-- <v-progress-circular
-      v-if="loading"
-      indeterminate
-      color="primary"
-      class="spinner"
-      :style="{ width: width, height: height }"
-    >
-    </v-progress-circular> -->
-    loading...
+  <div>
+    <va-inner-loading :loading="loading" color="#d7d7d7" :size="size" />
   </div>
 </template>
 
@@ -16,13 +8,9 @@
 export default {
   components: {},
   props: {
-    width: {
+    size: {
       type: String,
       default: "20px",
-    },
-    height: {
-      type: String,
-      default: "18px",
     },
     loading: {
       type: Boolean,

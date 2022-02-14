@@ -73,6 +73,10 @@
     "manner": "Sjellja",
     "periods": "Periodat"
   },
+  "subjectsBoard": {
+    "title": "Lendet",
+    "subjects": "Lendet"
+  },
   "sidebar": {
     "login": "Kycuni",
     "about": "Rreth nesh",
@@ -81,7 +85,9 @@
     "schedule": "Orari",
     "classes": "Klasat",
     "gradesBoard": "Notat",
-    "dashboard": "Ballina"
+    "dashboard": "Ballina",
+    "subjectsBoard": "Lendet",
+    "myClasses": "Klasat"
   },
   "login": {
     "student": {
@@ -115,18 +121,23 @@
     "settings": "Cilesimet",
     "logout": "Ckyqu"
   },
-  "studentProfile":{
-  "id": "ID Studentit",
-  "birthday":"Ditelindja",
-  "nationality":"Kombesia",
-  "citizenship":"Nenshtetesia",
-  "gender":"Gjinia",
-  "place":"Vendlindja",
-  "zipcode":"Kodi Postal",
-  "personalEmail":"Email Personal",
-  "phoneNumber":"Numri Kontaktues",
-  "studentEmail":"Email Studentit",
-  "generate":"Viti Regjistrimit",
-  "parentName":"Emri Prindit"
-  }
+  "studentProfile": {
+    "id": "ID Studentit",
+    "birthday": "Ditelindja",
+    "nationality": "Kombesia",
+    "citizenship": "Nenshtetesia",
+    "gender": "Gjinia",
+    "place": "Vendlindja",
+    "zipcode": "Kodi Postal",
+    "personalEmail": "Email Personal",
+    "phoneNumber": "Numri Kontaktues",
+    "studentEmail": "Email Studentit",
+    "generate": "Viti Regjistrimit",
+    "parentName": "Emri Prindit"
+  },
+  "myClasses": {
+    "title": "Klasat"
+  },
+  "save": "Ruaj",
+  "cancel": "Anulo"
 }

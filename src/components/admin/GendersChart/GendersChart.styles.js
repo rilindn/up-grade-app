@@ -7,10 +7,12 @@ const colorProps = {
 export const SingleChart = styled.div`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   padding: 10px;
-  /* box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16); */
   position: relative;
+  .chart-title {
+    font-size: 20px !important;
+    font-weight: bold;
+  }
 `;
 
 export const Color = styled("div", colorProps)`
@@ -18,7 +20,6 @@ export const Color = styled("div", colorProps)`
   height: 13px;
   border-radius: 3px;
   background-color: ${(props) => props.color};
-  /* box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16); */
 `;
 
 export const Legend = styled.legend`

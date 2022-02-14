@@ -2,7 +2,7 @@
   <Wrapper>
     <TablesWrapper>
       <SingleTable>
-        <span>{{ $t("gradesBoard.grades") }}</span>
+        <span class="table-title">{{ $t("gradesBoard.grades") }}</span>
         <TableStyled>
           <HeadStyled>
             <ColumnStyled>
@@ -31,13 +31,14 @@
                   </FinalGrade>
                 </GradeWrapper>
               </CellStyled>
-              <CellStyled class="final-grade">
+              <CellStyled>
                 <OtherGrades>{{ grades.final }}</OtherGrades>
               </CellStyled>
             </RowStyled>
           </BodyStyled>
         </TableStyled>
       </SingleTable>
+      <PieChartGPA />
       <!-- <SingleTable>
         <span>{{ $t("gradesBoard.manner") }}</span>
         <TableStyled>
@@ -69,6 +70,7 @@
   </Wrapper>
 </template>
 <script>
+import PieChartGPA from "@/components/student/PieChartGPA";
 import {
   Wrapper,
   TablesWrapper,
@@ -98,6 +100,7 @@ export default {
     FinalGrade,
     OtherGrades,
     SingleTable,
+    PieChartGPA,
   },
   data() {
     return {

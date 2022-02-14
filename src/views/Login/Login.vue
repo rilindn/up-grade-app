@@ -166,10 +166,12 @@ export default {
           } else {
             this.loading = false;
             _reject(new Error("Oops!"));
+            this.$notify({ type: "error", duration: 1000, text: "Invalid login data!" });
           }
         }, 2000);
       }).then(() => {
         this.$store.commit("SET_LOGGED_USER", user);
+        this.$notify({ type: "success", duration: 1000, text: "Logged in sucessfully!" });
         if (user?.role === "Admin") this.$router.push("/admin");
         else this.$router.push("/");
       });
