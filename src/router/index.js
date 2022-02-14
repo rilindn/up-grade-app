@@ -20,6 +20,12 @@ const routes = [
         component: () => import("@/views/Welcome"),
       },
       {
+        path: "StudentHome",
+        name: "Home",
+        meta: { requiredRole: ["Student"] },
+        component: () => import("@/views/StudentHome"),
+      },
+      {
         path: "schedule",
         name: "Schedule",
         meta: { requiredRole: ["Student"] },

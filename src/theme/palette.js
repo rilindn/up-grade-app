@@ -35,19 +35,37 @@ const palette = {
   green200: "#00BFA6",
   green100: "#D5FAE8",
   green50: "#BCECA6",
+  green40:'#D9F8CB',
   // background
   background: "#F3F8FC",
   // pink
+  pink20: "#FFE9F9",
+  pink50: "#FDDBDD",
   pink100: "#fd868e",
   pink200: "#F89ADD",
+  pink300: "#E74FBB",
+  
   // blue
+  blue50: "#CFEDFA",
   blue100: "#24B4F4",
   // yellow
+  yellow50: "#FBEFC5",
   yellow100: "#FFE790",
+  yellow200: "#F9CF3D",
+
+  
   // brown
   brown100: "#DCA796",
   // orange
+  orange50: "#FDDFC8",
   orange100: "#FFA562",
+  orange200: "#FF8427",
+  orange300: "#E36200",
+  orange400: "#FF7812",
+
+
+
+
 
   //red
   red100: "#FFE1E0",
