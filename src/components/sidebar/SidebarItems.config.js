@@ -1,10 +1,5 @@
 const basicItems = [
   {
-    name: "sidebar.home",
-    icon: "fa fa-home",
-    path: "/",
-  },
-  {
     name: "sidebar.about",
     icon: "fa fa-book",
     path: "/about",
