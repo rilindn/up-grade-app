@@ -1,10 +1,6 @@
 <template>
   <Container>
     <Wrapper>
-      <AddNew>
-        <span><i class="fas fa-plus-circle"></i></span>
-        <span>Add New</span>
-      </AddNew>
       <Table>
         <Head>
           <Column>Number</Column>
@@ -23,9 +19,6 @@
             <Cell>{{ user.email }}</Cell>
             <Cell>
               <ActionWrapper>
-                <Edit @click="editModal(user)"
-                  ><i class="far fa-edit"></i
-                ></Edit>
                 <Delete> <i class="far fa-trash-alt"></i></Delete>
               </ActionWrapper>
             </Cell>
@@ -33,17 +26,20 @@
         </Body>
       </Table>
     </Wrapper>
-    <va-modal v-model="showModal" hide-default-actions>
-      <slot>
-        <EditStudent :data="editUserData" @closeModal="closeModal" />
-      </slot>
-    </va-modal>
+
   </Container>
 </template>
 
 <script>
-import { Table, Head, Body, Column, Row, Cell } from "@/components/table";
-import { users } from "@/components/table/sampleData";
+import {
+  Table,
+  Head,
+  Body,
+  Column,
+  Row,
+  Cell,
+} from "../../components/table/Table.styles";
+import { users } from "../../components/table/sampleData";
 import {
   Wrapper,
   ActionWrapper,
@@ -51,9 +47,7 @@ import {
   Delete,
   AddNew,
   Container,
-} from "./Students.styles";
-import EditStudent from "./EditStudent";
-import { getAllUsers, getUserById } from "@/api/ApiMethods";
+} from "./ClassStudents.styles";
 export default {
   components: {
     Table,
@@ -68,28 +62,11 @@ export default {
     Delete,
     AddNew,
     Container,
-    EditStudent,
   },
   data() {
     return {
-      users,
-      showModal: false,
-      editUserData: [],
+      users: users,
     };
-  },
-  methods: {
-    editModal(user) {
-      this.editUserData = user;
-      this.showModal = true;
-    },
-    closeModal() {
-      this.showModal = false;
-    },
-  },
-  // api calls examples
-  async beforeCreate() {
-    const users = await getAllUsers();
-    const user = await getUserById(3);
   },
 };
 </script>

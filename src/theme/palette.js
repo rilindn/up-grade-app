@@ -4,6 +4,7 @@ const palette = {
   // primary
   primaryLight: "#05c59a",
   primaryMain: "#008466",
+  primary: "#008466", // override vuestic primary color
   primaryDark: "#2A9D8F",
   // info
   infoEdit: "#ffa404",

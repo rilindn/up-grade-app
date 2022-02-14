@@ -8,25 +8,35 @@ export const Wrapper = styled("div", inputProps)`
   position: relative;
   width: 100%;
   text-align: left;
-  display:flex;
-  flex-direction:column;
+  height: 70px;
+  .va-input-wrapper__input {
+    margin: 15px 0 0 0;
+  }
+  .va-input-wrapper__content {
+    border-radius: 5px;
+    border: 1px solid
+      ${(props) => (props.error ? "var(--va-errorMain)" : "transparent")} !important;
+    :focus {
+      border: none;
+    }
+  }
+
+  .va-input--focused.va-input-wrapper__content {
+    border: none !important;
+  }
   input {
     color: #333;
     font-size: 14px;
     text-decoration: none;
-    margin: 15px 0;
     margin-bottom: 0;
-    border-radius: 5px;
-    border-width: 1px !important;
-    border-color: ${(props) =>
-      props.error ? "var(--va-errorMain)" : "transparent"} !important;
     padding: 15px 10px;
+    height: 50px;
     outline: none;
     width: 100%;
     transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out,
       background-color 0.3s ease-in-out;
     :focus {
-      border-color: "var(--va-primaryDark)" !important;
+      border-color: "var(--va-primaryMain)" !important;
     }
     ::placeholder {
       color: var(--va-grey300);

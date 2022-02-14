@@ -1,4 +1,5 @@
 import styled from "vue3-styled-components";
+import Button from "@/components/button";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -9,7 +10,7 @@ export const Wrapper = styled.div`
 `;
 
 export const FormWrapper = styled.div`
-  width: 400px;
+  width: 450px;
   background-color: var(--va-white);
   flex-direction: column;
   display: flex;
@@ -20,4 +21,12 @@ export const FormWrapper = styled.div`
   span {
     padding-bottom: 12px;
   }
+  form {
+    width: 80%;
+  }
+`;
+
+export const SaveButton = styled(Button)`
+  margin-top: 35px;
+  font-size: 16px;
 `;
