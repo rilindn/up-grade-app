@@ -6,13 +6,14 @@ const btnProps = {
   borderColor: String,
   width: String,
   height: String,
+  color: String,
 };
 
 export const ButtonStyled = styled("button", btnProps)`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   border: 1px solid;
-  color: var(--va-white);
+  color:  ${(props) => props.color};
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
