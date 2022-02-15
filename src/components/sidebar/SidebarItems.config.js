@@ -23,6 +23,11 @@ const studentItems = [
     icon: "fas fa-book-open",
     path: "/grades-board",
   },
+  {
+    name: "sidebar.attendance-remarks",
+    icon: "fas fa-pen",
+    path: "/attendance-remarks",
+  },
 ];
 
 const teacherItems = [

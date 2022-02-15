@@ -90,7 +90,8 @@
     "classes": "Classes",
     "dashboard": "Dashboard",
     "subjectsBoard": "Subjects",
-    "myClasses": "My Classes"
+    "myClasses": "My Classes",
+    "attendance-remarks": "Attendance-Remarks"
   },
   "login": {
     "student": {

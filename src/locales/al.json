@@ -87,7 +87,8 @@
     "gradesBoard": "Notat",
     "dashboard": "Ballina",
     "subjectsBoard": "Lendet",
-    "myClasses": "Klasat"
+    "myClasses": "Klasat",
+    "attendance-remarks": "Mungesa-Verejtje"
   },
   "login": {
     "student": {
