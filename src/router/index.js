@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import store from "@/store";
+import { getLoggedUser } from "../api/ApiMethods";
 
 const routes = [
   {
@@ -146,7 +147,19 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
+  if (to.name !== "Login" && localStorage.getItem("token") === null) {
+    next({ name: "Login" });
+  } else {
+    if (store.getters.isAuthenticated) handleRouteRedirect(to, from, next);
+    else {
+      await fetchLoggedUser();
+      handleRouteRedirect(to, from, next);
+    }
+  }
+});
+
+const handleRouteRedirect = (to, from, next) => {
   const requiredRole = to.meta.requiredRole;
   const requiresAuth = to.meta.requiresAuth;
   const isAuthenticated = store.getters.isAuthenticated;
@@ -157,6 +170,25 @@ router.beforeEach((to, from, next) => {
   else if (requiredRole && !requiredRole.includes(userRole))
     next({ path: "/access-denied" });
   else next();
-});
+};
+
+const fetchLoggedUser = async () => {
+  try {
+    const result = await getLoggedUser();
+    const user = result?.data?.user;
+    if (user) {
+      store.dispatch({
+        type: "SET_LOGGED_USER",
+        user,
+      });
+      return user;
+    } else {
+      return null;
+    }
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
+};
 
 export default router;

@@ -116,6 +116,7 @@ import Button from "@/components/button";
 import { configure } from "vee-validate";
 import { users } from "../../data/usersData";
 import * as yup from "yup";
+import { login } from "@/api/ApiMethods";
 
 configure({
   validateOnBlur: true,
@@ -127,7 +128,6 @@ export default {
       loading: false,
       loginSchema: yup.object({
         email: yup.string().required().email(),
-        // can define custom error message
         password: yup
           .string()
           .required("Password is a required field")
@@ -151,30 +151,37 @@ export default {
     setRightPanel(val) {
       this.rightPanelShow = val;
     },
-    login(values, role) {
+    async login(values, role) {
       this.loading = true;
-      const user = users.find((user) => user.email === values.email);
-      if (user?.role == "Admin") role = "Admin";
-      return new Promise((resolve, _reject) => {
-        setTimeout(() => {
-          const authResult =
-            user?.psw === values.password && user?.role === role;
-          if (user && authResult) {
-            resolve(() => {
-              this.loading = false;
-            });
-          } else {
-            this.loading = false;
-            _reject(new Error("Oops!"));
-            this.$notify({ type: "error", duration: 1000, text: "Invalid login data!" });
-          }
-        }, 2000);
-      }).then(() => {
-        this.$store.commit("SET_LOGGED_USER", user);
-        this.$notify({ type: "success", duration: 1000, text: "Logged in sucessfully!" });
-        if (user?.role === "Admin") this.$router.push("/admin");
-        else this.$router.push("/");
-      });
+      try {
+        const result = await login(values);
+        this.loading = false;
+        if (result?.status === 200) {
+          const user = result?.data?.user;
+          localStorage.setItem("token", result?.data?.token);
+          this.$store.dispatch({
+            type: "SET_LOGGED_USER",
+            user,
+          });
+          this.$notify({
+            type: "success",
+            duration: 2000,
+            text: "Logged in sucessfully!",
+          });
+          if (user?.role === "Admin") this.$router.push("/admin");
+          else this.$router.push("/");
+        } else {
+          this.loading = false;
+          this.$notify({
+            type: "error",
+            duration: 2000,
+            text: "Please try again!",
+          });
+        }
+      } catch (error) {
+        console.error(error);
+        return error;
+      }
     },
   },
 };
