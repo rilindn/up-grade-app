@@ -14,7 +14,7 @@
         </MenuItem>
         <Divider />
       </div>
-      <MenuItem @click="logout">
+      <MenuItem @click="handleLogout">
         <i class="fas fa-sign-out-alt"></i>
         <span>{{ $t("userMenu.logout") }}</span>
       </MenuItem>
@@ -34,6 +34,7 @@ import {
 } from "./UserMenu.styles";
 import menuItems from "./UserMenu.config";
 import { directive } from "vue3-click-away";
+import { logout } from "../../api/ApiMethods";
 
 export default {
   components: {
@@ -57,9 +58,13 @@ export default {
     triggerMenu() {
       this.displayMenu = !this.displayMenu;
     },
-    logout() {
-      localStorage.removeItem("vuex");
-      window.location.reload();
+    handleLogout() {
+      logout()
+        .then(() => {
+          localStorage.removeItem("token");
+          window.location.reload();
+        })
+        .catch((err) => console.log(err));
     },
   },
   directives: {
