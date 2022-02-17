@@ -142,5 +142,10 @@
   },
   "myClasses": {
     "title": "myClasses"
-  }
+  },
+  "assignRoles": {
+    "teacher": "Teacher",
+    "subject":"Subject"
+  },
+  "addNew":"Add New"
 }

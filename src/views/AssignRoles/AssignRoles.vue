@@ -2,12 +2,12 @@
   <Wrapper>
       <AddNew @click="addAssignRolesModal()">
         <span><i class="fas fa-plus-circle"></i></span>
-        <span>Add New</span>
+        <span>{{ $t("addNew") }}</span>
       </AddNew>
       <Table>
         <Head>
-          <Column>Subject</Column>
-          <Column>Teacher</Column>
+          <Column>{{ $t("assignRoles.subject") }}</Column>
+          <Column>{{ $t("assignRoles.teacher") }}</Column>
         </Head>
         <Body>
           <Row  v-for="(assignRole, i) in assignRoles" :key="i">
