@@ -64,5 +64,10 @@ const adminItems = [
     icon: "fas fa-book-open",
     path: "/subjects-board",
   },
+  {
+    name: "Assign Roles",
+    icon: "fas fa-book-open",
+    path: "/assign-roles",
+  },
 ];
 export { basicItems, studentItems, adminItems, teacherItems };
