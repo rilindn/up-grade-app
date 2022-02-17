@@ -9,13 +9,13 @@
     >
       <InputField
         :error="errors"
-        name="firstname"
+        name="firstName"
         type="name"
         placeholder="Firstname"
       />
       <InputField
         :error="errors"
-        name="lastname"
+        name="lastName"
         type="lastname"
         placeholder="Lastname"
       />
@@ -51,6 +51,7 @@ import Select from "@/components/select";
 import Button from "@/components/button";
 import DateInput from "@/components/DateInput";
 import SelectInput from "@/components/SelectInput";
+import { updateStudent } from "../../../api/ApiMethods";
 
 export default {
   components: {
@@ -69,25 +70,23 @@ export default {
   data() {
     return {
       editSchema: yup.object({
-        firstname: yup
+        firstName: yup
           .string()
           .label("Firstname")
           .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
           .required(),
-        lastname: yup
+        lastName: yup
           .string()
           .label("Lastname")
           .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
           .required(),
         email: yup.string().required().email().label("Email"),
         dateOfBirth: yup.date().required().label("Date of birth"),
-        role: yup.string().required("Please choose a role"),
       }),
       loading: false,
-      username: this.data?.name,
       formValues: {
-        firstname: this.data?.name,
-        lastname: this.data?.lastname,
+        firstName: this.data?.firstName,
+        lastName: this.data?.lastName,
         dateOfBirth: new Date(this.data?.dateOfBirth),
         email: this.data?.email,
       },
@@ -99,18 +98,31 @@ export default {
     },
   },
   methods: {
-    editUser(data) {
+    async editUser(values) {
+      const id = this.data?._id;
       this.loading = true;
-      return new Promise((resolve, _reject) => {
-        setTimeout(() => {
-          resolve(() => {
-            this.loading = false;
+      try {
+        const result = await updateStudent(id, values);
+        if (result?.status === 200) {
+          this.loading = false;
+          this.$emit("closeModal");
+          await this.$emit("fetchStudents");
+          this.$notify({
+            type: "success",
+            duration: 2000,
+            text: "User data updated successfully!",
           });
-        }, 2000);
-      }).then(() => {
-        console.log("data", data);
-        this.$emit("closeModal");
-      });
+        } else {
+          this.loading = false;
+          this.$notify({
+            type: "error",
+            duration: 2000,
+            text: "Please try again!",
+          });
+        }
+      } catch (err) {
+        console.log(err);
+      }
     },
   },
 };

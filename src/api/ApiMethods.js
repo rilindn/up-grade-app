@@ -3,7 +3,6 @@ import Client from "./ApiBase";
 export async function login(data) {
   try {
     const result = await Client.post("login", { ...data });
-    console.log(result);
     return result;
   } catch (err) {
     console.error(err);
@@ -41,7 +40,47 @@ export async function getStudentById(id) {
   return user.data;
 }
 
+export async function registerStudent(data) {
+  try {
+    const result = await Client.post("student", { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function updateStudent(id, data) {
+  try {
+    const result = await Client.put(`student/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
 export async function deleteStudent(id) {
   const user = await Client.delete(`student/${id}`);
   return user.data;
+}
+
+export async function registerStaff(data) {
+  try {
+    const result = await Client.post("staff", { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function registerAdmin(data) {
+  try {
+    const result = await Client.post("admin", { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
 }

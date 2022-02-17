@@ -1,13 +1,13 @@
 <template>
   <Container>
     <Wrapper>
-      <AddNew>
+      <AddNew @click="$router.push('/register')">
         <span><i class="fas fa-plus-circle"></i></span>
         <span>Add New</span>
       </AddNew>
       <Table>
         <Head>
-          <Column>Number</Column>
+          <Column>Student ID</Column>
           <Column>Name</Column>
           <Column>Lastname</Column>
           <Column>Email</Column>
@@ -24,7 +24,7 @@
                 <Edit @click="editModal(user)"
                   ><i class="far fa-edit"></i
                 ></Edit>
-                <Delete @click="deleteStudent(user._id)">
+                <Delete @click="handleDelete(user._id)">
                   <i class="far fa-trash-alt"></i
                 ></Delete>
               </ActionWrapper>
@@ -35,7 +35,11 @@
     </Wrapper>
     <va-modal v-model="showModal" hide-default-actions>
       <slot>
-        <EditStudent :data="editUserData" @closeModal="closeModal" />
+        <EditStudent
+          :data="editUserData"
+          @closeModal="closeModal"
+          @fetchStudents="fetchStudents"
+        />
       </slot>
     </va-modal>
   </Container>
@@ -84,10 +88,20 @@ export default {
     closeModal() {
       this.showModal = false;
     },
-    async deleteStudent(id) {
-      await deleteStudent(id);
+    async fetchStudents() {
       const users = await getAllStudents();
       this.users = users;
+    },
+    async handleDelete(id) {
+      if (confirm("Are you sure?")) {
+        await deleteStudent(id);
+        this.$notify({
+          type: "success",
+          duration: 2000,
+          text: "User deleted!",
+        });
+        await this.fetchStudents();
+      }
     },
   },
   async beforeCreate() {

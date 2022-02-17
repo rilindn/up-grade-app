@@ -31,5 +31,6 @@ export const ButtonStyled = styled("button", btnProps)`
   }
   h4 {
     margin: 0;
+    color: white;
   }
 `;
