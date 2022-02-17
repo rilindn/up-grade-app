@@ -1,32 +1,32 @@
 <template>
   <Container>
     <Wrapper>
-      <AddNew>
+      <AddNew @click="$router.push('/register')">
         <span><i class="fas fa-plus-circle"></i></span>
         <span>Add New</span>
       </AddNew>
       <Table>
         <Head>
-          <Column>Number</Column>
+          <Column>Student ID</Column>
           <Column>Name</Column>
           <Column>Lastname</Column>
-          <Column>Date of Birth</Column>
           <Column>Email</Column>
           <Column>Actions</Column>
         </Head>
         <Body>
           <Row v-for="(user, i) in users" :key="user.id" :index="++i">
-            <Cell>{{ user.number }}</Cell>
-            <Cell>{{ user.name }}</Cell>
-            <Cell>{{ user.lastname }}</Cell>
-            <Cell>{{ user.dateOfBirth }}</Cell>
+            <Cell>{{ user.studentId }}</Cell>
+            <Cell>{{ user.firstName }}</Cell>
+            <Cell>{{ user.lastName }}</Cell>
             <Cell>{{ user.email }}</Cell>
             <Cell>
               <ActionWrapper>
                 <Edit @click="editModal(user)"
                   ><i class="far fa-edit"></i
                 ></Edit>
-                <Delete> <i class="far fa-trash-alt"></i></Delete>
+                <Delete @click="handleDelete(user._id)">
+                  <i class="far fa-trash-alt"></i
+                ></Delete>
               </ActionWrapper>
             </Cell>
           </Row>
@@ -35,7 +35,11 @@
     </Wrapper>
     <va-modal v-model="showModal" hide-default-actions>
       <slot>
-        <EditStudent :data="editUserData" @closeModal="closeModal" />
+        <EditStudent
+          :data="editUserData"
+          @closeModal="closeModal"
+          @fetchStudents="fetchStudents"
+        />
       </slot>
     </va-modal>
   </Container>
@@ -43,7 +47,6 @@
 
 <script>
 import { Table, Head, Body, Column, Row, Cell } from "@/components/table";
-import { users } from "@/components/table/sampleData";
 import {
   Wrapper,
   ActionWrapper,
@@ -53,7 +56,7 @@ import {
   Container,
 } from "./Students.styles";
 import EditStudent from "./EditStudent";
-import { getAllUsers, getUserById } from "@/api/ApiMethods";
+import { getAllStudents, deleteStudent } from "@/api/ApiMethods";
 export default {
   components: {
     Table,
@@ -72,7 +75,7 @@ export default {
   },
   data() {
     return {
-      users,
+      users: [],
       showModal: false,
       editUserData: [],
     };
@@ -85,11 +88,25 @@ export default {
     closeModal() {
       this.showModal = false;
     },
+    async fetchStudents() {
+      const users = await getAllStudents();
+      this.users = users;
+    },
+    async handleDelete(id) {
+      if (confirm("Are you sure?")) {
+        await deleteStudent(id);
+        this.$notify({
+          type: "success",
+          duration: 2000,
+          text: "User deleted!",
+        });
+        await this.fetchStudents();
+      }
+    },
   },
-  // api calls examples
   async beforeCreate() {
-    const users = await getAllUsers();
-    const user = await getUserById(3);
+    const users = await getAllStudents();
+    this.users = users;
   },
 };
 </script>

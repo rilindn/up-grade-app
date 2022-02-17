@@ -11,6 +11,7 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  min-height: 90vh;
 `;
 
 export const HeaderSection = styled.div`

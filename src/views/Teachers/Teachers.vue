@@ -52,7 +52,6 @@ import {
   AddNew,
   Container,
 } from "./Teachers.styles";
-import { getAllUsers, getUserById } from "@/api/ApiMethods";
 export default {
   components: {
     Table,
@@ -72,11 +71,6 @@ export default {
     return {
       users: users,
     };
-  },
-  // api calls examples
-  async beforeCreate() {
-    const users = await getAllUsers();
-    const user = await getUserById(3);
   },
 };
 </script>
