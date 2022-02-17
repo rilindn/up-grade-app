@@ -66,7 +66,7 @@ const adminItems = [
   },
   {
     name: "Assign Roles",
-    icon: "fas fa-book-open",
+    icon: "fas fa-tasks",
     path: "/assign-roles",
   },
 ];
