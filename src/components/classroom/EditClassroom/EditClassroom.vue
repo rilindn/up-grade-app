@@ -19,6 +19,12 @@
         type="number"
         placeholder="Level"
       />
+      <InputField
+        :error="errors"
+        name="classCapacity"
+        type="number"
+        placeholder="Capacity"
+      />
       <SaveButton :title="$t('save')" :loading="loading" type="submit" />
       <CancelButton :title="$t('cancel')" @click="$emit('closeModal')" />
     </FormStyled>
@@ -65,11 +71,13 @@ export default {
           .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
           .required(),
         level: yup.number().min(1).label("Level").required(),
+        classCapacity: yup.number().min(1).label("Capacity").required(),
       }),
       loading: false,
       formValues: {
         className: this.data?.className,
         level: this.data?.level,
+        classCapacity: this.data?.classCapacity,
       },
     };
   },
@@ -87,11 +95,11 @@ export default {
         if (result?.status === 200) {
           this.loading = false;
           this.$emit("closeModal");
-          await this.$emit("fetchClasses");
+          this.emitter.emit("fetchClasses");
           this.$notify({
             type: "success",
             duration: 2000,
-            text: "Grade updated successfully!",
+            text: "Updated successfully!",
           });
         } else {
           this.loading = false;

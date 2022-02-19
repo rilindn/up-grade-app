@@ -101,9 +101,13 @@ export const Divider = styled("div")`
 
 export const Action = styled("div")`
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
   .va-dropdown__anchor .va-button__left-icon {
     color: white !important;
+  }
+  span {
+    padding-left: 10px;
   }
 `;
 
@@ -125,7 +129,7 @@ export const ActionContent = styled("div")`
     color: white;
   }
   i {
-    padding-right: 20px;
     width: 10px;
+    padding-right: 20px;
   }
 `;

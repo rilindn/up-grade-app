@@ -2,6 +2,7 @@
   <Wrapper>
     <SingleClass :backgroundColor="bgColor">
       <Action>
+        <span>{{ classroom.classCapacity }}</span>
         <va-button-dropdown flat class="ml-2">
           <ActionContent>
             <span @click="editModal()"><i class="far fa-edit"></i>Edit</span>
@@ -40,11 +41,7 @@
   </Wrapper>
   <va-modal v-model="showModal" hide-default-actions>
     <slot>
-      <EditClassroom
-        :data="classroom"
-        @closeModal="closeModal"
-        @fetchClasses="fetchClasses"
-      />
+      <EditClassroom :data="classroom" @closeModal="closeModal" />
     </slot>
   </va-modal>
 </template>
@@ -106,10 +103,6 @@ export default {
     },
     closeModal() {
       this.showModal = false;
-    },
-    async fetchClasses() {
-      const classes = await getAllClasses();
-      this.classes = classes;
     },
   },
 };

@@ -4,7 +4,7 @@
       <Classroom
         v-for="(classroom, i) in classes"
         :key="classroom._id"
-        :bgColor="backgroundColors[i++]"
+        :bgColor="backgroundColors[i]"
         :classroom="classroom"
       />
     </Container>
@@ -35,6 +35,12 @@ export default {
   async beforeCreate() {
     const classes = await getAllClasses();
     this.classes = classes;
+  },
+  created() {
+    this.emitter.on("fetchClasses", async () => {
+      const classes = await getAllClasses();
+      this.classes = classes;
+    });
   },
 };
 </script>
