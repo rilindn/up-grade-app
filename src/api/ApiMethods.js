@@ -148,3 +148,8 @@ export async function updateSubject(id, data) {
     return err;
   }
 }
+
+export async function deleteSubject(id) {
+  const subject = await Client.delete(`subject/${id}`);
+  return subject.data;
+}

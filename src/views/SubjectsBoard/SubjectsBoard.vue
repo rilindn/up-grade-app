@@ -8,7 +8,7 @@
       <Table>
         <Head>
           <Column>Name</Column>
-          <Column>Level</Column>
+          <Column>Class</Column>
           <Column>Description</Column>
           <Column>Actions</Column>
         </Head>
@@ -22,7 +22,9 @@
                 <Edit @click="editModal(subject)"
                   ><i class="far fa-edit"></i
                 ></Edit>
-                <Delete> <i class="far fa-trash-alt"></i></Delete>
+                <Delete @click="handleDelete(subject._id)">
+                  <i class="far fa-trash-alt"></i
+                ></Delete>
               </ActionWrapper>
             </Cell>
           </Row>
@@ -68,7 +70,7 @@ import {
 } from "./SubjectsBoard.styles";
 import AddSubject from "./AddSubject/AddSubject.vue";
 import EditSubject from "./EditSubject/EditSubject.vue";
-import { getAllSubjects } from "../../api/ApiMethods";
+import { getAllSubjects, deleteSubject } from "../../api/ApiMethods";
 export default {
   components: {
     Table,
@@ -109,10 +111,27 @@ export default {
     triggerAddModal() {
       this.showAddModal = !this.showAddModal;
     },
+    async handleDelete(id) {
+      if (confirm("Are you sure you want to delete this subject?")) {
+        await deleteSubject(id);
+        this.$notify({
+          type: "success",
+          duration: 2000,
+          text: "Subject deleted succesfully!",
+        });
+        this.emitter.emit("fetchSubjects");
+      }
+    },
   },
   async beforeCreate() {
     const subjects = await getAllSubjects();
     this.subjects = subjects;
+  },
+  created() {
+    this.emitter.on("fetchSubjects", async () => {
+      const subjects = await getAllSubjects();
+      this.subjects = subjects;
+    });
   },
 };
 </script>
