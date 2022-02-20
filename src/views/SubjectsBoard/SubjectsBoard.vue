@@ -1,7 +1,7 @@
 <template>
   <Container>
     <Wrapper>
-      <AddNew>
+      <AddNew @click="triggerAddModal">
         <span><i class="fas fa-plus-circle"></i></span>
         <span>Add New</span>
       </AddNew>
@@ -29,12 +29,20 @@
         </Body>
       </Table>
     </Wrapper>
-    <va-modal v-model="showModal" hide-default-actions>
+    <va-modal v-model="showEditModal" hide-default-actions>
       <slot>
         <EditSubject
           :data="editSubjectData"
-          @closeModal="closeModal"
+          @closeModal="closeEditModal"
           @refetchSubjects="fetchSubjects"
+        />
+      </slot>
+    </va-modal>
+    <va-modal v-model="showAddModal" hide-default-actions>
+      <slot>
+        <AddSubject
+          @refetchSubjects="fetchSubjects"
+          @closeModal="triggerAddModal"
         />
       </slot>
     </va-modal>
@@ -58,6 +66,7 @@ import {
   Container,
   AddNew,
 } from "./SubjectsBoard.styles";
+import AddSubject from "./AddSubject/AddSubject.vue";
 import EditSubject from "./EditSubject/EditSubject.vue";
 import { getAllSubjects } from "../../api/ApiMethods";
 export default {
@@ -74,29 +83,33 @@ export default {
     Delete,
     Container,
     AddNew,
+    AddSubject,
     EditSubject,
   },
   data() {
     return {
       subjects: [],
-      showModal: false,
+      showEditModal: false,
+      showAddModal: false,
       editSubjectData: [],
     };
   },
   methods: {
     editModal(subject) {
       this.editSubjectData = subject;
-      this.showModal = true;
+      this.showEditModal = true;
     },
-    closeModal() {
-      this.showModal = false;
+    closeEditModal() {
+      this.showEditModal = false;
     },
     async fetchSubjects() {
       const subjects = await getAllSubjects();
       this.subjects = subjects;
     },
+    triggerAddModal() {
+      this.showAddModal = !this.showAddModal;
+    },
   },
-
   async beforeCreate() {
     const subjects = await getAllSubjects();
     this.subjects = subjects;

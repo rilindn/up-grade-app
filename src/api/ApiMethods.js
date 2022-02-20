@@ -129,6 +129,16 @@ export async function getAllSubjects() {
   return subjects.data;
 }
 
+export async function addSubject(data) {
+  try {
+    const result = await Client.post("subject", { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
 export async function updateSubject(id, data) {
   try {
     const result = await Client.put(`subject/${id}`, { ...data });
