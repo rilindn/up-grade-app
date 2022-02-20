@@ -7,6 +7,7 @@ const classroomProps = {
 export const Wrapper = styled("div", classroomProps)`
   display: flex;
   flex-direction: column;
+  margin: 20px 60px;
 `;
 
 export const SingleClass = styled("div", classroomProps)`
@@ -14,15 +15,21 @@ export const SingleClass = styled("div", classroomProps)`
   flex-direction: column;
   background-color: ${(props) => props.backgroundColor};
   height: 200px;
-  width: 220px;
-  justify-content: center;
-  align-items: center;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   color: var(--va-white);
   p {
     font-size: 18px;
   }
+`;
+
+export const Content = styled("div")`
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 220px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const DropDownWrapper = styled("div")`
@@ -34,7 +41,6 @@ export const DropDownWrapper = styled("div")`
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   border: 2px solid ${(props) => props.backgroundColor};
-
   background-color: var(--va-grey100);
   color: var(--va-black);
   cursor: pointer;
@@ -91,4 +97,39 @@ export const Divider = styled("div")`
   border: none;
   height: 1px;
   background-color: var(--va-grey200);
+`;
+
+export const Action = styled("div")`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .va-dropdown__anchor .va-button__left-icon {
+    color: white !important;
+  }
+  span {
+    padding-left: 10px;
+  }
+`;
+
+export const ActionContent = styled("div")`
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  span {
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 7px;
+  }
+  span:first-child:hover {
+    background-color: var(--va-infoEdit);
+    color: white;
+  }
+  span:last-child:hover {
+    background-color: var(--va-errorMain);
+    color: white;
+  }
+  i {
+    width: 10px;
+    padding-right: 20px;
+  }
 `;

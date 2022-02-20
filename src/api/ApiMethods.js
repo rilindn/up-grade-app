@@ -84,3 +84,35 @@ export async function registerAdmin(data) {
     return err;
   }
 }
+
+//Classes methods
+
+export async function getAllClasses() {
+  const classes = await Client.get("class");
+  return classes.data;
+}
+
+export async function addClass(data) {
+  try {
+    const result = await Client.post("class", { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function updateClass(id, data) {
+  try {
+    const result = await Client.put(`class/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function deleteClass(id) {
+  const classroom = await Client.delete(`class/${id}`);
+  return classroom.data;
+}
