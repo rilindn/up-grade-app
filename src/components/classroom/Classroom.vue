@@ -6,7 +6,9 @@
         <va-button-dropdown flat class="ml-2">
           <ActionContent>
             <span @click="editModal()"><i class="far fa-edit"></i>Edit</span>
-            <span><i class="far fa-trash-alt"></i>Delete</span>
+            <span @click="handleDelete(classroom._id)"
+              ><i class="far fa-trash-alt"></i>Delete</span
+            >
           </ActionContent>
         </va-button-dropdown>
       </Action>
@@ -41,7 +43,11 @@
   </Wrapper>
   <va-modal v-model="showModal" hide-default-actions>
     <slot>
-      <EditClassroom :data="classroom" @closeModal="closeModal" />
+      <EditClassroom
+        :data="classroom"
+        @closeModal="closeModal"
+        @fetchClasses="fetchClasses"
+      />
     </slot>
   </va-modal>
 </template>
@@ -60,7 +66,8 @@ import {
 } from "./Classroom.styles";
 import { directive } from "vue3-click-away";
 import EditClassroom from "./EditClassroom/EditClassroom.vue";
-import { getAllClasses } from "@/api/ApiMethods";
+import { deleteStudent, getAllClasses } from "@/api/ApiMethods";
+import { deleteClass } from "../../api/ApiMethods";
 
 export default {
   components: {
@@ -103,6 +110,17 @@ export default {
     },
     closeModal() {
       this.showModal = false;
+    },
+    async handleDelete(id) {
+      if (confirm("Are you sure you want to delete this class?")) {
+        await deleteClass(id);
+        this.$notify({
+          type: "success",
+          duration: 2000,
+          text: "Class deleted!",
+        });
+        this.emitter.emit("fetchClasses");
+      }
     },
   },
 };

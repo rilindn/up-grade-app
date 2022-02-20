@@ -1,6 +1,6 @@
 <template>
   <FormWrapper>
-    <Title>Edit Grade</Title>
+    <Title>Edit Class</Title>
     <FormStyled
       @submit="editClass"
       :validation-schema="editSchema"

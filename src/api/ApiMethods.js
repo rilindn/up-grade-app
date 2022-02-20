@@ -111,3 +111,8 @@ export async function updateClass(id, data) {
     return err;
   }
 }
+
+export async function deleteClass(id) {
+  const classroom = await Client.delete(`class/${id}`);
+  return classroom.data;
+}
