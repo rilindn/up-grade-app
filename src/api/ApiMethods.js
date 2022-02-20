@@ -35,6 +35,11 @@ export async function getAllStudents() {
   return users.data;
 }
 
+export async function paginationStudents(page) {
+  const users = await Client.get(`student/paginate?page=${page}`);
+  return users.data;
+}
+
 export async function getStudentById(id) {
   const user = await Client.get(`student/${id}`);
   return user.data;

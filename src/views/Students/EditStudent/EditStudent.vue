@@ -106,7 +106,7 @@ export default {
         if (result?.status === 200) {
           this.loading = false;
           this.$emit("closeModal");
-          await this.$emit("fetchStudents");
+          await this.$emit("refetchStudents");
           this.$notify({
             type: "success",
             duration: 2000,
