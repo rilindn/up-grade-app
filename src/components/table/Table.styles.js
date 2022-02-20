@@ -43,5 +43,5 @@ export const Cell = styled.td`
   padding: 10px 20px;
   font-size: 14px;
   text-align: left;
-  /* border: 1px solid var(--va-black); */
+  max-width: 250px;
 `;

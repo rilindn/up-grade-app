@@ -121,3 +121,20 @@ export async function deleteClass(id) {
   const classroom = await Client.delete(`class/${id}`);
   return classroom.data;
 }
+
+//Subject method
+
+export async function getAllSubjects() {
+  const subjects = await Client.get("subject");
+  return subjects.data;
+}
+
+export async function updateSubject(id, data) {
+  try {
+    const result = await Client.put(`subject/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
