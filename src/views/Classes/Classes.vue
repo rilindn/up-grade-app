@@ -1,5 +1,11 @@
 <template>
   <Wrapper>
+    <AddClassContainer>
+      <AddNew @click="triggerModal">
+        <span><i class="fas fa-plus-circle"></i></span>
+        <span>Add New</span>
+      </AddNew>
+    </AddClassContainer>
     <Container>
       <Classroom
         v-for="(classroom, i) in classes"
@@ -9,14 +15,24 @@
       />
     </Container>
   </Wrapper>
+  <va-modal v-model="showModal" hide-default-actions>
+    <slot>
+      <AddClass @closeModal="triggerModal" />
+    </slot>
+  </va-modal>
 </template>
 <script>
 import Select from "@/components/select";
 import Classroom from "../../components/classroom";
-
-import { Wrapper, Container, SubContainer } from "./Classes.styles";
+import {
+  Wrapper,
+  Container,
+  AddNew,
+  AddClassContainer,
+} from "./Classes.styles";
 import { getAllClasses } from "../../api/ApiMethods";
 import backgroundColors from "./ClassesColor.config";
+import AddClass from "./AddClass/AddClass.vue";
 
 export default {
   components: {
@@ -24,13 +40,21 @@ export default {
     Classroom,
     Wrapper,
     Container,
-    SubContainer,
+    AddNew,
+    AddClass,
+    AddClassContainer,
   },
   data() {
     return {
       classes: [],
       backgroundColors,
+      showModal: false,
     };
+  },
+  methods: {
+    triggerModal() {
+      this.showModal = !this.showModal;
+    },
   },
   async beforeCreate() {
     const classes = await getAllClasses();

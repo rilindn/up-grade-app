@@ -92,6 +92,16 @@ export async function getAllClasses() {
   return classes.data;
 }
 
+export async function addClass(data) {
+  try {
+    const result = await Client.post("class", { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
 export async function updateClass(id, data) {
   try {
     const result = await Client.put(`class/${id}`, { ...data });

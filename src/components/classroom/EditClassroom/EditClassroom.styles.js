@@ -16,7 +16,7 @@ export const Modal = styled.div`
 `;
 
 export const FormWrapper = styled.div`
-  width: 400px;
+  width: 300px;
   min-height: 300px;
   background-color: #fff;
   border-radius: 5px;
@@ -50,14 +50,12 @@ export const FormStyled = styled(Form)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 50px;
-  height: 100%;
+  height: 350px;
   text-align: center;
   & > h1 {
     font-weight: bold;
     margin: 0;
   }
-
   & > span {
     font-size: 12px;
   }
