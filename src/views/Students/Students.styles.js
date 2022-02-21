@@ -60,3 +60,8 @@ export const AddNew = styled.div`
     opacity: 0.85;
   }
 `;
+export const TableHeader = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;

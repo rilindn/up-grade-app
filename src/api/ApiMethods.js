@@ -35,8 +35,11 @@ export async function getAllStudents() {
   return users.data;
 }
 
-export async function paginationStudents(page) {
-  const users = await Client.get(`student/paginate?page=${page}`);
+export async function paginationStudents(page, search) {
+  const searchValue = search || "";
+  const users = await Client.get(
+    `student/filter?page=${page}&search=${searchValue}`
+  );
   return users.data;
 }
 
