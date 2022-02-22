@@ -88,7 +88,7 @@
     "dashboard": "Ballina",
     "subjectsBoard": "Lendet",
     "myClasses": "Klasat",
-    "attendance-remarks": "Mungesat"
+    "attendanceRemarks": "Vijueshmeria"
   },
   "login": {
     "student": {
@@ -138,5 +138,15 @@
     "personalEmail": "Email Personal",
     "phoneNumber": "Numri Kontaktues",
     "studentEmail": "Email Studentit"
+  },
+  "attendance": {
+    "title": "Vijueshmeria",
+    "total": "Totali",
+    "subject": "Lenda",
+    "teacher": "Mesuesi",
+    "reasonable": "Te arsyeshme",
+    "unreasonable": "Te paarsyeshme",
+    "totalAbsences": "Mungesat ne total",
+    "remarks": "Verejtjet"
   }
 }
