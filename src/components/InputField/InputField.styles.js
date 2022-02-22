@@ -8,9 +8,10 @@ export const Wrapper = styled("div", inputProps)`
   position: relative;
   width: 100%;
   text-align: left;
-  display:flex;
-  flex-direction:column;
-  input {
+  display: flex;
+  flex-direction: column;
+  input,
+  textarea {
     color: #333;
     font-size: 14px;
     text-decoration: none;
