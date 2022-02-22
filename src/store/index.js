@@ -1,5 +1,4 @@
 import { createStore } from "vuex";
-import createPersistedState from "vuex-persistedstate";
 
 export default createStore({
   state: {
@@ -12,17 +11,22 @@ export default createStore({
   },
   mutations: {
     SET_LOGGED_USER(state, payload) {
-      state.loggedUser.name = payload.name;
-      state.loggedUser.email = payload.email;
+      state.loggedUser.name = `${payload?.firstName} ${payload?.lastName}`;
+      state.loggedUser.email = payload?.email;
       state.loggedUser.isLogged = true;
-      state.loggedUser.role = payload.role;
+      state.loggedUser.role = payload?.role;
     },
   },
-  actions: {},
+  actions: {
+    SET_LOGGED_USER(context, payload) {
+      console.log("first", payload);
+      context.commit("SET_LOGGED_USER", payload?.user);
+    },
+  },
   modules: {},
   getters: {
     isAuthenticated: (state) => state.loggedUser.isLogged,
     userRole: (state) => state.loggedUser.role,
   },
-  plugins: [createPersistedState()],
+  plugins: [],
 });
