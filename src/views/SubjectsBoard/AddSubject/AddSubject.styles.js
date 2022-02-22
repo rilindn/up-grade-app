@@ -36,3 +36,9 @@ export const SaveButton = styled(Button)`
   margin-top: 35px;
   font-size: 16px;
 `;
+
+export const Title = styled.h2`
+  font-size: 28px !important;
+  text-align: center;
+  margin: 10px 0 !important;
+`;

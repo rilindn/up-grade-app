@@ -1,6 +1,6 @@
 <template>
   <Wrapper>
-    <h3>Add New Subject</h3>
+    <Title>Add New Subject</Title>
     <Form
       @submit="registerSubject"
       :validation-schema="registerSchema"
@@ -35,6 +35,7 @@ import {
   SaveButton,
   CancelButton,
   ButtonContainer,
+  Title,
 } from "./AddSubject.styles";
 import DateInput from "@/components/DateInput";
 import SelectInput from "@/components/SelectInput";
@@ -53,6 +54,7 @@ export default {
     SaveButton,
     CancelButton,
     ButtonContainer,
+    Title,
   },
   data() {
     return {
@@ -66,6 +68,7 @@ export default {
           .number()
           .typeError("Level must be a number")
           .min(1)
+          .max(12)
           .label("Level")
           .required(),
         subjectDescription: yup.string().min(3).label("Description").required(),
