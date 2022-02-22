@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   /* box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16); */
   border-radius: 5px;
-  width: 100%;
+  width: 100%
   /* margin: 30px auto; */
 `;
 
@@ -40,14 +40,14 @@ export const CellStyled = styled(Cell)`
 
 `;
 
-export const TablesWrapper = styled.div`
+export const SectionsWrapper = styled.div`
   display: flex;
   justify-content: start;
   margin: 20px;
 `;
 
 export const HeadStyled = styled(Head)``;
-export const SingleTable = styled.div`
+export const Section = styled.div`
   margin-bottom: 7px;
   display: flex;
   flex-direction: column;
@@ -57,3 +57,47 @@ export const SingleTable = styled.div`
     font-weight: bold;
   }
 `;
+
+export const RemarkWrapper = styled.div`
+  box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16);
+  border-radius: 5px;
+  width: 100%;
+  padding:20px;
+  
+`;
+
+export const RemarkDate = styled.div`
+  font-size: 15px;
+  div:first-child {
+    display: flex;
+    span {
+      margin-top:10px;
+    }
+  }
+
+`;
+
+
+export const RemarkItem = styled.div`
+margin-bottom:40px;
+
+`;
+
+export const RemarkBody = styled.div`
+height:470px;
+overflow-y:auto;
+`;
+
+export const Remarks = styled.div`
+margin-top:10px;
+`;
+
+
+
+
+
+
+
+
+
+

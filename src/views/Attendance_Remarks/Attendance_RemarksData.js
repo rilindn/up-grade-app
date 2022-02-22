@@ -77,55 +77,39 @@ export const attendance=[
 
 export const remarks=[
     {
-    subjectt:"Albanian",
-    remark:"someRemarks",
-    },
-
-    {
-    subjectt:"English",
-    remark:"someRemarks",
+        proffesor:"SomeTeacher",
+        date:"18.02.2022",
+        rem:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-    subjectt:"German",
-    remark:"someRemarks",
-   
+        proffesor:"SomeTeacher",
+        date:"18.02.2022",
+        rem:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-    subjectt:"Mathematic",
-    remark:"someRemarks",
+        proffesor:"SomeTeacher",
+        date:"18.02.2022",
+        rem:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-    subjectt:"Physic",
-    remark:"someRemarks",
+        proffesor:"SomeTeacher",
+        date:"18.02.2022",
+        rem:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-    subjectt:"Chemistry",
-    remark:"someRemarks",
+        proffesor:"SomeTeacher",
+        date:"18.02.2022",
+        rem:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-    subjectt:"Biology",
-    remark:"someRemarks",
+        proffesor:"SomeTeacher",
+        date:"18.02.2022",
+        rem:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-    subjectt:"Geography",
-    remark:"someRemarks",
-    },
-    {
-    subjectt:"Tik",
-    remark:"someRemarks",
-    },
-    {
-    subjectt:"Music",
-    remark:"someRemarks",
-    
-    },
-    {
-    subjectt:"Art",
-    remark:"someRemarks",
-    },
-    {
-    subjectt:"Physical Education",
-    remark:"someRemarks",
+        proffesor:"SomeTeacher",
+        date:"18.02.2022",
+        rem:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     
 ];

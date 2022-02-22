@@ -45,7 +45,7 @@ const routes = [
       },
       {
         path: "/attendance-remarks",
-        name: "Attendance-Remarks",
+        name: "Attendance",
         meta: { requiredRole: ["Student"] },
         component: () => import("@/views/Attendance_Remarks"),
       },
@@ -67,6 +67,12 @@ const routes = [
         meta: { requiredRole: ["Staff"] },
         component: () => import("@/views/TeacherClasses"),
       },
+      // {
+      //   path: "/teacher-student",
+      //   name: "My Students",
+      //   meta: { requiredRole: ["Staff"] },
+      //   component: () => import("@/views/Teacher_Student"),
+      // },
       {
         path: "/admin",
         name: "Dashboard",

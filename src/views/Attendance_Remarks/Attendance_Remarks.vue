@@ -1,8 +1,8 @@
 <template>
   <Container>
     <Wrapper>
-      <TablesWrapper>
-      <SingleTable>
+      <SectionsWrapper>
+      <Section>
           <span class="table-title">{{ $t("Attendance") }}</span>
       <TableStyled>
         <HeadStyled>
@@ -20,57 +20,83 @@
           </RowStyled>
         </BodyStyled>
       </TableStyled>
-     </SingleTable>
-     <SingleTable>
+     </Section>
+     <Section>
          <span class="table-title">{{ $t("Remarks") }}</span>
-      <TableStyled>
-        <HeadStyled>
-          <ColumnStyled>Subject</ColumnStyled>
-          <ColumnStyled>Remarks</ColumnStyled>
-        </HeadStyled>
-        <BodyStyled>
-          <RowStyled  v-for="(remarkk, i) in remarks" :key="i">
-            <CellStyled class="subject-name">{{ remarkk.subjectt }}</CellStyled>
-            <CellStyled>{{ remarkk.remark }}</CellStyled>
-          </RowStyled>
-        </BodyStyled>
-      </TableStyled>
-     </SingleTable>
-      </TablesWrapper>
+         <RemarkWrapper>
+             <RemarkBody>
+               <RemarkItem @scroll="handleScroll" v-for="(remark, i) in remarks" :key="i" >
+                 <RemarkDate class="proff-date">
+                  <div>
+                    <Avatar :size="37"/>
+                    <span>{{remark.proffesor}}</span>
+                    <span>{{remark.date}}</span>
+                   </div>
+                 </RemarkDate>
+                 <Remarks>{{remark.rem}}</Remarks>
+               </RemarkItem>
+             </RemarkBody>
+         </RemarkWrapper>
+       </Section>
+      </SectionsWrapper>
     </Wrapper>
   </Container>
 </template>
 
 <script>
-import { attendance, remarks} from "./Attendance_RemarksData";
+import Avatar from "@/components/Avatar"
+import { attendance,remarks} from "./Attendance_RemarksData";
 import {
   Wrapper,
   Container,
-  SingleTable,
-  TablesWrapper,
+  Section,
+  SectionsWrapper,
   ColumnStyled,
   BodyStyled,
   RowStyled,
   CellStyled,
-  HeadStyled
+  HeadStyled,
+  RemarkWrapper,
+  RemarkDate,
+  RemarkItem,
+  RemarkBody,
+  Remarks
+
 } from "./Attendance_Remarks.styles";
+
 export default {
   components: {
     Wrapper,
     Container,
-    SingleTable,
-    TablesWrapper,
+    Section,
+    SectionsWrapper,
     ColumnStyled,
     BodyStyled,
     RowStyled,
     CellStyled,
-    HeadStyled
+    HeadStyled,
+    RemarkWrapper,
+    RemarkDate,
+    RemarkItem,
+    RemarkBody,
+    Avatar,
+    Remarks
+
   },
   data() {
     return {
      attendance, 
      remarks
     };
+  },
+  methods:{
+    handleScroll(e)  {
+    var currentScrollPosition = e.srcElement.scrollTop;
+    if (currentScrollPosition > this.scrollPosition) {
+        console.log("Scrolling down");
+    }
+    this.scrollPosition = currentScrollPosition;
+   }
   },
 };
 </script>
