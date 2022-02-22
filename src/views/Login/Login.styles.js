@@ -124,6 +124,9 @@ export const OverlayPanel = styled("div", loginProps)`
   right: 0;
   transform: translateX(0);
   `};
+  button h4 {
+    color: white;
+  }
 `;
 
 export const FormStyled = styled(Form)`
@@ -148,6 +151,10 @@ export const FormStyled = styled(Form)`
     font-size: 14px;
     text-decoration: none;
     margin: 15px 0;
+  }
+
+  button h4 {
+    color: white;
   }
 `;
 

@@ -122,11 +122,6 @@
     "settings": "Cilesimet",
     "logout": "Ckyqu"
   },
-  "myClasses": {
-    "title": "Klasat"
-  },
-  "save": "Ruaj",
-  "cancel": "Anulo",
   "studentProfile": {
     "id": "ID Studentit",
     "birthday": "Ditelindja",
@@ -137,7 +132,9 @@
     "zipcode": "Kodi Postal",
     "personalEmail": "Email Personal",
     "phoneNumber": "Numri Kontaktues",
-    "studentEmail": "Email Studentit"
+    "studentEmail": "Email Studentit",
+    "generate": "Viti Regjistrimit",
+    "parentName": "Emri Prindit"
   },
   "attendance": {
     "title": "Vijueshmeria",
@@ -148,5 +145,10 @@
     "unreasonable": "Te paarsyeshme",
     "totalAbsences": "Mungesat ne total",
     "remarks": "Verejtjet"
-  }
+  },
+  "myClasses": {
+    "title": "Klasat"
+  },
+  "save": "Ruaj",
+  "cancel": "Anulo"
 }

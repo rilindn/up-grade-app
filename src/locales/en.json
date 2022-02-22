@@ -129,15 +129,17 @@
   "cancel": "Cancel",
   "studentProfile": {
     "id": "Student ID",
-    "birthday": "Birthday",
-    "nationality": "Nationality",
-    "citizenship": "Citizenship",
-    "gender": "Gender",
-    "place": "Place",
-    "zipcode": "Zip Code",
-    "personalEmail": "Personal Email",
-    "phoneNumber": "Phone Number",
-    "studentEmail": "Student Email"
+    "birthday":"Birthday",
+    "nationality":"Nationality",
+    "citizenship":"Citizenship",
+    "gender":"Gender",
+    "place":"Place",
+    "zipcode":"Zip Code",
+    "personalEmail":"Personal Email",
+    "phoneNumber":"Phone Number",
+    "studentEmail":"Student Email",
+    "generate":"Enrolled Year",
+    "parentName":"Father's Name"
   },
   "myClasses": {
     "title": "myClasses"

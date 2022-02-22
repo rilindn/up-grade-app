@@ -4,38 +4,25 @@
       <Form
         @submit="register"
         :validation-schema="registerSchema"
-        v-slot="{ errors }">
-      <h3>Register New User</h3>
-      <InputField 
-       :error="errors" 
-       name="firstname" 
-       placeholder="Firstname"
+        v-slot="{ errors }"
+      >
+        <h3>Register New User</h3>
+        <InputField :error="errors" name="firstName" placeholder="Firstname" />
+        <InputField :error="errors" name="lastName" placeholder="Lastname" />
+        <!-- <InputField
+          :error="errors"
+          name="email"
+          type="email"
+          placeholder="Email"
+        /> -->
+        <SelectInput
+          :error="errors"
+          name="role"
+          placeholder="Choose a role"
+          :options="['Student', 'Staff']"
         />
-      <InputField 
-      :error="errors" 
-      name="lastname" 
-      placeholder="Lastname"
-       />
-      <InputField 
-      :error="errors" 
-      name="email" 
-      type="email" 
-      placeholder="Email" 
-      />
-      <SelectInput
-        :error="errors"
-        name="role"
-        placeholder="Choose a role"
-        :options="['Student', 'Staff']"
-      />
-      <DateInput 
-      :error="errors" 
-      name="dateOfBirth" 
-      />
-      <SaveButton
-        title="Register"
-        type="submit"
-      />
+        <DateInput :error="errors" name="dateOfBirth" />
+        <SaveButton title="Register" :loading="loading" type="submit" />
       </Form>
     </FormWrapper>
   </Wrapper>
@@ -47,6 +34,11 @@ import DateInput from "@/components/DateInput";
 import SelectInput from "@/components/SelectInput";
 import { Form } from "vee-validate";
 import * as yup from "yup";
+import {
+  registerAdmin,
+  registerStaff,
+  registerStudent,
+} from "../../api/ApiMethods";
 
 export default {
   components: {
@@ -56,42 +48,57 @@ export default {
     DateInput,
     SelectInput,
     Form,
-    SaveButton
+    SaveButton,
   },
   data() {
     return {
       registerSchema: yup.object({
-        firstname: yup
+        firstName: yup
           .string()
           .label("Firstname")
           .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
           .required(),
-        lastname: yup
+        lastName: yup
           .string()
           .label("Lastname")
           .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
           .required(),
-        email: yup.string().required().email().label("Email"),
         dateOfBirth: yup.date().required().label("Date of birth"),
         role: yup.string().required("Please choose a role"),
       }),
       loading: false,
-
     };
   },
   methods: {
-    register(data) {
+    async register(data) {
       this.loading = true;
-      return new Promise((resolve, _reject) => {
-        setTimeout(() => {
-          resolve(() => {
-            this.loading = false;
+      const { role, ...userData } = data;
+      let result;
+      try {
+        if (role === "Student") result = await registerStudent(userData);
+        else if (role === "Staff") result = await registerStaff(userData);
+        else if (role === "Admin") result = await registerAdmin(userData);
+        if (result?.status === 200) {
+          this.loading = false;
+          window.location.reload();
+          this.$notify({
+            type: "success",
+            duration: 2000,
+            text: "New user registerd successfully!",
           });
-        }, 2000);
-      })
+        } else {
+          this.loading = false;
+          this.$notify({
+            type: "error",
+            duration: 2000,
+            text: "Please try again!",
+          });
+        }
+      } catch (err) {
+        console.log(err);
+      }
     },
   },
 };
 </script>
-<style>
-</style>
+<style></style>
