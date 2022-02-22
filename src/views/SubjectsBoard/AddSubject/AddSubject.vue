@@ -7,10 +7,17 @@
       v-slot="{ errors }"
     >
       <InputField :error="errors" name="subjectName" placeholder="Name" />
-      <InputField :error="errors" name="targetedLevel" placeholder="Level" />
+      <InputField
+        :error="errors"
+        name="targetedLevel"
+        placeholder="Level"
+        type="number"
+      />
       <InputField
         :error="errors"
         name="subjectDescription"
+        type="text"
+        as="textarea"
         placeholder="Description"
       />
       <SaveButton title="Register" :loading="loading" type="submit" />
@@ -55,8 +62,13 @@ export default {
           .label("Name")
           .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
           .required(),
-        targetedLevel: yup.number().min(1).label("Level").required(),
-        subjectDescription: yup.string().label("Description").required(),
+        targetedLevel: yup
+          .number()
+          .typeError("Level must be a number")
+          .min(1)
+          .label("Level")
+          .required(),
+        subjectDescription: yup.string().min(3).label("Description").required(),
       }),
       loading: false,
     };
