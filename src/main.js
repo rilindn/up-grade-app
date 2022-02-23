@@ -12,6 +12,7 @@ import { VuesticPlugin } from "vuestic-ui";
 import palette from "@/theme/palette";
 import Notifications from "@kyvg/vue3-notification";
 import mitt from "mitt";
+import moment from "moment";
 
 const emitter = mitt();
 
@@ -24,5 +25,6 @@ const app = createApp(App)
     colors: palette,
   });
 app.config.globalProperties.emitter = emitter;
+app.config.globalProperties.moment = moment;
 
 app.mount("#app");

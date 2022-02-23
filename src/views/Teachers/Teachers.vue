@@ -1,36 +1,51 @@
 <template>
   <Container>
     <Wrapper>
-      <AddNew>
+      <AddNew @click="$router.push('/register')">
         <span><i class="fas fa-plus-circle"></i></span>
         <span>Add New</span>
       </AddNew>
       <Table>
         <Head>
-          <Column>Number</Column>
-          <Column>Name</Column>
+          <Column></Column>
+          <Column>Firstname</Column>
           <Column>Lastname</Column>
           <Column>Date of Birth</Column>
           <Column>Email</Column>
           <Column>Actions</Column>
         </Head>
         <Body>
-          <Row v-for="(user, i) in users" :key="user.id" :index="++i">
-            <Cell>{{ user.number }}</Cell>
-            <Cell>{{ user.name }}</Cell>
-            <Cell>{{ user.lastname }}</Cell>
-            <Cell>{{ user.dateOfBirth }}</Cell>
-            <Cell>{{ user.email }}</Cell>
+          <Row v-for="(teacher, i) in staff" :key="teacher.id">
+            <Cell
+              ><b>#{{ ++i }}</b></Cell
+            >
+            <Cell>{{ teacher.firstName }}</Cell>
+            <Cell>{{ teacher.lastName }}</Cell>
+            <Cell>{{ moment(teacher.dateOfBirth).format("YYYY-MM-DD") }}</Cell>
+            <Cell>{{ teacher.email }}</Cell>
             <Cell>
               <ActionWrapper>
-                <Edit><i class="far fa-edit"></i></Edit>
-                <Delete> <i class="far fa-trash-alt"></i></Delete>
+                <Edit @click="editModal(teacher)"
+                  ><i class="far fa-edit"></i
+                ></Edit>
+                <Delete @click="handleDelete(teacher._id)">
+                  <i class="far fa-trash-alt"></i
+                ></Delete>
               </ActionWrapper>
             </Cell>
           </Row>
         </Body>
       </Table>
     </Wrapper>
+    <va-modal v-model="showEditModal" hide-default-actions>
+      <slot>
+        <EditTeacher
+          :data="editStaffData"
+          @closeModal="closeEditModal"
+          @refetchStaff="fetchStaff"
+        />
+      </slot>
+    </va-modal>
   </Container>
 </template>
 
@@ -43,7 +58,6 @@ import {
   Row,
   Cell,
 } from "../../components/table/Table.styles";
-import { users } from "../../components/table/sampleData";
 import {
   Wrapper,
   ActionWrapper,
@@ -52,6 +66,9 @@ import {
   AddNew,
   Container,
 } from "./Teachers.styles";
+import { getAllStaff, deleteStaff } from "../../api/ApiMethods";
+import EditTeacher from "./EditTeacher/EditTeacher.vue";
+
 export default {
   components: {
     Table,
@@ -66,11 +83,52 @@ export default {
     Delete,
     AddNew,
     Container,
+    EditTeacher,
   },
   data() {
     return {
-      users: users,
+      staff: [],
+      showEditModal: false,
+      showAddModal: false,
+      editStaffData: [],
     };
+  },
+  methods: {
+    editModal(subject) {
+      this.editStaffData = subject;
+      this.showEditModal = true;
+    },
+    closeEditModal() {
+      this.showEditModal = false;
+    },
+    async fetchStaff() {
+      const staff = await getAllStaff();
+      this.staff = staff;
+    },
+    triggerAddModal() {
+      this.showAddModal = !this.showAddModal;
+    },
+    async handleDelete(id) {
+      if (confirm("Are you sure you want to delete this teacher?")) {
+        await deleteStaff(id);
+        this.$notify({
+          type: "success",
+          duration: 2000,
+          text: "Teacher deleted succesfully!",
+        });
+        this.emitter.emit("fetchStaff");
+      }
+    },
+  },
+  async beforeCreate() {
+    const staff = await getAllStaff();
+    this.staff = staff;
+  },
+  created() {
+    this.emitter.on("fetchStaff", async () => {
+      const staff = await getAllStaff();
+      this.staff = staff;
+    });
   },
 };
 </script>
