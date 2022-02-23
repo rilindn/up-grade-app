@@ -51,10 +51,10 @@ const routes = [
         component: () => import("@/views/GradesBoard"),
       },
       {
-        path: "/attendance-remarks",
+        path: "/attendance",
         name: "Attendance",
         meta: { requiredRole: ["Student"] },
-        component: () => import("@/views/Attendance_Remarks"),
+        component: () => import("@/views/AttendanceRemarks"),
       },
       {
         path: "/subjects-board",

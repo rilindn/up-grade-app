@@ -91,7 +91,7 @@
     "dashboard": "Dashboard",
     "subjectsBoard": "Subjects",
     "myClasses": "My Classes",
-    "attendance-remarks": "Attendance"
+    "attendanceRemarks": "Attendance"
   },
   "login": {
     "student": {
@@ -143,5 +143,15 @@
   },
   "myClasses": {
     "title": "myClasses"
+  },
+  "attendance": {
+    "title": "Attendance",
+    "total": "Total",
+    "subject": "Subject",
+    "teacher": "Teacher",
+    "reasonable": "Reasonable",
+    "unreasonable": "Unreasonable",
+    "totalAbsences": "Total absences",
+    "remarks": "Remarks"
   }
 }

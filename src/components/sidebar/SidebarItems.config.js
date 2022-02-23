@@ -4,7 +4,6 @@ const basicItems = [
     icon: "fa fa-book",
     path: "/about",
   },
- 
 ];
 
 const studentItems = [
@@ -24,9 +23,9 @@ const studentItems = [
     path: "/grades-board",
   },
   {
-    name: "sidebar.attendance-remarks",
+    name: "sidebar.attendanceRemarks",
     icon: "fas fa-pen",
-    path: "/attendance-remarks",
+    path: "/attendance",
   },
 ];
 
