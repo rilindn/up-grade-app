@@ -7,6 +7,7 @@
       </AddNew>
       <Table>
         <Head>
+          <Column></Column>
           <Column>Name</Column>
           <Column>Class</Column>
           <Column>Description</Column>
@@ -14,6 +15,9 @@
         </Head>
         <Body>
           <Row v-for="(subject, i) in subjects" :key="i">
+            <Cell
+              ><b>#{{ ++i }}</b></Cell
+            >
             <Cell>{{ subject.subjectName }}</Cell>
             <Cell>{{ subject.targetedLevel }}</Cell>
             <Cell>{{ subject.subjectDescription }}</Cell>

@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   form {
-    width: 300px;
+    width: 320px;
     height: 400px;
     display: flex;
     flex-direction: column;

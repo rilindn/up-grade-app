@@ -50,7 +50,7 @@ export const FormStyled = styled(Form)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 350px;
+  height: 380px;
   text-align: center;
   & > h1 {
     font-weight: bold;
