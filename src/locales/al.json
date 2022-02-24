@@ -149,6 +149,11 @@
   "myClasses": {
     "title": "Klasat"
   },
+  "assignRoles": {
+    "teacher": "Profesori",
+    "subject":"Lenda"
+  },
+  "addNew":"Shtoni",
   "save": "Ruaj",
   "cancel": "Anulo"
 }

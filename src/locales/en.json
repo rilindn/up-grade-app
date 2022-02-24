@@ -144,6 +144,14 @@
   "myClasses": {
     "title": "myClasses"
   },
+  "assignRoles": {
+    "teacher": "Teacher",
+    "subject":"Subject",
+    "id":"Number",
+    "actions":"Actions"
+
+  },
+  "addNew":"Add New",
   "attendance": {
     "title": "Attendance",
     "total": "Total",
