@@ -73,5 +73,10 @@ const adminItems = [
     icon: "fas fa-tasks",
     path: "/assign-roles",
   },
+  {
+    name: "Admins",
+    icon: "fas fa-user",
+    path: "/admins",
+  },
 ];
 export { basicItems, studentItems, adminItems, teacherItems };

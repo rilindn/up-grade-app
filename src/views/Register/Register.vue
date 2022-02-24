@@ -9,17 +9,11 @@
         <h3>Register New User</h3>
         <InputField :error="errors" name="firstName" placeholder="Firstname" />
         <InputField :error="errors" name="lastName" placeholder="Lastname" />
-        <!-- <InputField
-          :error="errors"
-          name="email"
-          type="email"
-          placeholder="Email"
-        /> -->
         <SelectInput
           :error="errors"
           name="role"
           placeholder="Choose a role"
-          :options="['Student', 'Staff']"
+          :options="['Student', 'Staff', 'Admin']"
         />
         <DateInput :error="errors" name="dateOfBirth" />
         <SaveButton title="Register" :loading="loading" type="submit" />
