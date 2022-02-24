@@ -116,19 +116,13 @@ export default {
           duration: 2000,
           text: "Teacher deleted succesfully!",
         });
-        this.emitter.emit("fetchStaff");
+        await this.fetchStaff();
       }
     },
   },
   async beforeCreate() {
     const staff = await getAllStaff();
     this.staff = staff;
-  },
-  created() {
-    this.emitter.on("fetchStaff", async () => {
-      const staff = await getAllStaff();
-      this.staff = staff;
-    });
   },
 };
 </script>
