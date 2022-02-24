@@ -35,7 +35,7 @@ export const assignRoles=[
       teacher:"Eda Saoems",
     },
     { 
-      number:8,
+      id:8,
       subject:"Geography",
       teacher:"Omi Aloasi",
     },

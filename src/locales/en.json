@@ -145,7 +145,10 @@
   },
   "assignRoles": {
     "teacher": "Teacher",
-    "subject":"Subject"
+    "subject":"Subject",
+    "id":"Number",
+    "actions":"Actions"
+
   },
   "addNew":"Add New"
 }
