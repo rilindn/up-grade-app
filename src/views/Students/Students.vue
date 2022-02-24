@@ -15,6 +15,7 @@
             <Column>Student ID</Column>
             <Column>Name</Column>
             <Column>Lastname</Column>
+            <Column>Date of birth</Column>
             <Column>Email</Column>
             <Column>Actions</Column>
           </Head>
@@ -26,6 +27,7 @@
               <Cell>{{ user.studentId }}</Cell>
               <Cell>{{ user.firstName }}</Cell>
               <Cell>{{ user.lastName }}</Cell>
+              <Cell>{{ moment(user.dateOfBirth).format("YYYY-MM-DD") }}</Cell>
               <Cell>{{ user.email }}</Cell>
               <Cell>
                 <ActionWrapper>

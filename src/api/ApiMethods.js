@@ -156,3 +156,25 @@ export async function deleteSubject(id) {
   const subject = await Client.delete(`subject/${id}`);
   return subject.data;
 }
+
+//Teacher methods
+
+export async function getAllStaff() {
+  const staff = await Client.get("staff");
+  return staff.data;
+}
+
+export async function updateStaff(id, data) {
+  try {
+    const result = await Client.put(`staff/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function deleteStaff(id) {
+  const staff = await Client.delete(`staff/${id}`);
+  return staff.data;
+}
