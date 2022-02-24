@@ -1,8 +1,8 @@
 <template>
   <FormWrapper>
-    <Title>Edit user</Title>
+    <Title>Edit Teacher</Title>
     <FormStyled
-      @submit="editUser"
+      @submit="editStaff"
       :validation-schema="editSchema"
       v-slot="{ errors }"
       :initial-values="formValues"
@@ -10,13 +10,13 @@
       <InputField
         :error="errors"
         name="firstName"
-        type="name"
+        type="text"
         placeholder="Firstname"
       />
       <InputField
         :error="errors"
         name="lastName"
-        type="lastname"
+        type="text"
         placeholder="Lastname"
       />
       <DateInput
@@ -28,7 +28,7 @@
         :error="errors"
         name="email"
         type="email"
-        placeholder="email"
+        placeholder="Email"
       />
       <SaveButton :title="$t('save')" :loading="loading" type="submit" />
       <CancelButton :title="$t('cancel')" @click="$emit('closeModal')" />
@@ -44,14 +44,14 @@ import {
   Title,
   CancelButton,
   SaveButton,
-} from "./EditStudent.styles";
+} from "./EditTeacher.styles";
 import InputField from "@/components/InputField";
 import * as yup from "yup";
 import Select from "@/components/select";
 import Button from "@/components/button";
 import DateInput from "@/components/DateInput";
 import SelectInput from "@/components/SelectInput";
-import { updateStudent } from "../../../api/ApiMethods";
+import { updateStaff } from "../../../api/ApiMethods";
 
 export default {
   components: {
@@ -80,8 +80,8 @@ export default {
           .label("Lastname")
           .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
           .required(),
-        email: yup.string().required().email().label("Email"),
         dateOfBirth: yup.date().required().label("Date of birth"),
+        email: yup.string().required().email(),
       }),
       loading: false,
       formValues: {
@@ -98,19 +98,19 @@ export default {
     },
   },
   methods: {
-    async editUser(values) {
+    async editStaff(values) {
       const id = this.data?._id;
       this.loading = true;
       try {
-        const result = await updateStudent(id, values);
+        const result = await updateStaff(id, values);
         if (result?.status === 200) {
           this.loading = false;
           this.$emit("closeModal");
-          await this.$emit("refetchStudents");
+          await this.$emit("refetchStaff");
           this.$notify({
             type: "success",
             duration: 2000,
-            text: "User data updated successfully!",
+            text: "Teacher updated successfully!",
           });
         } else {
           this.loading = false;

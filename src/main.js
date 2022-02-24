@@ -11,13 +11,20 @@ import store from "./store";
 import { VuesticPlugin } from "vuestic-ui";
 import palette from "@/theme/palette";
 import Notifications from "@kyvg/vue3-notification";
+import mitt from "mitt";
+import moment from "moment";
 
-createApp(App)
+const emitter = mitt();
+
+const app = createApp(App)
   .use(store)
   .use(router)
   .use(i18n)
   .use(Notifications)
   .use(VuesticPlugin, {
     colors: palette,
-  })
-  .mount("#app");
+  });
+app.config.globalProperties.emitter = emitter;
+app.config.globalProperties.moment = moment;
+
+app.mount("#app");

@@ -87,7 +87,8 @@
     "gradesBoard": "Notat",
     "dashboard": "Ballina",
     "subjectsBoard": "Lendet",
-    "myClasses": "Klasat"
+    "myClasses": "Klasat",
+    "attendanceRemarks": "Vijueshmeria"
   },
   "login": {
     "student": {
@@ -134,6 +135,16 @@
     "studentEmail": "Email Studentit",
     "generate": "Viti Regjistrimit",
     "parentName": "Emri Prindit"
+  },
+  "attendance": {
+    "title": "Vijueshmeria",
+    "total": "Totali",
+    "subject": "Lenda",
+    "teacher": "Mesuesi",
+    "reasonable": "Te arsyeshme",
+    "unreasonable": "Te paarsyeshme",
+    "totalAbsences": "Mungesat ne total",
+    "remarks": "Verejtjet"
   },
   "myClasses": {
     "title": "Klasat"

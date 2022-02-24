@@ -8,7 +8,7 @@ injectGlobal`
 
   * {
       box-sizing: border-box;
-    }
+  }
   
   body {
     ${fontFamily.poppinsRegular}
@@ -26,35 +26,30 @@ injectGlobal`
       font-size: 1.5em !important;
       font-weight: bold;
       margin: 0 !important;
-
   }
   h3 { 
       display: block;
       font-size: 1.17em !important;
       font-weight: bold;
       margin: 0 !important;
-
   }
   h4 { 
       display: block;
       margin-top: 1.33em !important;
       font-weight: bold;
       margin: 0 !important;
-
   }
   h5 { 
       display: block;
       font-size: .83em !important;
       font-weight: bold;
       margin: 0 !important;
-
   }
   h6 { 
       display: block;
       font-size: .67em !important;
       font-weight: bold;
       margin: 0 !important;
-
   }
 
   .my-notifications {
@@ -79,5 +74,26 @@ injectGlobal`
       color:var(--va-errorMain);
       border: 1px solid var(--va-errorMain);
     }
+  }
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px rgba(0, 132, 102, 0.55); 
+    /* border-radius: 5px; */
+  }
+ 
+  ::-webkit-scrollbar-thumb {
+    background: var(--va-grey300);
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--va-grey400); 
+  }
+
+  ::selection {
+    background: var(--va-primaryMain) !important;
   }
 `;

@@ -1,34 +1,30 @@
 <template>
   <FormWrapper>
-    <Title>Edit user</Title>
+    <Title>Edit Subject</Title>
     <FormStyled
-      @submit="editUser"
+      @submit="editSubject"
       :validation-schema="editSchema"
       v-slot="{ errors }"
       :initial-values="formValues"
     >
       <InputField
         :error="errors"
-        name="firstName"
-        type="name"
-        placeholder="Firstname"
+        name="subjectName"
+        type="text"
+        placeholder="Name"
       />
       <InputField
         :error="errors"
-        name="lastName"
-        type="lastname"
-        placeholder="Lastname"
-      />
-      <DateInput
-        :error="errors"
-        name="dateOfBirth"
-        :defaultValue="formValues.dateOfBirth"
+        name="targetedLevel"
+        type="number"
+        placeholder="Level"
       />
       <InputField
         :error="errors"
-        name="email"
-        type="email"
-        placeholder="email"
+        name="subjectDescription"
+        type="text"
+        as="textarea"
+        placeholder="Description"
       />
       <SaveButton :title="$t('save')" :loading="loading" type="submit" />
       <CancelButton :title="$t('cancel')" @click="$emit('closeModal')" />
@@ -44,14 +40,14 @@ import {
   Title,
   CancelButton,
   SaveButton,
-} from "./EditStudent.styles";
+} from "./EditSubject.styles";
 import InputField from "@/components/InputField";
 import * as yup from "yup";
 import Select from "@/components/select";
 import Button from "@/components/button";
 import DateInput from "@/components/DateInput";
 import SelectInput from "@/components/SelectInput";
-import { updateStudent } from "../../../api/ApiMethods";
+import { updateSubject } from "../../../api/ApiMethods";
 
 export default {
   components: {
@@ -70,25 +66,19 @@ export default {
   data() {
     return {
       editSchema: yup.object({
-        firstName: yup
+        subjectName: yup
           .string()
-          .label("Firstname")
+          .label("Name")
           .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
           .required(),
-        lastName: yup
-          .string()
-          .label("Lastname")
-          .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
-          .required(),
-        email: yup.string().required().email().label("Email"),
-        dateOfBirth: yup.date().required().label("Date of birth"),
+        targetedLevel: yup.number().min(1).label("Level").required(),
+        subjectDescription: yup.string().min(3).label("Description").required(),
       }),
       loading: false,
       formValues: {
-        firstName: this.data?.firstName,
-        lastName: this.data?.lastName,
-        dateOfBirth: new Date(this.data?.dateOfBirth),
-        email: this.data?.email,
+        subjectName: this.data?.subjectName,
+        targetedLevel: this.data?.targetedLevel,
+        subjectDescription: this.data?.subjectDescription,
       },
     };
   },
@@ -98,19 +88,19 @@ export default {
     },
   },
   methods: {
-    async editUser(values) {
+    async editSubject(values) {
       const id = this.data?._id;
       this.loading = true;
       try {
-        const result = await updateStudent(id, values);
+        const result = await updateSubject(id, values);
         if (result?.status === 200) {
           this.loading = false;
           this.$emit("closeModal");
-          await this.$emit("refetchStudents");
+          await this.$emit("refetchSubjects");
           this.$notify({
             type: "success",
             duration: 2000,
-            text: "User data updated successfully!",
+            text: "Subject updated successfully!",
           });
         } else {
           this.loading = false;

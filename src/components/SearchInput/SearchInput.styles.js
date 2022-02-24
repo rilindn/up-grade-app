@@ -6,37 +6,35 @@ const inputProps = {
 
 export const Wrapper = styled("div", inputProps)`
   position: relative;
-  width: 100%;
   text-align: left;
   display: flex;
   flex-direction: column;
-  input,
-  textarea {
+  position: relative;
+  input {
+    width: 235px;
+    height: 40px;
     color: #333;
     font-size: 14px;
     text-decoration: none;
-    margin: 15px 0;
-    margin-bottom: 0;
+    margin: 5px 0;
     border-radius: 5px;
-    border-width: 1px !important;
-    border-color: ${(props) =>
-      props.error ? "var(--va-errorMain)" : "transparent"} !important;
-    padding: 15px 10px;
+    border: 1px solid rgba(0, 132, 102, 0.36);
+    padding: 5px 5px 5px 34px;
     outline: none;
-    width: 100%;
     transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out,
       background-color 0.3s ease-in-out;
     :focus {
-      border-color: "var(--va-primaryDark)" !important;
+      box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16);
     }
     ::placeholder {
-      color: var(--va-grey300);
+      color: var(--va-grey400);
     }
   }
-  span {
-    margin-left: 5px;
-    color: var(--va-errorMain);
-    font-weight: 600;
-    font-size: 11px;
-  }
+`;
+
+export const Icon = styled.span`
+  position: absolute;
+  top: 17px;
+  left: 10px;
+  color: rgba(0, 132, 102, 0.86);
 `;
