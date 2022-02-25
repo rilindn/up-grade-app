@@ -178,3 +178,25 @@ export async function deleteStaff(id) {
   const staff = await Client.delete(`staff/${id}`);
   return staff.data;
 }
+
+//Admin methods
+
+export async function getAllAdmins() {
+  const admins = await Client.get("admin");
+  return admins.data;
+}
+
+export async function updateAdmin(id, data) {
+  try {
+    const result = await Client.put(`admin/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function deleteAdmin(id) {
+  const admins = await Client.delete(`admin/${id}`);
+  return admins.data;
+}

@@ -15,20 +15,20 @@
           <Column>Actions</Column>
         </Head>
         <Body>
-          <Row v-for="(teacher, i) in staff" :key="teacher.id">
+          <Row v-for="(admin, i) in admins" :key="admin.id">
             <Cell
               ><b>#{{ ++i }}</b></Cell
             >
-            <Cell>{{ teacher.firstName }}</Cell>
-            <Cell>{{ teacher.lastName }}</Cell>
-            <Cell>{{ moment(teacher.dateOfBirth).format("YYYY-MM-DD") }}</Cell>
-            <Cell>{{ teacher.email }}</Cell>
+            <Cell>{{ admin.firstName }}</Cell>
+            <Cell>{{ admin.lastName }}</Cell>
+            <Cell>{{ moment(admin.dateOfBirth).format("YYYY-MM-DD") }}</Cell>
+            <Cell>{{ admin.email }}</Cell>
             <Cell>
               <ActionWrapper>
-                <Edit @click="editModal(teacher)"
+                <Edit @click="editModal(admin)"
                   ><i class="far fa-edit"></i
                 ></Edit>
-                <Delete @click="handleDelete(teacher._id)">
+                <Delete @click="handleDelete(admin._id)">
                   <i class="far fa-trash-alt"></i
                 ></Delete>
               </ActionWrapper>
@@ -39,10 +39,10 @@
     </Wrapper>
     <va-modal v-model="showEditModal" hide-default-actions>
       <slot>
-        <EditTeacher
-          :data="editStaffData"
+        <EditAdmin
+          :data="editAdminData"
           @closeModal="closeEditModal"
-          @refetchStaff="fetchStaff"
+          @refetchAdmin="fetchAdmin"
         />
       </slot>
     </va-modal>
@@ -65,9 +65,9 @@ import {
   Delete,
   AddNew,
   Container,
-} from "./Teachers.styles";
-import { getAllStaff, deleteStaff } from "../../api/ApiMethods";
-import EditTeacher from "./EditTeacher/EditTeacher.vue";
+} from "./Admins.styles";
+import { getAllAdmins, deleteAdmin } from "../../api/ApiMethods";
+import EditAdmin from "./EditAdmin/EditAdmin.vue";
 
 export default {
   components: {
@@ -83,46 +83,46 @@ export default {
     Delete,
     AddNew,
     Container,
-    EditTeacher,
+    EditAdmin,
   },
   data() {
     return {
-      staff: [],
+      admins: [],
       showEditModal: false,
       showAddModal: false,
-      editStaffData: [],
+      editAdminData: [],
     };
   },
   methods: {
-    editModal(subject) {
-      this.editStaffData = subject;
+    editModal(admin) {
+      this.editAdminData = admin;
       this.showEditModal = true;
     },
     closeEditModal() {
       this.showEditModal = false;
     },
-    async fetchStaff() {
-      const staff = await getAllStaff();
-      this.staff = staff;
+    async fetchAdmin() {
+      const admins = await getAllAdmins();
+      this.admins = admins;
     },
     triggerAddModal() {
       this.showAddModal = !this.showAddModal;
     },
     async handleDelete(id) {
-      if (confirm("Are you sure you want to delete this teacher?")) {
-        await deleteStaff(id);
+      if (confirm("Are you sure you want to delete this admin?")) {
+        await deleteAdmin(id);
         this.$notify({
           type: "success",
           duration: 2000,
-          text: "Teacher deleted succesfully!",
+          text: "Admin deleted succesfully!",
         });
-        await this.fetchStaff();
+        await this.fetchAdmin();
       }
     },
   },
   async beforeCreate() {
-    const staff = await getAllStaff();
-    this.staff = staff;
+    const admins = await getAllAdmins();
+    this.admins = admins;
   },
 };
 </script>
