@@ -200,3 +200,34 @@ export async function deleteAdmin(id) {
   const admins = await Client.delete(`admin/${id}`);
   return admins.data;
 }
+
+//SubjectTeacher methods
+
+export async function getAllSubjectTeacher() {
+  const staff = await Client.get("subjectTeacher");
+  return staff.data;
+}
+
+export async function addSubjectTeacher(data) {
+  try {
+    const result = await Client.post("subjectTeacher", { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+export async function updateSubjectTeacher(id, data) {
+  try {
+    const result = await Client.put(`subjectTeacher/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function deleteSubjectTeacher(id) {
+  const staff = await Client.delete(`subjectTeacher/${id}`);
+  return staff.data;
+}

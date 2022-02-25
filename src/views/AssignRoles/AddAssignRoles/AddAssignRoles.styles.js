@@ -1,6 +1,7 @@
 import { Form } from "vee-validate";
 import styled from "vue3-styled-components";
 import Button from "@/components/button";
+import { Table, Head, Body, Column, Row, Cell } from "@/components/table";
 
 export const Modal = styled.div`
   position: fixed;
@@ -66,5 +67,13 @@ export const FormStyled = styled(Form)`
     font-size: 14px;
     text-decoration: none;
     margin: 15px 0;
+  }
+`;
+
+export const Wrapper = styled.div`
+  overflow-y: auto;
+  max-height: 400px;
+  tr {
+    cursor: pointer;
   }
 `;
