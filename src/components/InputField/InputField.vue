@@ -6,6 +6,7 @@
       :type="type"
       :as="as"
       :placeholder="placeholder"
+      :disabled="disabled"
     />
     <ErrorMessage :name="name" />
   </Wrapper>
@@ -49,6 +50,10 @@ export default {
     as: {
       type: String,
       default: "",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
 };
