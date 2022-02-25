@@ -10,9 +10,11 @@
             <img src="@/assets/profile.jpeg" alt="logo" />
           </PhotoWrapper>
           <NameWrapper>
-            <div></div>
-            <p>Maria Ahshhs</p>
-            <span>(Active Student)</span>
+            <Status :active="student?.status"></Status>
+            <p>{{ student?.firstName }} {{ student?.lastName }}</p>
+            <span>{{
+              student?.status === true ? "(Active)" : "(NonActive)"
+            }}</span>
           </NameWrapper>
         </TopWrapper>
         <Form
@@ -26,19 +28,19 @@
               <div>
                 <DataField>
                   <p>{{ $t("studentProfile.id") }}:</p>
-                  <span>19038128</span>
+                  <span>{{ student?.studentId }}</span>
                 </DataField>
                 <DataField>
                   <p>{{ $t("studentProfile.studentEmail") }}:</p>
-                  <span>maria@ubt-uni.com</span>
+                  <span>{{ student?.email }}</span>
                 </DataField>
                 <DataField>
                   <p>{{ $t("studentProfile.generate") }}:</p>
-                  <span>2019/2020</span>
+                  <span>{{ student?.enrolledYear }}</span>
                 </DataField>
                 <DataField>
                   <p>{{ $t("studentProfile.parentName") }}:</p>
-                  <span>Alia Ahshsb</span>
+                  <span>{{ student?.parent?.firstName }}</span>
                 </DataField>
               </div>
             </ContainerColumn>
@@ -46,16 +48,16 @@
               <div>
                 <DataField>
                   <p>{{ $t("studentProfile.nationality") }}:</p>
-                  <span>United States</span>
+                  <span>{{ student?.nationality }}</span>
                 </DataField>
                 <DataField>
                   <p>{{ $t("studentProfile.citizenship") }}:</p>
-                  <span>United States</span>
+                  <span>{{ student?.citizenship }}</span>
                 </DataField>
                 <div style="display: flex; flex-direction: column">
                   <DataField>
                     <p>{{ $t("studentProfile.place") }}:</p>
-                    <span>New York,USA</span>
+                    <span>{{ student?.place }}</span>
                   </DataField>
                   <InputField
                     v-if="displayInputs"
@@ -68,7 +70,7 @@
                 <div style="display: flex; flex-direction: column">
                   <DataField>
                     <p>{{ $t("studentProfile.zipcode") }}:</p>
-                    <span>172520</span>
+                    <span>{{ student?.zipCode }}</span>
                   </DataField>
                   <InputField
                     v-if="displayInputs"
@@ -84,16 +86,16 @@
               <div>
                 <DataField>
                   <p>{{ $t("studentProfile.birthday") }}:</p>
-                  <span>1 July 2000 (age 21)</span>
+                  <span>{{ student?.dateOfBirth }}</span>
                 </DataField>
                 <DataField>
                   <p>{{ $t("studentProfile.gender") }}:</p>
-                  <span>Female</span>
+                  <span>{{ student?.gender }}</span>
                 </DataField>
                 <div style="display: flex; flex-direction: column">
                   <DataField>
                     <p>{{ $t("studentProfile.personalEmail") }}:</p>
-                    <span>marias@gmail.com</span>
+                    <span>{{ student?.personalEmail }}</span>
                   </DataField>
                   <InputField
                     v-if="displayInputs"
@@ -106,7 +108,7 @@
                 <div style="display: flex; flex-direction: column">
                   <DataField>
                     <p>{{ $t("studentProfile.phoneNumber") }}:</p>
-                    <span>+323239939393</span>
+                    <span>{{ student?.parent?.phoneNumber }}</span>
                   </DataField>
                   <InputField
                     v-if="displayInputs"
@@ -142,11 +144,13 @@ import {
   EditWrapper,
   SubmitButton,
   DataField,
+  Status,
 } from "./StudentProfile.styles";
 import InputField from "@/components/InputField";
 import { Form } from "vee-validate";
 import * as yup from "yup";
 import { configure } from "vee-validate";
+import { getLoggedUser } from "../../api/ApiMethods";
 
 configure({
   validateOnBlur: true,
@@ -166,9 +170,11 @@ export default {
     InputField,
     DataField,
     ContainerColumn,
+    Status,
   },
   data() {
     return {
+      student: {},
       displayInputs: false,
       role: "",
       profileSchema: yup.object({
@@ -192,6 +198,11 @@ export default {
         personalEmail: "marias@gmail.com",
       },
     };
+  },
+  methods: {},
+  async beforeCreate() {
+    const student = await getLoggedUser();
+    this.student = student?.data?.user;
   },
 };
 </script>
