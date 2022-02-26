@@ -64,6 +64,11 @@ const adminItems = [
     path: "/classes",
   },
   {
+    name: "sidebar.parallels",
+    icon: "fas fa-project-diagram",
+    path: "/parallels",
+  },
+  {
     name: "sidebar.subjectsBoard",
     icon: "fas fa-book-open",
     path: "/subjects-board",

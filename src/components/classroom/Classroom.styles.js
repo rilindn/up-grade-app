@@ -23,6 +23,20 @@ export const SingleClass = styled("div", classroomProps)`
   }
 `;
 
+export const AddParallel = styled.div`
+  position: absolute;
+  right: -25px;
+  bottom: 100%;
+  background-color: var(--va-primaryMain);
+  color: white;
+  border-radius: 7px;
+  padding: 5px;
+  :hover {
+    background-color: var(--va-primaryDark);
+    color: white;
+  }
+`;
+
 export const Content = styled("div")`
   display: flex;
   flex-direction: column;
@@ -44,6 +58,7 @@ export const DropDownWrapper = styled("div")`
   background-color: var(--va-grey100);
   color: var(--va-black);
   cursor: pointer;
+  position: relative;
 `;
 
 export const DropDownText = styled("div")`

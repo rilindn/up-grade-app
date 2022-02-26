@@ -84,6 +84,7 @@
     "home": "Home",
     "schedule": "Orari",
     "classes": "Klasat",
+    "parallels": "Paralelet",
     "gradesBoard": "Notat",
     "dashboard": "Ballina",
     "subjectsBoard": "Lendet",
@@ -151,9 +152,9 @@
   },
   "assignRoles": {
     "teacher": "Profesori",
-    "subject":"Lenda"
+    "subject": "Lenda"
   },
-  "addNew":"Shtoni",
+  "addNew": "Shtoni",
   "save": "Ruaj",
   "cancel": "Anulo"
 }

@@ -35,6 +35,11 @@ export async function getAllStudents() {
   return users.data;
 }
 
+export async function getNotAssignedStudents() {
+  const users = await Client.get("student/non-assigned");
+  return users.data;
+}
+
 export async function paginationStudents(page, search) {
   const searchValue = search || "";
   const users = await Client.get(
@@ -217,6 +222,7 @@ export async function addSubjectTeacher(data) {
     return err;
   }
 }
+
 export async function updateSubjectTeacher(id, data) {
   try {
     const result = await Client.put(`subjectTeacher/${id}`, { ...data });
@@ -230,4 +236,61 @@ export async function updateSubjectTeacher(id, data) {
 export async function deleteSubjectTeacher(id) {
   const staff = await Client.delete(`subjectTeacher/${id}`);
   return staff.data;
+}
+
+// Parallels
+
+export async function getAllParallels() {
+  const parallels = await Client.get(`parallel`);
+  return parallels.data;
+}
+
+export async function getParallel(id) {
+  const parallel = await Client.get(`parallel/${id}`);
+  return parallel.data;
+}
+
+export async function getParallelStudents(id) {
+  const parallel = await Client.get(`parallel/students/${id}`);
+  return parallel.data;
+}
+
+export async function getNonAssignedParallels(id) {
+  const parallels = await Client.get(`parallel/non-assigned`);
+  return parallels.data;
+}
+
+export async function newParallel(data) {
+  try {
+    const result = await Client.post(`parallel`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function updateParallel(id, data) {
+  try {
+    const result = await Client.put(`parallel/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function addClassStudent(data, id) {
+  try {
+    const result = await Client.post(`parallel/add-student/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function deleteParallel(id) {
+  const parallel = await Client.delete(`parallel/${id}`);
+  return parallel.data;
 }

@@ -111,10 +111,16 @@ const routes = [
         component: () => import("@/views/TeacherSchedule"),
       },
       {
-        path: "/class-students",
+        path: "/class-students/:id",
         name: "ClassStudents",
         meta: { requiredRole: ["Admin"] },
         component: () => import("@/views/ClassStudents"),
+      },
+      {
+        path: "/parallels",
+        name: "Parallels",
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/Parallels"),
       },
       {
         path: "/assign-roles",
