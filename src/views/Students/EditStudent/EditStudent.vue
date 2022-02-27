@@ -1,46 +1,81 @@
 <template>
   <FormWrapper>
-    <Title>Edit user</Title>
-    <FormStyled
+    <h2>Edit Student</h2>
+    <Form
       @submit="editUser"
       :validation-schema="editSchema"
       v-slot="{ errors }"
       :initial-values="formValues"
     >
-      <InputField
-        :error="errors"
-        name="firstName"
-        type="name"
-        placeholder="Firstname"
-      />
-      <InputField
-        :error="errors"
-        name="lastName"
-        type="lastname"
-        placeholder="Lastname"
-      />
-      <DateInput
-        :error="errors"
-        name="dateOfBirth"
-        :defaultValue="formValues.dateOfBirth"
-      />
-      <InputField
-        :error="errors"
-        name="email"
-        type="email"
-        placeholder="email"
-      />
+      <InputsWrapper>
+        <div>
+          <InputField
+            :error="errors"
+            name="firstName"
+            placeholder="Firstname"
+          />
+          <InputField :error="errors" name="lastName" placeholder="Lastname" />
+          <InputField
+            :error="errors"
+            name="parentName"
+            placeholder="Parent Name"
+          />
+          <DateInput
+            :error="errors"
+            name="dateOfBirth"
+            :defaultValue="formValues.dateOfBirth"
+          />
+          <SelectInput
+            :error="errors"
+            name="gender"
+            placeholder="Choose  gender"
+            :options="['Female', 'Male']"
+            :defaultValue="formValues.gender"
+          />
+          <InputField
+            :error="errors"
+            name="enrolledYear"
+            placeholder="Enrolled year"
+          />
+        </div>
+        <div>
+          <InputField
+            :error="errors"
+            name="nationality"
+            placeholder="Nationality"
+          />
+          <InputField
+            :error="errors"
+            name="citizenship"
+            placeholder="Citizenship"
+          />
+          <InputField :error="errors" name="place" placeholder="Place" />
+          <InputField :error="errors" name="zipCode" placeholder="Zipcode" />
+          <InputField
+            :error="errors"
+            name="personalEmail"
+            placeholder="Personal Email"
+            type="email"
+          />
+          <InputField
+            :error="errors"
+            name="phoneNumber"
+            placeholder="Parent phone number"
+          />
+        </div>
+      </InputsWrapper>
       <SaveButton :title="$t('save')" :loading="loading" type="submit" />
       <CancelButton :title="$t('cancel')" @click="$emit('closeModal')" />
-    </FormStyled>
+    </Form>
   </FormWrapper>
 </template>
 
 <script>
 import {
-  Modal,
+  Wrapper,
   FormWrapper,
   FormStyled,
+  InputsWrapper,
   Title,
   CancelButton,
   SaveButton,
@@ -52,10 +87,11 @@ import Button from "@/components/button";
 import DateInput from "@/components/DateInput";
 import SelectInput from "@/components/SelectInput";
 import { updateStudent } from "../../../api/ApiMethods";
+import { Form } from "vee-validate";
 
 export default {
   components: {
-    Modal,
+    Wrapper,
     FormWrapper,
     InputField,
     FormStyled,
@@ -66,6 +102,8 @@ export default {
     CancelButton,
     SaveButton,
     SelectInput,
+    InputsWrapper,
+    Form,
   },
   data() {
     return {
@@ -82,6 +120,15 @@ export default {
           .required(),
         email: yup.string().required().email().label("Email"),
         dateOfBirth: yup.date().required().label("Date of birth"),
+        gender: yup.string().label("Gender").required(),
+        zipCode: yup.string().label("Zipcode").required(),
+        nationality: yup.string().label("Nationality").required(),
+        citizenship: yup.string().label("Citizenship").required(),
+        place: yup.string().label("Place").required(),
+        personalEmail: yup.string().label("Personal Email").required(),
+        parentName: yup.string().label("Parent Name").required(),
+        enrolledYear: yup.number().label("Enrolled year").required(),
+        phoneNumber: yup.number().label("Phone number").required(),
       }),
       loading: false,
       formValues: {
@@ -89,6 +136,15 @@ export default {
         lastName: this.data?.lastName,
         dateOfBirth: new Date(this.data?.dateOfBirth),
         email: this.data?.email,
+        gender: this.data?.gender,
+        zipCode: this.data?.zipCode,
+        nationality: this.data?.nationality,
+        citizenship: this.data?.citizenship,
+        place: this.data?.place,
+        personalEmail: this.data?.personalEmail,
+        parentName: this.data?.parent?.firstName,
+        enrolledYear: this.data?.enrolledYear,
+        phoneNumber: this.data?.parent?.phoneNumber,
       },
     };
   },
@@ -101,8 +157,13 @@ export default {
     async editUser(values) {
       const id = this.data?._id;
       this.loading = true;
+      const { parentName, phoneNumber, ...userData } = values;
+      userData.parent = {
+        firstName: parentName,
+        phoneNumber,
+      };
       try {
-        const result = await updateStudent(id, values);
+        const result = await updateStudent(id, userData);
         if (result?.status === 200) {
           this.loading = false;
           this.$emit("closeModal");

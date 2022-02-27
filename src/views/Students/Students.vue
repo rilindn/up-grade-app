@@ -3,7 +3,7 @@
     <Wrapper>
       <TableHeader>
         <SearchInput v-model="search" placeholder="Search" />
-        <AddNew @click="$router.push('/register')">
+        <AddNew @click="$router.push('/register-student')">
           <span><i class="fas fa-plus-circle"></i></span>
           <span>Add New</span>
         </AddNew>
@@ -14,7 +14,9 @@
             <Column></Column>
             <Column>Student ID</Column>
             <Column>Name</Column>
+            <Column>Parent Name</Column>
             <Column>Lastname</Column>
+            <Column>Gender</Column>
             <Column>Date of birth</Column>
             <Column>Email</Column>
             <Column>Actions</Column>
@@ -24,11 +26,13 @@
               <Cell
                 ><b>#{{ i + (currentPage - 1) * pager.pageSize }}</b></Cell
               >
-              <Cell>{{ user.studentId }}</Cell>
-              <Cell>{{ user.firstName }}</Cell>
-              <Cell>{{ user.lastName }}</Cell>
-              <Cell>{{ moment(user.dateOfBirth).format("YYYY-MM-DD") }}</Cell>
-              <Cell>{{ user.email }}</Cell>
+              <Cell>{{ user?.studentId }}</Cell>
+              <Cell>{{ user?.firstName }}</Cell>
+              <Cell>{{ user.parent?.firstName }}</Cell>
+              <Cell>{{ user?.lastName }}</Cell>
+              <Cell>{{ user?.gender }}</Cell>
+              <Cell>{{ moment(user?.dateOfBirth).format("YYYY-MM-DD") }}</Cell>
+              <Cell>{{ user?.email }}</Cell>
               <Cell>
                 <ActionWrapper>
                   <Edit @click="editModal(user)"

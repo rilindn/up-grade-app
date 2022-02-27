@@ -123,6 +123,12 @@ const routes = [
         component: () => import("@/views/AssignRoles"),
       },
       {
+        path: "/register-student",
+        name: "RegisterStudent",
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/RegisterStudent"),
+      },
+      {
         path: "/access-denied",
         name: "Access Denied",
         component: () => import("@/views/AccessDenied"),
