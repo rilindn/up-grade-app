@@ -64,7 +64,7 @@
                     name="place"
                     :error="errors"
                     placeholder="Place"
-                    type="place"
+                    type="text"
                   />
                 </div>
                 <div style="display: flex; flex-direction: column">
@@ -77,7 +77,7 @@
                     name="zipCode"
                     :error="errors"
                     placeholder="Zip Code"
-                    type="zipCode"
+                    type="number"
                   />
                 </div>
               </div>
@@ -102,7 +102,7 @@
                     :error="errors"
                     placeholder="Personal Email"
                     name="personalEmail"
-                    type="personalEmail"
+                    type="email"
                   />
                 </div>
                 <div style="display: flex; flex-direction: column">
@@ -114,7 +114,8 @@
                     v-if="displayInputs"
                     name="phoneNumber"
                     :error="errors"
-                    type="phoneNumber"
+                    placeholder="Phone number"
+                    type="text"
                   />
                 </div>
               </div>
@@ -150,7 +151,7 @@ import InputField from "@/components/InputField";
 import { Form } from "vee-validate";
 import * as yup from "yup";
 import { configure } from "vee-validate";
-import { getLoggedUser } from "../../api/ApiMethods";
+import { getLoggedUser, updateStudent } from "../../api/ApiMethods";
 
 configure({
   validateOnBlur: true,
@@ -191,18 +192,49 @@ export default {
           .required(),
         personalEmail: yup.string().required().email().label("Email"),
       }),
-      formValues: {
-        place: "New York,USA",
-        phoneNumber: 323239939393,
-        zipCode: 172520,
-        personalEmail: "marias@gmail.com",
-      },
+      formValues: {},
     };
   },
-  methods: {},
+  methods: {
+    async editProfile(values) {
+      const id = this.student?._id;
+      const { phoneNumber, ...data } = values;
+      data.parent = { phoneNumber };
+      this.loading = true;
+      this.displayInputs = false;
+      try {
+        const result = await updateStudent(id, data);
+        if (result?.status === 200) {
+          this.loading = false;
+          const student = await getLoggedUser();
+          this.student = student?.data?.user;
+          this.$notify({
+            type: "success",
+            duration: 2000,
+            text: "Updated successfully!",
+          });
+        } else {
+          this.loading = false;
+          this.$notify({
+            type: "error",
+            duration: 2000,
+            text: "Please try again!",
+          });
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  },
   async beforeCreate() {
     const student = await getLoggedUser();
     this.student = student?.data?.user;
+    this.formValues = {
+      place: student?.data?.user?.place,
+      phoneNumber: student?.data?.user?.parent?.phoneNumber,
+      zipCode: student?.data?.user?.zipCode,
+      personalEmail: student?.data?.user?.personalEmail,
+    };
   },
 };
 </script>
