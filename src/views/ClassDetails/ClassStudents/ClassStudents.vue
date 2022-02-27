@@ -94,7 +94,7 @@ export default {
   methods: {
     async fetchClassMembers() {
       const students = await getParallelStudents(this.$route.params.id);
-      this.classStudents = students;
+      this.classStudents = students.filter(Boolean);
     },
     async handleDelete(id) {
       const ids = {
@@ -103,8 +103,7 @@ export default {
       };
       if (confirm("Are you sure you want to delete this student?")) {
         await deleteStudentParallel(ids);
-        const students = await getParallelStudents(this.$route.params.id);
-        this.classStudents = students;
+        await this.fetchClassMembers();
         this.$notify({
           type: "success",
           duration: 2000,

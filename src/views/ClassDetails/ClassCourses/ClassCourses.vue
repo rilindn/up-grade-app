@@ -85,8 +85,8 @@ export default {
   },
   methods: {
     async fetchClassCourses() {
-      const students = await getParallelCourses(this.$route.params.id);
-      this.classCourses = students;
+      const courses = await getParallelCourses(this.$route.params.id);
+      this.classCourses = courses.filter(Boolean);
     },
     async handleDelete(id) {
       const ids = {
@@ -107,7 +107,7 @@ export default {
   },
   async beforeCreate() {
     const courses = await getParallelCourses(this.$route.params.id);
-    this.classCourses = courses;
+    this.classCourses = courses.filter(Boolean);
   },
 };
 </script>

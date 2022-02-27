@@ -39,7 +39,7 @@ const routes = [
         component: () => import("@/views/Classes"),
       },
       {
-        path: "/Details",
+        path: "/students",
         name: "Students",
         meta: { requiredRole: ["Admin"] },
         component: () => import("@/views/Students"),
