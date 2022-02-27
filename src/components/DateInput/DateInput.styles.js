@@ -8,10 +8,12 @@ export const Wrapper = styled("div", inputProps)`
   position: relative;
   width: 100%;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 70px;
-  .va-input-wrapper__input {
-    margin: 15px 0 0 0;
-  }
+  margin-top: 3px;
+  position: relative;
   .va-input-wrapper__content {
     border-radius: 5px;
     border: 1px solid
@@ -30,7 +32,7 @@ export const Wrapper = styled("div", inputProps)`
     text-decoration: none;
     margin-bottom: 0;
     padding: 15px 10px;
-    height: 50px;
+    /* height: 50px; */
     outline: none;
     width: 100%;
     transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out,
@@ -47,5 +49,7 @@ export const Wrapper = styled("div", inputProps)`
     color: var(--va-errorMain);
     font-weight: 600;
     font-size: 11px;
+    position: absolute;
+    top: 103%;
   }
 `;

@@ -8,9 +8,12 @@ export const Wrapper = styled("div", inputProps)`
   position: relative;
   width: 100%;
   text-align: left;
-  .va-input-wrapper__input {
-    margin: 15px 0 0 0;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 70px;
+  margin-top: 2px;
+  position: relative;
   .va-input-wrapper__content {
     border-radius: 5px;
     border: 1px solid
@@ -46,5 +49,7 @@ export const Wrapper = styled("div", inputProps)`
     color: var(--va-errorMain);
     font-weight: 600;
     font-size: 11px;
+    position: absolute;
+    top: 103%;
   }
 `;

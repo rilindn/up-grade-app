@@ -3,7 +3,7 @@
     <Wrapper>
       <TableHeader>
         <SearchInput v-model="search" placeholder="Search" />
-        <AddNew @click="$router.push('/register')">
+        <AddNew @click="$router.push('/register-student')">
           <span><i class="fas fa-plus-circle"></i></span>
           <span>Add New</span>
         </AddNew>

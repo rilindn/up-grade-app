@@ -10,12 +10,15 @@ export const Wrapper = styled("div", inputProps)`
   text-align: left;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  height: 70px;
+  position: relative;
   input,
   textarea {
     color: #333;
     font-size: 14px;
     text-decoration: none;
-    margin: 15px 0;
+    /* margin: 15px 0; */
     margin-bottom: 0;
     border-radius: 5px;
     border-width: 1px !important;
@@ -38,5 +41,7 @@ export const Wrapper = styled("div", inputProps)`
     color: var(--va-errorMain);
     font-weight: 600;
     font-size: 11px;
+    position: absolute;
+    top: 103%;
   }
 `;
