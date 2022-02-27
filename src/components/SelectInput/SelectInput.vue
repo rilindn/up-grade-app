@@ -55,10 +55,4 @@ export default {
 };
 </script>
 
-<style scoped>
-/* .InputField {
-  position: relative;
-  margin-bottom: calc(1em * 1.5);
-  width: 100%;
-} */
-</style>
+<style scoped></style>

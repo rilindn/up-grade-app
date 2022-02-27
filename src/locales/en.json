@@ -138,10 +138,10 @@
     "place": "Place",
     "zipcode": "Zip Code",
     "personalEmail": "Personal Email",
-    "phoneNumber": "Phone Number",
+    "phoneNumber": " Parent Phone Number",
     "studentEmail": "Student Email",
     "generate": "Enrolled Year",
-    "parentName": "Father's Name"
+    "parentName": "Parent Name"
   },
   "myClasses": {
     "title": "myClasses"
