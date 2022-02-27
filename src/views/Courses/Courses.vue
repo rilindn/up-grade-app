@@ -1,27 +1,27 @@
 <template>
   <Wrapper>
-    <AddNew @click="addAssignRolesModal()">
+    <AddNew @click="addCoursesModal()">
       <span><i class="fas fa-plus-circle"></i></span>
       <span>{{ $t("addNew") }}</span>
     </AddNew>
     <Table>
       <Head>
         <Column></Column>
-        <Column>{{ $t("assignRoles.subject") }}</Column>
-        <Column>{{ $t("assignRoles.teacher") }}</Column>
-        <Column>{{ $t("assignRoles.actions") }}</Column>
+        <Column>{{ $t("courses.subject") }}</Column>
+        <Column>{{ $t("courses.teacher") }}</Column>
+        <Column>{{ $t("courses.actions") }}</Column>
       </Head>
       <Body>
-        <Row v-for="(item, i) in assignedRoles" :key="i">
+        <Row v-for="(course, i) in courses" :key="i">
           <Cell>#{{ ++i }}</Cell>
-          <Cell>{{ item.subject.name }}</Cell>
-          <Cell>{{ item.teacher.name }}</Cell>
+          <Cell>{{ course.subject.name }}</Cell>
+          <Cell>{{ course.teacher.name }}</Cell>
           <Cell>
             <ActionWrapper>
-              <Edit @click="editAssignRolesModal(item)"
+              <Edit @click="editCoursesModal(course)"
                 ><i class="far fa-edit"></i
               ></Edit>
-              <Delete @click="handleDelete(item._id)">
+              <Delete @click="handleDelete(course._id)">
                 <i class="far fa-trash-alt"></i
               ></Delete>
             </ActionWrapper>
@@ -31,16 +31,13 @@
     </Table>
     <va-modal v-model="showAddModal" hide-default-actions>
       <slot>
-        <AddAssignRoles
-          @closeModal="closeModal"
-          @fetchSubjectTeacher="fetchSubjectTeacher"
-        />
+        <AddCourse @closeModal="closeModal" @fetchCourses="fetchCourses" />
       </slot>
     </va-modal>
     <va-modal v-model="showEditModal" hide-default-actions>
       <slot>
-        <EditAssignRoles
-          @fetchSubjectTeacher="fetchSubjectTeacher"
+        <EditCourse
+          @fetchCourses="fetchCourses"
           @closeModal="closeModal"
           :data="editData"
         />
@@ -56,21 +53,11 @@ import {
   Column,
   Row,
   Cell,
-} from "../../components/table/Table.styles";
-import {
-  Wrapper,
-  AddNew,
-  ActionWrapper,
-  Edit,
-  Delete,
-} from "./AssignRoles.styles";
-import { assignRoles } from "./AssignRolesData";
-import AddAssignRoles from "./AddAssignRoles";
-import EditAssignRoles from "./EditAssignRoles";
-import {
-  getAllSubjectTeacher,
-  deleteSubjectTeacher,
-} from "@/api/ApiMethods.js";
+} from "@/components/table/Table.styles";
+import { Wrapper, AddNew, ActionWrapper, Edit, Delete } from "./Courses.styles";
+import AddCourse from "./AddCourse";
+import EditCourse from "./EditCourse";
+import { getAllCourses, deleteCourse } from "@/api/ApiMethods.js";
 
 export default {
   components: {
@@ -85,23 +72,22 @@ export default {
     ActionWrapper,
     Edit,
     Delete,
-    AddAssignRoles,
-    EditAssignRoles,
+    AddCourse,
+    EditCourse,
   },
   data() {
     return {
-      assignRoles,
       showEditModal: false,
       showAddModal: false,
-      assignedRoles: [],
+      courses: [],
       editData: {},
     };
   },
   methods: {
-    addAssignRolesModal() {
+    addCoursesModal() {
       this.showAddModal = true;
     },
-    editAssignRolesModal(item) {
+    editCoursesModal(item) {
       this.showEditModal = true;
       this.editData = item;
     },
@@ -109,25 +95,25 @@ export default {
       this.showEditModal = false;
       this.showAddModal = false;
     },
-    async fetchSubjectTeacher() {
-      const data = await getAllSubjectTeacher();
-      this.assignedRoles = data;
+    async fetchCourses() {
+      const data = await getAllCourses();
+      this.courses = data;
     },
     async handleDelete(id) {
       if (confirm("Are you sure?")) {
-        await deleteSubjectTeacher(id);
+        await deleteCourse(id);
         this.$notify({
           type: "success",
           duration: 2000,
           text: "Role assignment deleted!",
         });
-        await this.fetchSubjectTeacher();
+        await this.fetchCourses();
       }
     },
   },
   async beforeCreate() {
-    const data = await getAllSubjectTeacher();
-    this.assignedRoles = data;
+    const data = await getAllCourses();
+    this.courses = data;
   },
 };
 </script>

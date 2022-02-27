@@ -33,7 +33,7 @@
         <router-link
           v-for="{ _id, name } in parallels"
           :key="_id"
-          :to="{ name: 'ClassStudents', params: { id: _id } }"
+          :to="{ name: 'Class Details', params: { id: _id } }"
         >
           <MenuItem>
             <span>

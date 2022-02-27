@@ -36,7 +36,7 @@
             </Cell>
             <Cell>
               <router-link
-                :to="{ name: 'ClassStudents', params: { id: parallel._id } }"
+                :to="{ name: 'Class Details', params: { id: parallel._id } }"
                 >See Details</router-link
               >
             </Cell>

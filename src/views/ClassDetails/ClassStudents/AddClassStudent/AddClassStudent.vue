@@ -1,29 +1,33 @@
 <template>
   <FormWrapper>
-    <Title>Add Class Parallel</Title>
-    <Wrapper v-if="parallels?.length > 0">
+    <Title>Add Class Student</Title>
+    <Wrapper v-if="students?.length > 0">
       <Table>
         <Head>
-          <Column>Class</Column>
+          <Column></Column>
           <Column>Name</Column>
-          <Column>Max Capacity</Column>
-          <Column>Students</Column>
+          <Column>Surname</Column>
+          <Column>Email</Column>
         </Head>
         <Body>
           <Row
-            @click="selectParallel(parallel)"
-            v-for="parallel in parallels"
-            :key="parallel._id"
+            @click="selectStudent(student)"
+            v-for="student in students"
+            :key="student._id"
           >
-            <Cell>{{ parallel.class }}</Cell>
-            <Cell>{{ parallel.name }}</Cell>
-            <Cell>{{ parallel.capacity }}</Cell>
-            <Cell>{{ parallel.students.length }}</Cell>
+            <Cell
+              ><Avatar
+                :size="40"
+                :name="`${student.firstName} ${student.lastName}`"
+            /></Cell>
+            <Cell>{{ student.firstName }}</Cell>
+            <Cell>{{ student.lastName }}</Cell>
+            <Cell>{{ student.email }}</Cell>
           </Row>
         </Body>
       </Table>
     </Wrapper>
-    <span v-else>No unassigned parallels were found!</span>
+    <span v-else>No unassigned courses were found!</span>
   </FormWrapper>
 </template>
 
@@ -37,12 +41,12 @@ import {
   CancelButton,
   SaveButton,
   Wrapper,
-} from "./AddClassParallel.styles";
+} from "./AddClassStudent.styles";
 import InputField from "@/components/InputField";
 import SelectInput from "@/components/SelectInput";
 import Avatar from "@/components/Avatar";
-import { getNonAssignedParallels } from "@/api/ApiMethods";
-import { addClassParallel } from "../../../api/ApiMethods";
+import { addClassStudent } from "@/api/ApiMethods.js";
+import { getNotAssignedStudents } from "@/api/ApiMethods";
 
 export default {
   components: {
@@ -65,28 +69,28 @@ export default {
   },
   data() {
     return {
-      parallels: [],
+      students: [],
       selectedStudent: {},
       loading: false,
     };
   },
   props: {
-    classId: { type: String },
+    parallelId: { type: String },
   },
   methods: {
-    async selectParallel(parallel) {
-      const { _id } = parallel;
-      const data = { parallel: _id };
+    async selectStudent(student) {
+      const { _id } = student;
+      const data = { student: _id };
       try {
-        const result = await addClassParallel(data, this.classId);
+        const result = await addClassStudent(data, this.parallelId);
         if (result?.status === 200) {
           this.loading = false;
           this.$emit("closeModal");
-          this.$emit("fetchParallels");
+          this.$emit("fetchClassMembers");
           this.$notify({
             type: "success",
             duration: 2000,
-            text: "Parallel assigned successfully!",
+            text: "New student added successfully!",
           });
         } else {
           this.loading = false;
@@ -102,8 +106,8 @@ export default {
     },
   },
   async beforeCreate() {
-    const parallels = await getNonAssignedParallels();
-    this.parallels = parallels;
+    const students = await getNotAssignedStudents();
+    this.students = students;
   },
 };
 </script>

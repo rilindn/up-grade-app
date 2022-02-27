@@ -17,7 +17,6 @@ export const Modal = styled.div`
 `;
 
 export const FormWrapper = styled.div`
-  min-height: 300px;
   background-color: #fff;
   border-radius: 5px;
   position: relative;

@@ -74,9 +74,9 @@ const adminItems = [
     path: "/subjects-board",
   },
   {
-    name: "Assign Roles",
+    name: "sidebar.courses",
     icon: "fas fa-tasks",
-    path: "/assign-roles",
+    path: "/courses",
   },
   {
     name: "Admins",

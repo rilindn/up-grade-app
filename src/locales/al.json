@@ -89,7 +89,8 @@
     "dashboard": "Ballina",
     "subjectsBoard": "Lendet",
     "myClasses": "Klasat",
-    "attendanceRemarks": "Vijueshmeria"
+    "attendanceRemarks": "Vijueshmeria",
+    "courses": "Kurset"
   },
   "login": {
     "student": {
@@ -150,9 +151,11 @@
   "myClasses": {
     "title": "Klasat"
   },
-  "assignRoles": {
+  "courses": {
     "teacher": "Profesori",
-    "subject": "Lenda"
+    "subject": "Lenda",
+    "id": "ID",
+    "actions": "Veprimet"
   },
   "addNew": "Shtoni",
   "save": "Ruaj",

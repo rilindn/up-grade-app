@@ -92,7 +92,8 @@
     "dashboard": "Dashboard",
     "subjectsBoard": "Subjects",
     "myClasses": "My Classes",
-    "attendanceRemarks": "Attendance"
+    "attendanceRemarks": "Attendance",
+    "courses": "Courses"
   },
   "login": {
     "student": {
@@ -145,7 +146,7 @@
   "myClasses": {
     "title": "myClasses"
   },
-  "assignRoles": {
+  "courses": {
     "teacher": "Teacher",
     "subject": "Subject",
     "id": "Number",

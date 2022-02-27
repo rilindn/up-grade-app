@@ -5,7 +5,7 @@
         <span><i class="fas fa-plus-circle"></i></span>
         <span>{{ $t("addNew") }}</span>
       </AddNew>
-      <Table>
+      <Table v-if="classStudents?.length > 0">
         <Head>
           <Column>Id</Column>
           <Column>Firstname</Column>
@@ -17,7 +17,7 @@
         <Body>
           <Row
             v-for="(student, i) in classStudents"
-            :key="student.id"
+            :key="student._id"
             :index="++i"
           >
             <Cell>{{ student.studentId }}</Cell>
@@ -35,6 +35,7 @@
           </Row>
         </Body>
       </Table>
+      <span v-else>No assigned students were found!</span>
     </Wrapper>
   </Container>
   <va-modal v-model="addStudentModal" hide-default-actions>
@@ -56,8 +57,7 @@ import {
   Column,
   Row,
   Cell,
-} from "../../components/table/Table.styles";
-import { users } from "../../components/table/sampleData";
+} from "@/components/table/Table.styles";
 import {
   Wrapper,
   ActionWrapper,
@@ -66,12 +66,8 @@ import {
   AddNew,
   Container,
 } from "./ClassStudents.styles";
-import { getParallel, getStudentById } from "@/api/ApiMethods";
 import AddClassStudent from "./AddClassStudent";
-import {
-  deleteStudentParallel,
-  getParallelStudents,
-} from "../../api/ApiMethods";
+import { deleteStudentParallel, getParallelStudents } from "@/api/ApiMethods";
 
 export default {
   components: {
@@ -120,7 +116,7 @@ export default {
   },
   async beforeCreate() {
     const students = await getParallelStudents(this.$route.params.id);
-    this.classStudents = students;
+    this.classStudents = students.filter(Boolean);
   },
 };
 </script>

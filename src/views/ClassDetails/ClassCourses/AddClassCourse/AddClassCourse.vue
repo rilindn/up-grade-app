@@ -1,33 +1,27 @@
 <template>
   <FormWrapper>
-    <Title>Add Class Student</Title>
-    <va-inner-loading :loading="students?.length <= 0" :size="60" />
-    <Wrapper v-if="students?.length > 0">
+    <Title>Add Class Course</Title>
+    <Wrapper v-if="courses?.length > 0">
       <Table>
         <Head>
           <Column></Column>
-          <Column>Name</Column>
-          <Column>Surname</Column>
-          <Column>Email</Column>
+          <Column>Teacher</Column>
+          <Column>Subject</Column>
         </Head>
         <Body>
           <Row
-            @click="selectStudent(student)"
-            v-for="student in students"
-            :key="student._id"
+            @click="selectCourse(course)"
+            v-for="(course, i) in courses"
+            :key="course._id"
           >
-            <Cell
-              ><Avatar
-                :size="40"
-                :name="`${student.firstName} ${student.lastName}`"
-            /></Cell>
-            <Cell>{{ student.firstName }}</Cell>
-            <Cell>{{ student.lastName }}</Cell>
-            <Cell>{{ student.email }}</Cell>
+            <Cell>#{{ ++i }}</Cell>
+            <Cell>{{ course.teacher.name }}</Cell>
+            <Cell>{{ course.subject.name }}</Cell>
           </Row>
         </Body>
       </Table>
     </Wrapper>
+    <span v-else>No unassigned courses were found!</span>
   </FormWrapper>
 </template>
 
@@ -41,12 +35,11 @@ import {
   CancelButton,
   SaveButton,
   Wrapper,
-} from "./AddClassStudent.styles";
+} from "./AddClassCourse.styles";
 import InputField from "@/components/InputField";
 import SelectInput from "@/components/SelectInput";
 import Avatar from "@/components/Avatar";
-import { addClassStudent } from "@/api/ApiMethods.js";
-import { getNotAssignedStudents } from "../../../api/ApiMethods";
+import { getNonAssignedCourses, addClassCourse } from "@/api/ApiMethods";
 
 export default {
   components: {
@@ -69,8 +62,8 @@ export default {
   },
   data() {
     return {
-      students: [],
-      selectedStudent: {},
+      courses: [],
+      selectedCourse: {},
       loading: false,
     };
   },
@@ -78,19 +71,19 @@ export default {
     parallelId: { type: String },
   },
   methods: {
-    async selectStudent(student) {
-      const { _id } = student;
-      const data = { student: _id };
+    async selectCourse(course) {
+      const { _id } = course;
+      const data = { course: _id };
       try {
-        const result = await addClassStudent(data, this.parallelId);
+        const result = await addClassCourse(data, this.parallelId);
         if (result?.status === 200) {
           this.loading = false;
           this.$emit("closeModal");
-          this.$emit("fetchClassMembers");
+          this.$emit("fetchClassCourses");
           this.$notify({
             type: "success",
             duration: 2000,
-            text: "New student added successfully!",
+            text: "New course added successfully!",
           });
         } else {
           this.loading = false;
@@ -106,8 +99,8 @@ export default {
     },
   },
   async beforeCreate() {
-    const students = await getNotAssignedStudents();
-    this.students = students;
+    const courses = await getNonAssignedCourses();
+    this.courses = courses;
   },
 };
 </script>
