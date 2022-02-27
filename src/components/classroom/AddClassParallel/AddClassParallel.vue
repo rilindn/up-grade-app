@@ -12,7 +12,7 @@
         </Head>
         <Body>
           <Row
-            @click="selectParallel(student)"
+            @click="selectParallel(parallel)"
             v-for="parallel in parallels"
             :key="parallel._id"
           >
@@ -41,11 +41,8 @@ import {
 import InputField from "@/components/InputField";
 import SelectInput from "@/components/SelectInput";
 import Avatar from "@/components/Avatar";
-import { addClassStudent } from "@/api/ApiMethods.js";
-import {
-  getNonAssignedParallels,
-  getNotAssignedStudents,
-} from "../../../api/ApiMethods";
+import { getNonAssignedParallels } from "@/api/ApiMethods";
+import { addClassParallel } from "../../../api/ApiMethods";
 
 export default {
   components: {
@@ -73,12 +70,15 @@ export default {
       loading: false,
     };
   },
+  props: {
+    classId: { type: String },
+  },
   methods: {
     async selectParallel(parallel) {
       const { _id } = parallel;
       const data = { parallel: _id };
       try {
-        const result = await addClassStudent(data, this.parallelId);
+        const result = await addClassParallel(data, this.classId);
         if (result?.status === 200) {
           this.loading = false;
           this.$emit("closeModal");
@@ -86,7 +86,7 @@ export default {
           this.$notify({
             type: "success",
             duration: 2000,
-            text: "New parallel added successfully!",
+            text: "Parallel assigned successfully!",
           });
         } else {
           this.loading = false;

@@ -19,8 +19,8 @@
         <h1>{{ classroom.level }}</h1>
       </Content>
     </SingleClass>
-    <DropDownWrapper :backgroundColor="bgColor" @click="triggerMenu">
-      <DropDownText>
+    <DropDownWrapper :backgroundColor="bgColor">
+      <DropDownText @click="triggerMenu">
         <span>Parallels</span>
         <span>
           <i class="fas fa-sort-down fa-2x"></i>
@@ -57,6 +57,7 @@
   <va-modal v-model="parallelsModal" hide-default-actions>
     <slot>
       <AddClassParallel
+        :classId="classroom._id"
         :parallels="parallels"
         @closeModal="parallelsModal = false"
       />

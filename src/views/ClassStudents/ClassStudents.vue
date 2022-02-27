@@ -27,7 +27,9 @@
             <Cell>{{ student.email }}</Cell>
             <Cell>
               <ActionWrapper>
-                <Delete> <i class="far fa-trash-alt"></i></Delete>
+                <Delete @click="handleDelete(student._id)">
+                  <i class="far fa-trash-alt"></i
+                ></Delete>
               </ActionWrapper>
             </Cell>
           </Row>
@@ -66,7 +68,10 @@ import {
 } from "./ClassStudents.styles";
 import { getParallel, getStudentById } from "@/api/ApiMethods";
 import AddClassStudent from "./AddClassStudent";
-import { getParallelStudents } from "../../api/ApiMethods";
+import {
+  deleteStudentParallel,
+  getParallelStudents,
+} from "../../api/ApiMethods";
 
 export default {
   components: {
@@ -94,6 +99,23 @@ export default {
     async fetchClassMembers() {
       const students = await getParallelStudents(this.$route.params.id);
       this.classStudents = students;
+    },
+    async handleDelete(id) {
+      const ids = {
+        parallelId: this.$route.params.id,
+        studentId: id,
+      };
+      if (confirm("Are you sure you want to delete this student?")) {
+        await deleteStudentParallel(ids);
+        const students = await getParallelStudents(this.$route.params.id);
+        this.classStudents = students;
+        this.$notify({
+          type: "success",
+          duration: 2000,
+          text: "Student unassigned succesfully!",
+        });
+        this.fetchParallels();
+      }
     },
   },
   async beforeCreate() {

@@ -115,6 +115,16 @@ export async function addClass(data) {
   }
 }
 
+export async function addClassParallel(data, id) {
+  try {
+    const result = await Client.post(`class/add-parallel/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
 export async function updateClass(id, data) {
   try {
     const result = await Client.put(`class/${id}`, { ...data });
@@ -283,6 +293,18 @@ export async function updateParallel(id, data) {
 export async function addClassStudent(data, id) {
   try {
     const result = await Client.post(`parallel/add-student/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function deleteStudentParallel(data) {
+  try {
+    const result = await Client.post(`parallel/delete-student`, {
+      ...data,
+    });
     return result;
   } catch (err) {
     console.error(err);
