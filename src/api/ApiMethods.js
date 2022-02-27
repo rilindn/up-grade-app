@@ -35,6 +35,11 @@ export async function getAllStudents() {
   return users.data;
 }
 
+export async function getNotAssignedStudents() {
+  const users = await Client.get("student/non-assigned");
+  return users.data;
+}
+
 export async function paginationStudents(page, search) {
   const searchValue = search || "";
   const users = await Client.get(
@@ -103,6 +108,16 @@ export async function getAllClasses() {
 export async function addClass(data) {
   try {
     const result = await Client.post("class", { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function addClassParallel(data, id) {
+  try {
+    const result = await Client.post(`class/add-parallel/${id}`, { ...data });
     return result;
   } catch (err) {
     console.error(err);
@@ -203,23 +218,19 @@ export async function deleteAdmin(id) {
 
 //SubjectTeacher methods
 
-export async function getAllSubjectTeacher() {
-  const staff = await Client.get("subjectTeacher");
+export async function getAllCourses() {
+  const staff = await Client.get("course");
   return staff.data;
 }
 
-export async function addSubjectTeacher(data) {
-  try {
-    const result = await Client.post("subjectTeacher", { ...data });
-    return result;
-  } catch (err) {
-    console.error(err);
-    return err;
-  }
+export async function getNonAssignedCourses() {
+  const courses = await Client.get(`course/non-assigned`);
+  return courses.data;
 }
-export async function updateSubjectTeacher(id, data) {
+
+export async function addCourse(data) {
   try {
-    const result = await Client.put(`subjectTeacher/${id}`, { ...data });
+    const result = await Client.post("course", { ...data });
     return result;
   } catch (err) {
     console.error(err);
@@ -227,7 +238,113 @@ export async function updateSubjectTeacher(id, data) {
   }
 }
 
-export async function deleteSubjectTeacher(id) {
-  const staff = await Client.delete(`subjectTeacher/${id}`);
+export async function updateCourse(id, data) {
+  try {
+    const result = await Client.put(`course/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function deleteCourse(id) {
+  const staff = await Client.delete(`course/${id}`);
   return staff.data;
+}
+
+// Parallels
+
+export async function getAllParallels() {
+  const parallels = await Client.get(`parallel`);
+  return parallels.data;
+}
+
+export async function getParallel(id) {
+  const parallel = await Client.get(`parallel/${id}`);
+  return parallel.data;
+}
+
+export async function getParallelStudents(id) {
+  const students = await Client.get(`parallel/students/${id}`);
+  return students.data;
+}
+
+export async function getParallelCourses(id) {
+  const courses = await Client.get(`parallel/courses/${id}`);
+  return courses.data;
+}
+
+export async function getNonAssignedParallels(id) {
+  const parallels = await Client.get(`parallel/non-assigned`);
+  return parallels.data;
+}
+
+export async function newParallel(data) {
+  try {
+    const result = await Client.post(`parallel`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function updateParallel(id, data) {
+  try {
+    const result = await Client.put(`parallel/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function addClassStudent(data, id) {
+  try {
+    const result = await Client.post(`parallel/add-student/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function addClassCourse(data, id) {
+  try {
+    const result = await Client.post(`parallel/add-course/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function deleteStudentParallel(data) {
+  try {
+    const result = await Client.post(`parallel/delete-student`, {
+      ...data,
+    });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function deleteParallelCourse(data) {
+  try {
+    const result = await Client.post(`parallel/delete-course`, {
+      ...data,
+    });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function deleteParallel(id) {
+  const parallel = await Client.delete(`parallel/${id}`);
+  return parallel.data;
 }

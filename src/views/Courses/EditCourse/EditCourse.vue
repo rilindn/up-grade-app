@@ -89,13 +89,13 @@ import {
   CancelButton,
   SaveButton,
   Wrapper,
-} from "./EditAssignRoles.styles";
+} from "./EditCourse.styles";
 import InputField from "@/components/InputField";
 import * as yup from "yup";
 import SelectInput from "@/components/SelectInput";
 import { getAllStaff, getAllSubjects } from "@/api/ApiMethods.js";
 import Avatar from "@/components/Avatar";
-import { updateSubjectTeacher } from "@/api/ApiMethods.js";
+import { updateCourse } from "@/api/ApiMethods.js";
 
 export default {
   components: {
@@ -174,15 +174,15 @@ export default {
       const id = this.data._id;
       const data = { ...this.selectedSubject, ...this.selectedTeacher };
       try {
-        const result = await updateSubjectTeacher(id, data);
+        const result = await updateCourse(id, data);
         if (result?.status === 200) {
           this.loading = false;
           this.$emit("closeModal");
-          this.$emit("fetchSubjectTeacher");
+          this.$emit("fetchCourses");
           this.$notify({
             type: "success",
             duration: 2000,
-            text: "Role assignment was updated successfully!",
+            text: "Course was updated successfully!",
           });
         } else {
           this.loading = false;

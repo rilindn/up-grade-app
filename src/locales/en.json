@@ -88,10 +88,12 @@
     "home": "Home",
     "gradesBoard": "Grades",
     "classes": "Classes",
+    "parallels": "Parallels",
     "dashboard": "Dashboard",
     "subjectsBoard": "Subjects",
     "myClasses": "My Classes",
-    "attendanceRemarks": "Attendance"
+    "attendanceRemarks": "Attendance",
+    "courses": "Courses"
   },
   "login": {
     "student": {
@@ -139,12 +141,12 @@
     "phoneNumber": " Parent Phone Number",
     "studentEmail": "Student Email",
     "generate": "Enrolled Year",
-    "parentName": "Parent  Name"
+    "parentName": "Parent Name"
   },
   "myClasses": {
     "title": "myClasses"
   },
-  "assignRoles": {
+  "courses": {
     "teacher": "Teacher",
     "subject": "Subject",
     "id": "Number",

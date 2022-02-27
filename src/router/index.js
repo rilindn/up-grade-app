@@ -39,7 +39,7 @@ const routes = [
         component: () => import("@/views/Classes"),
       },
       {
-        path: "/students",
+        path: "/Details",
         name: "Students",
         meta: { requiredRole: ["Admin"] },
         component: () => import("@/views/Students"),
@@ -111,16 +111,22 @@ const routes = [
         component: () => import("@/views/TeacherSchedule"),
       },
       {
-        path: "/class-students",
-        name: "ClassStudents",
+        path: "/class-details/:id",
+        name: "Class Details",
         meta: { requiredRole: ["Admin"] },
-        component: () => import("@/views/ClassStudents"),
+        component: () => import("@/views/ClassDetails"),
       },
       {
-        path: "/assign-roles",
-        name: "AssignRoles",
+        path: "/parallels",
+        name: "Parallels",
         meta: { requiredRole: ["Admin"] },
-        component: () => import("@/views/AssignRoles"),
+        component: () => import("@/views/Parallels"),
+      },
+      {
+        path: "/courses",
+        name: "Courses",
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/Courses"),
       },
       {
         path: "/register-student",
