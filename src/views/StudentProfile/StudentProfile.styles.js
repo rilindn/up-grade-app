@@ -37,18 +37,25 @@ export const PhotoWrapper = styled.div`
   }
 `;
 
+const statusProps = {
+  active: Boolean,
+};
+
+export const Status = styled("div", statusProps)`
+  width: 10px;
+  height: 10px;
+  background-color: ${(props) =>
+    !props.active ? `var(--va-errorMain)` : `var(--va-green600)`};
+  border-radius: 30px;
+`;
+
 export const NameWrapper = styled.div`
   margin-top: -100px;
   margin-left: 30px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  div {
-    width: 10px;
-    height: 10px;
-    background-color: var(--va-green600);
-    border-radius: 30px;
-  }
+
   p {
     font-size: ${fontSizes.large};
     color: var(--va-grey500);
