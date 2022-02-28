@@ -6,7 +6,7 @@
     </SingleClass>
     <MenuWrapper>
         <MenuText>
-      <Menu >
+      <Menu @click="goToStudents()">
         <MenuItem>
           <span>
             <p>Paralel I</p>
@@ -56,6 +56,9 @@ export default {
     dropDown() {
       this.displayDropDown = !this.displayDropDown;
     },
+     goToStudents(){
+      this.$router.push('/mystudents');
+    }
   },
   directives: {
     ClickAway: directive,

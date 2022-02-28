@@ -149,6 +149,18 @@
   "myClasses": {
     "title": "Klasat"
   },
+  "mystudents":{
+    "number":"Id",
+    "name":"Emri",
+    "lastname":"Mbiemri",
+    "email":"Email",
+    "grade":"Nota",
+    "actions":"Opsionet",
+    "I":"I",
+    "II":"II",
+    "III":"III",
+    "final":"Perfundimtare"
+  },
   "save": "Ruaj",
   "cancel": "Anulo"
 }
