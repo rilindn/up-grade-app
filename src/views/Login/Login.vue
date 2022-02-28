@@ -117,6 +117,7 @@ import { configure } from "vee-validate";
 import { users } from "../../data/usersData";
 import * as yup from "yup";
 import { login } from "@/api/ApiMethods";
+import Client from "@/api/ApiBase";
 
 configure({
   validateOnBlur: true,
@@ -159,6 +160,8 @@ export default {
         if (result?.status === 200) {
           const user = result?.data?.user;
           localStorage.setItem("token", result?.data?.token);
+          Client.defaults.headers.common["Authorization"] =
+            "Bearer " + result?.data?.token;
           this.$store.dispatch({
             type: "SET_LOGGED_USER",
             user,
@@ -168,7 +171,8 @@ export default {
             duration: 2000,
             text: "Logged in sucessfully!",
           });
-          if (user?.role === "Admin") this.$router.push("/admin");
+          if (user?.role === "Student") this.$router.push("/student");
+          else if (user?.role === "Admin") this.$router.push("/admin");
           else this.$router.push("/");
         } else {
           this.loading = false;

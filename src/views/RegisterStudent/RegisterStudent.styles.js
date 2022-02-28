@@ -41,4 +41,7 @@ export const SaveButton = styled(Button)`
 export const InputsWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
+  .inputs {
+    width: 45%;
+  }
 `;

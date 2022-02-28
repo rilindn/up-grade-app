@@ -73,7 +73,7 @@ export default {
           this.$notify({
             type: "success",
             duration: 2000,
-            text: "Subject added successfully!",
+            text: "Parallel added successfully!",
           });
         } else {
           this.loading = false;

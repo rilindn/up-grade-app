@@ -1,16 +1,10 @@
-const basicItems = [
-  {
-    name: "sidebar.about",
-    icon: "fa fa-book",
-    path: "/about",
-  },
-];
+const basicItems = [];
 
 const studentItems = [
   {
     name: "Home",
     icon: "fas fa-book-open",
-    path: "/studenthome",
+    path: "/student",
   },
   {
     name: "sidebar.schedule",

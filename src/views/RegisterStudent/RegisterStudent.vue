@@ -8,7 +8,7 @@
         v-slot="{ errors }"
       >
         <InputsWrapper>
-          <div>
+          <div class="inputs">
             <InputField
               :error="errors"
               name="firstName"
@@ -37,7 +37,7 @@
               placeholder="Enrolled year"
             />
           </div>
-          <div>
+          <div class="inputs">
             <InputField
               :error="errors"
               name="nationality"
@@ -110,14 +110,14 @@ export default {
           .required(),
         dateOfBirth: yup.date().required().label("Date of birth"),
         gender: yup.string().label("Gender").required(),
-        zipCode: yup.string().label("Zipcode").required(),
+        zipCode: yup.string().label("Zipcode"),
         nationality: yup.string().label("Nationality").required(),
         citizenship: yup.string().label("Citizenship").required(),
-        place: yup.string().label("Place").required(),
-        personalEmail: yup.string().label("Personal Email").required(),
+        place: yup.string().label("Place"),
+        personalEmail: yup.string().label("Personal Email"),
         parentName: yup.string().label("Parent Name").required(),
         enrolledYear: yup.number().label("Enrolled year").required(),
-        phoneNumber: yup.number().label("Phone number").required(),
+        phoneNumber: yup.number().label("Phone number"),
       }),
       loading: false,
     };

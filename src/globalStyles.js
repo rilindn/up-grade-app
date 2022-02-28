@@ -4,6 +4,7 @@ import { fontFamily } from "@/theme/typography";
 injectGlobal`
   html{
     /* overflow: hidden !important; */
+    scroll-behavior: smooth;
   }
 
   * {

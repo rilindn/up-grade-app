@@ -21,7 +21,7 @@ const routes = [
         component: () => import("@/views/Welcome"),
       },
       {
-        path: "StudentHome",
+        path: "student",
         name: "Home",
         meta: { requiredRole: ["Student"] },
         component: () => import("@/views/StudentHome"),
@@ -202,8 +202,11 @@ const handleRouteRedirect = (to, from, next) => {
   const userRole = store.getters.userRole;
 
   if (requiresAuth && !isAuthenticated) next({ name: "Login" });
-  else if (to.name === "Login" && isAuthenticated) next({ path: "/" });
-  else if (requiredRole && !requiredRole.includes(userRole))
+  else if (to.name === "Login" && isAuthenticated) {
+    console.log("first", userRole);
+    if (userRole === "Student") next({ path: "/student" });
+    else next({ path: "/" });
+  } else if (requiredRole && !requiredRole.includes(userRole))
     next({ path: "/access-denied" });
   else next();
 };

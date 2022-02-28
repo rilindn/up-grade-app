@@ -60,6 +60,7 @@
         :classId="classroom._id"
         :parallels="parallels"
         @closeModal="parallelsModal = false"
+        @fetchParallels="fetchParallels"
       />
     </slot>
   </va-modal>
@@ -129,6 +130,12 @@ export default {
     closeModal() {
       this.showModal = false;
     },
+    async fetchParallels() {
+      this.classroom?.parallels.map(async ({ parallel }) => {
+        const data = await getParallel(parallel);
+        this.parallels.push(data[0]);
+      });
+    },
     async handleDelete(id) {
       if (confirm("Are you sure you want to delete this class?")) {
         await deleteClass(id);
@@ -141,11 +148,8 @@ export default {
       }
     },
   },
-  async beforeCreate() {
-    this.classroom?.parallels.map(async ({ parallel }) => {
-      const data = await getParallel(parallel);
-      this.parallels.push(data[0]);
-    });
+  async created() {
+    await this.fetchParallels();
   },
 };
 </script>

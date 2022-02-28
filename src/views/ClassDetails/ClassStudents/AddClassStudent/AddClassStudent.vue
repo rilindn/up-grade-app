@@ -27,7 +27,7 @@
         </Body>
       </Table>
     </Wrapper>
-    <span v-else>No unassigned courses were found!</span>
+    <span v-else>No unassigned students were found!</span>
   </FormWrapper>
 </template>
 

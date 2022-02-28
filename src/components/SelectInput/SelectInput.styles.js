@@ -13,6 +13,7 @@ export const Wrapper = styled("div", inputProps)`
   justify-content: flex-end;
   height: 70px;
   margin-top: 2px;
+  margin-bottom: -4px;
   position: relative;
   .va-input-wrapper__content {
     border-radius: 5px;
@@ -28,13 +29,14 @@ export const Wrapper = styled("div", inputProps)`
   }
   input {
     color: #333;
-    font-size: 14px;
+    font-size: 18px !important;
     text-decoration: none;
     margin-bottom: 0;
     padding: 15px 10px;
     height: 50px;
     outline: none;
     width: 100%;
+    background-color: #f2f5f7 !important;
     transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out,
       background-color 0.3s ease-in-out;
     :focus {

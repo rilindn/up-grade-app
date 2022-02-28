@@ -8,7 +8,7 @@ const Client = axios.create({
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
-    Authorization: "Bearer " + token,
+    ...(token && { Authorization: "Bearer " + token }),
   },
 });
 

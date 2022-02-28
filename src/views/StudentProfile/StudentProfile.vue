@@ -179,18 +179,16 @@ export default {
       displayInputs: false,
       role: "",
       profileSchema: yup.object({
-        place: yup.string().label("Place").required(),
+        place: yup.string().label("Place"),
         phoneNumber: yup
           .string()
           .label("Phone Number")
-          .matches(/^[0-9]*$/, "Only numbers are allowed for this field ")
-          .required(),
+          .matches(/^[0-9]*$/, "Only numbers are allowed for this field "),
         zipCode: yup
           .string()
           .label("Zip Code")
-          .matches(/^[0-9]*$/, "Only numbers are allowed for this field ")
-          .required(),
-        personalEmail: yup.string().required().email().label("Email"),
+          .matches(/^[0-9]*$/, "Only numbers are allowed for this field "),
+        personalEmail: yup.string().email().label("Email"),
       }),
       formValues: {},
     };

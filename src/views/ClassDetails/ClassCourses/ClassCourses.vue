@@ -27,7 +27,7 @@
           </Row>
         </Body>
       </Table>
-      <span v-else>No unassigned courses were found!</span>
+      <span v-else>No assigned courses were found!</span>
     </Wrapper>
   </Container>
   <va-modal v-model="addCourseModal" hide-default-actions>
@@ -93,7 +93,7 @@ export default {
         parallelId: this.$route.params.id,
         courseId: id,
       };
-      if (confirm("Are you sure you want to delete this student?")) {
+      if (confirm("Are you sure you want to delete this course?")) {
         await deleteParallelCourse(ids);
         this.fetchClassCourses();
         this.$notify({

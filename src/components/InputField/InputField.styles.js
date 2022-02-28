@@ -11,14 +11,14 @@ export const Wrapper = styled("div", inputProps)`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 70px;
+  min-height: 70px;
   position: relative;
   input,
   textarea {
     color: #333;
     font-size: 14px;
     text-decoration: none;
-    /* margin: 15px 0; */
+    margin: 15px 0;
     margin-bottom: 0;
     border-radius: 5px;
     border-width: 1px !important;
