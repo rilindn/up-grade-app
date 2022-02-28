@@ -88,10 +88,12 @@
     "home": "Home",
     "gradesBoard": "Grades",
     "classes": "Classes",
+    "parallels": "Parallels",
     "dashboard": "Dashboard",
     "subjectsBoard": "Subjects",
     "myClasses": "My Classes",
-    "attendanceRemarks": "Attendance"
+    "attendanceRemarks": "Attendance",
+    "courses": "Courses"
   },
   "login": {
     "student": {
@@ -129,21 +131,28 @@
   "cancel": "Cancel",
   "studentProfile": {
     "id": "Student ID",
-    "birthday":"Birthday",
-    "nationality":"Nationality",
-    "citizenship":"Citizenship",
-    "gender":"Gender",
-    "place":"Place",
-    "zipcode":"Zip Code",
-    "personalEmail":"Personal Email",
-    "phoneNumber":"Phone Number",
-    "studentEmail":"Student Email",
-    "generate":"Enrolled Year",
-    "parentName":"Father's Name"
+    "birthday": "Birthday",
+    "nationality": "Nationality",
+    "citizenship": "Citizenship",
+    "gender": "Gender",
+    "place": "Place",
+    "zipcode": "Zip Code",
+    "personalEmail": "Personal Email",
+    "phoneNumber": " Parent Phone Number",
+    "studentEmail": "Student Email",
+    "generate": "Enrolled Year",
+    "parentName": "Parent Name"
   },
   "myClasses": {
     "title": "myClasses"
   },
+  "courses": {
+    "teacher": "Teacher",
+    "subject": "Subject",
+    "id": "Number",
+    "actions": "Actions"
+  },
+  "addNew": "Add New",
   "attendance": {
     "title": "Attendance",
     "total": "Total",

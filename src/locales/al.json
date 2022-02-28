@@ -84,11 +84,13 @@
     "home": "Home",
     "schedule": "Orari",
     "classes": "Klasat",
+    "parallels": "Paralelet",
     "gradesBoard": "Notat",
     "dashboard": "Ballina",
     "subjectsBoard": "Lendet",
     "myClasses": "Klasat",
-    "attendanceRemarks": "Vijueshmeria"
+    "attendanceRemarks": "Vijueshmeria",
+    "courses": "Kurset"
   },
   "login": {
     "student": {
@@ -161,6 +163,13 @@
     "III":"III",
     "final":"Perfundimtare"
   },
+  "courses": {
+    "teacher": "Profesori",
+    "subject": "Lenda",
+    "id": "ID",
+    "actions": "Veprimet"
+  },
+  "addNew": "Shtoni",
   "save": "Ruaj",
   "cancel": "Anulo"
 }

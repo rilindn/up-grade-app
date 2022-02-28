@@ -1,25 +1,38 @@
 <template>
   <Container>
     <Wrapper>
-      <AddNew @click="$router.push('/register')">
-        <span><i class="fas fa-plus-circle"></i></span>
-        <span>Add New</span>
-      </AddNew>
+      <TableHeader>
+        <SearchInput v-model="search" placeholder="Search" />
+        <AddNew @click="$router.push('/register-student')">
+          <span><i class="fas fa-plus-circle"></i></span>
+          <span>Add New</span>
+        </AddNew>
+      </TableHeader>
       <va-inner-loading :loading="users?.length <= 0" :size="60">
         <Table>
           <Head>
+            <Column></Column>
             <Column>Student ID</Column>
             <Column>Name</Column>
+            <Column>Parent Name</Column>
             <Column>Lastname</Column>
+            <Column>Gender</Column>
+            <Column>Date of birth</Column>
             <Column>Email</Column>
             <Column>Actions</Column>
           </Head>
           <Body>
             <Row v-for="(user, i) in users" :key="user.id" :index="++i">
-              <Cell>{{ user.studentId }}</Cell>
-              <Cell>{{ user.firstName }}</Cell>
-              <Cell>{{ user.lastName }}</Cell>
-              <Cell>{{ user.email }}</Cell>
+              <Cell
+                ><b>#{{ i + (currentPage - 1) * pager.pageSize }}</b></Cell
+              >
+              <Cell>{{ user?.studentId }}</Cell>
+              <Cell>{{ user?.firstName }}</Cell>
+              <Cell>{{ user.parent?.firstName }}</Cell>
+              <Cell>{{ user?.lastName }}</Cell>
+              <Cell>{{ user?.gender }}</Cell>
+              <Cell>{{ moment(user?.dateOfBirth).format("YYYY-MM-DD") }}</Cell>
+              <Cell>{{ user?.email }}</Cell>
               <Cell>
                 <ActionWrapper>
                   <Edit @click="editModal(user)"
@@ -61,11 +74,13 @@ import {
   Delete,
   AddNew,
   Container,
+  TableHeader,
 } from "./Students.styles";
 import EditStudent from "./EditStudent";
 import { getAllStudents, deleteStudent } from "@/api/ApiMethods";
 import { paginationStudents } from "../../api/ApiMethods";
 import Paginator from "@/components/Paginator";
+import SearchInput from "@/components/SearchInput";
 export default {
   components: {
     Table,
@@ -82,6 +97,8 @@ export default {
     Container,
     EditStudent,
     Paginator,
+    SearchInput,
+    TableHeader,
   },
   data() {
     return {
@@ -90,6 +107,7 @@ export default {
       showModal: false,
       editUserData: [],
       currentPage: 1,
+      search: "",
     };
   },
   methods: {
@@ -115,10 +133,16 @@ export default {
       }
     },
     async fetchPaginationItems(page) {
+      console.log("first", this.search);
       this.currentPage = page;
-      const data = await paginationStudents(page);
+      const data = await paginationStudents(page, this.search);
       this.users = data.pageOfItems;
       this.pager = data.pager;
+    },
+  },
+  watch: {
+    search: async function () {
+      await this.fetchPaginationItems(this.currentPage);
     },
   },
   async beforeCreate() {

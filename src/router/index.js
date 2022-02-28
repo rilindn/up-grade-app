@@ -69,6 +69,12 @@ const routes = [
         component: () => import("@/views/Teachers"),
       },
       {
+        path: "/admins",
+        name: "Admins",
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/Admins"),
+      },
+      {
         path: "/teacher-classes",
         name: "My Classes",
         meta: { requiredRole: ["Staff"] },
@@ -105,10 +111,28 @@ const routes = [
         component: () => import("@/views/TeacherSchedule"),
       },
       {
-        path: "/class-students",
-        name: "ClassStudents",
+        path: "/class-details/:id",
+        name: "Class Details",
         meta: { requiredRole: ["Admin"] },
-        component: () => import("@/views/ClassStudents"),
+        component: () => import("@/views/ClassDetails"),
+      },
+      {
+        path: "/parallels",
+        name: "Parallels",
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/Parallels"),
+      },
+      {
+        path: "/courses",
+        name: "Courses",
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/Courses"),
+      },
+      {
+        path: "/register-student",
+        name: "RegisterStudent",
+        meta: { requiredRole: ["Admin"] },
+        component: () => import("@/views/RegisterStudent"),
       },
       {
         path: "/access-denied",

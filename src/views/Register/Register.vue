@@ -9,17 +9,17 @@
         <h3>Register New User</h3>
         <InputField :error="errors" name="firstName" placeholder="Firstname" />
         <InputField :error="errors" name="lastName" placeholder="Lastname" />
-        <!-- <InputField
-          :error="errors"
-          name="email"
-          type="email"
-          placeholder="Email"
-        /> -->
         <SelectInput
           :error="errors"
           name="role"
           placeholder="Choose a role"
-          :options="['Student', 'Staff']"
+          :options="['Staff', 'Admin']"
+        />
+        <SelectInput
+          :error="errors"
+          name="gender"
+          placeholder="Choose  gender"
+          :options="['Female', 'Male']"
         />
         <DateInput :error="errors" name="dateOfBirth" />
         <SaveButton title="Register" :loading="loading" type="submit" />
@@ -65,6 +65,7 @@ export default {
           .required(),
         dateOfBirth: yup.date().required().label("Date of birth"),
         role: yup.string().required("Please choose a role"),
+        gender: yup.string().label("Gender").required(),
       }),
       loading: false,
     };
@@ -75,8 +76,7 @@ export default {
       const { role, ...userData } = data;
       let result;
       try {
-        if (role === "Student") result = await registerStudent(userData);
-        else if (role === "Staff") result = await registerStaff(userData);
+        if (role === "Staff") result = await registerStaff(userData);
         else if (role === "Admin") result = await registerAdmin(userData);
         if (result?.status === 200) {
           this.loading = false;

@@ -64,9 +64,24 @@ const adminItems = [
     path: "/classes",
   },
   {
+    name: "sidebar.parallels",
+    icon: "fas fa-project-diagram",
+    path: "/parallels",
+  },
+  {
     name: "sidebar.subjectsBoard",
     icon: "fas fa-book-open",
     path: "/subjects-board",
+  },
+  {
+    name: "sidebar.courses",
+    icon: "fas fa-tasks",
+    path: "/courses",
+  },
+  {
+    name: "Admins",
+    icon: "fas fa-user",
+    path: "/admins",
   },
 ];
 export { basicItems, studentItems, adminItems, teacherItems };

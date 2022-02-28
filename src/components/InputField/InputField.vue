@@ -4,7 +4,9 @@
       @blur="change"
       :name="name"
       :type="type"
+      :as="as"
       :placeholder="placeholder"
+      :disabled="disabled"
     />
     <ErrorMessage :name="name" />
   </Wrapper>
@@ -45,6 +47,14 @@ export default {
       type: String,
       default: "",
     },
+    as: {
+      type: String,
+      default: "",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -62,7 +72,8 @@ label {
   width: 100%;
 }
 
-input {
+input,
+textarea {
   border-radius: 5px;
   border: 2px solid transparent;
   padding: 15px 10px;
@@ -73,9 +84,11 @@ input {
     background-color 0.3s ease-in-out;
   padding-left: 22px;
   font-size: 16px;
+  max-width: 100%;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   border-color: var(--primary-color);
 }
 

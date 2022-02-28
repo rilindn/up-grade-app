@@ -21,5 +21,6 @@ export const Avatar = styled("div", btnProps)`
   place-items: center;
   span {
     font-weight: bold;
+    color: white;
   }
 `;

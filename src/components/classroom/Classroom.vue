@@ -5,7 +5,9 @@
         <span>{{ classroom.classCapacity }}</span>
         <va-button-dropdown flat class="ml-2">
           <ActionContent>
-            <span @click="editModal()"><i class="far fa-edit"></i>Edit</span>
+            <span @click="editModal()"
+              ><i class="far fa-edit"></i>Edit class</span
+            >
             <span @click="handleDelete(classroom._id)"
               ><i class="far fa-trash-alt"></i>Delete</span
             >
@@ -17,27 +19,29 @@
         <h1>{{ classroom.level }}</h1>
       </Content>
     </SingleClass>
-    <DropDownWrapper :backgroundColor="bgColor" @click="triggerMenu">
-      <DropDownText>
+    <DropDownWrapper :backgroundColor="bgColor">
+      <DropDownText @click="triggerMenu">
         <span>Parallels</span>
         <span>
           <i class="fas fa-sort-down fa-2x"></i>
         </span>
       </DropDownText>
       <Menu v-if="displayMenu" v-click-away="triggerMenu">
-        <router-link to="class-students">
+        <AddParallel @click="parallelsModal = true"
+          ><i class="far fa-plus-circle"></i
+        ></AddParallel>
+        <router-link
+          v-for="{ _id, name } in parallels"
+          :key="_id"
+          :to="{ name: 'Class Details', params: { id: _id } }"
+        >
           <MenuItem>
             <span>
-              <p>Paralel I</p>
+              <p>Parallel {{ name }}</p>
             </span>
           </MenuItem>
+          <Divider />
         </router-link>
-        <Divider />
-        <MenuItem>
-          <span>
-            <p>Paralel 2</p>
-          </span>
-        </MenuItem>
       </Menu>
     </DropDownWrapper>
   </Wrapper>
@@ -47,6 +51,15 @@
         :data="classroom"
         @closeModal="closeModal"
         @fetchClasses="fetchClasses"
+      />
+    </slot>
+  </va-modal>
+  <va-modal v-model="parallelsModal" hide-default-actions>
+    <slot>
+      <AddClassParallel
+        :classId="classroom._id"
+        :parallels="parallels"
+        @closeModal="parallelsModal = false"
       />
     </slot>
   </va-modal>
@@ -63,11 +76,13 @@ import {
   Action,
   Content,
   ActionContent,
+  AddParallel,
 } from "./Classroom.styles";
 import { directive } from "vue3-click-away";
 import EditClassroom from "./EditClassroom/EditClassroom.vue";
-import { deleteStudent, getAllClasses } from "@/api/ApiMethods";
+import { getParallel } from "@/api/ApiMethods";
 import { deleteClass } from "../../api/ApiMethods";
+import AddClassParallel from "./AddClassParallel";
 
 export default {
   components: {
@@ -82,12 +97,15 @@ export default {
     Content,
     ActionContent,
     EditClassroom,
+    AddParallel,
+    AddClassParallel,
   },
   data() {
     return {
       displayMenu: false,
-      classes: [],
+      parallels: [],
       showModal: false,
+      parallelsModal: false,
     };
   },
   props: {
@@ -122,6 +140,12 @@ export default {
         this.emitter.emit("fetchClasses");
       }
     },
+  },
+  async beforeCreate() {
+    this.classroom?.parallels.map(async ({ parallel }) => {
+      const data = await getParallel(parallel);
+      this.parallels.push(data[0]);
+    });
   },
 };
 </script>

@@ -76,7 +76,7 @@ injectGlobal`
     }
   }
   ::-webkit-scrollbar {
-    width: 15px;
+    width: 12px;
   }
 
   ::-webkit-scrollbar-track {
@@ -85,12 +85,12 @@ injectGlobal`
   }
  
   ::-webkit-scrollbar-thumb {
-    background: rgba(0, 132, 102, 0.85); 
+    background: var(--va-grey300);
     border-radius: 6px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 132, 102, 0.75); 
+    background: var(--va-grey400); 
   }
 
   ::selection {
