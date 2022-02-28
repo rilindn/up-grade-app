@@ -80,12 +80,12 @@ const routes = [
         meta: { requiredRole: ["Staff"] },
         component: () => import("@/views/TeacherClasses"),
       },
-      // {
-      //   path: "/teacher-student",
-      //   name: "My Students",
-      //   meta: { requiredRole: ["Staff"] },
-      //   component: () => import("@/views/Teacher_Student"),
-      // },
+      {
+        path: "/mystudents",
+        name: "My Students",
+        meta: { requiredRole: ["Staff"] },
+        component: () => import("@/views/TeacherStudent"),
+      },
       {
         path: "/admin",
         name: "Dashboard",
