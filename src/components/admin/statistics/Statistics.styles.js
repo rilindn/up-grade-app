@@ -7,6 +7,11 @@ export const Wrapper = styled.div`
   border-radius: 10px;
   padding: 20px 60px;
   box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16);
+  color: black;
+  :hover {
+    color: white;
+    background: radial-gradient(#05c59a, #008466);
+  }
   i:first-child {
     font-size: 25px;
   }

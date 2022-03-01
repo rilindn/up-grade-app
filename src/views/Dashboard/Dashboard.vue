@@ -2,24 +2,40 @@
   <Wrapper>
     <div class="stats">
       <StatisticsSection>
-        <Statistics
-          icon="fad fa-user-graduate"
-          :statistic="1004"
-          field="Students"
-        />
-        <Statistics
-          icon="fad fa-chalkboard-teacher"
-          :statistic="140"
-          field="Teachers"
-        />
-        <Statistics icon="fad fa-users-class" :statistic="40" field="Classes" />
-        <Statistics icon="fad fa-school" :statistic="3" field="Schools" />
+        <router-link to="Students">
+          <Statistics
+            icon="fad fa-user-graduate"
+            :statistic="students"
+            field="Students"
+          />
+        </router-link>
+        <router-link to="Teachers">
+          <Statistics
+            icon="fad fa-chalkboard-teacher"
+            :statistic="staff"
+            field="Teachers"
+          />
+        </router-link>
+        <router-link to="Classes">
+          <Statistics
+            icon="fad fa-users-class"
+            :statistic="classes"
+            field="Classes"
+          />
+        </router-link>
+        <router-link to="Parallels">
+          <Statistics
+            icon="fas fa-project-diagram"
+            :statistic="parallels"
+            field="Parallels"
+          />
+        </router-link>
       </StatisticsSection>
     </div>
     <Chart>
       <SingeChart>
         <h2 class="display-5">Users stat</h2>
-        <em>New users registered in past 6 months.</em>
+        <em>New students registered in past 6 months.</em>
         <AreaChart :chartData="chartData" />
       </SingeChart>
       <GendersChart />
@@ -35,6 +51,12 @@ import {
   SingleChart,
 } from "./Dashboard.styles";
 import AreaChart from "@/components/charts/Area";
+import {
+  getAllStaff,
+  getAllStudents,
+  getAllClasses,
+  getAllParallels,
+} from "../../api/ApiMethods";
 
 import GendersChart from "@/components/admin/GendersChart";
 
@@ -50,6 +72,10 @@ export default {
   },
   data() {
     return {
+      staff: 0,
+      students: 0,
+      classes: 0,
+      parallels: 0,
       chartData: [
         { Month: "Jan", Nr: 1000, avg: 500, inc: 300 },
         { Month: "Feb", Nr: 2000, avg: 900, inc: 400 },
@@ -60,6 +86,17 @@ export default {
         { Month: "Jul", Nr: 500, avg: 90, inc: 100 },
       ],
     };
+  },
+  methods: {},
+  async beforeCreate() {
+    const staff = await getAllStaff();
+    this.staff = staff.length;
+    const students = await getAllStudents();
+    this.students = students.length;
+    const classes = await getAllClasses();
+    this.classes = classes.length;
+    const parallels = await getAllClasses();
+    this.parallels = parallels.length;
   },
 };
 </script>

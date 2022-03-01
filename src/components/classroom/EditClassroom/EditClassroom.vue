@@ -70,8 +70,13 @@ export default {
           .label("Firstname")
           .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
           .required(),
-        level: yup.number().min(1).label("Level").required(),
-        classCapacity: yup.number().min(1).label("Capacity").required(),
+        level: yup.number().min(1).max(12).label("Level").required(""),
+        classCapacity: yup
+          .number()
+          .min(2)
+          .max(200)
+          .label("Capacity")
+          .required(""),
       }),
       loading: false,
       formValues: {
