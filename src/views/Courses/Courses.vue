@@ -111,9 +111,8 @@ export default {
       }
     },
   },
-  async beforeCreate() {
-    const data = await getAllCourses();
-    this.courses = data;
+  async created() {
+    await this.fetchCourses();
   },
 };
 </script>

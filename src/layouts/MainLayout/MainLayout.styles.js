@@ -22,7 +22,7 @@ export const HeaderSection = styled.div`
 
 export const CurrentView = styled.div`
   height: 65px;
-  width: 250px;
+  max-width: 300px;
   ${fontFamily.poppinsSemiBold}
   font-size: 22pt;
   display: flex;
@@ -30,6 +30,6 @@ export const CurrentView = styled.div`
   align-items: center;
   padding-left: 25px;
   span {
-    border-bottom: 1px solid var(--va-primaryLight);
+    border-bottom: 2px solid var(--va-primaryLight);
   }
 `;

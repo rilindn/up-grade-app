@@ -1,70 +1,88 @@
 <template>
   <Wrapper>
     <SingleClass :backgroundColor="bgColor">
-      <p>{{ title }}</p>
-      <h1>{{ subTitle }}</h1>
+      <h2>{{ classname }}</h2>
     </SingleClass>
-    <MenuWrapper>
-        <MenuText>
-      <Menu @click="goToStudents()">
-        <MenuItem>
-          <span>
-            <p>Paralel I</p>
-          </span>
-        </MenuItem>
+    <DropDownWrapper :backgroundColor="bgColor">
+      <DropDownText @click="triggerMenu">
+        <span>Parallel {{ subTitle }}</span>
+        <span>
+          <i class="fas fa-sort-down fa-2x"></i>
+        </span>
+      </DropDownText>
+      <Menu v-if="displayDropDown" v-click-away="triggerMenu">
+        <router-link
+          v-for="{ _id, ...course } in courses"
+          :key="_id"
+          :to="{ name: 'My Students', params: { courseId: _id, parallelId } }"
+        >
+          <MenuItem>
+            <span>
+              <p>{{ course.subject.name }}</p>
+            </span>
+          </MenuItem>
+          <Divider />
+        </router-link>
       </Menu>
-      </MenuText>
-    </MenuWrapper>
+    </DropDownWrapper>
   </Wrapper>
 </template>
 
 <script>
 import {
   Wrapper,
+  SingleClass,
+  DropDownWrapper,
   MenuItem,
   Menu,
-  SingleClass,
-  MenuWrapper
+  Divider,
+  DropDownText,
 } from "./TeacherClass.styles";
 import { directive } from "vue3-click-away";
+import { getTeacherParallelCourses } from "../../api/ApiMethods";
 
 export default {
   components: {
     Wrapper,
+    SingleClass,
+    DropDownWrapper,
     MenuItem,
     Menu,
-    SingleClass,
-    MenuWrapper
+    Divider,
+    DropDownText,
   },
   data() {
     return {
       displayDropDown: false,
+      courses: [],
     };
   },
   props: {
     bgColor: {
       type: String,
     },
-    title: {
+    classname: {
       type: String,
     },
     subTitle: {
       type: String,
     },
+    parallelId: {
+      type: String,
+    },
   },
   methods: {
-    dropDown() {
+    triggerMenu() {
       this.displayDropDown = !this.displayDropDown;
     },
-     goToStudents(){
-      this.$router.push('/mystudents');
-    }
   },
   directives: {
     ClickAway: directive,
   },
-  created() {
-    console.log(this.bgColor);
+  async beforeCreate() {
+    let teacherId = this.$store.getters.loggedUser.id;
+    const courses = await getTeacherParallelCourses(this.parallelId, teacherId);
+    this.courses = courses;
   },
 };
 </script>

@@ -216,15 +216,15 @@ export async function deleteAdmin(id) {
   return admins.data;
 }
 
-//SubjectTeacher methods
+//Courses methods
 
 export async function getAllCourses() {
   const staff = await Client.get("course");
   return staff.data;
 }
 
-export async function getNonAssignedCourses() {
-  const courses = await Client.get(`course/non-assigned`);
+export async function getParallelNonAssignedCourses(parallelId) {
+  const courses = await Client.get(`course/non-assigned/${parallelId}`);
   return courses.data;
 }
 
@@ -275,8 +275,20 @@ export async function getParallelCourses(id) {
   return courses.data;
 }
 
-export async function getNonAssignedParallels(id) {
+export async function getNonAssignedParallels() {
   const parallels = await Client.get(`parallel/non-assigned`);
+  return parallels.data;
+}
+
+export async function getTeacherParallelCourses(parallelId, teacherId) {
+  const parallels = await Client.get(
+    `parallel/teacher/${parallelId}/${teacherId}`
+  );
+  return parallels.data;
+}
+
+export async function getTeacherParallels(teacherId) {
+  const parallels = await Client.get(`parallel/teacher/${teacherId}`);
   return parallels.data;
 }
 

@@ -39,7 +39,10 @@ import {
 import InputField from "@/components/InputField";
 import SelectInput from "@/components/SelectInput";
 import Avatar from "@/components/Avatar";
-import { getNonAssignedCourses, addClassCourse } from "@/api/ApiMethods";
+import {
+  getParallelNonAssignedCourses,
+  addClassCourse,
+} from "@/api/ApiMethods";
 
 export default {
   components: {
@@ -99,7 +102,7 @@ export default {
     },
   },
   async beforeCreate() {
-    const courses = await getNonAssignedCourses();
+    const courses = await getParallelNonAssignedCourses(this.parallelId);
     this.courses = courses;
   },
 };
