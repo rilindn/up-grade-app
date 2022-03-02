@@ -47,7 +47,7 @@ export const StatsMale = styled.span`
     width: 40px;
     position: absolute;
     top: 30px;
-    left: 70px;
+    left: 60px;
     transform: rotate(42deg);
   }
 `;

@@ -38,7 +38,10 @@
         <em>New students registered in past 6 months.</em>
         <AreaChart :chartData="chartData" />
       </SingeChart>
-      <GendersChart />
+      <GendersChart
+        :gendersCount="gendersCount"
+        :gendersChartData="gendersChartData"
+      />
     </Chart>
   </Wrapper>
 </template>
@@ -56,6 +59,7 @@ import {
   getAllStudents,
   getAllClasses,
   getAllParallels,
+  getStudentsByGender,
 } from "../../api/ApiMethods";
 
 import GendersChart from "@/components/admin/GendersChart";
@@ -76,6 +80,8 @@ export default {
       students: 0,
       classes: 0,
       parallels: 0,
+      gendersCount: {},
+      gendersChartData: [],
       chartData: [
         { Month: "Jan", Nr: 1000, avg: 500, inc: 300 },
         { Month: "Feb", Nr: 2000, avg: 900, inc: 400 },
@@ -87,7 +93,6 @@ export default {
       ],
     };
   },
-  methods: {},
   async beforeCreate() {
     const staff = await getAllStaff();
     this.staff = staff.length;
@@ -95,8 +100,19 @@ export default {
     this.students = students.length;
     const classes = await getAllClasses();
     this.classes = classes.length;
-    const parallels = await getAllClasses();
+    const parallels = await getAllParallels();
     this.parallels = parallels.length;
+    const gendersCount = await getStudentsByGender();
+    this.gendersCount = gendersCount;
+    this.gendersChartData = [
+      { Gender: "Male", Nr: gendersCount.male, avg: 900, inc: 400 },
+      {
+        Gender: "Female",
+        Nr: gendersCount.female,
+        avg: 500,
+        inc: 300,
+      },
+    ];
   },
 };
 </script>

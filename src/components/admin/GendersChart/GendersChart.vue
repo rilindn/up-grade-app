@@ -1,9 +1,9 @@
 <template>
   <SingleChart>
     <h5 class="chart-title">Genders</h5>
-    <em>Current users by their gender.</em>
+    <em>Current students by their gender.</em>
     <PieChart
-      :usersData="usersData"
+      :usersData="gendersChartData"
       :dataKeys="['Gender', 'Nr']"
       :colors="['var(--va-primaryMain)', 'var(--va-pink100)']"
       :padAngle="0.05"
@@ -22,11 +22,11 @@
     </Legend>
     <StatsMale
       ><hr />
-      2000 Male Students</StatsMale
+      {{ this.gendersCount.male }} Male Students</StatsMale
     >
     <StatsFemale
       ><hr />
-      1000 Female Students</StatsFemale
+      {{ this.gendersCount.female }} Female Students</StatsFemale
     >
   </SingleChart>
 </template>
@@ -50,13 +50,13 @@ export default {
     StatsFemale,
     SingleChart,
   },
-  data() {
-    return {
-      usersData: [
-        { Gender: "Male", Nr: 2000, avg: 900, inc: 400 },
-        { Gender: "Female", Nr: 1000, avg: 500, inc: 300 },
-      ],
-    };
+  props: {
+    gendersCount: {
+      type: Object,
+    },
+    gendersChartData: {
+      type: Array,
+    },
   },
 };
 </script>
