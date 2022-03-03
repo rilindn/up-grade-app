@@ -99,7 +99,9 @@
               <div>
                 <DataField>
                   <p>{{ $t("studentProfile.birthday") }}:</p>
-                  <span>{{ student?.dateOfBirth }}</span>
+                  <span>{{
+                    moment(student?.dateOfBirth).format("YYYY-MM-DD")
+                  }}</span>
                 </DataField>
                 <DataField>
                   <p>{{ $t("studentProfile.gender") }}:</p>
