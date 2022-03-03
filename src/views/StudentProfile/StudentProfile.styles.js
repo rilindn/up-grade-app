@@ -30,10 +30,28 @@ export const RightWrapper = styled.div`
 export const PhotoWrapper = styled.div`
   margin-top: -115px;
   margin-left: 40px;
+  cursor: pointer;
+  position: relative;
+  :hover {
+    /* background-color: red; */
+    filter: brightness(70%);
+    .plus {
+      display: block;
+    }
+  }
   img {
     border-radius: 50%;
     box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16);
     width: 170px;
+  }
+  span {
+    display: none;
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 `;
 
