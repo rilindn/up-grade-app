@@ -256,7 +256,7 @@ export default {
       }
     },
     openPicker() {
-      const client = filestack.init(process.env.FILESTACK_API_KEY);
+      const client = filestack.init(process.env.VUE_APP_FILESTACK_API_KEY);
       client.picker(this.options).open();
     },
   },

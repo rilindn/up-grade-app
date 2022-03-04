@@ -81,10 +81,10 @@ const routes = [
         component: () => import("@/views/TeacherClasses"),
       },
       {
-        path: "/mystudents",
+        path: "/mystudents/:courseId/:parallelId",
         name: "My Students",
         meta: { requiredRole: ["Staff"] },
-        component: () => import("@/views/TeacherStudent"),
+        component: () => import("@/views/TeacherStudents"),
       },
       {
         path: "/admin",

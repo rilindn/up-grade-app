@@ -33,7 +33,6 @@ export const PhotoWrapper = styled.div`
   cursor: pointer;
   position: relative;
   :hover {
-    /* background-color: red; */
     filter: brightness(70%);
     .plus {
       display: block;
@@ -98,17 +97,20 @@ export const DataField = styled.div`
   margin: 0;
   display: flex;
   align-items: center;
-  height: 75px;
+  margin-top: 40px;
   p {
     color: var(--va-grey600);
-    padding-left: 7px;
+    font-size: 16px;
+    font-weight: 600 !important;
     margin: 0;
+    white-space: nowrap;
     font-size: ${fontSizes.default};
     ${fontFamily.poppinsMedium}
   }
   span {
     color: var(--va-grey400);
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 500 !important;
     ${fontFamily.poppinsRegular};
     padding-left: 7px;
   }
@@ -127,6 +129,7 @@ export const Container = styled.div`
   width: auto;
   display: flex;
   flex-direction: row;
+  padding-bottom: 30px;
 `;
 export const EditWrapper = styled.div`
   width: 60px;

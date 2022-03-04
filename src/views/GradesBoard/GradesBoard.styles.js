@@ -11,7 +11,7 @@ export const HeadStyled = styled(Head)`
       padding: 20px;
     }
     hr {
-      transform: rotate(24deg);
+      transform: rotate(20deg);
       width: 150px;
       border: none;
       height: 1px;
@@ -45,7 +45,6 @@ export const RowStyled = styled(Row)`
     font-weight: bold;
     text-transform: uppercase;
     text-align: left;
-    font-size: 17px;
   }
 `;
 export const CellStyled = styled(Cell)`
@@ -77,6 +76,7 @@ export const GradeWrapper = styled.div`
     font-size: 18px;
     padding-right: 4px;
     span {
+      min-height: 16px;
       text-align: center;
       color: var(--va-grey500);
     }

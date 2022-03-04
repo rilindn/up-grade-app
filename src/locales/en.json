@@ -73,7 +73,7 @@
   "gradesBoard": {
     "title": "My Grades",
     "grades": "Grades",
-    "subjects": "Subjects",
+    "course": "Course",
     "manner": "Manner",
     "periods": "Periods"
   },
@@ -163,16 +163,16 @@
     "totalAbsences": "Total absences",
     "remarks": "Remarks"
   },
-  "mystudents":{
-    "number":"Id",
-    "name":"Name",
-    "lastname":"LastName",
-    "email":"Email",
-    "grade":"Grade",
-    "actions":"Actions",
-    "I":"I",
-    "II":"II",
-    "III":"III",
-    "final":"Final"
+  "mystudents": {
+    "id": "Id",
+    "name": "Name",
+    "lastname": "LastName",
+    "email": "Email",
+    "grade": "Grade",
+    "actions": "Actions",
+    "I": "I",
+    "II": "II",
+    "III": "III",
+    "final": "Final"
   }
 }

@@ -365,3 +365,30 @@ export async function deleteParallel(id) {
   const parallel = await Client.delete(`parallel/${id}`);
   return parallel.data;
 }
+
+// grades
+
+export async function getStudentGrades(studentId) {
+  const grades = await Client.get(`grades/${studentId}`);
+  return grades.data;
+}
+
+export async function getStudentsGPA(studentId) {
+  const gpa = await Client.get(`grades/gpa/${studentId}`);
+  return gpa.data;
+}
+
+export async function getStudentGradesByCourse(studentId, courseId) {
+  const grades = await Client.get(`grades/${studentId}/${courseId}`);
+  return grades.data;
+}
+
+export async function editStudentGrades(id, data) {
+  try {
+    const result = await Client.put(`grades/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}

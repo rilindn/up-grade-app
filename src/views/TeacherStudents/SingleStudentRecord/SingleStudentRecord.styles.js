@@ -1,29 +1,19 @@
 import styled from "vue3-styled-components";
-import { Table, Head, Body, Column, Row, Cell } from "@/components/table";
+import { Cell } from "@/components/table";
 
-
-export const TableStyled = styled(Table)`
-  margin: 50px 0 0 0;
-`;
-
-export const HeadStyled = styled(Head)`
-
-`;
-export const BodyStyled = styled(Body)``;
-export const ColumnStyled = styled(Column)`
-  width: 100px;
-  height: 50px;
-  text-align: center;
-  font-weight: bold;
-  padding: 5px;
-  vertical-align: middle;
-`;
-export const RowStyled = styled(Row)`
-
-`;
 export const CellStyled = styled(Cell)`
   border-right: 1px solid rgba(0, 132, 102, 0.16);
   vertical-align: middle;
+  color: var(--va-grey600);
+  position: relative;
+  .edit-trigger {
+    visibility: hidden;
+  }
+  :hover {
+    .edit-trigger {
+      visibility: visible !important;
+    }
+  }
 `;
 export const GradeWrapper = styled.div`
   display: flex;
@@ -36,12 +26,27 @@ export const GradeWrapper = styled.div`
     font-size: 18px;
     padding-right: 4px;
     span {
+      min-height: 16px;
       text-align: center;
       color: var(--va-grey500);
     }
     span:nth-child(1) {
       border-bottom: 1px groove;
     }
+  }
+`;
+
+export const EditIcon = styled.div`
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 3px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  :hover {
+    background-color: var(--va-infoEdit);
+    color: white;
   }
 `;
 
@@ -69,7 +74,7 @@ export const OtherGrades = styled.div`
 export const ActionWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-top:15px;
+  margin-top: 15px;
 `;
 
 export const Edit = styled.div`

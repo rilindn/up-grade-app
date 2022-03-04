@@ -69,7 +69,7 @@
   "gradesBoard": {
     "title": "Notat e mia",
     "grades": "Notat",
-    "subjects": "Lendet",
+    "course": "Kurset",
     "manner": "Sjellja",
     "periods": "Periodat"
   },
@@ -87,7 +87,7 @@
     "parallels": "Paralelet",
     "gradesBoard": "Notat",
     "dashboard": "Ballina",
-    "subjectsBoard": "Lendet",
+    "subjectsBoard": "Lëndët",
     "myClasses": "Klasat",
     "attendanceRemarks": "Vijueshmeria",
     "courses": "Kurset"
@@ -151,17 +151,17 @@
   "myClasses": {
     "title": "Klasat"
   },
-  "mystudents":{
-    "number":"Id",
-    "name":"Emri",
-    "lastname":"Mbiemri",
-    "email":"Email",
-    "grade":"Nota",
-    "actions":"Opsionet",
-    "I":"I",
-    "II":"II",
-    "III":"III",
-    "final":"Perfundimtare"
+  "mystudents": {
+    "id": "Id",
+    "name": "Emri",
+    "lastname": "Mbiemri",
+    "email": "Email",
+    "grade": "Nota",
+    "actions": "Opsionet",
+    "I": "I",
+    "II": "II",
+    "III": "III",
+    "final": "Perfundimtare"
   },
   "courses": {
     "teacher": "Profesori",
