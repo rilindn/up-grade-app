@@ -98,6 +98,11 @@ export async function registerAdmin(data) {
   }
 }
 
+export async function getStudentsByGender() {
+  const gender = await Client.get("student/gender");
+  return gender.data;
+}
+
 //Classes methods
 
 export async function getAllClasses() {
