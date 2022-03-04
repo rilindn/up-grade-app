@@ -115,7 +115,7 @@ export default {
   },
   async beforeCreate() {
     const students = await getParallelStudents(this.$route.params.id);
-    this.classStudents = students.filter(Boolean);
+    this.classStudents = students;
   },
 };
 </script>
