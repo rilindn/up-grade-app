@@ -6,8 +6,21 @@
     <MiddleBox>
       <RightWrapper>
         <TopWrapper>
-          <PhotoWrapper>
-            <img src="@/assets/profile.jpeg" alt="logo" />
+          <PhotoWrapper @click="openPicker">
+            <img
+              :src="
+                student.profilePictureUrl
+                  ? student.profilePictureUrl
+                  : EmptyImage
+              "
+            />
+            <span class="plus">
+              <i
+                :class="
+                  student.profilePictureUrl ? 'far fa-edit' : 'far fa-plus'
+                "
+              ></i>
+            </span>
           </PhotoWrapper>
           <NameWrapper>
             <Status :active="student?.status"></Status>
@@ -86,7 +99,9 @@
               <div>
                 <DataField>
                   <p>{{ $t("studentProfile.birthday") }}:</p>
-                  <span>{{ student?.dateOfBirth }}</span>
+                  <span>{{
+                    moment(student?.dateOfBirth).format("YYYY-MM-DD")
+                  }}</span>
                 </DataField>
                 <DataField>
                   <p>{{ $t("studentProfile.gender") }}:</p>
@@ -152,6 +167,8 @@ import { Form } from "vee-validate";
 import * as yup from "yup";
 import { configure } from "vee-validate";
 import { getLoggedUser, updateStudent } from "../../api/ApiMethods";
+import * as filestack from "filestack-js";
+import EmptyImage from "../../assets/EmptyImage.png";
 
 configure({
   validateOnBlur: true,
@@ -178,6 +195,7 @@ export default {
       student: {},
       displayInputs: false,
       role: "",
+      EmptyImage,
       profileSchema: yup.object({
         place: yup.string().label("Place"),
         phoneNumber: yup
@@ -191,6 +209,20 @@ export default {
         personalEmail: yup.string().email().label("Email"),
       }),
       formValues: {},
+      options: {
+        accept: "image/*",
+        maxSize: 1024 * 1024,
+        maxFiles: 1,
+        onOpen: () => console.log("opened!"),
+        onUploadDone: async (response) => {
+          const profilePictureUrl = response?.filesUploaded?.[0]?.url;
+          await this.editProfile({ profilePictureUrl });
+          console.log(
+            "User data has been saved",
+            response?.filesUploaded?.[0]?.url
+          );
+        },
+      },
     };
   },
   methods: {
@@ -222,6 +254,10 @@ export default {
       } catch (err) {
         console.log(err);
       }
+    },
+    openPicker() {
+      const client = filestack.init(process.env.FILESTACK_API_KEY);
+      client.picker(this.options).open();
     },
   },
   async beforeCreate() {
