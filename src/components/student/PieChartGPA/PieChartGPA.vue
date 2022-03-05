@@ -4,7 +4,7 @@
     <ChartWrapper>
       <PieChart
         :usersData="usersData"
-        :dataKeys="['Gender', 'Nr']"
+        :dataKeys="['GPA', 'Nr']"
         :colors="['var(--va-primaryMain)', 'var(--va-green100)']"
         :padAngle="0"
         :innerRadius="100"
@@ -12,7 +12,7 @@
         :showTooltip="false"
       />
       <Legend>
-        <span>{{ usersData[0].Nr }}/10</span>
+        <span>{{ usersData[0].Nr }}/5</span>
       </Legend>
     </ChartWrapper>
   </SingleChart>
@@ -39,11 +39,16 @@ export default {
     SingleChart,
     ChartWrapper,
   },
+  props: {
+    gpa: {
+      type: Number,
+    },
+  },
   data() {
     return {
       usersData: [
-        { Gender: "GPA", Nr: 8.45 },
-        { Gender: "Blank", Nr: 1.65 },
+        { GPA: "GPA", Nr: this.gpa },
+        { GPA: "Blank", Nr: 5 - this.gpa },
       ],
     };
   },

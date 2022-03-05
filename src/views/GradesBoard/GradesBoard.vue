@@ -5,12 +5,12 @@
         <span class="table-title">{{ $t("gradesBoard.grades") }}</span>
         <TableStyled>
           <HeadStyled>
-            <ColumnStyled>
-              <div>{{ $t("gradesBoard.subjects") }}</div>
+            <ColumnStyled colspan="2">
+              <div>{{ $t("gradesBoard.periods") }}</div>
               <span>
                 <hr />
               </span>
-              <div>{{ $t("gradesBoard.periods") }}</div>
+              <div>{{ $t("gradesBoard.course") }}</div>
             </ColumnStyled>
             <ColumnStyled>I</ColumnStyled>
             <ColumnStyled>II</ColumnStyled>
@@ -18,27 +18,54 @@
             <ColumnStyled>Final</ColumnStyled>
           </HeadStyled>
           <BodyStyled>
-            <RowStyled v-for="(grades, i) in studentgrades" :key="i">
-              <CellStyled class="subject-name">{{ grades.subject }}</CellStyled>
-              <CellStyled v-for="(g, i) in grades.periods" :key="i">
+            <RowStyled v-for="(grades, i) in studentgrades.grade" :key="i">
+              <CellStyled class="subject-name">
+                {{ grades.course.teacher || null }}
+              </CellStyled>
+              <CellStyled class="subject-name">
+                {{ grades.course.subject || null }}
+              </CellStyled>
+              <CellStyled>
                 <GradeWrapper>
                   <div>
-                    <span>{{ g.first }}</span>
-                    <span>{{ g.second }}</span>
+                    <span>{{ grades?.periods?.["1"]?.first || null }}</span>
+                    <span>{{ grades?.periods?.["1"]?.second || null }}</span>
                   </div>
                   <FinalGrade>
-                    <span>{{ calculatedGrade(g.first, g.second) }}</span>
+                    <span>{{ grades?.periods?.["1"]?.final || null }}</span>
                   </FinalGrade>
                 </GradeWrapper>
               </CellStyled>
               <CellStyled>
-                <OtherGrades>{{ grades.final }}</OtherGrades>
+                <GradeWrapper>
+                  <div>
+                    <span>{{ grades?.periods?.["2"]?.second || null }}</span>
+                    <span>{{ grades?.periods?.["2"]?.second || null }}</span>
+                  </div>
+                  <FinalGrade>
+                    <span>{{ grades?.periods?.["2"]?.final || null }}</span>
+                  </FinalGrade>
+                </GradeWrapper>
+              </CellStyled>
+              <CellStyled>
+                <GradeWrapper>
+                  <div>
+                    <span>{{ grades?.periods?.["3"]?.second || null }}</span>
+                    <span>{{ grades?.periods?.["3"]?.second || null }}</span>
+                  </div>
+                  <FinalGrade>
+                    <span>{{ grades?.periods?.["3"]?.final || null }}</span>
+                  </FinalGrade>
+                </GradeWrapper>
+              </CellStyled>
+              <CellStyled>
+                <OtherGrades>{{ grades?.final || null }}</OtherGrades>
               </CellStyled>
             </RowStyled>
           </BodyStyled>
         </TableStyled>
       </SingleTable>
-      <PieChartGPA />
+      <PieChartGPA v-if="studentGPA" :gpa="studentGPA" />
       <!-- <SingleTable>
         <span>{{ $t("gradesBoard.manner") }}</span>
         <TableStyled>
@@ -85,7 +112,7 @@ import {
   OtherGrades,
   SingleTable,
 } from "./GradesBoard.styles";
-import { studentgrades, subjects, studentmannergrades } from "./GradesData";
+import { getStudentsGPA, getStudentGrades } from "../../api/ApiMethods";
 export default {
   components: {
     Wrapper,
@@ -104,16 +131,18 @@ export default {
   },
   data() {
     return {
-      studentgrades,
-      subjects,
-      studentmannergrades,
+      studentgrades: {},
+      studentGPA: 0,
     };
   },
-  methods: {
-    calculatedGrade(firstGrade, secondGrade) {
-      const calculatedGPA = Math.round((firstGrade + secondGrade) / 2);
-      return calculatedGPA;
-    },
+  methods: {},
+  async beforeCreate() {
+    const grades = await getStudentGrades(this.$store.getters?.loggedUser?.id);
+    const studentGPA = await getStudentsGPA(
+      this.$store.getters?.loggedUser?.id
+    );
+    this.studentgrades = grades;
+    this.studentGPA = studentGPA;
   },
 };
 </script>

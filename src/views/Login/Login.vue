@@ -179,7 +179,7 @@ export default {
           this.$notify({
             type: "error",
             duration: 2000,
-            text: "Please try again!",
+            text: result?.response?.data,
           });
         }
       } catch (error) {
