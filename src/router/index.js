@@ -200,13 +200,18 @@ const handleRouteRedirect = (to, from, next) => {
   const requiresAuth = to.meta.requiresAuth;
   const isAuthenticated = store.getters.isAuthenticated;
   const userRole = store.getters.userRole;
+  const userEmail = store.getters.loggedUser.email;
 
   if (requiresAuth && !isAuthenticated) next({ name: "Login" });
   else if (to.name === "Login" && isAuthenticated) {
-    console.log("first", userRole);
     if (userRole === "Student") next({ path: "/student" });
     else next({ path: "/" });
   } else if (requiredRole && !requiredRole.includes(userRole))
+    next({ path: "/access-denied" });
+  else if (
+    to.name === "Admins" &&
+    userEmail !== process.env.VUE_APP_SUPERADMIN_EMAIL
+  )
     next({ path: "/access-denied" });
   else next();
 };

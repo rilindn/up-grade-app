@@ -36,6 +36,14 @@ const teacherItems = [
   },
 ];
 
+const superAdminItems = [
+  {
+    name: "Admins",
+    icon: "fas fa-user",
+    path: "/admins",
+  },
+];
+
 const adminItems = [
   {
     name: "sidebar.dashboard",
@@ -72,10 +80,5 @@ const adminItems = [
     icon: "fas fa-tasks",
     path: "/courses",
   },
-  {
-    name: "Admins",
-    icon: "fas fa-user",
-    path: "/admins",
-  },
 ];
-export { basicItems, studentItems, adminItems, teacherItems };
+export { basicItems, studentItems, superAdminItems, adminItems, teacherItems };

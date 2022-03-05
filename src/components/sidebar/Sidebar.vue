@@ -32,7 +32,13 @@ import {
   List,
   ListItem,
 } from "./Sidebar.styles";
-import { basicItems, studentItems, adminItems, teacherItems } from "./SidebarItems.config";
+import {
+  basicItems,
+  studentItems,
+  superAdminItems,
+  adminItems,
+  teacherItems,
+} from "./SidebarItems.config";
 export default {
   name: "Sidebar",
   components: {
@@ -51,8 +57,15 @@ export default {
   created() {
     if (this.userRole === "Student")
       this.sidebarItems = [...basicItems, ...studentItems];
-    else if (this.userRole === "Staff") this.sidebarItems = [...basicItems, ...teacherItems];
-    else if (this.userRole === "Admin") this.sidebarItems = adminItems;
+    else if (this.userRole === "Staff")
+      this.sidebarItems = [...basicItems, ...teacherItems];
+    else if (this.userRole === "Admin") {
+      this.sidebarItems = adminItems;
+      const userEmail = this.$store.getters.loggedUser.email;
+      console.log("first", userEmail, process.env.VUE_APP_SUPERADMIN_EMAIL);
+      if (userEmail === process.env.VUE_APP_SUPERADMIN_EMAIL)
+        this.sidebarItems = [...this.sidebarItems, ...superAdminItems];
+    }
   },
 };
 </script>

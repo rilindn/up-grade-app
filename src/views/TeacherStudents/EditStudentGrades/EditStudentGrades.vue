@@ -76,6 +76,8 @@ export default {
           .number()
           .typeError("Grade must be a number")
           .nullable()
+          .min(1)
+          .max(5)
           .label("First grade")
           .when("second", {
             is: Number,
@@ -83,6 +85,8 @@ export default {
               .number()
               .typeError("Grade must be a number")
               .nullable()
+              .min(1)
+              .max(5)
               .required("Must enter first grade"),
           })
           .when("final", {
@@ -91,12 +95,16 @@ export default {
               .number()
               .typeError("Grade must be a number")
               .nullable()
+              .min(1)
+              .max(5)
               .required("Must enter first grade"),
           }),
         second: yup
           .number()
           .typeError("Grade must be a number")
           .nullable()
+          .min(1)
+          .max(5)
           .label("Second grade")
           .when("final", {
             is: Number,
@@ -104,12 +112,16 @@ export default {
               .number()
               .typeError("Grade must be a number")
               .nullable()
+              .min(1)
+              .max(5)
               .required("Must enter second grade"),
           }),
         final: yup
           .number()
           .typeError("Grade must be a number")
           .nullable()
+          .min(1)
+          .max(5)
           .label("Final grade"),
       }),
       loading: false,
