@@ -1,16 +1,42 @@
 import styled from "vue3-styled-components";
 
 import { fontFamily } from "@/theme/typography";
+import breakpoints from "../../theme/breakpoints";
+
+const navProps = {
+  showSidebar: Boolean,
+};
 
 const listProps = {
   isCurrentRoute: Boolean,
 };
 
-export const NavWrapper = styled("div")`
-  /* width: 318px; */
+export const NavWrapper = styled("div")``;
+
+export const OpenBtn = styled("span", navProps)`
+  display: none;
+  @media ${breakpoints("max").tablet} {
+    display: ${(props) => (props.showSidebar ? "none" : "block")};
+    position: absolute;
+    top: 21px;
+    left: 17px;
+    font-size: 23px;
+  }
 `;
 
-export const Navigation = styled("nav")`
+export const CloseBtn = styled("span", navProps)`
+  display: none;
+  @media ${breakpoints("max").tablet} {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 17px;
+    color: white;
+    font-size: 17px;
+  }
+`;
+
+export const Navigation = styled("nav", navProps)`
   margin: 0;
   padding: 0;
   height: 100%;
@@ -18,6 +44,12 @@ export const Navigation = styled("nav")`
   background: radial-gradient(#05c59a, #008466);
   a {
     text-decoration: none;
+  }
+  @media ${breakpoints("max").tablet} {
+    left: ${(props) => (props.showSidebar ? "0" : "-100%")};
+    position: absolute;
+    height: calc(100% - 80px);
+    transition: all 0.7s ease 0s;
   }
 `;
 
@@ -89,5 +121,8 @@ export const LogoSection = styled.div`
     span {
       color: var(--va-grey600);
     }
+  }
+  @media ${breakpoints("max").tablet} {
+    margin-right: 50px;
   }
 `;

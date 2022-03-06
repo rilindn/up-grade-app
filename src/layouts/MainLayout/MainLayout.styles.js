@@ -1,5 +1,6 @@
 import styled from "vue3-styled-components";
 import { fontFamily } from "@/theme/typography";
+import { breakpoints } from "./../../theme/breakpoints";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 90vh;
+  min-height: calc(100vh - 80px);
 `;
 
 export const HeaderSection = styled.div`
@@ -31,5 +32,8 @@ export const CurrentView = styled.div`
   padding-left: 25px;
   span {
     border-bottom: 2px solid var(--va-primaryLight);
+  }
+  @media ${breakpoints("max").tablet} {
+    margin-left: 20px;
   }
 `;
