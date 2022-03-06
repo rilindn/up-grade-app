@@ -11,7 +11,11 @@ const listProps = {
   isCurrentRoute: Boolean,
 };
 
-export const NavWrapper = styled("div")``;
+export const NavWrapper = styled("div")`
+  @media ${breakpoints("max").tablet} {
+    z-index: 100;
+  }
+`;
 
 export const OpenBtn = styled("span", navProps)`
   display: none;
