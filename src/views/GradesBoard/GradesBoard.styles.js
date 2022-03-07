@@ -1,5 +1,6 @@
 import styled from "vue3-styled-components";
 import { Table, Head, Body, Column, Row, Cell } from "@/components/table";
+import breakpoints from "../../theme/breakpoints";
 
 export const TableStyled = styled(Table)`
   margin: 10px 0 0 0;
@@ -53,16 +54,19 @@ export const CellStyled = styled(Cell)`
 `;
 
 export const Wrapper = styled.div`
-  /* box-shadow: 0 0 2px 2px rgba(0, 132, 102, 0.16); */
   border-radius: 5px;
   width: 100%;
-  /* margin: 30px auto; */
 `;
 
 export const TablesWrapper = styled.div`
   display: flex;
   justify-content: start;
   margin: 40px;
+  @media ${breakpoints("max").tablet} {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const GradeWrapper = styled.div`
@@ -114,5 +118,11 @@ export const SingleTable = styled.div`
   .table-title {
     font-size: 20px;
     font-weight: bold;
+  }
+  @media ${breakpoints("max").tablet} {
+    span {
+      align-self: center;
+      margin-bottom: 10px;
+    }
   }
 `;
