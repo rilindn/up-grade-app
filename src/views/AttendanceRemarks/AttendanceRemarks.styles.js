@@ -10,7 +10,6 @@ export const Container = styled.div`
   border-radius: 5px;
   @media ${breakpoints("max").tablet} {
     flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
 `;
@@ -69,8 +68,9 @@ export const Section = styled.div`
     font-weight: bold;
   }
   @media ${breakpoints("max").tablet} {
-    span {
+    .title {
       margin-bottom: 15px;
+      font-size: 19px;
       align-self: center;
     }
   }

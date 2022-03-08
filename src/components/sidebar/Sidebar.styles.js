@@ -20,7 +20,7 @@ export const NavWrapper = styled("div")`
 export const OpenBtn = styled("span", navProps)`
   display: none;
   @media ${breakpoints("max").tablet} {
-    display: ${(props) => (props.showSidebar ? "none" : "block")};
+    display: block;
     position: absolute;
     top: 21px;
     left: 17px;

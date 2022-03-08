@@ -24,11 +24,9 @@
             <p>1</p>
             <CourseCode>
               <h4>First Grade</h4>
-              <span>Parallel I</span>
+              <span>Parallel 1</span>
             </CourseCode>
           </CourseContainer>
-        </Course>
-        <Course>
           <CourseContainer>
             <p>2</p>
             <CourseCode>
@@ -36,8 +34,6 @@
               <span>Parallel 2</span>
             </CourseCode>
           </CourseContainer>
-        </Course>
-        <Course>
           <CourseContainer>
             <p>3</p>
             <CourseCode>
@@ -45,8 +41,6 @@
               <span>Parallel 1</span>
             </CourseCode>
           </CourseContainer>
-        </Course>
-        <Course>
           <CourseContainer>
             <p>4</p>
             <CourseCode>
@@ -54,17 +48,13 @@
               <span>Parallel 1</span>
             </CourseCode>
           </CourseContainer>
-        </Course>
-        <Course>
           <CourseContainer>
             <p>5</p>
             <CourseCode>
               <h4>Third Grade</h4>
-              <span>Parallel 2</span>
+              <span>Parallel 1</span>
             </CourseCode>
           </CourseContainer>
-        </Course>
-        <Course>
           <CourseContainer>
             <p>6</p>
             <CourseCode>

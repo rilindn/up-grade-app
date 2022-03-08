@@ -4,8 +4,8 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
-  margin-top:60px;
-  margin-bottom:60px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 `;
 
 export const AddNew = styled.div`
@@ -53,6 +53,3 @@ export const Delete = styled.div`
     opacity: 0.6;
   }
 `;
-
-
-
