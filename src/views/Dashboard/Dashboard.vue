@@ -6,36 +6,36 @@
           <Statistics
             icon="fad fa-user-graduate"
             :statistic="students"
-            field="Students"
+            :field="$t('dashboard.students')"
           />
         </router-link>
         <router-link to="Teachers">
           <Statistics
             icon="fad fa-chalkboard-teacher"
             :statistic="staff"
-            field="Teachers"
+            :field="$t('dashboard.teachers')"
           />
         </router-link>
         <router-link to="Classes">
           <Statistics
             icon="fad fa-users-class"
             :statistic="classes"
-            field="Classes"
+            :field="$t('dashboard.classes')"
           />
         </router-link>
         <router-link to="Parallels">
           <Statistics
             icon="fas fa-project-diagram"
             :statistic="parallels"
-            field="Parallels"
+            :field="$t('dashboard.parallels')"
           />
         </router-link>
       </StatisticsSection>
     </div>
     <Chart>
       <SingeChart>
-        <h2 class="display-5">Users stat</h2>
-        <em>New students registered in past 6 months.</em>
+        <h2 class="display-5">{{ $t("dashboard.userStats") }}</h2>
+        <em>{{ $t("dashboard.pastMonths") }}</em>
         <AreaChart :chartData="chartData" />
       </SingeChart>
       <GendersChart
@@ -83,13 +83,13 @@ export default {
       gendersCount: {},
       gendersChartData: [],
       chartData: [
-        { Month: "Jan", Nr: 1000, avg: 500, inc: 300 },
-        { Month: "Feb", Nr: 2000, avg: 900, inc: 400 },
-        { Month: "Apr", Nr: 400, avg: 400, inc: 500 },
-        { Month: "Mar", Nr: 3100, avg: 1300, inc: 700 },
-        { Month: "May", Nr: 200, avg: 100, inc: 200 },
-        { Month: "Jun", Nr: 600, avg: 400, inc: 300 },
-        { Month: "Jul", Nr: 500, avg: 90, inc: 100 },
+        { Month: "Oct", Nr: 1000, avg: 500, inc: 300 },
+        { Month: "Nov", Nr: 2000, avg: 900, inc: 400 },
+        { Month: "Dec", Nr: 400, avg: 400, inc: 500 },
+        { Month: "Jan", Nr: 3100, avg: 1300, inc: 700 },
+        { Month: "Feb", Nr: 200, avg: 100, inc: 200 },
+        { Month: "Mar", Nr: 600, avg: 400, inc: 300 },
+        { Month: "Apr", Nr: 500, avg: 90, inc: 100 },
       ],
     };
   },

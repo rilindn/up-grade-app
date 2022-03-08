@@ -84,13 +84,15 @@
     "home": "Home",
     "schedule": "Orari",
     "classes": "Klasat",
+    "students": "Studentët",
     "parallels": "Paralelet",
     "gradesBoard": "Notat",
     "dashboard": "Ballina",
     "subjectsBoard": "Lëndët",
     "myClasses": "Klasat",
     "attendanceRemarks": "Vijueshmeria",
-    "courses": "Kurset"
+    "courses": "Kurset",
+    "teachers": "Profesorët"
   },
   "login": {
     "student": {
@@ -168,6 +170,38 @@
     "subject": "Lenda",
     "id": "ID",
     "actions": "Veprimet"
+  },
+  "dashboard": {
+    "classes": "Klasat",
+    "students": "Studentët",
+    "parallels": "Paralelet",
+    "teachers": "Profesorët",
+    "userStats": "Statistikat e përdoruesve",
+    "pastMonths": "Studentët të cilët janë regjistruar në 6 muajt e fundit"
+  },
+  "genderChart": {
+    "gender": "Gjinia",
+    "current": "Gjinia e studentëve aktualë",
+    "numberFemale": " studente femra",
+    "numberMale": "student meshkuj",
+    "male": "Meshkuj",
+    "female": "Femra"
+  },
+  "teachers": {
+    "firstname": "Emri",
+    "lastname": "Mbiemri",
+    "dateOfBirth": "Ditëlindja",
+    "actions": "Veprimet",
+    "email": "Email",
+    "delete": "Jeni i sigurtë se dëshironi ta fshini këtë profesor?",
+    "deleteSucces": "Profesori u fshi me sukses!",
+    "role": "Roli",
+    "gender": "Gjinia",
+    "addUser": "Shto përdorues të ri",
+    "register": "Regjistro"
+  },
+  "editTeacher": {
+    "edit": "Përditëso profesorin"
   },
   "addNew": "Shtoni",
   "save": "Ruaj",

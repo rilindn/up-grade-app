@@ -6,23 +6,35 @@
         :validation-schema="registerSchema"
         v-slot="{ errors }"
       >
-        <h3>Register New User</h3>
-        <InputField :error="errors" name="firstName" placeholder="Firstname" />
-        <InputField :error="errors" name="lastName" placeholder="Lastname" />
+        <h3>{{ $t("teachers.addUser") }}</h3>
+        <InputField
+          :error="errors"
+          name="firstName"
+          :placeholder="$t('teachers.firstname')"
+        />
+        <InputField
+          :error="errors"
+          name="lastName"
+          :placeholder="$t('teachers.lastname')"
+        />
         <SelectInput
           :error="errors"
           name="role"
-          placeholder="Choose a role"
+          :placeholder="$t('teachers.role')"
           :options="['Staff', 'Admin']"
         />
         <SelectInput
           :error="errors"
           name="gender"
-          placeholder="Choose  gender"
+          :placeholder="$t('teachers.gender')"
           :options="['Female', 'Male']"
         />
         <DateInput :error="errors" name="dateOfBirth" />
-        <SaveButton title="Register" :loading="loading" type="submit" />
+        <SaveButton
+          :title="$t('teachers.register')"
+          :loading="loading"
+          type="submit"
+        />
       </Form>
     </FormWrapper>
   </Wrapper>

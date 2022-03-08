@@ -1,7 +1,7 @@
 <template>
   <SingleChart>
-    <h5 class="chart-title">Genders</h5>
-    <em>Current students by their gender.</em>
+    <h5 class="chart-title">{{ $t("genderChart.gender") }}</h5>
+    <em>{{ $t("genderChart.current") }}</em>
     <PieChart
       :usersData="gendersChartData"
       :dataKeys="['Gender', 'Nr']"
@@ -13,20 +13,21 @@
     <Legend>
       <div>
         <Color color="var(--va-primaryMain)" />
-        <span>Male</span>
+        <span> {{ $t("genderChart.male") }}</span>
       </div>
       <div>
         <Color color="var(--va-pink100)" />
-        <span>Female</span>
+        <span> {{ $t("genderChart.female") }}</span>
       </div>
     </Legend>
     <StatsMale
       ><hr />
-      {{ this.gendersCount.male }} Male Students</StatsMale
-    >
+      {{ this.gendersCount.male }} {{ $t("genderChart.numberMale") }}
+    </StatsMale>
     <StatsFemale
       ><hr />
-      {{ this.gendersCount.female }} Female Students</StatsFemale
+      {{ this.gendersCount.female }}
+      {{ $t("genderChart.numberFemale") }}</StatsFemale
     >
   </SingleChart>
 </template>

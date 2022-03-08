@@ -3,16 +3,16 @@
     <Wrapper>
       <AddNew @click="$router.push('/register')">
         <span><i class="fas fa-plus-circle"></i></span>
-        <span>Add New</span>
+        <span>{{ $t("addNew") }}</span>
       </AddNew>
       <Table>
         <Head>
           <Column></Column>
-          <Column>Firstname</Column>
-          <Column>Lastname</Column>
-          <Column>Date of Birth</Column>
-          <Column>Email</Column>
-          <Column>Actions</Column>
+          <Column>{{ $t("teachers.firstname") }}</Column>
+          <Column>{{ $t("teachers.lastname") }}</Column>
+          <Column>{{ $t("teachers.dateOfBirth") }}</Column>
+          <Column>{{ $t("teachers.email") }}</Column>
+          <Column>{{ $t("teachers.actions") }}</Column>
         </Head>
         <Body>
           <Row v-for="(teacher, i) in staff" :key="teacher.id">
@@ -109,12 +109,12 @@ export default {
       this.showAddModal = !this.showAddModal;
     },
     async handleDelete(id) {
-      if (confirm("Are you sure you want to delete this teacher?")) {
+      if (confirm(this.$t("teachers.delete"))) {
         await deleteStaff(id);
         this.$notify({
           type: "success",
           duration: 2000,
-          text: "Teacher deleted succesfully!",
+          text: this.$t("teachers.deleteSucces"),
         });
         await this.fetchStaff();
       }

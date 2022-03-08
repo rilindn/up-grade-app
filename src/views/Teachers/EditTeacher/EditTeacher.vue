@@ -1,6 +1,6 @@
 <template>
   <FormWrapper>
-    <Title>Edit Teacher</Title>
+    <Title>{{ $t("editTeacher.edit") }}</Title>
     <FormStyled
       @submit="editStaff"
       :validation-schema="editSchema"
@@ -11,13 +11,13 @@
         :error="errors"
         name="firstName"
         type="text"
-        placeholder="Firstname"
+        :placeholder="$t('teachers.firstname')"
       />
       <InputField
         :error="errors"
         name="lastName"
         type="text"
-        placeholder="Lastname"
+        :placeholder="$t('teachers.lastname')"
       />
       <DateInput
         :error="errors"
@@ -28,7 +28,7 @@
         :error="errors"
         name="email"
         type="email"
-        placeholder="Email"
+        :placeholder="$t('teachers.email')"
       />
       <SaveButton :title="$t('save')" :loading="loading" type="submit" />
       <CancelButton :title="$t('cancel')" @click="$emit('closeModal')" />
