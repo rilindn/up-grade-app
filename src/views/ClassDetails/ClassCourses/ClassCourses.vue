@@ -8,9 +8,9 @@
       <Table v-if="classCourses?.length > 0">
         <Head>
           <Column></Column>
-          <Column>Teacher</Column>
-          <Column>Subject</Column>
-          <Column>Actions</Column>
+          <Column>{{ $t("students.studentId") }}</Column>
+          <Column>{{ $t("classDetails.subject") }}</Column>
+          <Column>{{ $t("action") }}</Column>
         </Head>
         <Body>
           <Row v-for="(course, i) in classCourses" :key="course._id">
@@ -27,7 +27,7 @@
           </Row>
         </Body>
       </Table>
-      <span v-else>No assigned courses were found!</span>
+      <span v-else>{{ $t("classDetails.noAssignCourses") }}!</span>
     </Wrapper>
   </Container>
   <va-modal v-model="addCourseModal" hide-default-actions>

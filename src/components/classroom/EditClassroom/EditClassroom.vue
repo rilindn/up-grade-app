@@ -1,6 +1,6 @@
 <template>
   <FormWrapper>
-    <Title>Edit Class</Title>
+    <Title>{{ $t("editClass.edit") }}</Title>
     <FormStyled
       @submit="editClass"
       :validation-schema="editSchema"
@@ -11,19 +11,19 @@
         :error="errors"
         name="className"
         type="text"
-        placeholder="Classname"
+        :placeholder="$t('editClass.classname')"
       />
       <InputField
         :error="errors"
         name="level"
         type="number"
-        placeholder="Level"
+        :placeholder="$t('editClass.level')"
       />
       <InputField
         :error="errors"
         name="classCapacity"
         type="number"
-        placeholder="Capacity"
+        :placeholder="$t('editClass.capacity')"
       />
       <SaveButton :title="$t('save')" :loading="loading" type="submit" />
       <CancelButton :title="$t('cancel')" @click="$emit('closeModal')" />
@@ -67,15 +67,22 @@ export default {
       editSchema: yup.object({
         className: yup
           .string()
-          .label("Firstname")
+          .label("Classname")
           .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
           .required(),
-        level: yup.number().min(1).max(12).label("Level").required(""),
+        level: yup
+          .number()
+          .min(1)
+          .max(12)
+          .label("Level")
+          .typeError("Level is a required field")
+          .required(""),
         classCapacity: yup
           .number()
           .min(2)
           .max(200)
           .label("Capacity")
+          .typeError("Capacity is a required field")
           .required(""),
       }),
       loading: false,

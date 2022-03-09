@@ -3,15 +3,15 @@
     <Wrapper>
       <AddNew @click="triggerAddModal">
         <span><i class="fas fa-plus-circle"></i></span>
-        <span>Add New</span>
+        <span>{{ $t("addNew") }}</span>
       </AddNew>
       <Table>
         <Head>
           <Column></Column>
-          <Column>Name</Column>
-          <Column>Class</Column>
-          <Column>Description</Column>
-          <Column>Actions</Column>
+          <Column>{{ $t("parallels.name") }}</Column>
+          <Column>{{ $t("parallels.class") }}</Column>
+          <Column>{{ $t("subjects.description") }}</Column>
+          <Column>{{ $t("actions") }}</Column>
         </Head>
         <Body>
           <Row v-for="(subject, i) in subjects" :key="i">

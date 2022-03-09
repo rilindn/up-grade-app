@@ -1,6 +1,6 @@
 <template>
   <FormWrapper>
-    <Title>Edit Subject</Title>
+    <Title>{{ $t("subjects.edit") }}</Title>
     <FormStyled
       @submit="editSubject"
       :validation-schema="editSchema"
@@ -11,20 +11,20 @@
         :error="errors"
         name="subjectName"
         type="text"
-        placeholder="Name"
+        :placeholder="$t('parallels.name')"
       />
       <InputField
         :error="errors"
         name="targetedLevel"
         type="number"
-        placeholder="Level"
+        :placeholder="$t('subjects.level')"
       />
       <InputField
         :error="errors"
         name="subjectDescription"
         type="text"
         as="textarea"
-        placeholder="Description"
+        :placeholder="$t('subjects.description')"
       />
       <SaveButton :title="$t('save')" :loading="loading" type="submit" />
       <CancelButton :title="$t('cancel')" @click="$emit('closeModal')" />
@@ -71,7 +71,12 @@ export default {
           .label("Name")
           .matches(/^[aA-zZ\s]+$/, "Only letters are allowed for this field ")
           .required(),
-        targetedLevel: yup.number().min(1).label("Level").required(),
+        targetedLevel: yup
+          .number()
+          .min(1)
+          .label("Level")
+          .typeError("Level is a required field")
+          .required(),
         subjectDescription: yup.string().min(3).label("Description").required(),
       }),
       loading: false,

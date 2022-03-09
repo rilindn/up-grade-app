@@ -5,12 +5,12 @@
         :active="currentTabComponent === 'ClassStudents'"
         @click="switchComponent('ClassStudents')"
       >
-        Students
+        {{ $t("classDetails.students") }}
       </Tab>
       <Tab
         :active="currentTabComponent === 'ClassCourses'"
         @click="switchComponent('ClassCourses')"
-        >Courses</Tab
+        >{{ $t("classDetails.courses") }}</Tab
       >
     </Tabs>
     <keep-alive>

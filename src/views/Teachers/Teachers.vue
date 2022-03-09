@@ -8,11 +8,11 @@
       <Table>
         <Head>
           <Column></Column>
-          <Column>{{ $t("teachers.firstname") }}</Column>
-          <Column>{{ $t("teachers.lastname") }}</Column>
-          <Column>{{ $t("teachers.dateOfBirth") }}</Column>
-          <Column>{{ $t("teachers.email") }}</Column>
-          <Column>{{ $t("teachers.actions") }}</Column>
+          <Column>{{ $t("firstname") }}</Column>
+          <Column>{{ $t("lastname") }}</Column>
+          <Column>{{ $t("dateOfBirth") }}</Column>
+          <Column>{{ $t("email") }}</Column>
+          <Column>{{ $t("actions") }}</Column>
         </Head>
         <Body>
           <Row v-for="(teacher, i) in staff" :key="teacher.id">
@@ -109,12 +109,12 @@ export default {
       this.showAddModal = !this.showAddModal;
     },
     async handleDelete(id) {
-      if (confirm(this.$t("teachers.delete"))) {
+      if (confirm(this.$t("Are you sure you want to delete this teacher?"))) {
         await deleteStaff(id);
         this.$notify({
           type: "success",
           duration: 2000,
-          text: this.$t("teachers.deleteSucces"),
+          text: "Teacher deleted succesfully!",
         });
         await this.fetchStaff();
       }

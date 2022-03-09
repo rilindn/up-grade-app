@@ -5,7 +5,7 @@
         v-bind="field"
         class="date-picker"
         highlight-weekend="{true}"
-        :placeholder="$t('teachers.dateOfBirth')"
+        :placeholder="$t('dateOfBirth')"
         color="#008466"
         manual-input="{true}"
         v-model="birthdate"

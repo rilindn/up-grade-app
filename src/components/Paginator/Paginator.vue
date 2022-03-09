@@ -1,7 +1,8 @@
 <template>
   <Wrapper>
     <span>
-      Page: <b>{{ currentPage }}</b> of <b>{{ pager.totalPages }}</b></span
+      {{ $t("students.page") }} <b>{{ currentPage }}</b>
+      {{ $t("students.of") }} <b>{{ pager.totalPages }}</b></span
     >
     <va-pagination
       v-model="value"

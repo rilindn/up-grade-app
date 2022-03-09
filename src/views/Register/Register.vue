@@ -10,12 +10,12 @@
         <InputField
           :error="errors"
           name="firstName"
-          :placeholder="$t('teachers.firstname')"
+          :placeholder="$t('firstname')"
         />
         <InputField
           :error="errors"
           name="lastName"
-          :placeholder="$t('teachers.lastname')"
+          :placeholder="$t('lastname')"
         />
         <SelectInput
           :error="errors"
@@ -30,11 +30,7 @@
           :options="['Female', 'Male']"
         />
         <DateInput :error="errors" name="dateOfBirth" />
-        <SaveButton
-          :title="$t('teachers.register')"
-          :loading="loading"
-          type="submit"
-        />
+        <SaveButton :title="$t('register')" :loading="loading" type="submit" />
       </Form>
     </FormWrapper>
   </Wrapper>

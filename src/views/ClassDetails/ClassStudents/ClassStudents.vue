@@ -7,12 +7,12 @@
       </AddNew>
       <Table v-if="classStudents?.length > 0">
         <Head>
-          <Column>Id</Column>
-          <Column>Firstname</Column>
-          <Column>Lastname</Column>
-          <Column>Date of Birth</Column>
-          <Column>Email</Column>
-          <Column>Actions</Column>
+          <Column>{{ $t("students.studentId") }}</Column>
+          <Column>{{ $t("firstname") }}</Column>
+          <Column>{{ $t("lastname") }}</Column>
+          <Column>{{ $t("dateOfBirth") }}</Column>
+          <Column>{{ $t("email") }}</Column>
+          <Column>{{ $t("actions") }}</Column>
         </Head>
         <Body>
           <Row
@@ -35,7 +35,7 @@
           </Row>
         </Body>
       </Table>
-      <span v-else>No assigned students were found!</span>
+      <span v-else>{{ $t("classDetails.noAssignStudents") }}</span>
     </Wrapper>
   </Container>
   <va-modal v-model="addStudentModal" hide-default-actions>

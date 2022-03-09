@@ -3,16 +3,16 @@
     <Wrapper>
       <AddNew @click="triggerAddModal">
         <span><i class="fas fa-plus-circle"></i></span>
-        <span>Add New</span>
+        <span>{{ $t("addNew") }}</span>
       </AddNew>
       <Table>
         <Head>
           <Column></Column>
-          <Column>Class</Column>
-          <Column>Name</Column>
-          <Column>Max Capacity</Column>
-          <Column>Students</Column>
-          <Column>Actions</Column>
+          <Column>{{ $t("parallels.class") }}</Column>
+          <Column>{{ $t("parallels.name") }}</Column>
+          <Column>{{ $t("parallels.capacity") }}</Column>
+          <Column>{{ $t("parallels.students") }}</Column>
+          <Column>{{ $t("actions") }}</Column>
           <Column></Column>
         </Head>
         <Body>
@@ -37,7 +37,7 @@
             <Cell>
               <router-link
                 :to="{ name: 'Class Details', params: { id: parallel._id } }"
-                >See Details</router-link
+                >{{ $t("parallels.seeDetails") }}</router-link
               >
             </Cell>
           </Row>

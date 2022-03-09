@@ -169,7 +169,8 @@
     "teacher": "Profesori",
     "subject": "Lenda",
     "id": "ID",
-    "actions": "Veprimet"
+    "actions": "Veprimet",
+    "assignRole": "Vendos rol të ri"
   },
   "dashboard": {
     "classes": "Klasat",
@@ -188,22 +189,75 @@
     "female": "Femra"
   },
   "teachers": {
-    "firstname": "Emri",
-    "lastname": "Mbiemri",
-    "dateOfBirth": "Ditëlindja",
     "actions": "Veprimet",
-    "email": "Email",
-    "delete": "Jeni i sigurtë se dëshironi ta fshini këtë profesor?",
-    "deleteSucces": "Profesori u fshi me sukses!",
     "role": "Roli",
     "gender": "Gjinia",
-    "addUser": "Shto përdorues të ri",
-    "register": "Regjistro"
+    "addUser": "Shto përdorues të ri"
   },
   "editTeacher": {
     "edit": "Përditëso profesorin"
   },
+  "students": {
+    "parentName": "Emri i prindit",
+    "studentId": "ID e studentit",
+    "gender": "Gjinia",
+    "addStudent": "Shto student të ri",
+    "enrolledYear": "Viti i regjistrimit",
+    "nationality": "Kombësia",
+    "citizenship": "Shtetësia",
+    "place": "Vendi",
+    "zipCode": "Zip kodi",
+    "personalEmail": "Email personal",
+    "parentNumber": "Numri i telefonit të prindit",
+    "page": "Faqe:",
+    "of": "nga"
+  },
+  "editStudent": {
+    "edit": "Përditëso studentin"
+  },
+  "classes": {
+    "edit": "Përditëso klasën",
+    "delete": "Fshi klasën",
+    "parallels": "Paralelet",
+    "parallel": "Paralelja"
+  },
+  "editClass": {
+    "edit": "Përditëso klasën",
+    "classname": "Emri",
+    "level": "Leveli",
+    "capacity": "Kapaciteti"
+  },
+  "classDetails": {
+    "students": "Studentët",
+    "courses": "Kurset",
+    "teacher": "Profesori",
+    "subject": "Lënda",
+    "noAssignCourses": "Nuk u gjend asnjë kurs!",
+    "noAssignStudents": "Nuk u gjend asnjë student!"
+  },
+  "parallels": {
+    "class": "Klasa",
+    "name": "Emri",
+    "capacity": "Kapaciteti",
+    "students": "Studentët",
+    "seeDetails": "Shiko detajet"
+  },
+  "editParallel": {
+    "edit": "Përditëso paralelen"
+  },
+  "subjects": {
+    "description": "Përshkrimi",
+    "level": "Leveli",
+    "edit": "Përditëso lëndën"
+  },
   "addNew": "Shtoni",
   "save": "Ruaj",
-  "cancel": "Anulo"
+  "cancel": "Anulo",
+  "firstname": "Emri",
+  "lastname": "Mbiemri",
+  "dateOfBirth": "Ditëlindja",
+  "email": "Email",
+  "actions": "Veprimet",
+  "register": "Regjistro",
+  "search": "Kërko"
 }

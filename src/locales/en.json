@@ -152,7 +152,8 @@
     "teacher": "Teacher",
     "subject": "Subject",
     "id": "Number",
-    "actions": "Actions"
+    "actions": "Actions",
+    "assignRole": "Assign new role"
   },
   "addNew": "Add New",
   "attendance": {
@@ -194,19 +195,70 @@
     "female": "Female"
   },
   "teachers": {
-    "firstname": "Firstname",
-    "lastname": "Lastname",
-    "dateOfBirth": "Date of birth",
-    "email": "Email",
-    "actions": "Actions",
-    "delete": "Are you sure you want to delete this professor?",
-    "deleteSucces": "Teacher deleted succesfully!",
     "role": "Role",
     "gender": "Gender",
-    "addUser": "Add new user",
-    "register": "Register"
+    "addUser": "Add new user"
   },
   "editTeacher": {
     "edit": "Edit Teacher"
-  }
+  },
+  "students": {
+    "parentName": "Parent name",
+    "studentId": "Student ID",
+    "gender": "Gender",
+    "addStudent": "Add new student",
+    "enrolledYear": "Enrolled year",
+    "nationality": "Nationality",
+    "citizenship": "Citizenship",
+    "place": "Place",
+    "zipCode": "Zip Code",
+    "personalEmail": "Personal email",
+    "parentNumber": "Parent phone number",
+    "page": "Page:",
+    "of": "of"
+  },
+  "editStudent": {
+    "edit": "Edit student"
+  },
+  "classes": {
+    "edit": "Edit grade",
+    "delete": "Delete grade",
+    "parallels": "Parallels",
+    "parallel": "Parallel "
+  },
+  "editClass": {
+    "edit": "Edit class",
+    "classname": "Classname",
+    "level": "Level",
+    "capacity": "Capacity"
+  },
+  "classDetails": {
+    "students": "Students",
+    "courses": "Courses",
+    "subject": "Subject",
+    "noAssignCourses": "No assigned courses were found!",
+    "noAssignStudents": "No assigned students were found!"
+  },
+  "parallels": {
+    "class": "Class",
+    "name": "Name",
+    "capacity": "Capacity",
+    "students": "Students",
+    "seeDetails": "See Details"
+  },
+  "editParallel": {
+    "edit": "Edit Parallel"
+  },
+  "subjects": {
+    "description": "Description",
+    "level": "Level",
+    "edit": "Edit subject"
+  },
+  "firstname": "Firstname",
+  "lastname": "Lastname",
+  "dateOfBirth": "Date of birth",
+  "email": "Email",
+  "actions": "Actions",
+  "register": "Register",
+  "search": "Search"
 }
