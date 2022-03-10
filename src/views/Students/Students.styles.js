@@ -1,4 +1,5 @@
 import styled from "vue3-styled-components";
+import breakpoints from "../../theme/breakpoints";
 
 export const Container = styled.div`
   display: flex;
@@ -6,12 +7,18 @@ export const Container = styled.div`
   align-items: center;
   margin: 50px;
   border-radius: 5px;
+  @media ${breakpoints("max").tablet} {
+    width: 90%;
+  }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
+  @media ${breakpoints("max").tablet} {
+    width: 100%;
+  }
 `;
 
 export const ActionWrapper = styled.div`

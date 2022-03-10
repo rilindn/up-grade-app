@@ -1,6 +1,15 @@
 <template>
   <NavWrapper>
-    <Navigation>
+    <OpenBtn :showSidebar="showSidebar" @click="showSidebar = true"
+      ><i class="fas fa-bars"></i
+    ></OpenBtn>
+    <Navigation
+      :showSidebar="showSidebar"
+      v-click-away="showSidebar && hideSidebar"
+    >
+      <CloseBtn @click="showSidebar = false"
+        ><i class="fas fa-times"></i
+      ></CloseBtn>
       <router-link to="/">
         <LogoSection>
           <img src="@/assets/logosvg.svg" width="93" height="43" alt="logo" />
@@ -31,6 +40,8 @@ import {
   LogoSection,
   List,
   ListItem,
+  CloseBtn,
+  OpenBtn,
 } from "./Sidebar.styles";
 import {
   basicItems,
@@ -39,6 +50,7 @@ import {
   adminItems,
   teacherItems,
 } from "./SidebarItems.config";
+import { directive } from "vue3-click-away";
 export default {
   name: "Sidebar",
   components: {
@@ -46,13 +58,24 @@ export default {
     NavWrapper,
     LogoSection,
     List,
+    OpenBtn,
+    CloseBtn,
     ListItem,
   },
   data() {
     return {
       sidebarItems: [],
       userRole: this.$store.state.loggedUser.role,
+      showSidebar: true,
     };
+  },
+  methods: {
+    hideSidebar() {
+      this.showSidebar = false;
+    },
+  },
+  directives: {
+    ClickAway: directive,
   },
   created() {
     if (this.userRole === "Student")

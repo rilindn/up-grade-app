@@ -1,12 +1,17 @@
 import styled from "vue3-styled-components";
 import { Table, Head, Body, Column, Row, Cell } from "@/components/table";
 import { fontFamily } from "@/theme/typography";
+import breakpoints from "../../theme/breakpoints";
 
 export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: start;
   border-radius: 5px;
+  @media ${breakpoints("max").tablet} {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const TableStyled = styled(Table)`
@@ -62,6 +67,13 @@ export const Section = styled.div`
     font-size: 17px;
     font-weight: bold;
   }
+  @media ${breakpoints("max").tablet} {
+    .title {
+      margin-bottom: 15px;
+      font-size: 19px;
+      align-self: center;
+    }
+  }
 `;
 
 export const RemarkWrapper = styled.div`
@@ -72,6 +84,9 @@ export const RemarkWrapper = styled.div`
   height: 650px;
   overflow-y: auto;
   margin-top: 3px;
+  @media ${breakpoints("max").tablet} {
+    margin-bottom: 25px;
+  }
 `;
 
 export const RemarkHead = styled.div`

@@ -1,12 +1,18 @@
 import styled from "vue3-styled-components";
+import breakpoints from "../../theme/breakpoints";
 
 export const Wrapper = styled.div`
   height: 700px;
   display: flex;
-  flex-direction: row;
   margin: 40px;
   border-radius: 5px;
   width: 85%;
+  @media ${breakpoints("max").tablet} {
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const SecondWrapper = styled.div`
@@ -18,6 +24,9 @@ export const SecondWrapper = styled.div`
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border: 3px solid var(--va-primaryLight);
+  @media ${breakpoints("max").tablet} {
+    width: 100%;
+  }
 `;
 
 export const ThirdWrapper = styled.div`
@@ -29,6 +38,12 @@ export const ThirdWrapper = styled.div`
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   flex-direction: column;
+  @media ${breakpoints("max").tablet} {
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const Container = styled.div`
@@ -37,6 +52,11 @@ export const Container = styled.div`
   justify-content: flex-start;
   p {
     font-size: 20px;
+  }
+  @media ${breakpoints("max").tablet} {
+    width: 100%;
+    align-items: center;
+    padding: 20px;
   }
 `;
 
@@ -67,6 +87,17 @@ export const WeekWrapper = styled.div`
 `;
 
 export const Course = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media ${breakpoints("max").tablet} {
+    width: 100%;
+    flex-wrap: wrap;
+    max-height: 300px;
+    align-items: center;
+  }
+`;
+
+export const CourseContainer = styled.div`
   width: 330px;
   height: 60px;
   background-color: var(--va-white);
@@ -76,15 +107,19 @@ export const Course = styled.div`
   padding: 0 20px;
   display: flex;
   align-items: center;
-`;
-
-export const CourseContainer = styled.div`
-  display: flex;
   justify-content: space-between;
   cursor: pointer;
   width: 100%;
   p {
     font-size: 18px;
+  }
+  @media ${breakpoints("max").tablet} {
+    width: 240px;
+    height: 60px;
+    p {
+      font-size: 16px;
+      margin-right: 7px;
+    }
   }
 `;
 
@@ -99,6 +134,11 @@ export const CourseCode = styled.div`
   }
   p:first-child {
     font-weight: 550;
+  }
+  @media ${breakpoints("max").tablet} {
+    p {
+      font-size: 15px;
+    }
   }
 `;
 

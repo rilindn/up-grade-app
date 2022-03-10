@@ -1,5 +1,6 @@
 import styled from "vue3-styled-components";
 import Button from "@/components/button";
+import breakpoints from "../../theme/breakpoints";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -7,6 +8,12 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding-bottom: 40px;
+  @media ${breakpoints("max").tablet} {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const FormWrapper = styled.div`

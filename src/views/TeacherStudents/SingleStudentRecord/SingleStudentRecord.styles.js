@@ -1,5 +1,6 @@
 import styled from "vue3-styled-components";
 import { Cell } from "@/components/table";
+import breakpoints from "../../../theme/breakpoints";
 
 export const CellStyled = styled(Cell)`
   border-right: 1px solid rgba(0, 132, 102, 0.16);
@@ -8,6 +9,9 @@ export const CellStyled = styled(Cell)`
   position: relative;
   .edit-trigger {
     visibility: hidden;
+    @media ${breakpoints("max").tablet} {
+      visibility: visible;
+    }
   }
   :hover {
     .edit-trigger {
@@ -32,6 +36,11 @@ export const GradeWrapper = styled.div`
     }
     span:nth-child(1) {
       border-bottom: 1px groove;
+    }
+  }
+  div:nth-child(2) {
+    @media ${breakpoints("max").tablet} {
+      width: 60px;
     }
   }
 `;

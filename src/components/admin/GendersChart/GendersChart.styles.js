@@ -1,4 +1,5 @@
 import styled from "vue3-styled-components";
+import breakpoints from "../../../theme/breakpoints";
 
 const colorProps = {
   color: String,
@@ -12,6 +13,9 @@ export const SingleChart = styled.div`
   .chart-title {
     font-size: 20px !important;
     font-weight: bold;
+  }
+  @media ${breakpoints("max").tablet} {
+    margin-top: 30px;
   }
 `;
 
@@ -50,6 +54,9 @@ export const StatsMale = styled.span`
     left: 60px;
     transform: rotate(42deg);
   }
+  @media ${breakpoints("max").tablet} {
+    margin-top: 30px;
+  }
 `;
 
 export const StatsFemale = styled.span`
@@ -67,5 +74,8 @@ export const StatsFemale = styled.span`
     bottom: 29px;
     left: 20px;
     transform: rotate(40deg);
+  }
+  @media ${breakpoints("max").tablet} {
+    margin-top: 30px;
   }
 `;
