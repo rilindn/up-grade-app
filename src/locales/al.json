@@ -71,7 +71,9 @@
     "grades": "Notat",
     "course": "Kurset",
     "manner": "Sjellja",
-    "periods": "Periodat"
+    "periods": "Periodat",
+    "final": "Finale",
+    "gpa": "Mesatarja ime"
   },
   "subjectsBoard": {
     "title": "Lendet",
@@ -141,14 +143,14 @@
     "parentName": "Emri Prindit"
   },
   "attendance": {
-    "title": "Vijueshmeria",
+    "title": "Vijueshmëria",
     "total": "Totali",
-    "subject": "Lenda",
-    "teacher": "Mesuesi",
-    "reasonable": "Te arsyeshme",
-    "unreasonable": "Te paarsyeshme",
-    "totalAbsences": "Mungesat ne total",
-    "remarks": "Verejtjet"
+    "subject": "Lënda",
+    "teacher": "Profesori",
+    "reasonable": "Të arsyeshme",
+    "unreasonable": "Të paarsyeshme",
+    "totalAbsences": "Mungesat në total",
+    "remarks": "Vërejtjet"
   },
   "myClasses": {
     "title": "Klasat"
@@ -249,6 +251,14 @@
     "description": "Përshkrimi",
     "level": "Leveli",
     "edit": "Përditëso lëndën"
+  },
+  "schedule": {
+    "course": "Lënda",
+    "class": "Klasa",
+    "code": "Kodi",
+    "professor": "Profesor",
+    "startTime": "Koha fillimit",
+    "endTime": "Koha mbarimit"
   },
   "addNew": "Shtoni",
   "save": "Ruaj",

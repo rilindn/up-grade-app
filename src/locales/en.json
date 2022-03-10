@@ -75,7 +75,9 @@
     "grades": "Grades",
     "course": "Course",
     "manner": "Manner",
-    "periods": "Periods"
+    "periods": "Periods",
+    "final": "Final",
+    "gpa": "My GPA"
   },
   "subjectsBoard": {
     "title": "Subjects",
@@ -253,6 +255,14 @@
     "description": "Description",
     "level": "Level",
     "edit": "Edit subject"
+  },
+  "schedule": {
+    "course": "Subject",
+    "class": "Class",
+    "code": "Code",
+    "professor": "Professor",
+    "startTime": "Start time",
+    "endTime": "End time"
   },
   "firstname": "Firstname",
   "lastname": "Lastname",

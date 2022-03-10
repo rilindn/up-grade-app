@@ -1,6 +1,6 @@
 <template>
   <SingleChart>
-    <span class="display-5">My GPA</span>
+    <span class="display-5">{{ $t("gradesBoard.gpa") }}</span>
     <ChartWrapper>
       <PieChart
         :usersData="usersData"
