@@ -144,6 +144,12 @@ const routes = [
         name: "Not Found",
         component: () => import("@/views/NotFound"),
       },
+      {
+        path: "/settings",
+        name: "Settings",
+        meta: { requiredRole: ["Student", "Admin", "staff"] },
+        component: () => import("@/views/Settings"),
+      },
     ],
   },
   {

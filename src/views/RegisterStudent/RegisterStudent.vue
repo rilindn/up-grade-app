@@ -1,7 +1,7 @@
 <template>
   <Wrapper>
     <FormWrapper>
-      <h3>Register New Student</h3>
+      <h3>{{ $t("students.addStudent") }}</h3>
       <Form
         @submit="register"
         :validation-schema="registerSchema"
@@ -12,58 +12,66 @@
             <InputField
               :error="errors"
               name="firstName"
-              placeholder="Firstname"
+              :placeholder="$t('firstname')"
             />
             <InputField
               :error="errors"
               name="lastName"
-              placeholder="Lastname"
+              :placeholder="$t('lastname')"
             />
             <InputField
               :error="errors"
               name="parentName"
-              placeholder="Parent Name"
+              :placeholder="$t('students.parentName')"
             />
             <DateInput :error="errors" name="dateOfBirth" />
             <SelectInput
               :error="errors"
               name="gender"
-              placeholder="Choose  gender"
+              :placeholder="$t('students.gender')"
               :options="['Female', 'Male']"
             />
             <InputField
               :error="errors"
               name="enrolledYear"
-              placeholder="Enrolled year"
+              :placeholder="$t('students.enrolledYear')"
             />
           </div>
           <div class="inputs">
             <InputField
               :error="errors"
               name="nationality"
-              placeholder="Nationality"
+              :placeholder="$t('students.nationality')"
             />
             <InputField
               :error="errors"
               name="citizenship"
-              placeholder="Citizenship"
+              :placeholder="$t('students.citizenship')"
             />
-            <InputField :error="errors" name="place" placeholder="Place" />
-            <InputField :error="errors" name="zipCode" placeholder="Zipcode" />
+            <InputField
+              :error="errors"
+              name="place"
+              :placeholder="$t('students.place')"
+            />
+            <InputField
+              :error="errors"
+              name="zipCode"
+              :placeholder="$t('students.zipCode')"
+            />
             <InputField
               :error="errors"
               name="personalEmail"
-              placeholder="Personal Email"
+              :placeholder="$t('students.personalEmail')"
               type="email"
             />
             <InputField
               :error="errors"
               name="phoneNumber"
-              placeholder="Parent phone number"
+              :placeholder="$t('students.parentNumber')"
             />
           </div>
         </InputsWrapper>
-        <SaveButton title="Register" :loading="loading" type="submit" />
+        <SaveButton :title="$t('register')" :loading="loading" type="submit" />
       </Form>
     </FormWrapper>
   </Wrapper>
