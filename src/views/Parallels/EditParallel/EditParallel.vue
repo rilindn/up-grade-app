@@ -1,18 +1,26 @@
 <template>
   <FormWrapper>
-    <Title>Edit Parallel</Title>
+    <Title>{{ $t("editParallel.edit") }}</Title>
     <FormStyled
       @submit="editParallel"
       :validation-schema="editSchema"
       v-slot="{ errors }"
       :initial-values="formValues"
     >
-      <InputField :error="errors" name="class" placeholder="Class" />
-      <InputField :error="errors" name="name" placeholder="Name" />
+      <InputField
+        :error="errors"
+        name="class"
+        :placeholder="$t('parallels.class')"
+      />
+      <InputField
+        :error="errors"
+        name="name"
+        :placeholder="$t('parallels.name')"
+      />
       <InputField
         :error="errors"
         name="capacity"
-        placeholder="Capacity"
+        :placeholder="$t('parallels.capacity')"
         type="number"
       />
       <SaveButton :title="$t('save')" :loading="loading" type="submit" />
@@ -57,7 +65,13 @@ export default {
       editSchema: yup.object({
         class: yup.string().required().label("Class"),
         name: yup.string().required().label("Name"),
-        capacity: yup.number().min(2).max(40).required().label("Capacity"),
+        capacity: yup
+          .number()
+          .min(2)
+          .max(40)
+          .required()
+          .typeError("Capacity is a required field")
+          .label("Capacity"),
       }),
       loading: false,
       formValues: {

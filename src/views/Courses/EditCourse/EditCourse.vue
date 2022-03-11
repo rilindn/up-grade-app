@@ -1,6 +1,6 @@
 <template>
   <FormWrapper>
-    <Title>Assign new Role</Title>
+    <Title>{{ $t("courses.assignRole") }}</Title>
     <FormStyled
       @submit="handleSubmit"
       :validation-schema="addSchema"

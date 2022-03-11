@@ -1,6 +1,6 @@
 <template>
   <FormWrapper>
-    <Title>Edit Teacher</Title>
+    <Title>{{ $t("editTeacher.edit") }}</Title>
     <FormStyled
       @submit="editStaff"
       :validation-schema="editSchema"
@@ -11,13 +11,13 @@
         :error="errors"
         name="firstName"
         type="text"
-        placeholder="Firstname"
+        :placeholder="$t('firstname')"
       />
       <InputField
         :error="errors"
         name="lastName"
         type="text"
-        placeholder="Lastname"
+        :placeholder="$t('lastname')"
       />
       <DateInput
         :error="errors"
@@ -28,7 +28,7 @@
         :error="errors"
         name="email"
         type="email"
-        placeholder="Email"
+        :placeholder="$t('email')"
       />
       <SaveButton :title="$t('save')" :loading="loading" type="submit" />
       <CancelButton :title="$t('cancel')" @click="$emit('closeModal')" />
@@ -51,7 +51,7 @@ import Select from "@/components/select";
 import Button from "@/components/button";
 import DateInput from "@/components/DateInput";
 import SelectInput from "@/components/SelectInput";
-import { updateStaff } from "../../../api/ApiMethods";
+import { updateStaff } from "@/api/ApiMethods";
 
 export default {
   components: {

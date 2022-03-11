@@ -71,7 +71,9 @@
     "grades": "Notat",
     "course": "Kurset",
     "manner": "Sjellja",
-    "periods": "Periodat"
+    "periods": "Periodat",
+    "final": "Finale",
+    "gpa": "Mesatarja ime"
   },
   "subjectsBoard": {
     "title": "Lendet",
@@ -84,13 +86,15 @@
     "home": "Home",
     "schedule": "Orari",
     "classes": "Klasat",
+    "students": "Studentët",
     "parallels": "Paralelet",
     "gradesBoard": "Notat",
     "dashboard": "Ballina",
     "subjectsBoard": "Lëndët",
     "myClasses": "Klasat",
     "attendanceRemarks": "Vijueshmeria",
-    "courses": "Kurset"
+    "courses": "Kurset",
+    "teachers": "Profesorët"
   },
   "login": {
     "student": {
@@ -139,14 +143,14 @@
     "parentName": "Emri Prindit"
   },
   "attendance": {
-    "title": "Vijueshmeria",
+    "title": "Vijueshmëria",
     "total": "Totali",
-    "subject": "Lenda",
-    "teacher": "Mesuesi",
-    "reasonable": "Te arsyeshme",
-    "unreasonable": "Te paarsyeshme",
-    "totalAbsences": "Mungesat ne total",
-    "remarks": "Verejtjet"
+    "subject": "Lënda",
+    "teacher": "Profesori",
+    "reasonable": "Të arsyeshme",
+    "unreasonable": "Të paarsyeshme",
+    "totalAbsences": "Mungesat në total",
+    "remarks": "Vërejtjet"
   },
   "myClasses": {
     "title": "Klasat"
@@ -167,9 +171,103 @@
     "teacher": "Profesori",
     "subject": "Lenda",
     "id": "ID",
-    "actions": "Veprimet"
+    "actions": "Veprimet",
+    "assignRole": "Vendos rol të ri"
+  },
+  "dashboard": {
+    "classes": "Klasat",
+    "students": "Studentët",
+    "parallels": "Paralelet",
+    "teachers": "Profesorët",
+    "userStats": "Statistikat e përdoruesve",
+    "pastMonths": "Studentët të cilët janë regjistruar në 6 muajt e fundit"
+  },
+  "genderChart": {
+    "gender": "Gjinia",
+    "current": "Gjinia e studentëve aktualë",
+    "numberFemale": " studente femra",
+    "numberMale": "student meshkuj",
+    "male": "Meshkuj",
+    "female": "Femra"
+  },
+  "teachers": {
+    "actions": "Veprimet",
+    "role": "Roli",
+    "gender": "Gjinia",
+    "addUser": "Shto përdorues të ri"
+  },
+  "editTeacher": {
+    "edit": "Përditëso profesorin"
+  },
+  "students": {
+    "parentName": "Emri i prindit",
+    "studentId": "ID e studentit",
+    "gender": "Gjinia",
+    "addStudent": "Shto student të ri",
+    "enrolledYear": "Viti i regjistrimit",
+    "nationality": "Kombësia",
+    "citizenship": "Shtetësia",
+    "place": "Vendi",
+    "zipCode": "Zip kodi",
+    "personalEmail": "Email personal",
+    "parentNumber": "Numri i telefonit të prindit",
+    "page": "Faqe:",
+    "of": "nga"
+  },
+  "editStudent": {
+    "edit": "Përditëso studentin"
+  },
+  "classes": {
+    "edit": "Përditëso klasën",
+    "delete": "Fshi klasën",
+    "parallels": "Paralelet",
+    "parallel": "Paralelja"
+  },
+  "editClass": {
+    "edit": "Përditëso klasën",
+    "classname": "Emri",
+    "level": "Leveli",
+    "capacity": "Kapaciteti"
+  },
+  "classDetails": {
+    "students": "Studentët",
+    "courses": "Kurset",
+    "teacher": "Profesori",
+    "subject": "Lënda",
+    "noAssignCourses": "Nuk u gjend asnjë kurs!",
+    "noAssignStudents": "Nuk u gjend asnjë student!"
+  },
+  "parallels": {
+    "class": "Klasa",
+    "name": "Emri",
+    "capacity": "Kapaciteti",
+    "students": "Studentët",
+    "seeDetails": "Shiko detajet"
+  },
+  "editParallel": {
+    "edit": "Përditëso paralelen"
+  },
+  "subjects": {
+    "description": "Përshkrimi",
+    "level": "Leveli",
+    "edit": "Përditëso lëndën"
+  },
+  "schedule": {
+    "course": "Lënda",
+    "class": "Klasa",
+    "code": "Kodi",
+    "professor": "Profesor",
+    "startTime": "Koha fillimit",
+    "endTime": "Koha mbarimit"
   },
   "addNew": "Shtoni",
   "save": "Ruaj",
-  "cancel": "Anulo"
+  "cancel": "Anulo",
+  "firstname": "Emri",
+  "lastname": "Mbiemri",
+  "dateOfBirth": "Ditëlindja",
+  "email": "Email",
+  "actions": "Veprimet",
+  "register": "Regjistro",
+  "search": "Kërko"
 }

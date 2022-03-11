@@ -15,7 +15,7 @@
             <ColumnStyled>I</ColumnStyled>
             <ColumnStyled>II</ColumnStyled>
             <ColumnStyled>III</ColumnStyled>
-            <ColumnStyled>Final</ColumnStyled>
+            <ColumnStyled>{{ $t("gradesBoard.final") }}</ColumnStyled>
           </HeadStyled>
           <BodyStyled>
             <RowStyled v-for="(grades, i) in studentgrades.grade" :key="i">

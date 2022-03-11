@@ -75,7 +75,9 @@
     "grades": "Grades",
     "course": "Course",
     "manner": "Manner",
-    "periods": "Periods"
+    "periods": "Periods",
+    "final": "Final",
+    "gpa": "My GPA"
   },
   "subjectsBoard": {
     "title": "Subjects",
@@ -93,7 +95,9 @@
     "subjectsBoard": "Subjects",
     "myClasses": "My Classes",
     "attendanceRemarks": "Attendance",
-    "courses": "Courses"
+    "courses": "Courses",
+    "students": "Students",
+    "teachers": "Teachers"
   },
   "login": {
     "student": {
@@ -150,7 +154,8 @@
     "teacher": "Teacher",
     "subject": "Subject",
     "id": "Number",
-    "actions": "Actions"
+    "actions": "Actions",
+    "assignRole": "Assign new role"
   },
   "addNew": "Add New",
   "attendance": {
@@ -174,5 +179,96 @@
     "II": "II",
     "III": "III",
     "final": "Final"
-  }
+  },
+  "dashboard": {
+    "classes": "Classes",
+    "students": "Students",
+    "parallels": "Parallels",
+    "teachers": "Teachers",
+    "userStats": "Users stat",
+    "pastMonths": "New students registered in past 6 months"
+  },
+  "genderChart": {
+    "gender": "Genders",
+    "current": "Current students by their gender",
+    "numberFemale": "female students",
+    "numberMale": "male students",
+    "male": "Male",
+    "female": "Female"
+  },
+  "teachers": {
+    "role": "Role",
+    "gender": "Gender",
+    "addUser": "Add new user"
+  },
+  "editTeacher": {
+    "edit": "Edit Teacher"
+  },
+  "students": {
+    "parentName": "Parent name",
+    "studentId": "Student ID",
+    "gender": "Gender",
+    "addStudent": "Add new student",
+    "enrolledYear": "Enrolled year",
+    "nationality": "Nationality",
+    "citizenship": "Citizenship",
+    "place": "Place",
+    "zipCode": "Zip Code",
+    "personalEmail": "Personal email",
+    "parentNumber": "Parent phone number",
+    "page": "Page:",
+    "of": "of"
+  },
+  "editStudent": {
+    "edit": "Edit student"
+  },
+  "classes": {
+    "edit": "Edit grade",
+    "delete": "Delete grade",
+    "parallels": "Parallels",
+    "parallel": "Parallel "
+  },
+  "editClass": {
+    "edit": "Edit class",
+    "classname": "Classname",
+    "level": "Level",
+    "capacity": "Capacity"
+  },
+  "classDetails": {
+    "students": "Students",
+    "courses": "Courses",
+    "subject": "Subject",
+    "noAssignCourses": "No assigned courses were found!",
+    "noAssignStudents": "No assigned students were found!"
+  },
+  "parallels": {
+    "class": "Class",
+    "name": "Name",
+    "capacity": "Capacity",
+    "students": "Students",
+    "seeDetails": "See Details"
+  },
+  "editParallel": {
+    "edit": "Edit Parallel"
+  },
+  "subjects": {
+    "description": "Description",
+    "level": "Level",
+    "edit": "Edit subject"
+  },
+  "schedule": {
+    "course": "Subject",
+    "class": "Class",
+    "code": "Code",
+    "professor": "Professor",
+    "startTime": "Start time",
+    "endTime": "End time"
+  },
+  "firstname": "Firstname",
+  "lastname": "Lastname",
+  "dateOfBirth": "Date of birth",
+  "email": "Email",
+  "actions": "Actions",
+  "register": "Register",
+  "search": "Search"
 }

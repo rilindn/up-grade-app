@@ -67,14 +67,25 @@
     </SecondWrapper>
     <ThirdWrapper>
       <ul>
-        <ListItem> <span>Course:</span><span>Mathematics</span> </ListItem>
-        <ListItem> <span>Class:</span><span>Z008</span> </ListItem>
-        <ListItem> <span>Code:</span><span>MAT001</span> </ListItem>
         <ListItem>
-          <span>Professor:</span><span>Rilinda Xhaqkaj</span>
+          <span>{{ $t("schedule.course") }}:</span><span>Mathematics</span>
         </ListItem>
-        <ListItem> <span>Start time:</span><span>08:00 AM</span> </ListItem>
-        <ListItem> <span>End time:</span><span>08:45 AM</span> </ListItem>
+        <ListItem>
+          <span>{{ $t("schedule.class") }}:</span><span>Z008</span>
+        </ListItem>
+        <ListItem>
+          <span>{{ $t("schedule.code") }}:</span><span>MAT001</span>
+        </ListItem>
+        <ListItem>
+          <span>{{ $t("schedule.professor") }}:</span
+          ><span>Rilinda Xhaqkaj</span>
+        </ListItem>
+        <ListItem>
+          <span>{{ $t("schedule.startTime") }}:</span><span>08:00 AM</span>
+        </ListItem>
+        <ListItem>
+          <span>{{ $t("schedule.endTime") }}:</span><span>08:45 AM</span>
+        </ListItem>
       </ul>
     </ThirdWrapper>
   </Wrapper>

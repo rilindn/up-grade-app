@@ -2,24 +2,24 @@
   <Container>
     <Wrapper>
       <TableHeader>
-        <SearchInput v-model="search" placeholder="Search" />
+        <SearchInput v-model="search" :placeholder="$t('search')" />
         <AddNew @click="$router.push('/register-student')">
           <span><i class="fas fa-plus-circle"></i></span>
-          <span>Add New</span>
+          <span>{{ $t("addNew") }}</span>
         </AddNew>
       </TableHeader>
       <!-- <va-inner-loading :loading="users?.length <= 0" :size="60"> -->
       <Table>
         <Head>
           <Column></Column>
-          <Column>Student ID</Column>
-          <Column>Name</Column>
-          <Column>Parent Name</Column>
-          <Column>Lastname</Column>
-          <Column>Gender</Column>
-          <Column>Date of birth</Column>
-          <Column>Email</Column>
-          <Column>Actions</Column>
+          <Column>{{ $t("students.studentId") }}</Column>
+          <Column>{{ $t("firstname") }}</Column>
+          <Column>{{ $t("students.parentName") }}</Column>
+          <Column>{{ $t("lastname") }}</Column>
+          <Column>{{ $t("students.gender") }}</Column>
+          <Column>{{ $t("dateOfBirth") }}</Column>
+          <Column>{{ $t("email") }}</Column>
+          <Column>{{ $t("actions") }}</Column>
         </Head>
         <Body>
           <Row v-for="(user, i) in users" :key="user.id" :index="++i">
@@ -122,12 +122,12 @@ export default {
       await this.fetchPaginationItems(this.currentPage);
     },
     async handleDelete(id) {
-      if (confirm("Are you sure?")) {
+      if (confirm(this.$t("Are you sure you want to delete this student?"))) {
         await deleteStudent(id);
         this.$notify({
           type: "success",
           duration: 2000,
-          text: "User deleted!",
+          text: "Student deleted succesfully!",
         });
         await this.fetchStudentsOnAction();
       }

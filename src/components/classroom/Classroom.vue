@@ -6,10 +6,10 @@
         <va-button-dropdown flat class="ml-2">
           <ActionContent>
             <span @click="editModal()"
-              ><i class="far fa-edit"></i>Edit class</span
+              ><i class="far fa-edit"></i>{{ $t("classes.edit") }}</span
             >
             <span @click="handleDelete(classroom._id)"
-              ><i class="far fa-trash-alt"></i>Delete</span
+              ><i class="far fa-trash-alt"></i>{{ $t("classes.delete") }}</span
             >
           </ActionContent>
         </va-button-dropdown>
@@ -21,7 +21,7 @@
     </SingleClass>
     <DropDownWrapper :backgroundColor="bgColor">
       <DropDownText @click="triggerMenu">
-        <span>Parallels</span>
+        <span>{{ $t("classes.parallels") }}</span>
         <span>
           <i class="fas fa-sort-down fa-2x"></i>
         </span>
@@ -37,7 +37,7 @@
         >
           <MenuItem>
             <span>
-              <p>Parallel {{ name }}</p>
+              <p>{{ $t("classes.parallel") }} {{ name }}</p>
             </span>
           </MenuItem>
           <Divider />

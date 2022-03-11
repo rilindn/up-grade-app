@@ -51,12 +51,12 @@ const adminItems = [
     path: "/admin",
   },
   {
-    name: "Teachers",
+    name: "sidebar.teachers",
     icon: "fas fa-chalkboard-teacher",
     path: "/teachers",
   },
   {
-    name: "Students",
+    name: "sidebar.students",
     icon: "fas fa-user-graduate",
     path: "/students",
   },

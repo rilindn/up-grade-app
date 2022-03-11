@@ -5,7 +5,7 @@
     </SingleClass>
     <DropDownWrapper :backgroundColor="bgColor">
       <DropDownText @click="triggerMenu">
-        <span>Parallel {{ subTitle }}</span>
+        <span>{{ $t("classes.parallel") }} {{ subTitle }}</span>
         <span>
           <i class="fas fa-sort-down fa-2x"></i>
         </span>

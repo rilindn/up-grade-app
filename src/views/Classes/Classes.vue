@@ -3,7 +3,7 @@
     <AddClassContainer>
       <AddNew @click="triggerModal">
         <span><i class="fas fa-plus-circle"></i></span>
-        <span>Add New</span>
+        <span>{{ $t("addNew") }}</span>
       </AddNew>
     </AddClassContainer>
     <Container>

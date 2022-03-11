@@ -1,6 +1,6 @@
 <template>
   <FormWrapper>
-    <h2>Edit Student</h2>
+    <h2>{{ $t("editStudent.edit") }}</h2>
     <Form
       @submit="editUser"
       :validation-schema="editSchema"
@@ -12,13 +12,17 @@
           <InputField
             :error="errors"
             name="firstName"
-            placeholder="Firstname"
+            :placeholder="$t('firstname')"
           />
-          <InputField :error="errors" name="lastName" placeholder="Lastname" />
+          <InputField
+            :error="errors"
+            name="lastName"
+            :placeholder="$t('lastname')"
+          />
           <InputField
             :error="errors"
             name="parentName"
-            placeholder="Parent Name"
+            :placeholder="$t('students.parentName')"
           />
           <DateInput
             :error="errors"
@@ -28,39 +32,47 @@
           <SelectInput
             :error="errors"
             name="gender"
-            placeholder="Choose  gender"
+            :placeholder="$t('students.gender')"
             :options="['Female', 'Male']"
             :defaultValue="formValues.gender"
           />
           <InputField
             :error="errors"
             name="enrolledYear"
-            placeholder="Enrolled year"
+            :placeholder="$t('students.enrolledYear')"
           />
         </div>
         <div>
           <InputField
             :error="errors"
             name="nationality"
-            placeholder="Nationality"
+            :placeholder="$t('students.nationality')"
           />
           <InputField
             :error="errors"
             name="citizenship"
-            placeholder="Citizenship"
+            :placeholder="$t('students.citizenship')"
           />
-          <InputField :error="errors" name="place" placeholder="Place" />
-          <InputField :error="errors" name="zipCode" placeholder="Zipcode" />
+          <InputField
+            :error="errors"
+            name="place"
+            :placeholder="$t('students.place')"
+          />
+          <InputField
+            :error="errors"
+            name="zipCode"
+            :placeholder="$t('students.zipCode')"
+          />
           <InputField
             :error="errors"
             name="personalEmail"
-            placeholder="Personal Email"
+            :placeholder="$t('students.personalEmail')"
             type="email"
           />
           <InputField
             :error="errors"
             name="phoneNumber"
-            placeholder="Parent phone number"
+            :placeholder="$t('students.parentNumber')"
           />
         </div>
       </InputsWrapper>
@@ -171,7 +183,7 @@ export default {
           this.$notify({
             type: "success",
             duration: 2000,
-            text: "User data updated successfully!",
+            text: "Student updated successfully!",
           });
         } else {
           this.loading = false;
