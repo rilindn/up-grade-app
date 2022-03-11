@@ -152,6 +152,18 @@
     "id": "Number",
     "actions": "Actions"
   },
+  "settings": {
+    "preferences": "Preferences",
+    "offer": "We offer to you options",
+    "changePreferences": "You can change your preferences",
+    "avatar": "Change your avatar color",
+    "password": "Change your password",
+    "language": "Change language",
+    "actualPassword": "Password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm password",
+    "languagePlaceholder": "Language"
+  },
   "addNew": "Add New",
   "attendance": {
     "title": "Attendance",

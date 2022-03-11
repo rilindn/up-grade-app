@@ -169,6 +169,18 @@
     "id": "ID",
     "actions": "Veprimet"
   },
+  "settings": {
+    "preferences": "Preferencat",
+    "offer": "Ne ofrojmë për ju opsione",
+    "changePreferences": "Ju mund ti ndryshoni preferencat tuaja",
+    "avatar": "Ndryshoni ngjyrën e avatarit",
+    "password": "Ndryshoni passwordin tuaj",
+    "language": "Ndryshoni gjuhën",
+    "actualPassword": "Password",
+    "newPassword": "Password i ri",
+    "confirmPassword": "Konfirmo passwordin",
+    "languagePlaceholder": "Gjuha"
+  },
   "addNew": "Shtoni",
   "save": "Ruaj",
   "cancel": "Anulo"

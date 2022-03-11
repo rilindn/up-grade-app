@@ -1,6 +1,6 @@
 import styled from "vue3-styled-components";
 import Button from "@/components/button";
-// import breakpoints from "../../theme/breakpoints";
+import breakpoints from "../../theme/breakpoints";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -26,6 +26,10 @@ export const BottomWrapper = styled.div`
   justify-content: space-around;
   flex-direction: row;
   display: flex;
+  @media ${breakpoints("max").tablet} {
+    flex-wrap: wrap;
+    height: 70vh;
+  }
 `;
 
 export const BoxContainer = styled.div`
@@ -39,6 +43,7 @@ export const BoxContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  margin-top: 10px;
 `;
 
 export const PasswordContainer = styled.div`
@@ -46,6 +51,15 @@ export const PasswordContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+`;
+
+export const AvatarContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 250px;
+  height: 180px;
 `;
 
 export const LanguageContainer = styled.div`
@@ -59,8 +73,6 @@ export const LanguageContainer = styled.div`
     height: 100px;
   }
 `;
-
-export const ImageWrapper = styled.div``;
 
 export const TextWrapper = styled.div`
   display: flex;
@@ -77,7 +89,6 @@ export const TextWrapper = styled.div`
 
 export const BottomBoxWrapper = styled.div`
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   flex-direction: column;
   width: 300px;

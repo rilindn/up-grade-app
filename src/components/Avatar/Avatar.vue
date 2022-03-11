@@ -1,6 +1,6 @@
 <template>
   <Wrapper>
-    <Avatar :color="randomColor()" :size="size">
+    <Avatar :color="color || randomColor()" :size="size">
       <span>{{ getInitials() }}</span>
     </Avatar>
   </Wrapper>
@@ -22,6 +22,9 @@ export default {
       type: String,
     },
     profilePic: {
+      type: String,
+    },
+    color: {
       type: String,
     },
   },

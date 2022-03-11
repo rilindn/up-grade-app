@@ -2,9 +2,9 @@
   <Wrapper>
     <TopWrapper>
       <TextWrapper>
-        <h2>Preferences</h2>
-        <span>We offer to you options. </span>
-        <i> You can change your preferences!</i>
+        <h2>{{ $t("settings.preferences") }}</h2>
+        <span>{{ $t("settings.offer") }}. </span>
+        <i> {{ $t("settings.changePreferences") }}!</i>
       </TextWrapper>
       <ImageWrapper>
         <img src="@/assets/preferences.svg" alt="" />
@@ -12,24 +12,40 @@
     </TopWrapper>
     <BottomWrapper>
       <BottomBoxWrapper
-        ><h3>Password</h3>
+        ><h3>{{ $t("settings.avatar") }}</h3>
+        <BoxContainer>
+          <AvatarContainer>
+            <Avatar :size="75" :name="name" @click="triggerMenu" />
+            <InputField name="color" type="color" placeholder="Color" />
+          </AvatarContainer>
+          <SaveButton
+            borderRadius="10px"
+            :title="$t('save')"
+            type="submit"
+            height="30px"
+            backgroundColor="#05C59A"
+          />
+        </BoxContainer>
+      </BottomBoxWrapper>
+
+      <BottomBoxWrapper
+        ><h3>{{ $t("settings.password") }}</h3>
         <BoxContainer>
           <PasswordContainer>
             <InputField
               name="password"
               type="password"
-              placeholder="Password"
+              :placeholder="$t('settings.actualPassword')"
             />
             <InputField
               name="password"
               type="password"
-              placeholder="New password"
+              :placeholder="$t('settings.newPassword')"
             />
-
             <InputField
               name="password"
               type="password"
-              placeholder="Confirm new password"
+              :placeholder="$t('settings.confirmPassword')"
             />
           </PasswordContainer>
           <SaveButton
@@ -41,19 +57,16 @@
           />
         </BoxContainer>
       </BottomBoxWrapper>
+
       <BottomBoxWrapper
-        ><h3>Avatar</h3>
-        <BoxContainer></BoxContainer>
-      </BottomBoxWrapper>
-      <BottomBoxWrapper
-        ><h3>Language</h3>
+        ><h3>{{ $t("settings.language") }}</h3>
         <BoxContainer>
           <LanguageContainer>
             <img src="@/assets/languages.png" alt="" />
             <SelectInput
               :error="errors"
               name="language"
-              placeholder="Language"
+              :placeholder="$t('settings.languagePlaceholder')"
               :options="['English', 'Albania']"
             />
           </LanguageContainer>
@@ -81,9 +94,11 @@ import {
   PasswordContainer,
   SaveButton,
   LanguageContainer,
+  AvatarContainer,
 } from "./Settings.styles";
 import InputField from "@/components/InputField";
 import SelectInput from "@/components/SelectInput";
+import Avatar from "../../components/Avatar";
 export default {
   components: {
     Wrapper,
@@ -98,8 +113,14 @@ export default {
     SaveButton,
     LanguageContainer,
     SelectInput,
+    Avatar,
+    AvatarContainer,
   },
-  data() {},
+  data() {
+    return {
+      name: this.$store.state.loggedUser.name,
+    };
+  },
 };
 </script>
 <style></style>
