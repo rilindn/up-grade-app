@@ -27,8 +27,6 @@
               <p>MAT001</p>
             </CourseCode>
           </CourseContainer>
-        </Course>
-        <Course>
           <CourseContainer>
             <p>2</p>
             <CourseCode>
@@ -36,8 +34,6 @@
               <p>BIO002</p>
             </CourseCode>
           </CourseContainer>
-        </Course>
-        <Course>
           <CourseContainer>
             <p>3</p>
             <CourseCode>
@@ -45,8 +41,6 @@
               <p>ENG003</p>
             </CourseCode>
           </CourseContainer>
-        </Course>
-        <Course>
           <CourseContainer>
             <p>4</p>
             <CourseCode>
@@ -54,8 +48,6 @@
               <p>MAT001</p>
             </CourseCode>
           </CourseContainer>
-        </Course>
-        <Course>
           <CourseContainer>
             <p>5</p>
             <CourseCode>
@@ -63,8 +55,6 @@
               <p>BIO002</p>
             </CourseCode>
           </CourseContainer>
-        </Course>
-        <Course>
           <CourseContainer>
             <p>6</p>
             <CourseCode>

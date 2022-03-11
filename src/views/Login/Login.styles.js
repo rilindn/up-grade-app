@@ -1,7 +1,7 @@
 import styled from "vue3-styled-components";
 
 import { Form } from "vee-validate";
-// import BackgroundPhoto from "@/assets/loginbg.png";
+import breakpoints from "../../theme/breakpoints";
 const loginProps = {
   rightPanel: Boolean,
   leftContainer: Boolean,
@@ -34,6 +34,9 @@ export const Container = styled("div", loginProps)`
   width: 868px;
   max-width: 100%;
   min-height: 480px;
+  @media ${breakpoints("max").tablet} {
+    width: 90vw;
+  }
 `;
 
 export const FormContainer = styled("div", loginProps)`

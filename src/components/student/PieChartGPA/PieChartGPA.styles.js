@@ -1,4 +1,5 @@
 import styled from "vue3-styled-components";
+import breakpoints from "../../../theme/breakpoints";
 
 const colorProps = {
   color: String,
@@ -13,6 +14,13 @@ export const SingleChart = styled.div`
   span:first-child {
     font-size: 20px;
     font-weight: bold;
+  }
+  @media ${breakpoints("max").tablet} {
+    margin-top: 30px;
+    span {
+      align-self: center;
+      margin-bottom: 10px;
+    }
   }
 `;
 

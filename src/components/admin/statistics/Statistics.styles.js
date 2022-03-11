@@ -1,4 +1,5 @@
 import styled from "vue3-styled-components";
+import breakpoints from "../../../theme/breakpoints";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -22,5 +23,11 @@ export const Wrapper = styled.div`
   }
   span {
     font-size: 20px;
+  }
+
+  @media ${breakpoints("max").tablet} {
+    margin: 10px;
+    width: 320px;
+    align-items: center;
   }
 `;

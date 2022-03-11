@@ -1,6 +1,7 @@
 import styled from "vue3-styled-components";
 import { fontSizes, fontFamily } from "../../theme/typography";
 import Button from "@/components/button";
+import breakpoints from "../../theme/breakpoints";
 
 export const Wrapper = styled.div`
   height: auto;
@@ -122,6 +123,9 @@ export const ContainerColumn = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 40px;
+  @media ${breakpoints("max").tablet} {
+    width: 50%;
+  }
 `;
 
 export const Container = styled.div`
@@ -130,6 +134,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   padding-bottom: 30px;
+  @media ${breakpoints("max").tablet} {
+    flex-wrap: wrap;
+  }
 `;
 export const EditWrapper = styled.div`
   width: 60px;

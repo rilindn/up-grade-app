@@ -8,50 +8,50 @@
           <span>{{ $t("addNew") }}</span>
         </AddNew>
       </TableHeader>
-      <va-inner-loading :loading="users?.length <= 0" :size="60">
-        <Table>
-          <Head>
-            <Column></Column>
-            <Column>{{ $t("students.studentId") }}</Column>
-            <Column>{{ $t("firstname") }}</Column>
-            <Column>{{ $t("students.parentName") }}</Column>
-            <Column>{{ $t("lastname") }}</Column>
-            <Column>{{ $t("students.gender") }}</Column>
-            <Column>{{ $t("dateOfBirth") }}</Column>
-            <Column>{{ $t("email") }}</Column>
-            <Column>{{ $t("actions") }}</Column>
-          </Head>
-          <Body>
-            <Row v-for="(user, i) in users" :key="user.id" :index="++i">
-              <Cell
-                ><b>#{{ i + (currentPage - 1) * pager.pageSize }}</b></Cell
-              >
-              <Cell>{{ user?.studentId }}</Cell>
-              <Cell>{{ user?.firstName }}</Cell>
-              <Cell>{{ user.parent?.firstName }}</Cell>
-              <Cell>{{ user?.lastName }}</Cell>
-              <Cell>{{ user?.gender }}</Cell>
-              <Cell>{{ moment(user?.dateOfBirth).format("YYYY-MM-DD") }}</Cell>
-              <Cell>{{ user?.email }}</Cell>
-              <Cell>
-                <ActionWrapper>
-                  <Edit @click="editModal(user)"
-                    ><i class="far fa-edit"></i
-                  ></Edit>
-                  <Delete @click="handleDelete(user._id)">
-                    <i class="far fa-trash-alt"></i
-                  ></Delete>
-                </ActionWrapper>
-              </Cell>
-            </Row>
-          </Body>
-        </Table>
-        <Paginator
-          @fetchPaginationItems="fetchPaginationItems"
-          :page="page"
-          :pager="pager"
-        />
-      </va-inner-loading>
+      <!-- <va-inner-loading :loading="users?.length <= 0" :size="60"> -->
+      <Table>
+        <Head>
+          <Column></Column>
+          <Column>{{ $t("students.studentId") }}</Column>
+          <Column>{{ $t("firstname") }}</Column>
+          <Column>{{ $t("students.parentName") }}</Column>
+          <Column>{{ $t("lastname") }}</Column>
+          <Column>{{ $t("students.gender") }}</Column>
+          <Column>{{ $t("dateOfBirth") }}</Column>
+          <Column>{{ $t("email") }}</Column>
+          <Column>{{ $t("actions") }}</Column>
+        </Head>
+        <Body>
+          <Row v-for="(user, i) in users" :key="user.id" :index="++i">
+            <Cell
+              ><b>#{{ i + (currentPage - 1) * pager.pageSize }}</b></Cell
+            >
+            <Cell>{{ user?.studentId }}</Cell>
+            <Cell>{{ user?.firstName }}</Cell>
+            <Cell>{{ user.parent?.firstName }}</Cell>
+            <Cell>{{ user?.lastName }}</Cell>
+            <Cell>{{ user?.gender }}</Cell>
+            <Cell>{{ moment(user?.dateOfBirth).format("YYYY-MM-DD") }}</Cell>
+            <Cell>{{ user?.email }}</Cell>
+            <Cell>
+              <ActionWrapper>
+                <Edit @click="editModal(user)"
+                  ><i class="far fa-edit"></i
+                ></Edit>
+                <Delete @click="handleDelete(user._id)">
+                  <i class="far fa-trash-alt"></i
+                ></Delete>
+              </ActionWrapper>
+            </Cell>
+          </Row>
+        </Body>
+      </Table>
+      <Paginator
+        @fetchPaginationItems="fetchPaginationItems"
+        :page="page"
+        :pager="pager"
+      />
+      <!-- </va-inner-loading> -->
     </Wrapper>
     <va-modal v-model="showModal" hide-default-actions>
       <slot>
