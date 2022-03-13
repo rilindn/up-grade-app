@@ -11,9 +11,8 @@ export const Wrapper = styled("div", inputProps)`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 70px;
-  margin-top: 2px;
-  margin-bottom: -4px;
+  height: 80px !important;
+  margin-top: 3px;
   position: relative;
   .va-input-wrapper__content {
     border-radius: 5px;
@@ -35,8 +34,8 @@ export const Wrapper = styled("div", inputProps)`
     font-size: 18px !important;
     text-decoration: none;
     margin-bottom: 0;
-    padding: 15px 10px;
-    height: 50px;
+    padding: 10px 10px;
+    /* height: 50px; */
     outline: none;
     width: 100%;
     background-color: #f2f5f7 !important;

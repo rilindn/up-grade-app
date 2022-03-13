@@ -1,5 +1,9 @@
 <template>
   <Wrapper>
+    <AddHour @click="addScheduleHour = true">
+      <span><i class="fas fa-plus-circle"></i></span>
+      <span>{{ $t("addNew") }}</span>
+    </AddHour>
     <SecondWrapper>
       <Container>
         <WeekWrapper>
@@ -26,6 +30,18 @@
         </Course>
       </Container>
       <ThirdWrapper>
+        <Actions>
+          <va-button-dropdown label="Actions" class="ml-2">
+            <ActionsContent>
+              <span @click="editSchedule = true"
+                ><i class="far fa-edit"></i>{{ $t("edit") }}</span
+              >
+              <span @click="handleDelete"
+                ><i class="far fa-trash-alt"></i>{{ $t("delete") }}</span
+              >
+            </ActionsContent>
+          </va-button-dropdown>
+        </Actions>
         <ul>
           <ListItem>
             <span>Course:</span><span>{{ selectedHour?.course || "---" }}</span>
@@ -61,9 +77,28 @@
         </ul>
       </ThirdWrapper>
     </SecondWrapper>
+    <va-modal v-model="addScheduleHour" hide-default-actions>
+      <slot>
+        <SetSchedule
+          @refetchSchedule="getSchedule"
+          @closeModal="addScheduleHour = false"
+        />
+      </slot>
+    </va-modal>
+    <va-modal v-model="editSchedule" hide-default-actions>
+      <slot>
+        <EditSchedule
+          @closeModal="editSchedule = false"
+          :defaultValues="{ ...selectedHour, selectedDay }"
+          @refetchSchedule="getSchedule"
+        />
+      </slot>
+    </va-modal>
   </Wrapper>
 </template>
 <script>
+import days from "@/data/days";
+import { getParallelsSchedule } from "@/api/ApiMethods";
 import {
   Wrapper,
   SecondWrapper,
@@ -76,9 +111,12 @@ import {
   ListItem,
   AddHour,
   WeekDay,
+  Actions,
+  ActionsContent,
 } from "./Schedule.styles";
-import days from "@/data/days";
-import { getStudentSchedule } from "@/api/ApiMethods";
+import SetSchedule from "./SetSchedule";
+import EditSchedule from "./EditSchedule";
+import { deleteScheduleHour } from "../../../api/ApiMethods";
 export default {
   components: {
     Wrapper,
@@ -92,10 +130,16 @@ export default {
     ListItem,
     AddHour,
     WeekDay,
+    SetSchedule,
+    Actions,
+    EditSchedule,
+    ActionsContent,
   },
   data() {
     return {
       days,
+      addScheduleHour: false,
+      editSchedule: false,
       schedule: {},
       selectedDay: "Monday",
       selectedDayOrder: 0,
@@ -105,8 +149,7 @@ export default {
   },
   methods: {
     async getSchedule() {
-      const studentId = this.$store.getters.loggedUser?.id;
-      const schedule = await getStudentSchedule(studentId);
+      const schedule = await getParallelsSchedule(this.$route.params.id);
       this.schedule = schedule;
       this.selectedHour = schedule?.days?.[this.selectedDayOrder]?.hours?.[0];
     },
@@ -119,6 +162,23 @@ export default {
       this.selectedDayOrder = order;
       this.selectedHourOrder = 0;
       this.selectedHour = this.schedule?.days?.[order]?.hours?.[0];
+    },
+    async handleDelete() {
+      const payload = {
+        parallel: this.$route.params.id,
+        day: this.selectedDay,
+        hourId: this.selectedHour?._id,
+      };
+      if (confirm("Are you sure?")) {
+        await deleteScheduleHour(payload);
+        this.$notify({
+          type: "success",
+          duration: 2000,
+          text: "Hour deleted!",
+        });
+        this.selectedHourOrder = 0;
+        await this.getSchedule();
+      }
     },
   },
   async created() {

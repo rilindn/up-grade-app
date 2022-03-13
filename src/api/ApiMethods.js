@@ -424,3 +424,60 @@ export async function editLanguage(id, data) {
     return err;
   }
 }
+
+// schedule
+
+export async function getParallelsSchedule(parallelId) {
+  const schedule = await Client.get(`schedule/${parallelId}`);
+  return schedule.data;
+}
+
+export async function getStudentSchedule(id) {
+  const schedule = await Client.get(`schedule/student/${id}`);
+  return schedule.data;
+}
+
+export async function getTeacherSchedule(id) {
+  const schedule = await Client.get(`schedule/teacher/${id}`);
+  return schedule.data;
+}
+
+export async function setParallelsSchedule(data) {
+  try {
+    const result = await Client.post(`schedule`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function addScheduleHour(data) {
+  try {
+    const result = await Client.post(`schedule/add-hour`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function updateScheduleHour(data) {
+  try {
+    const result = await Client.put(`schedule/update-hour`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function deleteScheduleHour(data) {
+  try {
+    const result = await Client.put(`schedule/delete-hour`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}

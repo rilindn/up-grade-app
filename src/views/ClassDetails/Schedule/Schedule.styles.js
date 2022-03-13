@@ -1,5 +1,4 @@
 import styled from "vue3-styled-components";
-import breakpoints from "../../theme/breakpoints";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -7,37 +6,57 @@ export const Wrapper = styled.div`
   margin: 40px;
   width: 95%;
   align-items: end;
-  @media ${breakpoints("max").tablet} {
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-  }
 `;
 
 export const SecondWrapper = styled.div`
+  /* height: 700px; */
   width: 100%;
   display: flex;
+  flex-direction: row;
   border-radius: 5px;
-  @media ${breakpoints("max").tablet} {
-    width: 100%;
-    flex-direction: column;
-  }
 `;
 
 export const ThirdWrapper = styled.div`
   width: 50%;
   background-color: var(--va-primaryLight);
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  padding: 50px 20px;
-  @media ${breakpoints("max").tablet} {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+`;
+
+export const Actions = styled.div`
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  margin: 20px 30px 20px 0;
+  cursor: pointer;
+`;
+
+export const ActionsContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  span {
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 7px;
+  }
+  span:first-child:hover {
+    background-color: var(--va-infoEdit);
+    color: white;
+  }
+  span:last-child:hover {
+    background-color: var(--va-errorMain);
+    color: white;
+  }
+  i {
+    width: 10px;
+    padding-right: 20px;
   }
 `;
 
@@ -54,12 +73,6 @@ export const Container = styled.div`
   padding: 40px;
   p {
     font-size: 20px;
-  }
-  @media ${breakpoints("max").tablet} {
-    width: 100%;
-    min-height: 50%;
-    align-items: center;
-    padding: 20px;
   }
 `;
 
@@ -108,12 +121,6 @@ export const Course = styled("div", weekProps)`
   align-items: center;
   background-color: ${(props) => props.isSelected && `var(--va-primaryLight)`};
   color: ${(props) => props.isSelected && `var(--va-white)`};
-
-  @media ${breakpoints("max").tablet} {
-    flex-wrap: wrap;
-    max-height: 300px;
-    align-items: center;
-  }
 `;
 
 export const CourseContainer = styled("div", weekProps)`
@@ -130,14 +137,6 @@ export const CourseContainer = styled("div", weekProps)`
     font-size: 17px;
     font-weight: 550;
   }
-  @media ${breakpoints("max").tablet} {
-    width: 200px;
-    height: 60px;
-    p {
-      font-size: 16px;
-      margin-right: 7px;
-    }
-  }
 `;
 
 export const ListItem = styled.li`
@@ -146,9 +145,7 @@ export const ListItem = styled.li`
   justify-content: space-between;
   width: 400px;
   list-style: none;
-  :not(:last-child) {
-    margin-bottom: 30px;
-  }
+  margin-bottom: 30px;
   span {
     width: 170px;
     font-size: 18px;
@@ -157,5 +154,23 @@ export const ListItem = styled.li`
   span:first-child {
     font-weight: 600;
     font-size: 20px;
+  }
+`;
+
+export const AddHour = styled.div`
+  display: flex;
+  background-color: var(--va-primaryMain);
+  color: var(--va-white);
+  width: 140px;
+  height: 45px;
+  font-size: 13pt;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  /* padding: 10px; */
+  :hover {
+    opacity: 0.85;
   }
 `;

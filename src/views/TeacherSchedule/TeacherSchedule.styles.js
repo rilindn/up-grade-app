@@ -2,11 +2,11 @@ import styled from "vue3-styled-components";
 import breakpoints from "../../theme/breakpoints";
 
 export const Wrapper = styled.div`
-  height: 700px;
   display: flex;
+  flex-direction: column;
   margin: 40px;
-  border-radius: 5px;
-  width: 85%;
+  width: 95%;
+  align-items: end;
   @media ${breakpoints("max").tablet} {
     flex-direction: column;
     height: 100%;
@@ -16,16 +16,12 @@ export const Wrapper = styled.div`
 `;
 
 export const SecondWrapper = styled.div`
-  width: 50%;
-  background-color: var(--va-background);
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border: 3px solid var(--va-primaryLight);
+  border-radius: 5px;
   @media ${breakpoints("max").tablet} {
     width: 100%;
+    flex-direction: column;
   }
 `;
 
@@ -37,26 +33,58 @@ export const ThirdWrapper = styled.div`
   align-items: center;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  flex-direction: column;
+  padding: 50px 20px;
   @media ${breakpoints("max").tablet} {
     width: 100%;
-    height: 50%;
     align-items: center;
     justify-content: center;
   }
 `;
 
 export const Container = styled.div`
+  width: 50%;
+  background-color: var(--va-background);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 3px solid var(--va-primaryLight);
+  padding: 40px;
   p {
     font-size: 20px;
   }
   @media ${breakpoints("max").tablet} {
     width: 100%;
+    min-height: 50%;
     align-items: center;
     padding: 20px;
+  }
+`;
+
+const weekProps = {
+  isSelected: Boolean,
+};
+
+export const WeekDay = styled("div", weekProps)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--va-white);
+  text-align: center;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #92929d;
+  cursor: pointer;
+  box-shadow: 0.5px 1px #b5b5be;
+  background-color: ${(props) => props.isSelected && `var(--va-primaryLight)`};
+  color: ${(props) => props.isSelected && `var(--va-white)`};
+  :hover {
+    background-color: var(--va-primaryLight);
+    color: var(--va-white);
   }
 `;
 
@@ -66,38 +94,9 @@ export const WeekWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 330px;
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background-color: var(--va-white);
-    text-align: center;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #92929d;
-    cursor: pointer;
-    box-shadow: 0.5px 1px #b5b5be;
-    :hover {
-      background-color: var(--va-green700);
-      color: var(--va-white);
-    }
-  }
 `;
 
-export const Course = styled.div`
-  display: flex;
-  flex-direction: column;
-  @media ${breakpoints("max").tablet} {
-    width: 100%;
-    flex-wrap: wrap;
-    max-height: 300px;
-    align-items: center;
-  }
-`;
-
-export const CourseContainer = styled.div`
+export const Course = styled("div", weekProps)`
   width: 330px;
   height: 60px;
   background-color: var(--va-white);
@@ -107,37 +106,36 @@ export const CourseContainer = styled.div`
   padding: 0 20px;
   display: flex;
   align-items: center;
+  background-color: ${(props) => props.isSelected && `var(--va-primaryLight)`};
+  color: ${(props) => props.isSelected && `var(--va-white)`};
+
+  @media ${breakpoints("max").tablet} {
+    flex-wrap: wrap;
+    max-height: 300px;
+    align-items: center;
+  }
+`;
+
+export const CourseContainer = styled("div", weekProps)`
+  display: flex;
   justify-content: space-between;
+  padding: 20px 0;
   cursor: pointer;
+  align-items: center;
   width: 100%;
-  p {
-    font-size: 18px;
+  span {
+    font-size: 15px;
+  }
+  span:nth-child(2) {
+    font-size: 17px;
+    font-weight: 550;
   }
   @media ${breakpoints("max").tablet} {
-    width: 240px;
+    width: 200px;
     height: 60px;
     p {
       font-size: 16px;
       margin-right: 7px;
-    }
-  }
-`;
-
-export const CourseCode = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 230px;
-  p {
-    font-size: 18px;
-    width: 70px;
-  }
-  p:first-child {
-    font-weight: 550;
-  }
-  @media ${breakpoints("max").tablet} {
-    h4 {
-      font-size: 15px;
     }
   }
 `;
@@ -148,7 +146,9 @@ export const ListItem = styled.li`
   justify-content: space-between;
   width: 400px;
   list-style: none;
-  margin-bottom: 30px;
+  :not(:last-child) {
+    margin-bottom: 30px;
+  }
   span {
     width: 170px;
     font-size: 18px;

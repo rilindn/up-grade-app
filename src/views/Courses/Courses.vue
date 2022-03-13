@@ -7,13 +7,15 @@
     <Table>
       <Head>
         <Column></Column>
-        <Column>{{ $t("courses.subject") }}</Column>
+        <Column>{{ $t("courses.courseCode") }}</Column>
+        <Column>{{ $t("courses.teacher") }}</Column>
         <Column>{{ $t("courses.teacher") }}</Column>
         <Column>{{ $t("courses.actions") }}</Column>
       </Head>
       <Body>
         <Row v-for="(course, i) in courses" :key="i">
           <Cell>#{{ ++i }}</Cell>
+          <Cell>{{ course.courseCode }}</Cell>
           <Cell>{{ course.subject.name }}</Cell>
           <Cell>{{ course.teacher.name }}</Cell>
           <Cell>
