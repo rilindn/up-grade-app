@@ -53,3 +53,9 @@ export const Delete = styled.div`
     opacity: 0.6;
   }
 `;
+
+export const TableHeader = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;

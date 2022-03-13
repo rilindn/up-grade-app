@@ -129,7 +129,7 @@ export default {
       rightPanelShow: false,
       loading: false,
       loginSchema: yup.object({
-        email: yup.string().required().email(),
+        email: yup.string().required().email().label("Email"),
         password: yup
           .string()
           .required("Password is a required field")
@@ -173,7 +173,7 @@ export default {
             duration: 2000,
             text: "Logged in sucessfully!",
           });
-          if (user?.role === "Student") this.$router.push("/student");
+          if (user?.role === "Student") this.$router.push("/schedule");
           else if (user?.role === "Admin") this.$router.push("/admin");
           else this.$router.push("/");
         } else {

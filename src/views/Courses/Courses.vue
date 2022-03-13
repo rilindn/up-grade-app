@@ -1,9 +1,13 @@
 <template>
   <Wrapper>
-    <AddNew @click="addCoursesModal()">
-      <span><i class="fas fa-plus-circle"></i></span>
-      <span>{{ $t("addNew") }}</span>
-    </AddNew>
+    <TableHeader>
+      <SearchInput v-model="search" :placeholder="$t('search')" />
+
+      <AddNew @click="addCoursesModal()">
+        <span><i class="fas fa-plus-circle"></i></span>
+        <span>{{ $t("addNew") }}</span>
+      </AddNew>
+    </TableHeader>
     <Table>
       <Head>
         <Column></Column>
@@ -56,10 +60,18 @@ import {
   Row,
   Cell,
 } from "@/components/table/Table.styles";
-import { Wrapper, AddNew, ActionWrapper, Edit, Delete } from "./Courses.styles";
+import {
+  Wrapper,
+  AddNew,
+  ActionWrapper,
+  Edit,
+  Delete,
+  TableHeader,
+} from "./Courses.styles";
 import AddCourse from "./AddCourse";
 import EditCourse from "./EditCourse";
 import { getAllCourses, deleteCourse } from "@/api/ApiMethods.js";
+import SearchInput from "@/components/SearchInput";
 
 export default {
   components: {
@@ -71,6 +83,8 @@ export default {
     Row,
     Cell,
     AddNew,
+    SearchInput,
+    TableHeader,
     ActionWrapper,
     Edit,
     Delete,
@@ -83,6 +97,7 @@ export default {
       showAddModal: false,
       courses: [],
       editData: {},
+      search: "",
     };
   },
   methods: {
@@ -98,7 +113,7 @@ export default {
       this.showAddModal = false;
     },
     async fetchCourses() {
-      const data = await getAllCourses();
+      const data = await getAllCourses(this.search);
       this.courses = data;
     },
     async handleDelete(id) {
@@ -111,6 +126,11 @@ export default {
         });
         await this.fetchCourses();
       }
+    },
+  },
+  watch: {
+    search: async function () {
+      await this.fetchCourses();
     },
   },
   async created() {

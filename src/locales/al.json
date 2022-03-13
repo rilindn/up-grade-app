@@ -1,6 +1,7 @@
 {
   "welcome": {
-    "title": "Miresevini {name}"
+    "title": "Miresevini {name}",
+    "redirect": "Ju do te riderektoheni ne faqen tuaj kryesore"
   },
   "admin": {
     "title": "Pershendetje"

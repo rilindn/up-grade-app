@@ -28,6 +28,7 @@ export const BottomWrapper = styled.div`
   justify-content: space-around;
   flex-direction: row;
   display: flex;
+  margin-bottom: 50px;
   @media ${breakpoints("max").tablet} {
     flex-wrap: wrap;
     height: 70vh;

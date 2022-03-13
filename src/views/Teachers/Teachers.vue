@@ -1,10 +1,13 @@
 <template>
   <Container>
     <Wrapper>
-      <AddNew @click="$router.push('/register')">
-        <span><i class="fas fa-plus-circle"></i></span>
-        <span>{{ $t("addNew") }}</span>
-      </AddNew>
+      <TableHeader>
+        <SearchInput v-model="search" :placeholder="$t('search')" />
+        <AddNew @click="$router.push('/register')">
+          <span><i class="fas fa-plus-circle"></i></span>
+          <span>{{ $t("addNew") }}</span>
+        </AddNew>
+      </TableHeader>
       <Table>
         <Head>
           <Column></Column>
@@ -12,6 +15,7 @@
           <Column>{{ $t("lastname") }}</Column>
           <Column>{{ $t("dateOfBirth") }}</Column>
           <Column>{{ $t("email") }}</Column>
+          <Column>{{ $t("students.gender") }}</Column>
           <Column>{{ $t("actions") }}</Column>
         </Head>
         <Body>
@@ -23,6 +27,7 @@
             <Cell>{{ teacher.lastName }}</Cell>
             <Cell>{{ moment(teacher.dateOfBirth).format("YYYY-MM-DD") }}</Cell>
             <Cell>{{ teacher.email }}</Cell>
+            <Cell>{{ teacher?.gender }}</Cell>
             <Cell>
               <ActionWrapper>
                 <Edit @click="editModal(teacher)"
@@ -36,13 +41,14 @@
           </Row>
         </Body>
       </Table>
+      <Paginator @fetchPaginationItems="fetchPaginationItems" :pager="pager" />
     </Wrapper>
     <va-modal v-model="showEditModal" hide-default-actions>
       <slot>
         <EditTeacher
           :data="editStaffData"
           @closeModal="closeEditModal"
-          @refetchStaff="fetchStaff"
+          @refetchStaff="fetchStaffOnAction"
         />
       </slot>
     </va-modal>
@@ -57,7 +63,7 @@ import {
   Column,
   Row,
   Cell,
-} from "../../components/table/Table.styles";
+} from "@/components/table/Table.styles";
 import {
   Wrapper,
   ActionWrapper,
@@ -65,9 +71,12 @@ import {
   Delete,
   AddNew,
   Container,
+  TableHeader,
 } from "./Teachers.styles";
-import { getAllStaff, deleteStaff } from "../../api/ApiMethods";
+import { paginationStaff, deleteStaff } from "@/api/ApiMethods";
 import EditTeacher from "./EditTeacher/EditTeacher.vue";
+import Paginator from "@/components/Paginator";
+import SearchInput from "@/components/SearchInput";
 
 export default {
   components: {
@@ -79,18 +88,24 @@ export default {
     Cell,
     Wrapper,
     ActionWrapper,
+    SearchInput,
+    TableHeader,
     Edit,
     Delete,
     AddNew,
     Container,
     EditTeacher,
+    Paginator,
   },
   data() {
     return {
       staff: [],
       showEditModal: false,
       showAddModal: false,
+      search: "",
       editStaffData: [],
+      pager: {},
+      currentPage: 1,
     };
   },
   methods: {
@@ -101,12 +116,11 @@ export default {
     closeEditModal() {
       this.showEditModal = false;
     },
-    async fetchStaff() {
-      const staff = await getAllStaff();
-      this.staff = staff;
-    },
     triggerAddModal() {
       this.showAddModal = !this.showAddModal;
+    },
+    async fetchStaffOnAction() {
+      await this.fetchPaginationItems(this.currentPage);
     },
     async handleDelete(id) {
       if (confirm(this.$t("Are you sure you want to delete this teacher?"))) {
@@ -116,13 +130,25 @@ export default {
           duration: 2000,
           text: "Teacher deleted succesfully!",
         });
-        await this.fetchStaff();
+        await this.fetchStaffOnAction();
       }
+    },
+    async fetchPaginationItems(page) {
+      this.currentPage = page;
+      const data = await paginationStaff(page, this.search);
+      this.staff = data.pageOfItems;
+      this.pager = data.pager;
+    },
+  },
+  watch: {
+    search: async function () {
+      await this.fetchPaginationItems(this.currentPage);
     },
   },
   async beforeCreate() {
-    const staff = await getAllStaff();
-    this.staff = staff;
+    const data = await paginationStaff(1);
+    this.staff = data.pageOfItems;
+    this.pager = data.pager;
   },
 };
 </script>

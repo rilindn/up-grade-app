@@ -14,8 +14,6 @@ export default createStore({
   },
   mutations: {
     SET_LOGGED_USER(state, payload) {
-      console.log(payload?.avatarColor);
-
       state.loggedUser.id = payload?._id;
       state.loggedUser.name = `${payload?.firstName} ${payload?.lastName}`;
       state.loggedUser.email = payload?.email;

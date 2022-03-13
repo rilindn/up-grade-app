@@ -42,6 +42,7 @@ export const Column = styled.th`
 `;
 
 export const Row = styled("tr")`
+  cursor: pointer;
   :hover {
     background-color: rgba(0, 132, 102, 0.03) !important;
   }

@@ -44,7 +44,7 @@ export const Navigation = styled("nav", navProps)`
   margin: 0;
   padding: 0;
   height: 100%;
-  width: 260px;
+  width: 245px;
   background: radial-gradient(#05c59a, #008466);
   a {
     text-decoration: none;
