@@ -155,7 +155,8 @@
     "subject": "Subject",
     "id": "Number",
     "actions": "Actions",
-    "assignRole": "Assign new role"
+    "assignRole": "Assign new role",
+    "courseCode": "Course code"
   },
   "settings": {
     "preferences": "Preferences",
@@ -282,5 +283,7 @@
   "email": "Email",
   "actions": "Actions",
   "register": "Register",
-  "search": "Search"
+  "search": "Search",
+  "edit": "Edit",
+  "delete": "Delete"
 }

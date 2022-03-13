@@ -131,7 +131,7 @@ const routes = [
       },
       {
         path: "/register-student",
-        name: "RegisterStudent",
+        name: "Register Student",
         meta: { requiredRole: ["Admin"] },
         component: () => import("@/views/RegisterStudent"),
       },

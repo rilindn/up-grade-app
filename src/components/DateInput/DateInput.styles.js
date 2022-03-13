@@ -21,6 +21,9 @@ export const Wrapper = styled("div", inputProps)`
     :focus {
       border: none;
     }
+    .va-input__container {
+      background-color: #f2f5f7 !important;
+    }
   }
 
   .va-input--focused.va-input-wrapper__content {

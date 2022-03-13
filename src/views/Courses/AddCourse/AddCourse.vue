@@ -75,6 +75,7 @@
           </Wrapper>
         </slot>
       </va-modal>
+      <InputField :error="errors" name="courseCode" placeholder="Course code" />
       <SaveButton :title="$t('save')" :loading="loading" type="submit" />
       <CancelButton :title="$t('cancel')" @click="$emit('closeModal')" />
     </FormStyled>
@@ -123,6 +124,7 @@ export default {
       addSchema: yup.object({
         teacher: yup.string().required("Please choose a teacher"),
         subject: yup.string().required("Please choose a subject"),
+        courseCode: yup.string().required("Please enter the course code"),
       }),
       teachers: [],
       subjects: [],
@@ -164,9 +166,14 @@ export default {
       this.subjectModal = false;
       this.formValues.subject = subject.subjectName;
     },
-    async handleSubmit() {
+    async handleSubmit(payload) {
       this.loading = true;
-      const data = { ...this.selectedSubject, ...this.selectedTeacher };
+      const courseCode = payload.courseCode;
+      const data = {
+        ...this.selectedSubject,
+        ...this.selectedTeacher,
+        courseCode,
+      };
       try {
         const result = await addCourse(data);
         if (result?.status === 200) {

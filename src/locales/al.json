@@ -172,7 +172,8 @@
     "subject": "Lenda",
     "id": "ID",
     "actions": "Veprimet",
-    "assignRole": "Vendos rol të ri"
+    "assignRole": "Vendos rol të ri",
+    "courseCode": "Kodi i kursit"
   },
   "dashboard": {
     "classes": "Klasat",
@@ -281,5 +282,7 @@
   "email": "Email",
   "actions": "Veprimet",
   "register": "Regjistro",
-  "search": "Kërko"
+  "search": "Kërko",
+  "edit": "Përditëso",
+  "delete": "Fshij"
 }
