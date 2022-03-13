@@ -3,90 +3,65 @@
     <SecondWrapper>
       <Container>
         <WeekWrapper>
-          <div>
-            <span>Mon</span>
-          </div>
-          <div>
-            <span>Tue</span>
-          </div>
-          <div>
-            <span>Wed</span>
-          </div>
-          <div>
-            <span>Thur</span>
-          </div>
-          <div>
-            <span>Fri</span>
-          </div>
+          <WeekDay
+            v-for="(day, i) in days"
+            :key="i"
+            @click="handleSelectedDay(i, day.full)"
+            :isSelected="selectedDayOrder === i"
+          >
+            <span>{{ day.short }}</span>
+          </WeekDay>
         </WeekWrapper>
-        <Course>
+        <Course
+          v-for="(scheduleHour, i) in schedule?.[this.selectedDayOrder]?.hours"
+          :key="scheduleHour?.hour?._id"
+          @click="handleSelectedHour(i, scheduleHour?.hour)"
+          :isSelected="selectedHourOrder === i"
+        >
           <CourseContainer>
-            <p>1</p>
-            <CourseCode>
-              <h4>First Grade</h4>
-              <span>Parallel 1</span>
-            </CourseCode>
-          </CourseContainer>
-          <CourseContainer>
-            <p>2</p>
-            <CourseCode>
-              <h4>Second Grade</h4>
-              <span>Parallel 2</span>
-            </CourseCode>
-          </CourseContainer>
-          <CourseContainer>
-            <p>3</p>
-            <CourseCode>
-              <h4>Third Grade</h4>
-              <span>Parallel 1</span>
-            </CourseCode>
-          </CourseContainer>
-          <CourseContainer>
-            <p>4</p>
-            <CourseCode>
-              <h4>Second Grade</h4>
-              <span>Parallel 1</span>
-            </CourseCode>
-          </CourseContainer>
-          <CourseContainer>
-            <p>5</p>
-            <CourseCode>
-              <h4>Third Grade</h4>
-              <span>Parallel 1</span>
-            </CourseCode>
-          </CourseContainer>
-          <CourseContainer>
-            <p>6</p>
-            <CourseCode>
-              <h4>Forth Grade</h4>
-              <span>Parallel 1</span>
-            </CourseCode>
+            <span>{{ i + 1 }}</span>
+            <span>{{ scheduleHour?.parallel?.parallelClass }}</span>
+            <span>Parallel {{ scheduleHour?.parallel?.parallelName }}</span>
           </CourseContainer>
         </Course>
       </Container>
+      <ThirdWrapper>
+        <ul>
+          <ListItem>
+            <span>{{ $t("schedule.course") }}:</span
+            ><span>{{ selectedHour?.course || "---" }}</span>
+          </ListItem>
+          <ListItem>
+            <span>{{ $t("schedule.class") }}:</span
+            ><span>{{ selectedHour?.classroom || "---" }}</span>
+          </ListItem>
+          <ListItem>
+            <span>{{ $t("schedule.code") }}:</span
+            ><span>{{ selectedHour?.courseCode || "---" }}</span>
+          </ListItem>
+          <ListItem>
+            <span>{{ $t("schedule.startTime") }}:</span
+            ><span>{{
+              selectedHour?.startTime
+                ? moment(selectedHour?.startTime).format("hh:mm A")
+                : "---"
+            }}</span>
+          </ListItem>
+          <ListItem>
+            <span>{{ $t("schedule.endTime") }}:</span
+            ><span>{{
+              selectedHour?.startTime
+                ? moment(selectedHour?.endTime).format("hh:mm A")
+                : "---"
+            }}</span>
+          </ListItem>
+        </ul>
+      </ThirdWrapper>
     </SecondWrapper>
-    <ThirdWrapper>
-      <ul>
-        <ListItem>
-          <span>{{ $t("schedule.course") }}:</span><span>Mathematics</span>
-        </ListItem>
-        <ListItem>
-          <span>{{ $t("schedule.class") }}:</span><span>Z008</span>
-        </ListItem>
-        <ListItem>
-          <span>{{ $t("schedule.code") }}:</span><span>MAT001</span>
-        </ListItem>
-        <ListItem>
-          <span>{{ $t("schedule.startTime") }}:</span><span>08:00 AM</span>
-        </ListItem>
-        <ListItem>
-          <span>{{ $t("schedule.endTime") }}:</span><span>08:45 AM</span>
-        </ListItem>
-      </ul>
-    </ThirdWrapper>
   </Wrapper>
 </template>
 <script>
+import days from "@/data/days";
 import {
   Wrapper,
   SecondWrapper,
@@ -97,7 +72,9 @@ import {
   CourseContainer,
   CourseCode,
   ListItem,
+  WeekDay,
 } from "./TeacherSchedule.styles";
+import { getTeacherSchedule } from "@/api/ApiMethods";
 export default {
   components: {
     Wrapper,
@@ -109,6 +86,38 @@ export default {
     CourseContainer,
     CourseCode,
     ListItem,
+    WeekDay,
+  },
+  data() {
+    return {
+      days,
+      schedule: {},
+      selectedDay: "Monday",
+      selectedDayOrder: 0,
+      selectedHour: {},
+      selectedHourOrder: 0,
+    };
+  },
+  methods: {
+    async getSchedule() {
+      const teacherId = this.$store.getters.loggedUser?.id;
+      const schedule = await getTeacherSchedule(teacherId);
+      this.schedule = schedule;
+      this.selectedHour = schedule?.days?.[this.selectedDayOrder]?.hours?.[0];
+    },
+    handleSelectedHour(order, hour) {
+      this.selectedHour = hour;
+      this.selectedHourOrder = order;
+    },
+    handleSelectedDay(order, val) {
+      this.selectedDay = val;
+      this.selectedDayOrder = order;
+      this.selectedHourOrder = 0;
+      this.selectedHour = this.schedule?.[order]?.hours?.[0]?.hour;
+    },
+  },
+  async created() {
+    await this.getSchedule();
   },
 };
 </script>
