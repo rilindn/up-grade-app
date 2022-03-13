@@ -2,7 +2,7 @@ import styled from "vue3-styled-components";
 
 const btnProps = {
   size: Number,
-  coloe: String,
+  color: String,
 };
 
 export const Wrapper = styled("div")`
@@ -22,5 +22,6 @@ export const Avatar = styled("div", btnProps)`
   span {
     font-weight: bold;
     color: white;
+    font-size: ${(props) => props.size * (2 / 5)}px;
   }
 `;

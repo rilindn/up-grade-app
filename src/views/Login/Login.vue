@@ -118,6 +118,7 @@ import { users } from "../../data/usersData";
 import * as yup from "yup";
 import { login } from "@/api/ApiMethods";
 import Client from "@/api/ApiBase";
+import i18n from "@/i18n";
 
 configure({
   validateOnBlur: true,
@@ -166,6 +167,7 @@ export default {
             type: "SET_LOGGED_USER",
             user,
           });
+          i18n.global.locale = user?.language || "en";
           this.$notify({
             type: "success",
             duration: 2000,

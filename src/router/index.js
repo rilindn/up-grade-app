@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import store from "@/store";
 import { getLoggedUser } from "../api/ApiMethods";
+import i18n from "@/i18n";
 
 const routes = [
   {
@@ -144,6 +145,12 @@ const routes = [
         name: "Not Found",
         component: () => import("@/views/NotFound"),
       },
+      {
+        path: "/settings",
+        name: "Settings",
+        meta: { requiredRole: ["Student", "Admin", "staff"] },
+        component: () => import("@/views/Settings"),
+      },
     ],
   },
   {
@@ -225,6 +232,7 @@ const fetchLoggedUser = async () => {
         type: "SET_LOGGED_USER",
         user,
       });
+      i18n.global.locale = user?.language || "en";
       return user;
     } else {
       return null;

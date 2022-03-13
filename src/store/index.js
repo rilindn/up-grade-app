@@ -8,15 +8,21 @@ export default createStore({
       email: "",
       isLogged: false,
       role: "",
+      avatarColor: "",
+      language: "",
     },
   },
   mutations: {
     SET_LOGGED_USER(state, payload) {
+      console.log(payload?.avatarColor);
+
       state.loggedUser.id = payload?._id;
       state.loggedUser.name = `${payload?.firstName} ${payload?.lastName}`;
       state.loggedUser.email = payload?.email;
       state.loggedUser.isLogged = true;
       state.loggedUser.role = payload?.role;
+      state.loggedUser.avatarColor = payload?.avatarColor;
+      state.loggedUser.language = payload?.language;
     },
   },
   actions: {
@@ -29,6 +35,7 @@ export default createStore({
     isAuthenticated: (state) => state.loggedUser.isLogged,
     userRole: (state) => state.loggedUser.role,
     loggedUser: (state) => state.loggedUser,
+    language: (state) => state.loggedUser.language,
   },
   plugins: [],
 });

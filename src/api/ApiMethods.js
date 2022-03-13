@@ -392,3 +392,35 @@ export async function editStudentGrades(id, data) {
     return err;
   }
 }
+
+// preferences
+
+export async function editAvatarColor(id, data) {
+  try {
+    const result = await Client.put(`user/avatar/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function editPassword(id, data) {
+  try {
+    const result = await Client.put(`user/password/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
+
+export async function editLanguage(id, data) {
+  try {
+    const result = await Client.put(`user/lang/${id}`, { ...data });
+    return result;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
