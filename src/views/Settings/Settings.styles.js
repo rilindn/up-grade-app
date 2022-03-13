@@ -1,6 +1,8 @@
 import styled from "vue3-styled-components";
 import Button from "@/components/button";
+import InputField from "@/components/InputField";
 import breakpoints from "../../theme/breakpoints";
+import { Form } from "vee-validate";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -32,7 +34,7 @@ export const BottomWrapper = styled.div`
   }
 `;
 
-export const BoxContainer = styled.div`
+export const FormStyled = styled(Form)`
   border: 1px solid var(--va-grey200);
   background-color: white;
   width: 100%;
@@ -92,7 +94,7 @@ export const BottomBoxWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   width: 300px;
-  height: 300px;
+  height: 310px;
 `;
 
 export const SaveButton = styled(Button)`
@@ -100,4 +102,10 @@ export const SaveButton = styled(Button)`
   width: 90px;
   align-self: flex-end;
   border-width: 0px;
+`;
+
+export const InputFieldStyled = styled(InputField)`
+  input {
+    height: -webkit-fill-available;
+  }
 `;

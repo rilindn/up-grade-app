@@ -2,7 +2,7 @@
   <Wrapper>
     <NameField>{{ name }}</NameField>
     <AvatarWrapper>
-      <Avatar :size="37" :name="name" @click="triggerMenu" />
+      <Avatar :size="37" :name="name" @click="triggerMenu" :color="color" />
     </AvatarWrapper>
     <Menu v-if="displayMenu" v-click-away="triggerMenu">
       <div v-for="{ name, icon, path } in menuItems" :key="name">
@@ -48,7 +48,8 @@ export default {
   },
   data() {
     return {
-      name: this.$store.state.loggedUser.name,
+      color: this.$store.getters.loggedUser.avatarColor,
+      name: this.$store.getters.loggedUser.name,
       displayMenu: false,
       menuItems,
     };
