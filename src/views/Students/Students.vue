@@ -22,10 +22,24 @@
           <Column>{{ $t("actions") }}</Column>
         </Head>
         <Body>
-          <Row v-for="(user, i) in users" :key="user.id" :index="++i">
-            <Cell
-              ><b>#{{ i + (currentPage - 1) * pager.pageSize }}</b></Cell
-            >
+          <Row
+            v-for="(user, i) in users"
+            :key="user._id"
+            :index="++i"
+            @click="
+              this.$router.push({
+                name: 'Profile',
+                params: { id: user._id },
+              })
+            "
+          >
+            <Cell>
+              <Avatar
+                :size="35"
+                :name="`${user?.firstName} ${user?.lastName}`"
+                :color="user?.avatarColor"
+              />
+            </Cell>
             <Cell>{{ user?.studentId }}</Cell>
             <Cell>{{ user?.firstName }}</Cell>
             <Cell>{{ user.parent?.firstName }}</Cell>
@@ -46,11 +60,7 @@
           </Row>
         </Body>
       </Table>
-      <Paginator
-        @fetchPaginationItems="fetchPaginationItems"
-        :page="page"
-        :pager="pager"
-      />
+      <Paginator @fetchPaginationItems="fetchPaginationItems" :pager="pager" />
       <!-- </va-inner-loading> -->
     </Wrapper>
     <va-modal v-model="showModal" hide-default-actions>
@@ -67,6 +77,7 @@
 
 <script>
 import { Table, Head, Body, Column, Row, Cell } from "@/components/table";
+import Avatar from "@/components/Avatar";
 import {
   Wrapper,
   ActionWrapper,
@@ -77,7 +88,7 @@ import {
   TableHeader,
 } from "./Students.styles";
 import EditStudent from "./EditStudent";
-import { getAllStudents, deleteStudent } from "@/api/ApiMethods";
+import { deleteStudent } from "@/api/ApiMethods";
 import { paginationStudents } from "../../api/ApiMethods";
 import Paginator from "@/components/Paginator";
 import SearchInput from "@/components/SearchInput";
@@ -97,6 +108,7 @@ export default {
     Container,
     EditStudent,
     Paginator,
+    Avatar,
     SearchInput,
     TableHeader,
   },
@@ -133,7 +145,6 @@ export default {
       }
     },
     async fetchPaginationItems(page) {
-      console.log("first", this.search);
       this.currentPage = page;
       const data = await paginationStudents(page, this.search);
       this.users = data.pageOfItems;

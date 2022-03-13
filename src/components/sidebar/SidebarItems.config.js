@@ -1,11 +1,11 @@
 const basicItems = [];
 
 const studentItems = [
-  {
-    name: "Home",
-    icon: "fas fa-book-open",
-    path: "/student",
-  },
+  // {
+  //   name: "Home",
+  //   icon: "fas fa-book-open",
+  //   path: "/student",
+  // },
   {
     name: "sidebar.schedule",
     icon: "fas fa-calendar-day",
@@ -25,14 +25,14 @@ const studentItems = [
 
 const teacherItems = [
   {
-    name: "sidebar.schedule",
-    icon: "fas fa-calendar-day",
-    path: "/teacher-schedule",
-  },
-  {
     name: "sidebar.myClasses",
     icon: "fas fa-users-class",
     path: "/teacher-classes",
+  },
+  {
+    name: "sidebar.schedule",
+    icon: "fas fa-calendar-day",
+    path: "/teacher-schedule",
   },
 ];
 

@@ -35,8 +35,9 @@ export async function getAllStudents() {
   return users.data;
 }
 
-export async function getNotAssignedStudents() {
-  const users = await Client.get("student/non-assigned");
+export async function getNotAssignedStudents(search) {
+  const searchValue = search || "";
+  const users = await Client.get(`student/non-assigned?search=${searchValue}`);
   return users.data;
 }
 
@@ -147,8 +148,9 @@ export async function deleteClass(id) {
 
 //Subject method
 
-export async function getAllSubjects() {
-  const subjects = await Client.get("subject");
+export async function getAllSubjects(search) {
+  const searchValue = search || "";
+  const subjects = await Client.get(`subject?search=${searchValue}`);
   return subjects.data;
 }
 
@@ -179,8 +181,9 @@ export async function deleteSubject(id) {
 
 //Teacher methods
 
-export async function getAllStaff() {
-  const staff = await Client.get("staff");
+export async function paginationStaff(page, search) {
+  const searchValue = search || "";
+  const staff = await Client.get(`staff?page=${page}&search=${searchValue}`);
   return staff.data;
 }
 
@@ -223,9 +226,10 @@ export async function deleteAdmin(id) {
 
 //Courses methods
 
-export async function getAllCourses() {
-  const staff = await Client.get("course");
-  return staff.data;
+export async function getAllCourses(search) {
+  const searchValue = search || "";
+  const courses = await Client.get(`course?search=${searchValue}`);
+  return courses.data;
 }
 
 export async function getParallelNonAssignedCourses(parallelId) {
@@ -260,8 +264,9 @@ export async function deleteCourse(id) {
 
 // Parallels
 
-export async function getAllParallels() {
-  const parallels = await Client.get(`parallel`);
+export async function getAllParallels(search) {
+  const searchValue = search || "";
+  const parallels = await Client.get(`parallel?search=${searchValue}`);
   return parallels.data;
 }
 

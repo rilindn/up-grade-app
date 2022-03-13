@@ -1,6 +1,7 @@
 <template>
   <FormWrapper>
     <Title>Add Class Student</Title>
+    <SearchInput v-model="search" :placeholder="$t('search')" />
     <Wrapper v-if="students?.length > 0">
       <Table>
         <Head>
@@ -46,6 +47,7 @@ import InputField from "@/components/InputField";
 import SelectInput from "@/components/SelectInput";
 import Avatar from "@/components/Avatar";
 import { addClassStudent } from "@/api/ApiMethods.js";
+import SearchInput from "@/components/SearchInput";
 import { getNotAssignedStudents } from "@/api/ApiMethods";
 
 export default {
@@ -57,6 +59,7 @@ export default {
     CancelButton,
     SaveButton,
     SelectInput,
+    SearchInput,
     InputField,
     Avatar,
     Table,
@@ -72,6 +75,7 @@ export default {
       students: [],
       selectedStudent: {},
       loading: false,
+      search: "",
     };
   },
   props: {
@@ -104,10 +108,18 @@ export default {
         console.log(err);
       }
     },
+    async fetchStudents() {
+      const students = await getNotAssignedStudents(this.search);
+      this.students = students;
+    },
   },
-  async beforeCreate() {
-    const students = await getNotAssignedStudents();
-    this.students = students;
+  watch: {
+    search: async function () {
+      await this.fetchStudents();
+    },
+  },
+  async created() {
+    await this.fetchStudents();
   },
 };
 </script>

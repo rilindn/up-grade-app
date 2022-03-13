@@ -1,6 +1,7 @@
 {
   "welcome": {
-    "title": "Welcome {name}"
+    "title": "Welcome {name}",
+    "redirect": "You will be redirected to your home page"
   },
   "admin": {
     "title": "Hi"

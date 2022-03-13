@@ -130,6 +130,12 @@ const routes = [
         component: () => import("@/views/Courses"),
       },
       {
+        path: "/profile/:id",
+        name: "Profile",
+        meta: { requiredRole: ["Admin", "Staff", "Student"] },
+        component: () => import("@/views/Profile"),
+      },
+      {
         path: "/register-student",
         name: "Register Student",
         meta: { requiredRole: ["Admin"] },
@@ -148,7 +154,7 @@ const routes = [
       {
         path: "/settings",
         name: "Settings",
-        meta: { requiredRole: ["Student", "Admin", "staff"] },
+        meta: { requiredRole: ["Student", "Admin", "Staff"] },
         component: () => import("@/views/Settings"),
       },
     ],

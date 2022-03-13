@@ -1,10 +1,13 @@
 <template>
   <Container>
     <Wrapper>
-      <AddNew @click="triggerAddModal">
-        <span><i class="fas fa-plus-circle"></i></span>
-        <span>{{ $t("addNew") }}</span>
-      </AddNew>
+      <TableHeader>
+        <SearchInput v-model="search" :placeholder="$t('search')" />
+        <AddNew @click="triggerAddModal">
+          <span><i class="fas fa-plus-circle"></i></span>
+          <span>{{ $t("addNew") }}</span>
+        </AddNew>
+      </TableHeader>
       <Table>
         <Head>
           <Column></Column>
@@ -63,7 +66,7 @@ import {
   Column,
   Row,
   Cell,
-} from "../../components/table/Table.styles";
+} from "@/components/table/Table.styles";
 import {
   Wrapper,
   ActionWrapper,
@@ -71,10 +74,12 @@ import {
   Delete,
   Container,
   AddNew,
+  TableHeader,
 } from "./SubjectsBoard.styles";
 import AddSubject from "./AddSubject/AddSubject.vue";
+import SearchInput from "@/components/SearchInput";
 import EditSubject from "./EditSubject/EditSubject.vue";
-import { getAllSubjects, deleteSubject } from "../../api/ApiMethods";
+import { getAllSubjects, deleteSubject } from "@/api/ApiMethods";
 export default {
   components: {
     Table,
@@ -84,6 +89,7 @@ export default {
     Row,
     Cell,
     Wrapper,
+    SearchInput,
     ActionWrapper,
     Edit,
     Delete,
@@ -91,6 +97,7 @@ export default {
     AddNew,
     AddSubject,
     EditSubject,
+    TableHeader,
   },
   data() {
     return {
@@ -98,6 +105,7 @@ export default {
       showEditModal: false,
       showAddModal: false,
       editSubjectData: [],
+      search: "",
     };
   },
   methods: {
@@ -109,7 +117,7 @@ export default {
       this.showEditModal = false;
     },
     async fetchSubjects() {
-      const subjects = await getAllSubjects();
+      const subjects = await getAllSubjects(this.search);
       this.subjects = subjects;
     },
     triggerAddModal() {
@@ -127,11 +135,13 @@ export default {
       }
     },
   },
-  async beforeCreate() {
-    const subjects = await getAllSubjects();
-    this.subjects = subjects;
+  watch: {
+    search: async function () {
+      await this.fetchSubjects();
+    },
   },
-  created() {
+  async created() {
+    await this.fetchSubjects();
     this.emitter.on("fetchSubjects", async () => {
       const subjects = await getAllSubjects();
       this.subjects = subjects;

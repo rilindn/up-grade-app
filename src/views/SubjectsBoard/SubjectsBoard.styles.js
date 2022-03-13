@@ -1,6 +1,5 @@
 import styled from "vue3-styled-components";
 
-
 export const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -14,7 +13,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: end;
 `;
-
 
 export const ActionWrapper = styled.div`
   display: flex;
@@ -61,4 +59,10 @@ export const AddNew = styled.div`
   :hover {
     opacity: 0.85;
   }
+`;
+
+export const TableHeader = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 `;

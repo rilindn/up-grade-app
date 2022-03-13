@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px;
+  margin: 35px;
   border-radius: 5px;
   @media ${breakpoints("max").tablet} {
     width: 90%;
@@ -67,6 +67,7 @@ export const AddNew = styled.div`
     opacity: 0.85;
   }
 `;
+
 export const TableHeader = styled.div`
   width: 100%;
   display: flex;

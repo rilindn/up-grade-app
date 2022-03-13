@@ -1,10 +1,13 @@
 <template>
   <Container>
     <Wrapper>
-      <AddNew @click="triggerAddModal">
-        <span><i class="fas fa-plus-circle"></i></span>
-        <span>{{ $t("addNew") }}</span>
-      </AddNew>
+      <TableHeader>
+        <SearchInput v-model="search" :placeholder="$t('search')" />
+        <AddNew @click="triggerAddModal">
+          <span><i class="fas fa-plus-circle"></i></span>
+          <span>{{ $t("addNew") }}</span>
+        </AddNew>
+      </TableHeader>
       <Table>
         <Head>
           <Column></Column>
@@ -80,7 +83,9 @@ import {
   Delete,
   Container,
   AddNew,
+  TableHeader,
 } from "./Parallels.styles";
+import SearchInput from "@/components/SearchInput";
 import AddParallel from "./AddParallel";
 import EditParallel from "./EditParallel";
 import { getAllParallels, deleteParallel } from "../../api/ApiMethods";
@@ -100,6 +105,8 @@ export default {
     AddNew,
     AddParallel,
     EditParallel,
+    TableHeader,
+    SearchInput,
   },
   data() {
     return {
@@ -107,6 +114,7 @@ export default {
       showEditModal: false,
       showAddModal: false,
       editParallel: [],
+      search: "",
     };
   },
   methods: {
@@ -118,7 +126,7 @@ export default {
       this.showEditModal = false;
     },
     async fetchParallels() {
-      const parallels = await getAllParallels();
+      const parallels = await getAllParallels(this.search);
       this.parallels = parallels;
     },
     triggerAddModal() {
@@ -136,9 +144,13 @@ export default {
       }
     },
   },
-  async beforeCreate() {
-    const parallels = await getAllParallels();
-    this.parallels = parallels;
+  watch: {
+    search: async function () {
+      await this.fetchParallels();
+    },
+  },
+  async created() {
+    await this.fetchParallels();
   },
 };
 </script>
