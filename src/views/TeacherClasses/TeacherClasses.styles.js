@@ -10,9 +10,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  @media ${breakpoints("max").tablet} {
-    flex-wrap: wrap;
-  }
+  flex-wrap: wrap;
 `;
 
 export const SubContainer = styled.div`

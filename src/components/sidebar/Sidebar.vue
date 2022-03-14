@@ -85,7 +85,6 @@ export default {
     else if (this.userRole === "Admin") {
       this.sidebarItems = adminItems;
       const userEmail = this.$store.getters.loggedUser.email;
-      console.log("first", userEmail, process.env.VUE_APP_SUPERADMIN_EMAIL);
       if (userEmail === process.env.VUE_APP_SUPERADMIN_EMAIL)
         this.sidebarItems = [...this.sidebarItems, ...superAdminItems];
     }

@@ -181,9 +181,16 @@ export async function deleteSubject(id) {
 
 //Teacher methods
 
+export async function getAllStaff() {
+  const staff = await Client.get(`staff`);
+  return staff.data;
+}
+
 export async function paginationStaff(page, search) {
   const searchValue = search || "";
-  const staff = await Client.get(`staff?page=${page}&search=${searchValue}`);
+  const staff = await Client.get(
+    `staff/filter?page=${page}&search=${searchValue}`
+  );
   return staff.data;
 }
 

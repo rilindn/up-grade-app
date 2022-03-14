@@ -57,6 +57,9 @@ export const MenuItem = styled("span")`
     background-color: var(--va-primaryLight);
     color: var(--va-white);
   }
+  a:hover {
+    color: var(--va-white);
+  }
 `;
 
 export const Divider = styled("hr")`

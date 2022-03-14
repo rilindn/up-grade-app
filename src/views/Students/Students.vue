@@ -22,18 +22,15 @@
           <Column>{{ $t("actions") }}</Column>
         </Head>
         <Body>
-          <Row
-            v-for="(user, i) in users"
-            :key="user._id"
-            :index="++i"
-            @click="
-              this.$router.push({
-                name: 'Profile',
-                params: { id: user._id },
-              })
-            "
-          >
-            <Cell>
+          <Row v-for="(user, i) in users" :key="user._id" :index="++i">
+            <Cell
+              @click="
+                this.$router.push({
+                  name: 'Profile',
+                  params: { id: user._id },
+                })
+              "
+            >
               <Avatar
                 :size="35"
                 :name="`${user?.firstName} ${user?.lastName}`"

@@ -21,7 +21,7 @@
           :error="errors"
           name="role"
           :placeholder="$t('teachers.role')"
-          :options="['Staff', 'Admin']"
+          :options="roleOptions"
         />
         <SelectInput
           :error="errors"
@@ -60,6 +60,7 @@ export default {
   },
   data() {
     return {
+      roleOptions: this.getRoleOptions(),
       registerSchema: yup.object({
         firstName: yup
           .string()
@@ -105,6 +106,13 @@ export default {
       } catch (err) {
         console.log(err);
       }
+    },
+    getRoleOptions() {
+      const roleOptions = ["Staff"];
+      const userEmail = this.$store.getters.loggedUser.email;
+      if (userEmail === process.env.VUE_APP_SUPERADMIN_EMAIL)
+        roleOptions.push("Admin");
+      return roleOptions;
     },
   },
 };

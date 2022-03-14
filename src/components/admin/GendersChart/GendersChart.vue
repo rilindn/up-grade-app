@@ -20,11 +20,11 @@
         <span> {{ $t("genderChart.female") }}</span>
       </div>
     </Legend>
-    <StatsMale
+    <StatsMale v-if="gendersChartData.length > 0"
       ><hr />
       {{ this.gendersCount.male }} {{ $t("genderChart.numberMale") }}
     </StatsMale>
-    <StatsFemale
+    <StatsFemale v-if="gendersChartData.length > 0"
       ><hr />
       {{ this.gendersCount.female }}
       {{ $t("genderChart.numberFemale") }}</StatsFemale
